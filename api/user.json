@@ -1,0 +1,11 @@
+{
+    "user": [
+        {
+            "id": 1,
+            "nameTag": "testUser",
+            "password": "test123",
+            "profilePicture":"",
+            "inventory": []
+        }
+    ]
+}

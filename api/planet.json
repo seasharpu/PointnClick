@@ -1,0 +1,62 @@
+{
+    "planets": [
+        {
+            "id":1,
+            "name": "tomatoPlanet",
+            "NPC": {
+                "name": "",
+                "dialouge": ["","","","",""]
+            },
+            "itemOnGround":4
+        },
+        {
+            "id":2,
+            "name": "desertPlanet",
+            "NPC": {
+                "name": "",
+                "dialouge": ["","","","",""]
+            },
+            "itemOnGround":2
+        },
+        {
+            "id":3,
+            "name": "alienPlanet",
+            "NPC": {
+                "name": "",
+                "dialouge": ["","","","",""]
+            },
+            "itemOnGround":1,
+            "requiredItem":2
+        },
+        {
+            "id":4,
+            "name": "junglePlanet",
+            "NPC": {
+                "name": "",
+                "dialouge": ["","","","",""]
+            },
+            "itemOnGround":5
+        },
+        {
+            "id":5,
+            "name": "waterPlanet",
+            "NPC": {
+                "name": "",
+                "dialouge": ["","","","",""]
+            },
+            "itemOnGround":3,
+            "requiredItem":1
+        },
+        {
+            "id":6,
+            "name": "pluto",
+            "NPC": {
+                "name": "",
+                "dialouge": ["","","","",""]
+            }
+        },
+        {
+            "laikaPassword": 12345
+        } 
+    ]
+}

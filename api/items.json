@@ -1,0 +1,29 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "name": "snorkle",
+            "description":"for underwater"
+        },
+        {
+            "id": 2,
+            "name": "gasmask",
+            "description":"for toxic enviroments"
+        },
+        {
+            "id": 3,
+            "name": "candy",
+            "description":"not foor humans"
+        },
+        {
+            "id": 4,
+            "name": "musicdisc",
+            "description":"aliens absolute hits!"
+        },
+        {
+            "id": 5,
+            "name": "alienWorm",
+            "description":"bites"
+        }
+    ]
+}
