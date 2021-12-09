@@ -1,0 +1,23 @@
+[
+      {
+        "id": 1,
+        "nameTag": "david",
+        "password": "1",
+        "profilePicture": "filename.jpeg",
+        "inventory": [1, 5]
+      },
+      {
+        "id": 1,
+        "nameTag": "matilda",
+        "password": "12",
+        "profilePicture": "filename.jpeg",
+        "inventory": [1, 5]
+      },
+      {
+        "id": 1,
+        "nameTag": "alex",
+        "password": "123",
+        "profilePicture": "filename.jpeg",
+        "inventory": [1, 5]
+      }
+]
