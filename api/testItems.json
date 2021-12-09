@@ -1,5 +1,4 @@
-{
-    "items": [
+[
         {
             "id": 1,
             "name": "snorkle",
@@ -26,4 +25,3 @@
             "description":"bites"
         }
     ]
-}

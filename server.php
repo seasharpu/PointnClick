@@ -27,7 +27,8 @@ if ($contentType == "application/json"){
     //kod funkar endast om inskickat material är json.
     if($rqstMethod === "POST"){
         //skapar en NY användare
-        if (isset($rqstData["nameTag"], $rqstData["password"], $FILES["image"])){
+        if (isset($rqstData["nameTag"], $rqstData["password"])){
+            //, $FILES["image"]
             $nameTag = $rqstData["nameTag"];
             $password = $rqstData["password"];
 
@@ -51,15 +52,15 @@ if ($contentType == "application/json"){
                 }
             }
             //hantering för bild som användaren laddar upp
-            if ($error !== 0) {
-                sendJson(["Something went wrong with the picture, try again."], 409);
-                exit();
-            }
-                // Filen får inte vara större än ca 500kb
-            if ($size > (0.5 * 1000 * 1000)) {
-                sendJson(["Picture too large! Try something smaller than 400kb."]) ;
-                exit();
-            }
+           //if ($error !== 0) {
+           //    sendJson(["Something went wrong with the picture, try again."], 409);
+           //    exit();
+           //}
+           //    // Filen får inte vara större än ca 500kb
+           //if ($size > (0.5 * 1000 * 1000)) {
+           //    sendJson(["Picture too large! Try something smaller than 400kb."]) ;
+           //    exit();
+           //}
 
             // Hämta filinformation
             $info = pathinfo($filename);
@@ -187,7 +188,7 @@ if ($contentType == "application/json"){
         }
     }
 }
-} else {
+} else { //
     sendJson(["Content type is not JSON."], 405);
 }
 
