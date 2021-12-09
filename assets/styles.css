@@ -15,7 +15,7 @@
 
   /* Storlekar */
   --screenWidth: 1100px;
-  --screenHeight: 600px;
+  --screenHeight: 650px;
 
   /* Fonter */
   --mainFont: "DotGothic16", sans-serif;
@@ -45,7 +45,7 @@ main {
 }
 footer {
   width: var(--screenWidth);
-  height: 50px;
+  height: 60px;
 
   display: flex;
   justify-content: center;
