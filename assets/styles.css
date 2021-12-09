@@ -2,24 +2,58 @@
 
 :root {
   /* Färger */
-  --background: #000000;
-  --mainText: #ffffff;
-  --dialogText: #000000;
-  --inputTitles: #810084;
+  --backgroundC: #000000;
+  --mainTextC: #ffffff;
+  --dialogTextC: #000000;
+  --inputTitlesC: #810084;
 
   /* Knappar */
-  --mainButton: #810084;
-  --buttonBorder: #342957;
-  --exitButton: #c70039;
-  --deleteButton: #c70039;
+  --mainButtonC: #810084;
+  --buttonBorderC: #342957;
+  --exitButtonC: #c70039;
+  --deleteButtonC: #c70039;
 
   /* Storlekar */
+  --screenWidth: 1100px;
+  --screenHeight: 600px;
 
   /* Fonter */
+  --mainFont: "DotGothic16", sans-serif;
 }
 
 /* Konstanter på hemsidan */
-/* Slut */
+body {
+  margin: 0px;
+  height: 100vh;
+  background-color: var(--backgroundC);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  margin: 0px;
+  width: var(--screenWidth);
+  height: 75px;
+}
+main {
+  width: var(--screenWidth);
+  height: var(--screenHeight);
+
+  border: 1px solid white;
+}
+footer {
+  width: var(--screenWidth);
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--mainFont);
+  color: var(--mainTextC);
+}
+/* konst - slut */
 
 /* Startsidan*/
 /* Start - Slut */
