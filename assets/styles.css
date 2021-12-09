@@ -1,0 +1,55 @@
+/* Varje sida har sin css skriven inom sina kommentarsramar. Se till att skriva nya css-regler på rätt respketive ställe ställen. */
+
+:root {
+  /* Färger */
+  --background: #000000;
+  --mainText: #ffffff;
+  --dialogText: #000000;
+  --inputTitles: #810084;
+
+  /* Knappar */
+  --mainButton: #810084;
+  --buttonBorder: #342957;
+  --exitButton: #c70039;
+  --deleteButton: #c70039;
+
+  /* Storlekar */
+
+  /* Fonter */
+}
+
+/* Konstanter på hemsidan */
+/* Slut */
+
+/* Startsidan*/
+/* Start - Slut */
+
+/* Registrering */
+/* Reg - Slut */
+
+/* Tutorial */
+/* Tuto - Slut */
+
+/* Spaceship */
+/* Ship - Slut */
+
+/* Djungelplaneten */
+/* Djung - Slut */
+
+/* Raveplaneten */
+/* Rave - Slut */
+
+/* Vattenplaneten */
+/* Vatten - Slut */
+
+/* Ökenplaneten */
+/* Öken - Slut */
+
+/* Alienplaneten */
+/* Alien - Slut */
+
+/* Pluto */
+/* Pluto - Slut */
+
+/* Laikas skepp */
+/* Laika - Slut */
