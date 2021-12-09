@@ -94,7 +94,7 @@ if ($contentType == "application/json"){
             saveJson("api/testUser.json", $newUser);
             sendJson(["User is added."=> $newUser]);
             exit();
-        }
+        } sendJson(405, ["TagName or Password is not set."]);
         //loggar in en redan EXISTERANDE användare
         if (isset($rqstData["nameTag"], $rqstData["password"])){
             $users = loadJson("api/testUser.json");
