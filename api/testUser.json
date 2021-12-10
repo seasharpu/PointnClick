@@ -1,0 +1,26 @@
+[
+    {
+        "id": 2,
+        "nameTag": "MatildaNimvik",
+        "password": "matilda",
+        "inventory": []
+    },
+    {
+        "id": 3,
+        "nameTag": "alex",
+        "password": "matilda",
+        "inventory": []
+    },
+    {
+        "id": 4,
+        "nameTag": "sandra",
+        "password": "matilda",
+        "inventory": []
+    },
+    {
+        "id": 5,
+        "nameTag": "yooo",
+        "password": "matilda",
+        "inventory": []
+    }
+]

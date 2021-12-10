@@ -1,5 +1,4 @@
-{
-    "planets": [
+[
         {
             "id":1,
             "name": "tomatoPlanet",
@@ -59,4 +58,3 @@
             "laikaPassword": 12345
         } 
     ]
-}
