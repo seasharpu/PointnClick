@@ -1,23 +1,26 @@
 [
-      {
-        "id": 1,
-        "nameTag": "david",
-        "password": "1",
-        "profilePicture": "filename.jpeg",
-        "inventory": [1, 5]
-      },
-      {
-        "id": 1,
-        "nameTag": "matilda",
-        "password": "12",
-        "profilePicture": "filename.jpeg",
-        "inventory": [1, 5]
-      },
-      {
-        "id": 1,
+    {
+        "id": 2,
+        "nameTag": "MatildaNimvik",
+        "password": "matilda",
+        "inventory": []
+    },
+    {
+        "id": 3,
         "nameTag": "alex",
-        "password": "123",
-        "profilePicture": "filename.jpeg",
-        "inventory": [1, 5]
-      }
+        "password": "matilda",
+        "inventory": []
+    },
+    {
+        "id": 4,
+        "nameTag": "sandra",
+        "password": "matilda",
+        "inventory": []
+    },
+    {
+        "id": 5,
+        "nameTag": "yooo",
+        "password": "matilda",
+        "inventory": []
+    }
 ]
