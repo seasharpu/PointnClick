@@ -10,13 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <title>Saving Laika</title>
 </head>
-<body>
-    <header>
-    </header>
-    <main>
-    </main>
-    <footer>
-        <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
-    </footer>
-</body>
+    <body>
+        <header>
+        </header>
+        <main>
+        </main>
+        <footer>
+            <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
+        </footer>
+    </body>
 </html>
