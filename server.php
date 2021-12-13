@@ -181,22 +181,34 @@ if ($contentType == "application/json") {
                 sendJson(200, "successful");
             }
         } ///DELETE INVENTORY ITEM
-        elseif (isset($rqstData["inventoryID"], $rqstData["itemName"])) {
-            $invent = loadJson("api/testItem.json");
+        elseif (isset($rqstData["inventoryID"], $rqstData["userID"])) {
+            $users = loadJson("api/testUser.json");
+            $userID = null;
             $found = FALSE;
 
-            foreach ($invent as $key => $item) {
-                if ($rqstData["inventoryID"] == $rqstData["itemName"]) {
-                    $found = TRUE;
-                    array_splice($invent, $key, 1);
+            //hitta den specifika användaren.
+            foreach ($users as $key => $user) {
+                var_dump($user);
+                if ($rqstData["userID"] == $user["id"]) {
+                    $userItemArray = $users[$key]["inventory"];
+                    var_dump($userItemArray);
                 }
             }
+            //den specifika användarens inventory.
+            foreach ($userItemArray as $key => $userItem) {
+                if ($rqstData["inventoryID"] == $userItem) {
+                    echo $userItem;
+                    $found = TRUE;
+                    array_splice($userItemArray, $key, 1);
+                }
+
+            }
             if ($found == False) {
-                sendJson(["user not found"], 404);
+                sendJson(404, ["item not found"]);
             }
 
-            saveJson("api/testItem.json", $data);
-            sendJson(200, "successful");
+            saveJson("api/testUser.json", $users);
+            sendJson(200, "successfully deleted item");
         } else {
             sendJson(404, "fill in all information");
         }

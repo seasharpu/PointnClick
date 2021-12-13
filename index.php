@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +15,19 @@
         <header>
         </header>
         <main>
+            <?php
+            //kollar om vi har en inloggad användare.
+            if (isset($_SESSION["id"], $_SESSION["nameTag"])){
+                $id = $_SESSION["id"];
+                $nameTag = $_SESSION["nameTag"];
+            } else {
+                $id = -1;
+                $nameTag = "";
+            }
+            echo "<script>const userID = $id</script>";
+            echo "<script>const userNameTag = $nameTag</script>";
+            ?>
+            <script src="script.js"></script>
         </main>
         <footer>
             <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
