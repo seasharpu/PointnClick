@@ -42,10 +42,10 @@ main {
   height: var(--screenHeight);
 
   border: 1px solid white;
-
+/* 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 footer {
   width: var(--screenWidth);
