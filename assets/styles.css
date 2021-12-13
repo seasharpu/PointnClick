@@ -42,6 +42,10 @@ main {
   height: var(--screenHeight);
 
   border: 1px solid white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 footer {
   width: var(--screenWidth);
@@ -105,6 +109,26 @@ footer {
 /* Start - Slut */
 
 /* Registrering */
+.wrapperDiv {
+  width: 95%;
+  height: 95%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.wrapperDiv > div {
+  
+}
+.hej {
+  background-color: var(--mainButtonC);
+  grid-row: 1/ span 2;
+}
+
+.hejhej{
+  background-color: var(--mainButtonC);
+  grid-row: 1/ span 2;
+}
 /* Reg - Slut */
 
 /* Tutorial */

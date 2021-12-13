@@ -43,7 +43,7 @@ function makeStartPage() {
     signUpButton.innerHTML = "Sign in";
 }
 
-makeStartPage();
+//makeStartPage();
 
 // document.querySelector("main").style.backgroundImage = "url('images/background.png')";
 
@@ -83,3 +83,23 @@ makeStartPage();
 // let newPlayerButton = document.createElement("div");
 // let signUpButton = document.createElement("div");
 // document.querySelector(".buttonsDiv").append(newPlayerButton, signUpButton);
+
+function MakerRegisterPage() {
+    document.querySelector("main").style.backgroundImage = "url('images/background.png')";
+    let wrapperDiv = document.createElement("div");
+    wrapperDiv.classList.add("wrapperDiv");
+    document.querySelector("main").append(wrapperDiv);
+
+    let signInDiv = document.createElement("div");
+    signInDiv.classList.add("hej");
+
+    let avatarWrapperDiv = document.createElement("div");
+    avatarWrapperDiv.classList.add("hejhej");
+
+    document.querySelector(".wrapperDiv").append(signInDiv, avatarWrapperDiv);
+
+
+
+}
+
+MakerRegisterPage();
