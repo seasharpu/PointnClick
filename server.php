@@ -151,8 +151,33 @@ if ($contentType == "application/json") {
             } else {
                 sendJson(404, "namechange failed");
             }
+             ///DELETE INVENTORY ITEM
+        } elseif (isset($rqstData["inventoryID"], $rqstData["userID"])) {
+            $users = loadJson("api/testUser.json");
+            $found = FALSE;
+
+
+            //hitta den specifika användaren.
+            foreach ($users as $key => $user) {
+                if ($rqstData["userID"] == $user["id"]) {
+                    $userItemArray = $users[$key]["inventory"];
+                }
+            }
+            //den specifika användarens inventory.
+            foreach ($userItemArray as $key => $userItem) {
+                if ($rqstData["inventoryID"] == $userItem) {
+                    echo $userItem;
+                    $found = TRUE;
+                    array_splice($userItemArray, $userItem, 1);
+                }
+            }
+            if ($found == FALSE) {
+                sendJson(404, ["item not found"]);
+            }
+            saveJson("api/testUser.json", $users);
+            sendJson(200, "successfully deleted item");
         } else {
-            sendJson(404, "enter all information");
+            sendJson(404, "fill in all information");
         }
     }
 
@@ -180,38 +205,8 @@ if ($contentType == "application/json") {
                 saveJson("api/testUser.json", $users);
                 sendJson(200, "successful");
             }
-        } ///DELETE INVENTORY ITEM
-        elseif (isset($rqstData["inventoryID"], $rqstData["userID"])) {
-            $users = loadJson("api/testUser.json");
-            $userID = null;
-            $found = FALSE;
-
-            //hitta den specifika användaren.
-            foreach ($users as $key => $user) {
-                var_dump($user);
-                if ($rqstData["userID"] == $user["id"]) {
-                    $userItemArray = $users[$key]["inventory"];
-                    var_dump($userItemArray);
-                }
-            }
-            //den specifika användarens inventory.
-            foreach ($userItemArray as $key => $userItem) {
-                if ($rqstData["inventoryID"] == $userItem) {
-                    echo $userItem;
-                    $found = TRUE;
-                    array_splice($userItemArray, $key, 1);
-                }
-
-            }
-            if ($found == False) {
-                sendJson(404, ["item not found"]);
-            }
-
-            saveJson("api/testUser.json", $users);
-            sendJson(200, "successfully deleted item");
-        } else {
-            sendJson(404, "fill in all information");
         }
+        
     }
     //logga ut knappen ska ha en a href länk som skickar
     //till server.php/logout.
