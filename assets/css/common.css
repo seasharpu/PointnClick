@@ -1,5 +1,9 @@
 /* Denna sida avser samtliga regler för gemensamma css-regler på alla sidor */
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+@font-face {
+  font-family: "PixelBold";
+  src: url(/assets/fonts/PixelBold.ttf);
+}
 
 :root {
   /* Färger */
@@ -20,6 +24,7 @@
 
   /* Fonter */
   --mainFont: "DotGothic16", sans-serif;
+  --titleFont: "PixelBold";
 }
 
 /* Konstanter på hemsidan */

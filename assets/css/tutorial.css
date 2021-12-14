@@ -1,3 +1,87 @@
 @import "common.css";
 /* Denna fil avser unika css-regler för tutorialsidan */
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+
+#backgroundPic {
+  background-image: url(/assets/images/space_background.png);
+  width: var(--screenWidth);
+  height: var(--screenHeight);
+
+  display: flex;
+  flex-direction: column;
+
+  color: var(--mainTextC);
+}
+
+#gridMain {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+
+#tutorialTitleParent {
+  margin: 0px;
+  height: auto;
+  font-family: var(--titleFont);
+  font-size: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#tutorialTitleParent > h1 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.totText {
+  font-family: var(--mainFont);
+}
+
+#textOne,
+#picTwo {
+  grid-column: 2;
+}
+
+#textTwo,
+#picOne {
+  grid-column: 1;
+}
+
+#picOne {
+  grid-row: 1;
+  background-image: url(/assets/images/tempAstro.jpeg);
+  background-size: contain;
+}
+
+#textTwo {
+  grid-row: 2;
+}
+
+#picTwo {
+  background-image: url(/assets/images/tempSpace.jpeg);
+  background-size: cover;
+}
+
+#buttonParent {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttonSpaceShip {
+  height: 50px;
+  width: 150px;
+  border: 5px solid var(--buttonBorderC);
+
+  background-color: var(--mainButtonC);
+  text-align: center;
+}
+
+#buttonSpaceShip > p {
+  font-family: var(--titleFont);
+}
