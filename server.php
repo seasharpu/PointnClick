@@ -27,6 +27,7 @@ header("Access-Control-Allow-Origin: *");
 //ändra nycklar till SESSION, där det sker inloggning 
 //och när vi behöver klla om någon är inloggad
 if ($contentType == "application/json") {
+    echo $contentType;
     //kod funkar endast om inskickat material är json.
     if ($rqstMethod === "POST") {
         //skapar en NY användare
@@ -39,53 +40,52 @@ if ($contentType == "application/json") {
         //{
         //    "
         //}
-        if (isset($rqstData["nameTag"], $rqstData["password"])) {
-            //, $FILES["image"]
+        if (isset($rqstData["nameTag"], $rqstData["password"], $FILES["image"])) {
             $nameTag = $rqstData["nameTag"];
             $password = $rqstData["password"];
 
             //variabler för bild-filen
-            //$profilePicture = $FILES["image"];
-            //$filename = $profilePicture["name"];
-            //$tempname = $profilePicture["tmp_name"];
-            //$size = $profilePicture["size"];
-            //$error = $profilePicture["error"];
+            $profilePicture = $FILES["image"];
+            $filename = $profilePicture["name"];
+            $tempname = $profilePicture["tmp_name"];
+            $size = $profilePicture["size"];
+            $error = $profilePicture["error"];
 
             //nameTag är färre än 3 bokstäver
             if (strlen($nameTag) <= 2) {
-                sendJson(["Please add more characters to your nameTag."], 406);
+                sendJson(406, ["Please add more characters to your nameTag."]);
             }
             //lösenord är färre än 4 bokstäver
             if (strlen($password) <= 3) {
-                sendJson(["Please add more characters to your password."], 406);
+                sendJson(406, ["Please add more characters to your password."]);
                 if (preg_match('~[0-9]+~', $password)) {
-                    sendJson(["Your password has to at least include one number."], 406);
+                    sendJson(406, ["Your password has to at least include one number."] );
                     exit();
                 }
             }
             //hantering för bild som användaren laddar upp
-            //if ($error !== 0) {
-            //    sendJson(["Something went wrong with the picture, try again."], 409);
-            //    exit();
-            //}
-            //    // Filen får inte vara större än ca 500kb
-            //if ($size > (0.5 * 1000 * 1000)) {
-            //    sendJson(["Picture too large! Try something smaller than 400kb."]) ;
-            //    exit();
-            //}
+            if ($error !== 0) {
+                sendJson(409, ["Something went wrong with the picture, try again."] );
+                exit();
+            }
+                // Filen får inte vara större än ca 500kb
+            if ($size > (0.5 * 1000 * 1000)) {
+                sendJson(405, ["Picture too large! Try something smaller than 400kb."]) ;
+                exit();
+            }
 
             // Hämta filinformation
-            //$info = pathinfo($filename);
-            //// Hämta ut filändelsen (och gör om till gemener)
-            //$ext = strtolower($info["extension"]);
-            //
-            //// Konvertera från int (siffra) till en sträng,
-            //// så vi kan slå samman dom nedan.
-            //$time = (string) time(); // Klockslaget i millisekunder
-            //// Skapa ett unikt filnamn med TID + FILNAMN
-            //$uniqueFilename = sha1("$time$filename");
-            //// Skickar iväg bilden till vår mapp
-            //move_uploaded_file($tempname, "/api/profileImages/$uniqueFilename.$ext");
+            $info = pathinfo($filename);
+            // Hämta ut filändelsen (och gör om till gemener)
+            $ext = strtolower($info["extension"]);
+            
+            // Konvertera från int (siffra) till en sträng,
+            // så vi kan slå samman dom nedan.
+            $time = (string) time(); // Klockslaget i millisekunder
+            // Skapa ett unikt filnamn med TID + FILNAMN
+            $uniqueFilename = sha1("$time$filename");
+            // Skickar iväg bilden till vår mapp
+            move_uploaded_file($tempname, "/api/profileImages/$uniqueFilename.$ext");
 
             //när all info har kikats genom och kontrollerats, ska 
             //det läggas till i databasen. 
@@ -155,20 +155,23 @@ if ($contentType == "application/json") {
         } elseif (isset($rqstData["inventoryID"], $rqstData["userID"])) {
             $users = loadJson("api/testUser.json");
             $found = FALSE;
-
+            $userID = null;
 
             //hitta den specifika användaren.
             foreach ($users as $key => $user) {
                 if ($rqstData["userID"] == $user["id"]) {
-                    $userItemArray = $users[$key]["inventory"];
+                    $userID = $user["id"];
+                    $index = $key;
                 }
             }
+            var_dump($users[$index]["inventory"]);
             //den specifika användarens inventory.
-            foreach ($userItemArray as $key => $userItem) {
+            foreach ($users[$index]["inventory"] as $key => $userItem) {
                 if ($rqstData["inventoryID"] == $userItem) {
                     echo $userItem;
                     $found = TRUE;
-                    array_splice($userItemArray, $userItem, 1);
+                    array_splice($users[$index]["inventory"], $key, 1);
+                    
                 }
             }
             if ($found == FALSE) {
@@ -181,8 +184,8 @@ if ($contentType == "application/json") {
         }
     }
 
-    // ta bort användare
-    //Behöver inget
+    //ta bort användare
+    //Behöver användarens id.
     if ($rqstMethod === "DELETE") {
 
         //tar bort ANVÄNDAREN. behöver userID och nameTag, och specifikt INTE inventoryID. 
@@ -206,13 +209,12 @@ if ($contentType == "application/json") {
                 sendJson(200, "successful");
             }
         }
-        
     }
     //logga ut knappen ska ha en a href länk som skickar
     //till server.php/logout.
     //TODO: kolla GET-förfrågan om den är "logout",
     //om den är det avslutas SESSION, och användaren skickas
-    //till index.html igen. (logga in sida)
+    //till index.php igen. (logga in sida)
     if ($rqstMethod === "GET") {
         if ($_GET == "logout") {
             session_unset();
@@ -221,5 +223,5 @@ if ($contentType == "application/json") {
         }
     }
 } else { //
-    sendJson(["Content type is not JSON."], 405);
+    sendJson(405, ["Content type is not JSON."]);
 }

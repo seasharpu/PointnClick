@@ -1,12 +1,11 @@
 [
     {
         "id": 2,
-        "nameTag": "MatildaNimvik",
+        "nameTag": "Buster",
         "password": "matilda",
         "inventory": [
             1,
-            2,
-            3
+            2
         ]
     },
     {
@@ -21,16 +20,6 @@
         ]
     },
     {
-        "id": 4,
-        "nameTag": "sandra",
-        "password": "matilda",
-        "inventory": [
-            4,
-            1,
-            3
-        ]
-    },
-    {
         "id": 5,
         "nameTag": "yooo",
         "password": "matilda",
@@ -39,5 +28,11 @@
             7,
             2
         ]
+    },
+    {
+        "id": 6,
+        "nameTag": "AlexanderDenStore",
+        "password": "batman123",
+        "inventory": []
     }
 ]
