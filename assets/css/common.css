@@ -1,4 +1,5 @@
-/* Varje sida har sin css skriven inom sina kommentarsramar. Se till att skriva nya css-regler på rätt respketive ställe ställen. */
+/* Denna sida avser samtliga regler för gemensamma css-regler på alla sidor */
+/* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
 
 :root {
   /* Färger */
@@ -53,37 +54,3 @@ footer {
   font-family: var(--mainFont);
   color: var(--mainTextC);
 }
-/* konst - slut */
-
-/* Startsidan*/
-/* Start - Slut */
-
-/* Registrering */
-/* Reg - Slut */
-
-/* Tutorial */
-/* Tuto - Slut */
-
-/* Spaceship */
-/* Ship - Slut */
-
-/* Djungelplaneten */
-/* Djung - Slut */
-
-/* Raveplaneten */
-/* Rave - Slut */
-
-/* Vattenplaneten */
-/* Vatten - Slut */
-
-/* Ökenplaneten */
-/* Öken - Slut */
-
-/* Alienplaneten */
-/* Alien - Slut */
-
-/* Pluto */
-/* Pluto - Slut */
-
-/* Laikas skepp */
-/* Laika - Slut */
