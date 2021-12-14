@@ -19,6 +19,7 @@ function requestDeleteItem(userID, inventoryID){
 
 
 //CHANGE NAMETAG 
+//tar emot befintligt namn, samt det nya namnet.
 function requestChangeUserName(nameTag, newNameTag){
     const data = {"nameTag": nameTag, "newNameTag": newNameTag};
     const req = new Request("http://localhost:1000/server.php", {
@@ -31,7 +32,7 @@ function requestChangeUserName(nameTag, newNameTag){
 //requestChangeUserName("MatildaNimvik", "Buster");
 
 //CREATE USER
-function requestCreateUser(nameTag, password){
+function requestLoginUser(nameTag, password){
     const data = {"nameTag": nameTag, "password": password};
     const req = new Request("http://localhost:1000/server.php", {
         method: "POST",
@@ -40,7 +41,7 @@ function requestCreateUser(nameTag, password){
     });
     fetch(req).then(response => response.text().then(value => console.log(value)))
 }
-//requestCreateUser("AlexanderDenStore", "batman123");
+//requestLoginUser("AlexanderDenStore", "batman123");
 
 //DELETE USER
 function requestDeleteUser(userID){
@@ -57,27 +58,29 @@ function requestDeleteUser(userID){
 let formWrapper = document.createElement("div");
 formWrapper.innerHTML = 
     `
-    <form id="login-user" action="server.php" method="POST" enctype="multipart/form-data">
+    <form id="login-user" action="server.php "method="POST" enctype="multipart/form-data">
         <input type="file" name="image">
         <input type="text" placeholder="nameTag" name="nameTag">
         <input type="text" placeholder="password" name="password">
-        <button>Upload</button>
+        <button id="button">Upload</button>
     </form>
     `;
 
 document.querySelector("main").append(formWrapper);
 
 //LOGIN USER
-function requestLoginUser(){
-    const form = document.getElementById("login-user");
+const form = document.getElementById("login-user");
+form.addEventListener("button", (event) => {
+    event.preventDefault();
     const data = new FormData(form);
+    console.log(data);
+
     const req = new Request("http://localhost:1000/server.php", {
         method: "POST",
-        body: JSON.stringify(data),
-        headers: {"Content-type": "application/json"}
+        body: data
     });
     fetch(req).then(response => response.text().then(value => console.log(value)))
-}
-//requestLoginUser("Buster", "matilda");
+
+})
 
 
