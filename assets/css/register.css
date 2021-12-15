@@ -5,6 +5,14 @@
     grid-template-rows: 1fr 1fr;
     grid-gap: 10px;
   }
+
+  .GridWrapperDiv {
+    width: var(--screenWidth);
+    height: var(--screenHeight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
   .hej {
     background-color: var(--mainButtonC);
