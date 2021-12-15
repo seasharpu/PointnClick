@@ -47,6 +47,3 @@ function createTutorial(){
     headerDiv.append(tutorialTitleParent);
     bottomDiv.append(button);
 }
-
-
-createTutorial();

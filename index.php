@@ -29,7 +29,7 @@
     <footer>
         <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
     </footer>
-    <script src="tutorial.js"></script>
+    <script src="/assets/scripts/tutorial.js"></script>
 </body>
 
 </html>

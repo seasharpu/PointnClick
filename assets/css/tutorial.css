@@ -82,6 +82,10 @@
   text-align: center;
 }
 
+#buttonSpaceShip:hover {
+  cursor: pointer;
+}
+
 #buttonSpaceShip > p {
   font-family: var(--titleFont);
 }
