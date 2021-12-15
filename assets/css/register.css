@@ -1,0 +1,17 @@
+.wrapperDiv {
+    width: 95%;
+    height: 95%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+  }
+  
+  .hej {
+    background-color: var(--mainButtonC);
+    grid-row: 1/ span 2;
+  }
+  
+  .hejhej{
+    background-color: var(--mainButtonC);
+    grid-row: 1/ span 2;
+  }

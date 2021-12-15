@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/css/spaceship.css">
     <link rel="stylesheet" href="assets/css/tutorial.css">
     <link rel="stylesheet" href="assets/css/water.css">
+    <link rel="stylesheet" href="assets/css/register.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
@@ -30,6 +31,8 @@
         <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
     </footer>
     <script src="/assets/scripts/tutorial.js"></script>
+    <script src="/assets/scripts/startpage.js"></script>
+    <script src="/assets/scripts/register.js"></script>
 </body>
 
 </html>
