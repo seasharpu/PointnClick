@@ -1,0 +1,73 @@
+#main {
+    display: flex;
+    justify-content: center;
+
+}
+.codeWrapper {
+    background-color: black;
+    border: solid 5px purple;
+
+    padding: 1vw;
+    width: 10vw;
+}
+
+.codeNumbersWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-gap: 1vw;
+}
+
+.codePanelIMGandNumbers {
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+}
+
+.spaceshipButton {
+    width: 100%;
+    padding: 1vw;
+    background-color: purple;
+}
+
+.codeinputnumbers {
+    background-color:purple;
+    grid-area: 1/1/2/7;
+    border: none;
+}
+
+.codeNumbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white; 
+    font-size: 1vw;
+}
+
+.clearCodePanelButton, .enterCodeButton {
+  
+    background-color: purple;
+    border: 3px solid rgb(34, 8, 61);
+    font-size: 1vw;
+}
+
+#codePanelTitel {
+    color: white;
+    font-size: 1vw;
+}
+
+.laikasShip {
+    width: 50px;
+    height: 50px;
+    background-color:green;
+}
+
+.transformSize {
+    width: 30vw;
+    height: auto;
+    
+}
+
