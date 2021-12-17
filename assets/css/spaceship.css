@@ -22,9 +22,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: absolute;
 }
 /*Denna diven är alla planeter placerade i*/
@@ -46,9 +43,9 @@
     background-color: rgb(121, 7, 7);
     color: white;
 
-    position: absolute;
-    top: 660px;
-    left: 53px;
+    position: relative;
+    top: 590px;
+    left: 10px;
 
     display: flex;
     align-items: center;
