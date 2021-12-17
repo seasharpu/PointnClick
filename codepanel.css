@@ -10,7 +10,7 @@
     padding: 1vw;
     width: 20px;
     height: 100px;
-    transition: width 2s, height 4s;
+    transition: width 3s, height 3s;
 
     display: flex;
     flex-direction: column;
