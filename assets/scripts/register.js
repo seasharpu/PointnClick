@@ -12,13 +12,27 @@ function MakerRegisterPage() {
     wrapperDiv.classList.add("wrapperDiv");
     document.querySelector(".GridWrapperDiv").append(wrapperDiv);
 
-    let signInDiv = document.createElement("div");
-    signInDiv.classList.add("registerDiv");
+    let registerDiv = document.createElement("div");
+    registerDiv.classList.add("registerDiv");
 
     let avatarWrapperDiv = document.createElement("div");
-    avatarWrapperDiv.classList.add("avatarDiv");
+    avatarWrapperDiv.classList.add("avatarWrapperDiv");
 
-    document.querySelector(".wrapperDiv").append(signInDiv, avatarWrapperDiv);
+    document.querySelector(".wrapperDiv").append(registerDiv, avatarWrapperDiv);
+
+    let uploadProfilePicDiv = document.createElement("div");
+    registerDiv.append(uploadProfilePicDiv);
+    uploadProfilePicDiv.setAttribute("ID","uploadProfilePic");
+
+    //skapar 4st divvar för avatargubbarna 
+    for (let i= 1; i <= 4; i++) {
+        let avatars = document.createElement("div");
+        avatars.classList.add("avatars");
+        avatarWrapperDiv.append(avatars);
+
+    }    
+
+
 
 
 
