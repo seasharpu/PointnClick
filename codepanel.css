@@ -8,14 +8,19 @@
     border: solid 5px purple;
 
     padding: 1vw;
-    width: 10vw;
+    width: 20px;
+    height: 100px;
+    transition: width 2s, height 4s;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .codeNumbersWrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
     grid-gap: 1vw;
+    height: 200px;
 }
 
 .codePanelIMGandNumbers {
@@ -48,10 +53,9 @@
 }
 
 .clearCodePanelButton, .enterCodeButton {
-  
     background-color: purple;
     border: 3px solid rgb(34, 8, 61);
-    font-size: 1vw;
+    height: 10%;
 }
 
 #codePanelTitel {
@@ -66,8 +70,11 @@
 }
 
 .transformSize {
-    width: 30vw;
-    height: auto;
+    width: 400px;
+    height: 400px;
     
 }
 
+.clearCodePanelButton > p , .enterCodeButton > p {
+    margin: 0;
+}

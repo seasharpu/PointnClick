@@ -45,7 +45,7 @@ function codeControllerButton(){
     let enterCodeButton = document.createElement("div");
     document.querySelector(".codeWrapper").append(enterCodeButton);
     enterCodeButton.classList.add("enterCodeButton");
-    enterCodeButton.innerHTML="ENTER CODE";
+    enterCodeButton.innerHTML="<p>ENTER CODE</p>";
     let password = `123456`;
 
     enterCodeButton.addEventListener("click", () => {
@@ -70,7 +70,7 @@ function clearPanel (clearButton){
     clearButton = document.createElement("div");
     clearButton.classList.add("clearCodePanelButton");
     document.querySelector(".codeWrapper").append(clearButton);
-    clearButton.innerHTML="CLEAR CODE";
+    clearButton.innerHTML="<p>CLEAR CODE</p>";
     
     clearButton.addEventListener("click", () => {
         document.querySelector(".codeinputnumbers").innerHTML = "";
