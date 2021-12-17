@@ -14,12 +14,12 @@
     align-items: center;
   }
   
-  .hej {
+  .registerDiv {
     background-color: var(--mainButtonC);
     grid-row: 1/ span 2;
   }
   
-  .hejhej{
+  .avatarDiv{
     background-color: var(--mainButtonC);
     grid-row: 1/ span 2;
   }

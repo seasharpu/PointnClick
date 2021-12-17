@@ -13,10 +13,10 @@ function MakerRegisterPage() {
     document.querySelector(".GridWrapperDiv").append(wrapperDiv);
 
     let signInDiv = document.createElement("div");
-    signInDiv.classList.add("hej");
+    signInDiv.classList.add("registerDiv");
 
     let avatarWrapperDiv = document.createElement("div");
-    avatarWrapperDiv.classList.add("hejhej");
+    avatarWrapperDiv.classList.add("avatarDiv");
 
     document.querySelector(".wrapperDiv").append(signInDiv, avatarWrapperDiv);
 
