@@ -17,7 +17,7 @@ function spaceShip() {
     //document.querySelector(".spaceShipBackground").style.backgroundImage = "url('images/spaceship.bmp')";
     //document.querySelector(".spaceShipBackground").style.position = "static";
     backgrounds();
-    
+    inventory();
     // RYMDEN DÄR ALLA PALANETER FINNS
     let space = document.createElement("div");
     document.querySelector(".spaceShipBackground").append(space);
@@ -149,5 +149,28 @@ function backToSpaceship() {
     backToSpaceship.addEventListener("click", function() {
         document.querySelector(".background").style.display = "none";
         spaceShip();
+    });
+}
+
+// GRUND INVENTORY FUNCTION
+function inventory(){
+    let inventory = document.createElement("div");
+    let backpack = document.createElement("div");
+    let objects = document.createElement("div");
+
+    inventory.classList.add("inventory");
+    backpack.classList.add("backpack");
+    objects.classList.add("invetoryObjectHidden");
+
+    inventory.append(backpack);
+    inventory.append(objects);
+    document.querySelector(".spaceShipBackground").append(inventory);
+
+    backpack.addEventListener("click", function(e) {
+        objects.classList.toggle("invetoryObjects");
+        backpack.classList.toggle("backpackOpen");
+        if(objects.classList.contains("invetoryObjects")) {
+            objects.classList.toggle("invetoryObjectsHidden");
+        }
     });
 }

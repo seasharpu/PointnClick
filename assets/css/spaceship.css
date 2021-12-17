@@ -51,6 +51,44 @@
     align-items: center;
     justify-content: center;
 }
+/*INVENTORY*/
+.inventory {
+    height: 100px;
+    width: 100px;
+    border-bottom: black 1px solid;
+    background-color: rgba(128, 128, 128, 0.678);
+    position: relative;
+    bottom: 265px;
+    left: 430px;
+    transition-property: height;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+}
+.backpack {
+    height: 100px;
+    width: 100px;
+    background-color: rgba(128, 128, 128, 0.678);
+    border-bottom: 1px black solid;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/assets/images/Treasure\ Chest\ closed\ 64x64.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.backpackOpen {
+    background-image: url(/assets/images/Treasure\ Chest\ open\ 64x64.png);
+}
+.inventoryObjectsHidden {
+    display: none;
+}
+.invetoryObjects {
+    height: 200px;
+    width: 100px;
+    background-color: rgba(128, 128, 128, 0.678);
+}
+
 /*PLANETERNA SOM MAN KLICKAR PÅ *!warning!* (Ska läggas till bilder istället för runda divar)*/
 .underwaterPLANET {
     height: 80px;
