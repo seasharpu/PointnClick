@@ -13,7 +13,7 @@ function saveJson($database, $data)
 }
 
 
-function sendJson($errorCode = 200, $message)
+function sendJson($message, $errorCode = 200)
 {
     header("Content-Type: application/json");
     http_response_code($errorCode);

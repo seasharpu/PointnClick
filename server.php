@@ -158,14 +158,13 @@ if ($rqstMethod === "POST"){
         //{
         //    "
         //}
-        var_dump($_POST);
 
-        if (isset($_POST["nameTag"], $_POST["password"], $FILES["image"])) {
+        if (isset($_POST["nameTag"], $_POST["password"], $_FILES["image"])) {
             $nameTag = $_POST["nameTag"];
             $password = $_POST["password"];
 
             //variabler för bild-filen
-            $profilePicture = $FILES["image"];
+            $profilePicture = $_FILES["image"];
             $filename = $profilePicture["name"];
             $tempname = $profilePicture["tmp_name"];
             $size = $profilePicture["size"];
@@ -204,8 +203,8 @@ if ($rqstMethod === "POST"){
             $time = (string) time(); // Klockslaget i millisekunder
             // Skapa ett unikt filnamn med TID + FILNAMN
             $uniqueFilename = sha1("$time$filename");
-            // Skickar iväg bilden till vår mapp
-            move_uploaded_file($tempname, "api/profileImages/" . $uniqueFilename . $ext);
+            // Skickar iväg bilden till vår mapp"
+            move_uploaded_file($tempname, "api/profileImages/$uniqueFilename.$ext");
 
             //när all info har kikats genom och kontrollerats, ska 
             //det läggas till i databasen. 
@@ -219,18 +218,17 @@ if ($rqstMethod === "POST"){
             $newUser["id"] = $highestID;
             $newUser["nameTag"] = $nameTag;
             $newUser["password"] = $password;
-            $newUser["profilePicture"] = $uniqueFilename . $ext;
+            $newUser["profilePicture"] = "$uniqueFilename.$ext";
             $newUser["inventory"] = [];
 
             //sparar i array, och sen i json-fil.
             array_push($allUsers, $newUser);
             saveJson("api/testUser.json", $allUsers);
-            sendJson(200, ["User is added." => $newUser]);
-            //header("Location: index.php");
+            sendJson(["User is added."]);
+            header("Location: index.php");
             exit();
         } else {
-            //sendJson(405, ["TagName or Password is not set."]);
-            echo "dodnt work";
+            sendJson(405, ["TagName or Password is not set."]);
             exit();
         }
 }
