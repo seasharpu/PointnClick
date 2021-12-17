@@ -1,3 +1,117 @@
 @import "common.css";
 /* Denna fil avser unika css-regler för spaceship */
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+
+/*Spaceship diven*/
+.spaceShipBackground {
+    height: var(--screenHeight);
+    width: var(--screenWidth);
+    position: static;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/assets/images/spaceship.bmp');
+}
+/*En div som bytar bakrund beroende på vilken planet man är på*/
+.background {
+    height: var(--screenHeight);
+    width: var(--screenWidth);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+/*Denna diven är alla planeter placerade i*/
+.space {
+    height: 350px;
+    width: 750px;
+    position: absolute;
+}
+/*När man hovrar över en planet*/
+.space > div:hover {
+    height: 85px;
+    width: 85px;
+    cursor: pointer;
+}
+/*Tillbaka knappen till spaceship*/
+.backToSpaceship {
+    height: 50px;
+    width: 165px;
+    background-color: rgb(121, 7, 7);
+    color: white;
+
+    position: absolute;
+    top: 660px;
+    left: 53px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*PLANETERNA SOM MAN KLICKAR PÅ *!warning!* (Ska läggas till bilder istället för runda divar)*/
+.underwaterPLANET {
+    height: 80px;
+    width: 80px;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    transition: 1s;
+}
+.alienPLANET {
+    height: 60px;
+    width: 60px;
+    background-color: grey;
+    border-radius: 50%;
+    position: absolute;
+    left: 550px;
+    top: 100px;
+    transition: 2s;
+}
+.junglePLANET {
+    height: 60px;
+    width: 60px;
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    left: 310px;
+    top: 180px;
+    transition: 2s;
+}
+.partyPLANET {
+    height: 65px;
+    width: 65px;
+    background-color: purple;
+    border-radius: 50%;
+    position: absolute;
+    left: 200px;
+    top: 280px;
+    transition: 2s;
+}
+.desertPLANET {
+    height: 60px;
+    width: 60px;
+    background-color: burlywood;
+    border-radius: 50%;
+    position: absolute;
+    left: 600px;
+    top: 270px;
+    transition: 2s;
+}
+.plutoPLANET {
+    height: 60px;
+    width: 60px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    left: 350px;
+    top: 30px;
+    transition: 2s;
+}

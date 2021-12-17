@@ -37,11 +37,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  overflow: hidden;
 }
 header {
   margin: 0px;
   width: var(--screenWidth);
   height: 75px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--mainFont);
+  font-size: larger;
+  color: var(--mainTextC);
 }
 main {
   width: var(--screenWidth);

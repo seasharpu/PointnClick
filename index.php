@@ -22,14 +22,15 @@
 </head>
 
 <body>
-    <header>
+    <header id="location">
     </header>
-    <main>
+    <main id="hidden">
     </main>
     <footer>
         <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
     </footer>
     <script src="/assets/scripts/tutorial.js"></script>
+    <script src="/assets/scripts/spaceship.js"></script>
 </body>
 
 </html>
