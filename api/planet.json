@@ -4,7 +4,7 @@
             "name": "tomatoPlanet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["Hej1","Hej2","Hej3","Hej4","Hej5"]
             },
             "itemOnGround":4
         },
@@ -13,7 +13,7 @@
             "name": "desertPlanet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["","","","",""]
             },
             "itemOnGround":2
         },
@@ -22,7 +22,7 @@
             "name": "alienPlanet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["","","","",""]
             },
             "itemOnGround":1,
             "requiredItem":2
@@ -32,7 +32,7 @@
             "name": "junglePlanet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["","","","",""]
             },
             "itemOnGround":5
         },
@@ -41,7 +41,7 @@
             "name": "waterPlanet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["","","","",""]
             },
             "itemOnGround":3,
             "requiredItem":1
@@ -51,7 +51,7 @@
             "name": "pluto",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["","","","",""]
             }
         },
         {

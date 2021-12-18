@@ -31,6 +31,7 @@
     </footer>
     <script src="/assets/scripts/tutorial.js"></script>
     <script src="/assets/scripts/spaceship.js"></script>
+    <script src="/assets/scripts/dialogue.js"></script>
 </body>
 
 </html>

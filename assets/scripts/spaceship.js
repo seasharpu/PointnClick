@@ -1,4 +1,20 @@
 "use strict";
+
+
+    fetch('./api/planet.json').then(response => {
+        return response.json();
+      }).then(data => {
+        //console.log(data);
+        data.forEach(element => {
+            let planetID = element.id;
+            let planetName = element.name;
+            console.log(planetName);
+            console.log(planetID);
+        });
+      }).catch(err => {
+         console.log(err = "This did not work");
+      }); 
+
 // SKAPAR DIV SOM SKA ÄNDRA BAKRUND
 function backgrounds() {
     let background = document.createElement("div");
@@ -19,15 +35,18 @@ function spaceShip() {
     backgrounds();
     inventory();
     // RYMDEN DÄR ALLA PALANETER FINNS
+   
     let space = document.createElement("div");
     document.querySelector(".spaceShipBackground").append(space);
     space.classList.add("space");
 
     // UNDERVATTENPLANETEN
     let underwaterPLANET = document.createElement("div");
-    underwaterPLANET.classList.add("underwaterPLANET");
+    underwaterPLANET.classList.add("underwaterPlanet");
     document.querySelector(".space").append(underwaterPLANET);
-
+    if(planetName === underwaterPLANET) {
+        console.log("hejhej");
+    }
     // NÄR MAN KLICKAR PÅ UNDERVATTENPLANETEN
     underwaterPLANET.addEventListener("click", function() {
     cleanBackground();
@@ -102,6 +121,7 @@ function jungleplanetbackground() {
     document.querySelector(".background").style.backgroundImage = "url('/assets/images/jungleplanet.png')";
     document.querySelector(".background").style.position = "static";
     document.getElementById("location").innerHTML = "Jungleplanet";
+    document.querySelector(".background").setAttribute("id", 4); //EV HA MED ID NÅGONSTANS
     backToSpaceship()
 };
 // PÅ PLUTOPLANET
