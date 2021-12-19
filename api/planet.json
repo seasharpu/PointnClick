@@ -38,7 +38,7 @@
         },
         {
             "id":5,
-            "name": "waterPlanet",
+            "name": "underwaterPlanet",
             "NPC": {
                 "name": "",
                 "dialogue": ["","","","",""]

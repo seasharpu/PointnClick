@@ -1,19 +1,22 @@
 "use strict";
 
+let planetNames = [];
+async function fetchPlanetNamesandIDs () {
+    const response = await fetch('./api/planet.json')
+    const data = await response.json()
+    let planetData = await data;
+    console.log(planetData);
 
-    fetch('./api/planet.json').then(response => {
-        return response.json();
-      }).then(data => {
-        //console.log(data);
-        data.forEach(element => {
-            let planetID = element.id;
-            let planetName = element.name;
-            console.log(planetName);
-            console.log(planetID);
-        });
-      }).catch(err => {
-         console.log(err = "This did not work");
-      }); 
+    planetData.forEach(element => {
+        let name = element.name;
+        let id = element.id;
+        planetNames.push({name, id});
+    });
+}
+fetchPlanetNamesandIDs();
+
+console.log(planetNames);
+
 
 // SKAPAR DIV SOM SKA ÄNDRA BAKRUND
 function backgrounds() {
@@ -43,10 +46,9 @@ function spaceShip() {
     // UNDERVATTENPLANETEN
     let underwaterPLANET = document.createElement("div");
     underwaterPLANET.classList.add("underwaterPlanet");
+    console.log(underwaterPLANET.className);
     document.querySelector(".space").append(underwaterPLANET);
-    if(planetName === underwaterPLANET) {
-        console.log("hejhej");
-    }
+    
     // NÄR MAN KLICKAR PÅ UNDERVATTENPLANETEN
     underwaterPLANET.addEventListener("click", function() {
     cleanBackground();
@@ -111,10 +113,16 @@ function spaceShip() {
 
 // PÅ WATERPLANET
 function waterplanetbackground() {
-    document.querySelector(".background").style.backgroundImage = "url('/assets/images/Underwater.png')";
-    document.querySelector(".background").style.position = "static";
-    document.getElementById("location").innerHTML = "Waterplanet";
-    backToSpaceship()
+    let underwaterPlanet = document.querySelector(".underwaterPlanet");
+    if(planetNames.name.includes(underwaterPlanet.className)) {
+        console.log(planetNames);
+
+        underwaterPlanet.setAttribute("id", planetNames.id);
+        document.querySelector(".background").style.backgroundImage = "url('/assets/images/Underwater.png')";
+        document.querySelector(".background").style.position = "static";
+        document.getElementById("location").innerHTML = "Waterplanet";
+        backToSpaceship()
+    }
 };
 // PÅ JUNGLEPLANET
 function jungleplanetbackground() {
