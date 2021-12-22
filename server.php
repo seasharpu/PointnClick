@@ -24,52 +24,80 @@ header("Access-Control-Allow-Origin: *");
 //lägg till kontroll om användarnamn redan finns.
 //ändra nycklar till SESSION, där det sker inloggning 
 //och när vi behöver klla om någon är inloggad
-if ($contentType == "application/json" || $contentType == "multipart/form-data") {
+if ($contentType == "application/json") {
 
    //kod funkar endast om inskickat material är json.
-   if ($rqstMethod === "POST") {
+    if ($rqstMethod === "POST") {
        //loggar in en redan EXISTERANDE användare
        //nameTag & password
-       if (isset($rqstData["nameTag"], $rqstData["password"]) && !isset($_FILES["images"])) {
-           $users = loadJson("api/user.json");
-           $found = false;
+        if (isset($rqstData["nameTag"], $rqstData["password"]) && !isset($_FILES["images"])) {
+            $users = loadJson("api/user.json");
+            $found = false;
 
-           foreach ($users as $key => $user) {
-               if ($user["nameTag"] == $rqstData["nameTag"] && $user["password"] == $rqstData["password"]) {
-                   $_SESSION["userID"] = $user["id"];
-                   $_SESSION["nameTag"] = $user["nameTag"];
-                   $_SESSION["isLoggedIn"] = true;
-                   $found = true;
-               }
-           }
-           if ($found) {
-               sendJson("Login succcessful");
-           } else {
-               sendJson("Information incorrect", 400);
-           }
-       }
-   }
+            foreach ($users as $key => $user) {
+                if ($user["nameTag"] == $rqstData["nameTag"] && $user["password"] == $rqstData["password"]) {
+                    $_SESSION["userID"] = $user["id"];
+                    $_SESSION["nameTag"] = $user["nameTag"];
+                    $_SESSION["isLoggedIn"] = true;
+                    $found = true;
+                }
+            }
+            if ($found) {
+                sendJson("Login succcessful");
+            }  
+            //lägger till ETT ITEM i användarens array
+        } elseif (isset($rqstData["inventoryID"], $rqstData["userID"])){
+            $users = loadJson("api/user.json");
+            $items = loadJson("api/items.json");
+            $found = FALSE;
+            $userID = null;
+            $addedItem = $rqstData["inventoryID"];
+
+           //hitta den specifika användaren.
+            foreach ($users as $user) {
+                if ($rqstData["userID"] == $user["id"]) {
+                    $userID = $user["id"];
+                }
+            }
+
+           //den specifika användarens inventory.
+            foreach ($items as $key => $item) {
+                if ($rqstData["inventoryID"] == $item["id"]) {
+                    $found = TRUE;
+                    array_push($users[$key]["inventory"], $addedItem);
+                }
+            }
+            if ($found == FALSE) {
+                sendJson(["item not found"], 404);
+            }
+            saveJson("api/user.json", $users);
+            sendJson("successfully added item");
+        }else {
+                sendJson("Information incorrect", 400);
+            }
+        }
+    }
 
    //Ändra användarnamn
    //Behöver nytt användarnamn
-   if ($rqstMethod === "PATCH") {
-       if (isset($rqstData["newNameTag"], $rqstData["nameTag"])) {
-           $users = loadJson("api/user.json");
-           $newNameTag = $rqstData["newNameTag"];
-           $foundUser = false;
+    if ($rqstMethod === "PATCH") {
+        if (isset($rqstData["newNameTag"], $rqstData["nameTag"])) {
+            $users = loadJson("api/user.json");
+            $newNameTag = $rqstData["newNameTag"];
+            $foundUser = false;
 
-           foreach ($users as $key => $user) {
-               if ($rqstData["nameTag"] == $user["nameTag"]) {
-                   $foundUser = true;
-                   $users[$key]["nameTag"] = $newNameTag;
-               }
-           }
-           if ($foundUser) {
-               saveJson("api/user.json", $users);
-               sendJson("namechange successful");
-           } else {
-               sendJson("namechange failed", 404);
-           }
+            foreach ($users as $key => $user) {
+                if ($rqstData["nameTag"] == $user["nameTag"]) {
+                    $foundUser = true;
+                    $users[$key]["nameTag"] = $newNameTag;
+                }
+            }
+            if ($foundUser) {
+                saveJson("api/user.json", $users);
+                sendJson("namechange successful");
+            } else {
+                sendJson("namechange failed", 404);
+            }
             ///DELETE INVENTORY ITEM
        } elseif (isset($rqstData["inventoryID"], $rqstData["userID"])) {
            $users = loadJson("api/user.json");
@@ -83,11 +111,9 @@ if ($contentType == "application/json" || $contentType == "multipart/form-data")
                    $index = $key;
                }
            }
-           var_dump($users[$index]["inventory"]);
            //den specifika användarens inventory.
            foreach ($users[$index]["inventory"] as $key => $userItem) {
                if ($rqstData["inventoryID"] == $userItem) {
-                   echo $userItem;
                    $found = TRUE;
                    array_splice($users[$index]["inventory"], $key, 1);
                    
@@ -98,7 +124,7 @@ if ($contentType == "application/json" || $contentType == "multipart/form-data")
            }
            saveJson("api/user.json", $users);
            sendJson("successfully deleted item");
-       } else {
+        }else {
            sendJson("fill in all information", 404);
        }
    }
@@ -140,7 +166,6 @@ if ($contentType == "application/json" || $contentType == "multipart/form-data")
            session_destroy();
            header("Location: index.html");
        }
-   }
-} else {
+   } else {
    sendJson(["Content type is not JSON."], 405);
 }

@@ -16,6 +16,18 @@ function requestDeleteItem(userID, inventoryID){
 }
 //requestDeleteItem(2, 5);
 
+//tar emot ID på inloggad användare samt ID på item som ska läggas till
+//i användarens inventoryArray.
+function requestAddItem(userID, inventoryID){
+    const data = {"userID": userID, "inventoryID": inventoryID};
+    const req = new Request("server.php", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {"Content-type": "application/json"}
+    });
+    fetch(req).then(response => response.text().then(value => console.log(value)))
+}
+requestAddItem(4, 2);
 
 
 //CHANGE NAMETAG 
@@ -34,7 +46,7 @@ function requestChangeUserName(nameTag, newNameTag){
 //CREATE USER
 function requestLoginUser(nameTag, password){
     const data = {"nameTag": nameTag, "password": password};
-    const req = new Request("http://localhost:1000/server.php", {
+    const req = new Request("server.php", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json"}
@@ -46,7 +58,7 @@ function requestLoginUser(nameTag, password){
 //DELETE USER
 function requestDeleteUser(userID){
     const data = {"deleteUserID": userID};
-    const req = new Request("http://localhost:1000/server.php", {
+    const req = new Request("server.php", {
         method: "DELETE",
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json"}
