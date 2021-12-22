@@ -27,7 +27,7 @@
             echo "<script>const userID = $id</script>";
             echo "<script>const userNameTag = $nameTag</script>";
             ?>
-            <script src="script.js"></script>
+            <script src="requests.js"></script>
         </main>
         <footer>
             <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
