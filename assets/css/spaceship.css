@@ -94,7 +94,7 @@
     background-color: rgba(128, 128, 128, 0.678);
 }
 /*PLANETERNA SOM MAN KLICKAR PÅ *!warning!* (Ska läggas till bilder istället för runda divar)*/
-.underwaterPLANET {
+.underwaterPlanet {
     height: 80px;
     width: 80px;
     background-color: blue;
@@ -104,7 +104,7 @@
     top: 100px;
     transition: 1s;
 }
-.alienPLANET {
+.alienPlanet {
     height: 60px;
     width: 60px;
     background-color: grey;
@@ -114,7 +114,7 @@
     top: 100px;
     transition: 2s;
 }
-.junglePLANET {
+.junglePlanet {
     height: 60px;
     width: 60px;
     background-color: green;
@@ -124,7 +124,7 @@
     top: 180px;
     transition: 2s;
 }
-.partyPLANET {
+.partyPlanet {
     height: 65px;
     width: 65px;
     background-color: purple;
@@ -134,7 +134,7 @@
     top: 280px;
     transition: 2s;
 }
-.desertPLANET {
+.desertPlanet {
     height: 60px;
     width: 60px;
     background-color: burlywood;
@@ -144,7 +144,7 @@
     top: 270px;
     transition: 2s;
 }
-.plutoPLANET {
+.plutoPlanet {
     height: 60px;
     width: 60px;
     background-color: yellow;

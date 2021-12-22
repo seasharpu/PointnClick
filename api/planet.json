@@ -1,58 +1,64 @@
 [
         {
             "id":1,
-            "name": "tomatoPlanet",
+            "name": "partyPlanet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["Hej1","Hej2","Hej3","Hej4","Hej5"]
             },
-            "itemOnGround":4
+            "itemOnGround":4,
+            "backgroundImage": "assets/images/alien.png"
         },
         {
             "id":2,
             "name": "desertPlanet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["","","","",""]
             },
-            "itemOnGround":2
+            "itemOnGround":2,
+            "backgroundImage": "assets/images/alien.png"
         },
         {
             "id":3,
             "name": "alienPlanet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["","","","",""]
             },
             "itemOnGround":1,
-            "requiredItem":2
+            "requiredItem":2,
+            "backgroundImage": "assets/images/alien.png"
         },
         {
             "id":4,
             "name": "junglePlanet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["","","","",""]
             },
-            "itemOnGround":5
+            "itemOnGround":5,
+            "backgroundImage": "assets/images/alien.png"
         },
         {
             "id":5,
-            "name": "waterPlanet",
+            "name": "underwaterPlanet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["","","","",""]
             },
             "itemOnGround":3,
-            "requiredItem":1
+            "requiredItem":1,
+            "backgroundImage": "assets/images/alien.png"
         },
         {
             "id":6,
-            "name": "pluto",
+            "name": "plutoPlanet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
-            }
+                "dialogue": ["","","","",""]
+            },
+            "backgroundImage": "assets/images/alien.png"
         },
         {
             "laikaPassword": 12345
