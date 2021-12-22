@@ -74,17 +74,19 @@
     background-image: url(/assets/images/Treasure\ Chest\ closed\ 64x64.png);
     background-repeat: no-repeat;
     background-position: center;
-    transition: 0.5s;
 }
 .backpackOpen {
     background-image: url(/assets/images/Treasure\ Chest\ open\ 64x64.png);
     background-color: rgba(128, 128, 128, 0.712);
+    transition: height 1s;
 }
 .backpack:hover {
     background-color: rgba(128, 128, 128, 0.712);
 }
 .inventoryObjectsHidden {
-    display: none;
+    height: 0px;
+    width: 100px;
+    transition: 1s;
 }
 .invetoryObjects {
     height: 200px;
