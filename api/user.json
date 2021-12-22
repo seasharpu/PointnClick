@@ -1,9 +1,16 @@
 [
-        {
-            "id": 1,
-            "nameTag": "testUser",
-            "password": "test123",
-            "profilePicture":"",
-            "inventory": []
-        }
-    ]
+    {
+        "id": 1,
+        "nameTag": "Buster",
+        "password": "test123",
+        "profilePicture": "99266523275a5c213f54ea25c856f8a1b1e1406b.jpg",
+        "inventory": []
+    },
+    {
+        "id": 2,
+        "nameTag": "lnkkl",
+        "password": "uukjbhh",
+        "profilePicture": "cc7c956c21dee60890ad21ea13b49496f4469148.jpg",
+        "inventory": []
+    }
+]
