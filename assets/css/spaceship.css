@@ -100,7 +100,7 @@
     top: 100px;
     transition: 1s;
 }
-.alienPLANET {
+.alienPlanet {
     height: 60px;
     width: 60px;
     background-color: grey;
@@ -110,7 +110,7 @@
     top: 100px;
     transition: 2s;
 }
-.junglePLANET {
+.junglePlanet {
     height: 60px;
     width: 60px;
     background-color: green;
@@ -120,7 +120,7 @@
     top: 180px;
     transition: 2s;
 }
-.partyPLANET {
+.partyPlanet {
     height: 65px;
     width: 65px;
     background-color: purple;
@@ -130,7 +130,7 @@
     top: 280px;
     transition: 2s;
 }
-.desertPLANET {
+.desertPlanet {
     height: 60px;
     width: 60px;
     background-color: burlywood;
@@ -140,7 +140,7 @@
     top: 270px;
     transition: 2s;
 }
-.plutoPLANET {
+.plutoPlanet {
     height: 60px;
     width: 60px;
     background-color: yellow;
