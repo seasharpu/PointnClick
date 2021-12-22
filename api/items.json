@@ -2,26 +2,31 @@
         {
             "id": 1,
             "name": "snorkle",
+            "image": "snorkle.jpg",
             "description":"for underwater"
         },
         {
             "id": 2,
             "name": "gasmask",
+            "image": "snorkle.jpg",
             "description":"for toxic enviroments"
         },
         {
             "id": 3,
             "name": "candy",
+            "image": "snorkle.jpg",
             "description":"not foor humans"
         },
         {
             "id": 4,
             "name": "musicdisc",
+            "image": "snorkle.jpg",
             "description":"aliens absolute hits!"
         },
         {
             "id": 5,
             "name": "alienWorm",
+            "image": "snorkle.jpg",
             "description":"bites"
         }
     ]
