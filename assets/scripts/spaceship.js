@@ -83,22 +83,26 @@ function backToSpaceship() {
 // GRUND INVENTORY FUNCTION
 function inventory(){
     let inventory = document.createElement("div");
-    let backpack = document.createElement("div");
-    let objects = document.createElement("div");
+    let chest = document.createElement("div");
+    let inventoryObjects = document.createElement("div");
 
     inventory.classList.add("inventory");
-    backpack.classList.add("backpack");
-    objects.classList.add("invetoryObjectHidden");
+    chest.classList.add("chest");
+    inventoryObjects.classList.add("inventoryObjectsHidden");
 
-    inventory.append(backpack);
-    inventory.append(objects);
+    inventory.append(chest);
+    inventory.append(inventoryObjects);
     document.querySelector(".spaceShipBackground").append(inventory);
 
-    backpack.addEventListener("click", function(e) {
-        objects.classList.toggle("invetoryObjects");
-        backpack.classList.toggle("backpackOpen");
-        if(objects.classList.contains("invetoryObjects")) {
-            objects.classList.toggle("invetoryObjectsHidden");
+    chest.addEventListener("click", function(e) {
+        chest.classList.toggle("chestOpen");
+
+        if(inventoryObjects.classList.contains("inventoryObjectsHidden")) {
+            inventoryObjects.classList.remove("inventoryObjectsHidden");
+            inventoryObjects.classList.add("inventoryObjectsOpen");
+        } else if (inventoryObjects.classList.contains("inventoryObjectsOpen")){
+            inventoryObjects.classList.remove("inventoryObjectsOpen");
+            inventoryObjects.classList.add("inventoryObjectsHidden");
         }
     });
 }

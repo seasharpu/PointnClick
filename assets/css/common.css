@@ -19,7 +19,7 @@
   --deleteButtonC: #c70039;
 
   /* Storlekar */
-  --screenWidth: 1100px;
+  --screenWidth: 975px;
   --screenHeight: 650px;
 
   /* Fonter */
@@ -40,6 +40,7 @@ body {
 
   overflow: hidden;
 }
+
 header {
   margin: 0px;
   width: var(--screenWidth);
@@ -52,12 +53,14 @@ header {
   font-size: larger;
   color: var(--mainTextC);
 }
+
 main {
   width: var(--screenWidth);
   height: var(--screenHeight);
 
   border: 1px solid white;
 }
+
 footer {
   width: var(--screenWidth);
   height: 60px;

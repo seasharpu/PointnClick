@@ -4,153 +4,154 @@
 
 /*Spaceship diven*/
 .spaceShipBackground {
-    height: var(--screenHeight);
-    width: var(--screenWidth);
-    position: static;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('/assets/images/spaceship.bmp');
+  height: var(--screenHeight);
+  width: var(--screenWidth);
+  position: static;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/assets/images/spaceship.bmp");
 }
 /*En div som bytar bakrund beroende på vilken planet man är på*/
 .background {
-    height: var(--screenHeight);
-    width: var(--screenWidth);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    position: absolute;
+  height: var(--screenHeight);
+  width: var(--screenWidth);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
 }
 /*Denna diven är alla planeter placerade i*/
 .space {
-    height: 350px;
-    width: 750px;
-    position: absolute;
+  height: 350px;
+  width: 750px;
+  position: absolute;
 }
 /*När man hovrar över en planet*/
 .space > div:hover {
-    height: 85px;
-    width: 85px;
-    cursor: pointer;
+  height: 85px;
+  width: 85px;
+  cursor: pointer;
 }
 /*Tillbaka knappen till spaceship*/
 .backToSpaceship {
-    height: 50px;
-    width: 165px;
-    background-color: rgb(121, 7, 7);
-    color: white;
+  height: 50px;
+  width: 165px;
+  background-color: rgb(121, 7, 7);
+  color: white;
 
-    position: relative;
-    top: 590px;
-    left: 10px;
+  position: relative;
+  top: 590px;
+  left: 10px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /*INVENTORY*/
 .inventory {
-    height: 100px;
-    width: 100px;
-    border-bottom: black 1px solid;
-    background-color: rgba(128, 128, 128, 0.582);
-    position: relative;
-    bottom: 265px;
-    left: 430px;
-    
+  height: 100px;
+  width: 100px;
+  border-bottom: black 1px solid;
+  background-color: rgba(128, 128, 128, 0.582);
+  position: relative;
+  bottom: 265px;
+  left: 430px;
 }
-.backpack {
-    height: 100px;
-    width: 100px;
-    /*background-color: rgba(128, 128, 128, 0.562);*/
-    border-bottom: 1px black solid;
+.chest {
+  height: 100px;
+  width: 100px;
+  /*background-color: rgba(128, 128, 128, 0.562);*/
+  border-bottom: 1px black solid;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(/assets/images/Treasure\ Chest\ closed\ 64x64.png);
-    background-repeat: no-repeat;
-    background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/assets/images/Treasure\ Chest\ closed\ 64x64.png);
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.backpackOpen {
-    background-image: url(/assets/images/Treasure\ Chest\ open\ 64x64.png);
-    background-color: rgba(128, 128, 128, 0.712);
-    transition: height 1s;
+.chestOpen {
+  background-image: url(/assets/images/Treasure\ Chest\ open\ 64x64.png);
+  background-color: rgba(128, 128, 128, 0.712);
 }
-.backpack:hover {
-    background-color: rgba(128, 128, 128, 0.712);
+.chest:hover {
+  background-color: rgba(128, 128, 128, 0.712);
+  cursor: pointer;
 }
 .inventoryObjectsHidden {
-    height: 0px;
-    width: 100px;
-    transition: 1s;
+  height: 0px;
+  width: 100px;
+  background-color: rgba(128, 128, 128, 0.678);
+  transition: 0.5s ease;
 }
-.invetoryObjects {
-    height: 200px;
-    width: 100px;
-    background-color: rgba(128, 128, 128, 0.678);
+.inventoryObjectsOpen {
+  height: 200px;
+  width: 100px;
+  background-color: rgba(128, 128, 128, 0.678);
+  transition: 0.5s ease;
 }
 /*PLANETERNA SOM MAN KLICKAR PÅ *!warning!* (Ska läggas till bilder istället för runda divar)*/
 .underwaterPlanet {
-    height: 80px;
-    width: 80px;
-    background-color: blue;
-    border-radius: 50%;
-    position: absolute;
-    left: 100px;
-    top: 100px;
-    transition: 1s;
+  height: 80px;
+  width: 80px;
+  background-color: blue;
+  border-radius: 50%;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  transition: 1s;
 }
 .alienPlanet {
-    height: 60px;
-    width: 60px;
-    background-color: grey;
-    border-radius: 50%;
-    position: absolute;
-    left: 550px;
-    top: 100px;
-    transition: 2s;
+  height: 60px;
+  width: 60px;
+  background-color: grey;
+  border-radius: 50%;
+  position: absolute;
+  left: 550px;
+  top: 100px;
+  transition: 2s;
 }
 .junglePlanet {
-    height: 60px;
-    width: 60px;
-    background-color: green;
-    border-radius: 50%;
-    position: absolute;
-    left: 310px;
-    top: 180px;
-    transition: 2s;
+  height: 60px;
+  width: 60px;
+  background-color: green;
+  border-radius: 50%;
+  position: absolute;
+  left: 310px;
+  top: 180px;
+  transition: 2s;
 }
 .partyPlanet {
-    height: 65px;
-    width: 65px;
-    background-color: purple;
-    border-radius: 50%;
-    position: absolute;
-    left: 200px;
-    top: 280px;
-    transition: 2s;
+  height: 65px;
+  width: 65px;
+  background-color: purple;
+  border-radius: 50%;
+  position: absolute;
+  left: 200px;
+  top: 280px;
+  transition: 2s;
 }
 .desertPlanet {
-    height: 60px;
-    width: 60px;
-    background-color: burlywood;
-    border-radius: 50%;
-    position: absolute;
-    left: 600px;
-    top: 270px;
-    transition: 2s;
+  height: 60px;
+  width: 60px;
+  background-color: burlywood;
+  border-radius: 50%;
+  position: absolute;
+  left: 600px;
+  top: 270px;
+  transition: 2s;
 }
 .plutoPlanet {
-    height: 60px;
-    width: 60px;
-    background-color: yellow;
-    border-radius: 50%;
-    position: absolute;
-    left: 350px;
-    top: 30px;
-    transition: 2s;
+  height: 60px;
+  width: 60px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  left: 350px;
+  top: 30px;
+  transition: 2s;
 }
