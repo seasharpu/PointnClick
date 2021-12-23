@@ -4,15 +4,15 @@
         "nameTag": "Buster",
         "password": "test123",
         "profilePicture": "99266523275a5c213f54ea25c856f8a1b1e1406b.jpg",
-        "inventory": []
+        "inventory": [
+            1
+        ]
     },
     {
         "id": 2,
         "nameTag": "lnkkl",
         "password": "uukjbhh",
         "profilePicture": "cc7c956c21dee60890ad21ea13b49496f4469148.jpg",
-        "inventory": [
-            2
-        ]
+        "inventory": []
     }
 ]

@@ -43,8 +43,10 @@ if ($contentType == "application/json") {
                 }
             }
             if ($found) {
-                sendJson("Login succcessful");
-            }  
+                statusCode(210);
+            } else {
+                statusCode(469);
+            }
             //lägger till ETT ITEM i användarens array
         } elseif (isset($rqstData["inventoryID"], $rqstData["userID"])){
             $users = loadJson("api/user.json");
@@ -68,12 +70,12 @@ if ($contentType == "application/json") {
                 }
             }
             if ($found == FALSE) {
-                sendJson(["item not found"], 404);
+                statusCode(460);
             }
             saveJson("api/user.json", $users);
-            sendJson("successfully added item");
+            statusCode(211);
         }else {
-                sendJson("Information incorrect", 400);
+                statusCode(461);
             }
         }
     }
@@ -86,6 +88,10 @@ if ($contentType == "application/json") {
             $newNameTag = $rqstData["newNameTag"];
             $foundUser = false;
 
+            if (strlen($$rqstData["nameTag"]) <= 2) {
+                statusCode(468);
+            }
+
             foreach ($users as $key => $user) {
                 if ($rqstData["nameTag"] == $user["nameTag"]) {
                     $foundUser = true;
@@ -94,78 +100,75 @@ if ($contentType == "application/json") {
             }
             if ($foundUser) {
                 saveJson("api/user.json", $users);
-                sendJson("namechange successful");
+                statusCode(212);
             } else {
-                sendJson("namechange failed", 404);
+                statusCode(462);
             }
             ///DELETE INVENTORY ITEM
-       } elseif (isset($rqstData["inventoryID"], $rqstData["userID"])) {
-           $users = loadJson("api/user.json");
-           $found = FALSE;
-           $userID = null;
+        } elseif (isset($rqstData["inventoryID"], $rqstData["userID"])) {
+            $users = loadJson("api/user.json");
+            $found = FALSE;
+            $userID = null;
 
            //hitta den specifika användaren.
-           foreach ($users as $key => $user) {
-               if ($rqstData["userID"] == $user["id"]) {
-                   $userID = $user["id"];
-                   $index = $key;
-               }
-           }
+            foreach ($users as $key => $user) {
+                if ($rqstData["userID"] == $user["id"]) {
+                    $userID = $user["id"];
+                    $index = $key;
+                }
+            }
            //den specifika användarens inventory.
-           foreach ($users[$index]["inventory"] as $key => $userItem) {
-               if ($rqstData["inventoryID"] == $userItem) {
-                   $found = TRUE;
-                   array_splice($users[$index]["inventory"], $key, 1);
-                   
-               }
-           }
-           if ($found == FALSE) {
-               sendJson(["item not found"], 404);
-           }
-           saveJson("api/user.json", $users);
-           sendJson("successfully deleted item");
+            foreach ($users[$index]["inventory"] as $key => $userItem) {
+                if ($rqstData["inventoryID"] == $userItem) {
+                    $found = TRUE;
+                    array_splice($users[$index]["inventory"], $key, 1);
+                }
+            }
+            if ($found == FALSE) {
+                statusCode(460);
+            }
+            saveJson("api/user.json", $users);
+            statusCode(213);
         }else {
-           sendJson("fill in all information", 404);
-       }
-   }
+            statusCode(461);
+        }
+    }
 
    //ta bort användare
    //Behöver användarens id.
-   if ($rqstMethod === "DELETE") {
+    if ($rqstMethod === "DELETE") {
 
-       //tar bort ANVÄNDAREN. behöver userID och nameTag, och specifikt INTE inventoryID. 
-       if (isset($rqstData["deleteUserID"]) && !isset(
-           $rqstData["inventoryID"]
-       )) {
+       //tar bort ANVÄNDAREN. behöver userID, och specifikt INTE inventoryID. 
+        if (isset($rqstData["deleteUserID"]) && !isset($rqstData["inventoryID"])) {
 
-           $users = loadJson("api/user.json");
-           $found = FALSE;
+            $users = loadJson("api/user.json");
+            $found = FALSE;
 
-           foreach ($users as $key => $user) {
-               if ($rqstData["deleteUserID"] == $user["id"]) {
-                   $found = TRUE;
-                   array_splice($users, $key, 1);
-               }
-           }
-           if ($found == False) {
-               sendJson(["user not found"], 404);
-           } else {
-               saveJson("api/user.json", $users);
-               sendJson("successful");
-           }
-       }
-   }
+            foreach ($users as $key => $user) {
+                if ($rqstData["deleteUserID"] == $user["id"]) {
+                    $found = TRUE;
+                    array_splice($users, $key, 1);
+                }
+            }
+            if ($found == False) {
+                statusCode(463);
+            } else {
+                saveJson("api/user.json", $users);
+                statusCode(214);
+            }
+        }
+    }
    //logga ut knappen ska ha en a href länk som skickar
    //till server.php/logout.
    //TODO: kolla GET-förfrågan om den är "logout",
    //om den är det avslutas SESSION, och användaren skickas
    //till index.php igen. (logga in sida)
-   if ($rqstMethod === "GET") {
-       if ($_GET == "logout") {
-           session_unset();
-           session_destroy();
-           header("Location: index.html");
-       }
-   } else {
-   sendJson(["Content type is not JSON."], 405);
+    if ($rqstMethod === "GET") {
+        if ($_GET == "logout") {
+            session_unset();
+            session_destroy();
+            header("Location: index.html");
+        }
+    } else {
+    statusCode(405);
 }

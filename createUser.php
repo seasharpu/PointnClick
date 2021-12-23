@@ -29,24 +29,20 @@ if ($rqstMethod === "POST"){
 
             //nameTag är färre än 3 bokstäver
             if (strlen($nameTag) <= 2) {
-                sendJson(["Please add more characters to your nameTag."], 406);
+                statusCode(468);
             }
             //lösenord är färre än 4 bokstäver
             if (strlen($password) <= 3) {
-                sendJson(["Please add more characters to your password."], 406);
-                if (preg_match('~[0-9]+~', $password)) {
-                    sendJson(["Your password has to at least include one number."], 406 );
-                    exit();
-                }
+                statusCode(467);
             }
             //hantering för bild som användaren laddar upp
             if ($error !== 0) {
-                sendJson(["Something went wrong with the picture, try again."], 409 );
+                statusCode(466);
                 exit();
             }
                 // Filen får inte vara större än ca 500kb
             if ($size > (0.5 * 1000 * 1000)) {
-                sendJson(["Picture too large! Try something smaller than 400kb."], 405) ;
+                statusCode(465) ;
                 exit();
             }
 
@@ -89,19 +85,19 @@ if ($rqstMethod === "POST"){
                 }
             }
             if ($found) {
-                sendJson("Login succcessful");
+                statusCode(210);
             } else {
-                sendJson("Information incorrect", 400);
+                statusCode(463);
             }
 
             //sparar i array, och sen i json-fil.
             array_push($allUsers, $newUser);
             saveJson("api/user.json", $allUsers);
-            //sendJson(["User is added."]);
+            //statusCode(["User is added."]);
             header("Location: index.php");
             exit();
         } else {
-            sendJson(["TagName or Password is not set."], 405);
+            statusCode(464);
             exit();
         }
 }
