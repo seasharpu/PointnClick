@@ -29,6 +29,20 @@
     height: 350px;
     width: 750px;
     position: absolute;
+    left: 190px;
+    right: 190px;
+    transition: left 2s, right 2s;
+    background-image: url(/assets/images/space_background.png);
+}
+.spaceLeft {
+  position: absolute;
+  left: 10px;
+  right: 200px;
+}
+.spaceRight {
+  position: absolute;
+  right: 10px;
+  left: 400px;
 }
 /*När man hovrar över en planet*/
 .space > div:hover {
@@ -36,6 +50,41 @@
     width: 85px;
     cursor: pointer;
 }
+/*JOYSTICK*/
+.joystick {
+  position: absolute;
+  background-image: url(/assets/images/joystick/joystick_middle.png);
+  bottom: 100px;
+  height: 100px;
+  width: 100px;
+}
+.joystickLeft {
+  background-image: url(/assets/images/joystick/joystick_left.png);
+}
+.joystickRight {
+  background-image: url(/assets/images/joystick/joystick_right.png);
+}
+.goLeft {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 100px;
+  left: 430px;
+  background-image: url(/assets/images/joystick/g21493.png);
+  background-size: contain;
+  cursor: pointer;
+}
+.goRight {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 100px;
+  right: 430px;
+  background-image: url(/assets/images/joystick/g23185.png);
+  background-size: contain;
+  cursor: pointer;
+}
+
 /*Tillbaka knappen till spaceship*/
 .backToSpaceship {
     height: 50px;
@@ -97,7 +146,8 @@
 .underwaterPlanet {
     height: 80px;
     width: 80px;
-    background-color: blue;
+    background-image: url(/assets/images/planets/neptunlikeplanet.png);
+    background-size: contain;
     border-radius: 50%;
     position: absolute;
     left: 100px;
@@ -107,7 +157,8 @@
 .alienPlanet {
     height: 60px;
     width: 60px;
-    background-color: grey;
+    background-image: url(/assets/images/planets/machine_world.png);
+    background-size: contain;
     border-radius: 50%;
     position: absolute;
     left: 550px;
@@ -115,9 +166,10 @@
     transition: 2s;
 }
 .junglePlanet {
-    height: 60px;
-    width: 60px;
-    background-color: green;
+    height: 70px;
+    width: 70px;
+    background-image: url(/assets/images/planets/exoplanet.png);
+    background-size: contain;
     border-radius: 50%;
     position: absolute;
     left: 310px;
@@ -127,7 +179,8 @@
 .partyPlanet {
     height: 65px;
     width: 65px;
-    background-color: purple;
+    background-image: url(/assets/images/planets/dryhotplanet.png);
+    background-size: contain;
     border-radius: 50%;
     position: absolute;
     left: 200px;
@@ -137,7 +190,8 @@
 .desertPlanet {
     height: 60px;
     width: 60px;
-    background-color: burlywood;
+    background-image: url(/assets/images/planets/dryvenuslikeplanet.png);
+    background-size: contain;
     border-radius: 50%;
     position: absolute;
     left: 600px;
@@ -145,9 +199,10 @@
     transition: 2s;
 }
 .plutoPlanet {
-    height: 60px;
-    width: 60px;
-    background-color: yellow;
+    height: 70px;
+    width: 70px;
+    background-image: url(/assets/images/planets/sphereplanet.png);
+    background-size: contain;
     border-radius: 50%;
     position: absolute;
     left: 350px;

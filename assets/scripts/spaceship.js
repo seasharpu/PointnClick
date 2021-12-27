@@ -51,13 +51,13 @@ function spaceShip() {
     document.getElementById("location").innerHTML = "Spaceship";
     //document.querySelector(".spaceShipBackground").style.backgroundImage = "url('images/spaceship.bmp')";
     //document.querySelector(".spaceShipBackground").style.position = "static";
+
     backgrounds();
     inventory();
-    // RYMDEN DÄR ALLA PALANETER FINNS
-   
-    let space = document.createElement("div");
-    document.querySelector(".spaceShipBackground").append(space);
-    space.classList.add("space");
+    joystick();
+
+    let spaceshipMusic = new Audio('/assets/audiofiles/slow-travel.wav');
+    spaceshipMusic.play();
 }
 
 // Rensar bakgrunden
@@ -100,5 +100,34 @@ function inventory(){
         if(objects.classList.contains("invetoryObjects")) {
             objects.classList.toggle("invetoryObjectsHidden");
         }
+    });
+}
+// GRUNDEN TILL JOYSTICK FUNCTIONEN
+function joystick() {
+    let joystick = document.createElement("div");
+    let goLeft = document.createElement("div");
+    let goRight = document.createElement("div");
+
+    joystick.classList.add("joystick");
+    goLeft.classList.add("goLeft");
+    goRight.classList.add("goRight");
+
+    document.querySelector(".spaceShipBackground").append(joystick);
+    document.querySelector(".spaceShipBackground").append(goLeft);
+    document.querySelector(".spaceShipBackground").append(goRight);
+
+    // RYMDEN DÄR ALLA PALANETER FINNS
+    let space = document.createElement("div");
+    document.querySelector(".spaceShipBackground").append(space);
+    space.classList.add("space");
+
+    // NÄR MAN KLICKAR PÅ JOYSTICKEN
+    goLeft.addEventListener("click", function() {
+        joystick.classList.toggle("joystickLeft");
+        space.classList.toggle("spaceLeft");
+    });
+    goRight.addEventListener("click", function() {
+        joystick.classList.toggle("joystickRight");
+        space.classList.toggle("spaceRight");
     });
 }
