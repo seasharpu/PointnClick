@@ -18,13 +18,13 @@ async function makePlanets(){
     planetData.forEach(element => {
         let planetDiv = document.createElement("div");
         planetDiv.classList.add(element.name);
-        planetDiv.setAttribute("id", element.id);
         document.querySelector(".space").append(planetDiv);
 
         planetDiv.addEventListener("click", ()=> {
             document.querySelector(".background").style.position = "static";
             document.getElementById("location").innerHTML = element.name;
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
+            document.querySelector(".background").setAttribute("id", element.id);
             cleanBackground();
             backToSpaceship();
             

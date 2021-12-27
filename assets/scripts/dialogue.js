@@ -1,37 +1,39 @@
 "use strict";
 
+let attribute = document.getElementById("3").getAttribute("id");
 
-/*function fetchDialogue(){   
-    fetch('./api/planet.json').then(response => {
-        return response.json();
-      }).then(data => {
-        //console.log(data);
-        data.forEach(element => {
-            let characterDialogue = element.NPC.dialogue;
-            let planetID = element.id;
-            console.log(characterDialogue);
-            console.log(planetID);
-        });
-      }).catch(err => {
-         console.log(err = "This did not work");
-      }); 
+async function whichPlanet(){
+    let planetData = await fetchPlanetNamesandIDs();
+    let planetDialogue = [];
+    planetData.forEach(element => {
+        //IF sats här tror jag angående vilken dialog ska hamna var
+       
+        console.log(attribute);
+        if(attribute == element.id) {
+            planetDialogue.push(element.NPC);
+        }
+        
+    });
 
-      planetNameID = document.getElementById(4);
-
-      if(planetID === planetNameID) {
-        console.log(characterDialogue);
-    }
-
-}
-fetchDialogue();*/
-
-function whichPlanet(){
-    // if data.name === id.location.innerHTML
+    return planetDialogue;
 }
 
+whichPlanet();
+
+async function whichDialogue (){
+    let planetDialogue = await whichPlanet();
+    planetDialogue.forEach(obj => {
+        let characterTalkBubble = document.createElement("div");
+        let dialogue = obj.dialogue;
+        characterTalkBubble.append(dialogue);
+        console.log(characterTalkBubble);
+    })
+}
+whichDialogue();
 
 function makeandplaceCharacters(){
     let characterDiv = document.createElement("div");
-    characterDiv.style.backgroundImage ="url('/assets/images/Tiger_JunglePlanet.png')"
-    document.getElementById(4).append(characterDiv);
+
+    characterTalkBubble.append(dialogue);
+    document.querySelector(".background").append(characterTalkBubble);
 }
