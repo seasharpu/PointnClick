@@ -1,30 +1,36 @@
 "use strict";
 
+//array för dialog som finns på den planet användaren har klickat på 
+let currentPlanetDialogue = [];
 
+//hämtar infon om planeterna från planet.json
 async function fetchPlanetNamesandIDs () {
     const response = await fetch('./api/planet.json')
     const data = await response.json()
     let planetData = await data;
-    console.log(planetData);
     return planetData;
 }
 
 fetchPlanetNamesandIDs();
 
+//skapar planeter och lägger till info från planet.json när man klickar på en planet så som bakgrundsbild etc
 async function makePlanets(){
     let planetData = await fetchPlanetNamesandIDs();
-    console.log(planetData);
-
+    //console.log(planetData);
+   
     planetData.forEach(element => {
         let planetDiv = document.createElement("div");
         planetDiv.classList.add(element.name);
-        planetDiv.setAttribute("id", element.id);
         document.querySelector(".space").append(planetDiv);
 
         planetDiv.addEventListener("click", ()=> {
             document.querySelector(".background").style.position = "static";
             document.getElementById("location").innerHTML = element.name;
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
+            document.querySelector(".background").setAttribute("id", element.id);
+            currentPlanetDialogue.push(element.NPC);
+            
+            whichDialogue();
             cleanBackground();
             backToSpaceship();
             

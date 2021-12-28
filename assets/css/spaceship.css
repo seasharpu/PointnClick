@@ -92,9 +92,9 @@
   background-color: rgb(121, 7, 7);
   color: white;
 
-  position: relative;
-  top: 590px;
-  left: 10px;
+   /* position: relative;
+    top: 590px;
+    left: 10px;*/
 
   display: flex;
   align-items: center;
@@ -209,4 +209,10 @@
     left: 350px;
     top: 30px;
     transition: 2s;
+}
+
+.dialogueBubble {
+    color: white;
+    width: 50px;
+    height: 50px;
 }
