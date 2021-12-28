@@ -11,6 +11,8 @@
   --mainTextC: #ffffff;
   --dialogTextC: #000000;
   --inputTitlesC: #810084;
+  /*nedan kan ändras om färgen inte passar!*/
+  --messageBackgroundC: #231c3b;
 
   /* Knappar */
   --mainButtonC: #810084;
@@ -59,6 +61,7 @@ main {
   height: var(--screenHeight);
 
   border: 1px solid white;
+  position:relative;
 }
 
 footer {
@@ -71,3 +74,47 @@ footer {
   font-family: var(--mainFont);
   color: var(--mainTextC);
 }
+.statusCodeDiv{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.36);
+  transition: background-color 1.5s ease;
+
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/*kod för meddelande av statuskod*/
+.statusCodeDiv > div{
+  font-family: var(--titleFont);
+  background-color: var(--messageBackgroundC);
+  border: 7px solid var(--buttonBorderC);
+
+  position: absolute;
+  height: 220px;
+  width: 250px;
+  left: 50%;
+  top: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform: translate(-50%, -50%);
+}
+.statusCodeDiv > div h2{
+  font-family: var(--mainFont);
+  color:var(--mainTextC);
+}
+.statusCodeDiv > div p{
+  text-align: center;
+  margin: 5px 3px 0px 3px;}
+.statusCodeDiv .understood{
+  background-color: var(--exitButtonC);
+  padding: 13px 20px 13px 20px;
+  color:var(--mainTextC);
+  margin-top: 34px;
+}
+.statusCodeDiv .understood:hover{background-color: #b10334;}
+.statusCodeDiv .understood:active{background-color: #9f032f;}

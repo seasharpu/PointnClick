@@ -12,7 +12,7 @@ function requestDeleteItem(userID, inventoryID){
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json"}
     });
-    fetch(req).then(response => response.text().then(value => console.log(value)))
+    fetch(req).then(response => getStatusCode(response));
 }
 //requestDeleteItem(2, 5);
 
@@ -25,9 +25,9 @@ function requestAddItem(userID, inventoryID){
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json"}
     });
-    fetch(req).then(response => response.text().then(value => console.log(value)))
+    fetch(req).then(response => getStatusCode(response));
 }
-requestAddItem(4, 2);
+//requestAddItem(2, 200);
 
 
 //CHANGE NAMETAG 
@@ -39,7 +39,7 @@ function requestChangeUserName(nameTag, newNameTag){
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json"}
     });
-    fetch(req).then(response => response.text().then(value => console.log(value)))
+    fetch(req).then(response => getStatusCode(response));
 }
 //requestChangeUserName("testUser", "Buster");
 
@@ -51,7 +51,7 @@ function requestLoginUser(nameTag, password){
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json"}
     });
-    fetch(req).then(response => response.text().then(value => console.log(value)))
+    fetch(req).then(response => getStatusCode(response));
 }
 //requestLoginUser("AlexanderDenStore", "batman123");
 
@@ -63,7 +63,7 @@ function requestDeleteUser(userID){
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json"}
     });
-    fetch(req).then(response => response.text().then(value => console.log(value)))
+    fetch(req).then(response => getStatusCode(response));
 }
 //requestDeleteUser(4);
 
@@ -91,7 +91,7 @@ form.addEventListener("button", (event) => {
         method: "POST",
         body: data
     });
-    fetch(req).then(response => response.text().then(value => console.log(value)));
+    fetch(req).then(response => getStatusCode(response));
 
 });
 
