@@ -1,3 +1,49 @@
 @import "common.css";
 /* Denna fil avser unika css-regler för startsidan */
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+.titleText {
+    font-family: var(--mainFont);
+    color: var(--mainTextC);
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .logInWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+    margin: auto;
+  }
+  
+  .NameTagText, .PasswordText{
+    text-align: center;
+    font-family: var(--mainFont);
+    margin: 0;
+    color:var(--inputTitlesC);
+  }
+  
+  .logInWrapper > input {
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    width: 60%;
+  }
+  
+  .buttonsDiv {
+    width: 60%;
+    height: 100px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .buttonsDiv > div {
+    background-color: var(--mainButtonC);
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
