@@ -1,11 +1,11 @@
 "use strict";
 
+let characterDialogue = [];
 
 async function fetchPlanetNamesandIDs () {
     const response = await fetch('./api/planet.json')
     const data = await response.json()
     let planetData = await data;
-    console.log(planetData);
     return planetData;
 }
 
@@ -24,7 +24,12 @@ async function makePlanets(){
             document.querySelector(".background").style.position = "static";
             document.getElementById("location").innerHTML = element.name;
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
-            document.querySelector(".background").setAttribute("id", element.id);
+            document.querySelector(".background").setAttribute("id", element.id)
+            
+           characterDialogue.push(element.NPC);
+            
+
+            whichDialogue();
             cleanBackground();
             backToSpaceship();
             

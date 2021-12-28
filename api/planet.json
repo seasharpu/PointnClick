@@ -4,7 +4,7 @@
             "name": "partyPlanet",
             "NPC": {
                 "name": "",
-                "dialogue": ["Hej1","Hej2","Hej3","Hej4","Hej5"]
+                "dialogue": ["PartyPlanet1","PartyPlanet2","PartyPlanet3","PartyPlanet4","PartyPlanet4"]
             },
             "itemOnGround":4,
             "backgroundImage": "assets/images/alien.png"
