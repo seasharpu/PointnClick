@@ -13,8 +13,8 @@ fetchPlanetNamesandIDs();
 
 async function makePlanets(){
     let planetData = await fetchPlanetNamesandIDs();
-    console.log(planetData);
-
+    //console.log(planetData);
+   
     planetData.forEach(element => {
         let planetDiv = document.createElement("div");
         planetDiv.classList.add(element.name);
@@ -24,10 +24,9 @@ async function makePlanets(){
             document.querySelector(".background").style.position = "static";
             document.getElementById("location").innerHTML = element.name;
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
-            document.querySelector(".background").setAttribute("id", element.id)
-            
-           characterDialogue.push(element.NPC);
-            
+            document.querySelector(".background").setAttribute("id", element.id);
+            characterDialogue.push(element.NPC);
+            console.log(characterDialogue)
 
             whichDialogue();
             cleanBackground();

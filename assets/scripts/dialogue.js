@@ -1,8 +1,8 @@
 "use strict";
 
-
 function whichDialogue (){
     characterDialogue.forEach(obj => {
+        document.querySelector(".background").innerHTML="";
         let dialogue = obj.dialogue;
         dialogue.forEach(element => {
             let characterTalkBubble = document.createElement("div");
@@ -11,9 +11,8 @@ function whichDialogue (){
             document.querySelector(".background").append(characterTalkBubble);
             console.log(characterTalkBubble);
         })
-    
     })
 }
-
+whichDialogue();
 
 
