@@ -14,7 +14,7 @@
             "name": "desertPlanet",
             "NPC": {
                 "name": "",
-                "dialogue": ["","","","",""]
+                "dialogue": ["desertPlanet1","desertPlanet2","desertPlanet3","desertPlanet4","desertPlanet5"]
             },
             "itemOnGround":2,
             "backgroundImage": "assets/images/alien.png"
@@ -24,7 +24,7 @@
             "name": "alienPlanet",
             "NPC": {
                 "name": "",
-                "dialogue": ["","","","",""]
+                "dialogue": ["alienPlanet1","alienPlanet2","alienPlanet3","alienPlanet4","alienPlanet5"]
             },
             "itemOnGround":1,
             "requiredItem":2,
@@ -35,7 +35,7 @@
             "name": "junglePlanet",
             "NPC": {
                 "name": "",
-                "dialogue": ["","","","",""]
+                "dialogue": ["junglePlanet1","junglePlanet2","junglePlanet3","junglePlanet4","junglePlanet5"]
             },
             "itemOnGround":5,
             "backgroundImage": "assets/images/alien.png"
@@ -45,7 +45,7 @@
             "name": "underwaterPlanet",
             "NPC": {
                 "name": "",
-                "dialogue": ["","","","",""]
+                "dialogue": ["waterPlanet1","waterPlanet2","waterPlanet3","waterPlanet4","waterPlanet5"]
             },
             "itemOnGround":3,
             "requiredItem":1,
@@ -56,7 +56,7 @@
             "name": "plutoPlanet",
             "NPC": {
                 "name": "",
-                "dialogue": ["","","","",""]
+                "dialogue": ["plutoPlanet1","plutoPlanet2","plutoPlanet3","plutoPlanet4","plutoPlanet5"]
             },
             "backgroundImage": "assets/images/alien.png"
         },
