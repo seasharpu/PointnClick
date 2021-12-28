@@ -2,6 +2,7 @@
 
 //array för dialog som finns på den planet användaren har klickat på 
 let currentPlanetDialogue = [];
+let currentID = [];
 
 //hämtar infon om planeterna från planet.json
 async function fetchPlanetNamesandIDs () {
@@ -27,9 +28,11 @@ async function makePlanets(){
             document.querySelector(".background").style.position = "static";
             document.getElementById("location").innerHTML = element.name;
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
-            document.querySelector(".background").setAttribute("id", element.id);
+            //document.querySelector(".background").setAttribute("id", element.id);
             currentPlanetDialogue.push(element.NPC);
-            
+            currentID.push(element.id);
+
+            fetchItemsForPlanets();
             whichDialogue();
             cleanBackground();
             backToSpaceship(); 
