@@ -1,0 +1,63 @@
+.wrapperDiv {
+    width: 95%;
+    height: 95%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .GridWrapperDiv {
+    width: var(--screenWidth);
+    height: var(--screenHeight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .registerDiv {
+    background-color: var(--mainButtonC);
+    grid-row: 1/ span 2;
+  }
+  
+  .avatarWrapperDiv{
+    background-color: var(--mainButtonC);
+    grid-row: 1/ span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .avatars {
+    background-color: black;
+    margin: 5px;
+  }
+
+  .avatarWrapperDiv div:first-child {
+    background-image: url(/assets/images/avatar1.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .avatarWrapperDiv div:nth-child(2) {
+    background-image: url(/assets/images/avatar2.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .avatarWrapperDiv div:nth-child(3) {
+    background-image: url(/assets/images/avatar3.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .avatarWrapperDiv div:nth-child(4) {
+    background-image: url(/assets/images/avatar4.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  #uploadProfilePic {
+    background-color: purple;
+    width: 200px;
+    height: 100px;
+  }
