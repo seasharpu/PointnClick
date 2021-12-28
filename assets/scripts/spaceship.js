@@ -32,8 +32,7 @@ async function makePlanets(){
             
             whichDialogue();
             cleanBackground();
-            backToSpaceship();
-            
+            backToSpaceship(); 
         })
     });
 }
