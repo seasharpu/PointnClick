@@ -2,7 +2,6 @@
 
 //hämtar arrayen från spaceship.js och går igenom den och skapar divar för varje dialog
 function whichDialogue (){
-
     //eventuellt lägga till IF sats här
     currentPlanetDialogue.forEach(obj => {
         document.querySelector(".background").innerHTML="";

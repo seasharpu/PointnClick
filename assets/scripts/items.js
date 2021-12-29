@@ -6,15 +6,16 @@ async function fetchItemsForPlanets () {
     const data = await response.json()
     let itemData = await data;
     //console.log(itemData);
-
+    let itemsDiv = document.createElement("div");
+    itemsDiv.innerHTML = "";
+    
     currentID.forEach(obj => {
         itemData.forEach(element => {
             if(element.id == obj) {
-                
-                let itemsDiv = document.createElement("div");
-                itemsDiv.innerHTML = element.name;
+               
                 itemsDiv.classList.add("planetsItem");
-                document.querySelector(".background").append(itemsDiv);
+                document.querySelector(".background").prepend(itemsDiv);
+                itemsDiv.innerHTML = element.name;
             }
         });
     })
