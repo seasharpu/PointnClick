@@ -4,16 +4,34 @@
 
 /*Spaceship diven*/
 .spaceShipBackground {
-  height: var(--screenHeight);
-  width: var(--screenWidth);
-  position: static;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url("/assets/images/spaceship.bmp");
+    height: var(--screenHeight);
+    width: var(--screenWidth);
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/assets/images/spaceship.png');
+    z-index: 2;
+    
+}
+.rightBlack {
+    position: absolute;
+    background-color: black;
+    right: 0px;
+    height: 100%;
+    width: 235px;
+    z-index: 2;
+}
+.leftBlack {
+    position: absolute;
+    background-color: black;
+    left: 0px;
+    height: 100%;
+    width: 235px;
+    z-index: 2;
 }
 /*En div som bytar bakrund beroende på vilken planet man är på*/
 .background {
@@ -26,23 +44,25 @@
 }
 /*Denna diven är alla planeter placerade i*/
 .space {
-    height: 350px;
-    width: 750px;
+    height: var(--screenHeight);
+    width: 2500px;
     position: absolute;
-    left: 190px;
-    right: 190px;
-    transition: left 2s, right 2s;
-    background-image: url(/assets/images/space_background.png);
+    left: 0;
+    right: 0;
+    transition: left 2s ease, right 2s;
+    background-image: url(/assets/images/space_background.png)
+    ;
+    z-index: 1;
 }
 .spaceLeft {
   position: absolute;
-  left: 10px;
-  right: 200px;
+  right: 2000px;
+  left: 500px;
 }
 .spaceRight {
   position: absolute;
-  right: 10px;
-  left: 400px;
+  left: 2000px;
+  right: 50px;
 }
 /*När man hovrar över en planet*/
 .space > div:hover {
@@ -54,21 +74,23 @@
 .joystick {
   position: absolute;
   background-image: url(/assets/images/joystick/joystick_middle.png);
-  bottom: 100px;
+  bottom: 50px;
   height: 100px;
   width: 100px;
 }
 .joystickLeft {
   background-image: url(/assets/images/joystick/joystick_left.png);
+  z-index: 100;
 }
 .joystickRight {
   background-image: url(/assets/images/joystick/joystick_right.png);
+  z-index: 100;
 }
 .goLeft {
   height: 50px;
   width: 50px;
   position: absolute;
-  bottom: 100px;
+  bottom: 50px;
   left: 430px;
   background-image: url(/assets/images/joystick/g21493.png);
   background-size: contain;
@@ -78,7 +100,7 @@
   height: 50px;
   width: 50px;
   position: absolute;
-  bottom: 100px;
+  bottom: 50px;
   right: 430px;
   background-image: url(/assets/images/joystick/g23185.png);
   background-size: contain;
@@ -145,8 +167,8 @@
 }
 /*PLANETERNA SOM MAN KLICKAR PÅ *!warning!* (Ska läggas till bilder istället för runda divar)*/
 .underwaterPlanet {
-    height: 80px;
-    width: 80px;
+    height: 250px;
+    width: 250px;
     background-image: url(/assets/images/planets/neptunlikeplanet.png);
     background-size: contain;
     border-radius: 50%;
@@ -156,8 +178,8 @@
     transition: 1s;
 }
 .alienPlanet {
-    height: 60px;
-    width: 60px;
+    height: 200px;
+    width: 200px;
     background-image: url(/assets/images/planets/machine_world.png);
     background-size: contain;
     border-radius: 50%;
@@ -167,14 +189,14 @@
     transition: 2s;
 }
 .junglePlanet {
-    height: 70px;
-    width: 70px;
+    height: 150px;
+    width: 150px;
     background-image: url(/assets/images/planets/exoplanet.png);
     background-size: contain;
     border-radius: 50%;
     position: absolute;
-    left: 310px;
-    top: 180px;
+    left: 900px;
+    top: 300px;
     transition: 2s;
 }
 .partyPlanet {
@@ -189,25 +211,25 @@
     transition: 2s;
 }
 .desertPlanet {
-    height: 60px;
-    width: 60px;
+    height: 100px;
+    width: 100px;
     background-image: url(/assets/images/planets/dryvenuslikeplanet.png);
     background-size: contain;
     border-radius: 50%;
     position: absolute;
-    left: 600px;
+    left: 1100px;
     top: 270px;
     transition: 2s;
 }
 .plutoPlanet {
-    height: 70px;
-    width: 70px;
+    height: 150px;
+    width: 150px;
     background-image: url(/assets/images/planets/sphereplanet.png);
     background-size: contain;
     border-radius: 50%;
     position: absolute;
-    left: 350px;
-    top: 30px;
+    left: 450px;
+    top: 300px;
     transition: 2s;
 }
 

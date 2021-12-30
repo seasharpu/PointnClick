@@ -61,6 +61,13 @@ function spaceShip() {
     inventory();
     joystick();
 
+    let leftBlack = document.createElement("div");
+    let rightBlack = document.createElement("div");
+    leftBlack.classList.add("leftBlack");
+    rightBlack.classList.add("rightBlack");
+    document.querySelector("main").append(leftBlack);
+    document.querySelector("main").append(rightBlack);
+
     let spaceshipMusic = new Audio('/assets/audiofiles/slow-travel.wav');
     spaceshipMusic.play();
 }
@@ -127,7 +134,7 @@ function joystick() {
 
     // RYMDEN DÄR ALLA PALANETER FINNS
     let space = document.createElement("div");
-    document.querySelector(".spaceShipBackground").append(space);
+    document.querySelector("main").append(space);
     space.classList.add("space");
 
     // NÄR MAN KLICKAR PÅ JOYSTICKEN

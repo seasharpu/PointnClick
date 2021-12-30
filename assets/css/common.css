@@ -39,7 +39,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   overflow: hidden;
 }
 
@@ -66,13 +65,15 @@ main {
 
 footer {
   width: var(--screenWidth);
-  height: 60px;
+  height: 65px;
 
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: var(--mainFont);
   color: var(--mainTextC);
+  z-index: 30;
+  background-color: black;
 }
 .statusCodeDiv{
   height: 100%;
