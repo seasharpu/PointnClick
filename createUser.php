@@ -3,6 +3,9 @@ session_start();
 require_once "functions.php";
 $rqstMethod = $_SERVER["REQUEST_METHOD"];
 
+$data = file_get_contents("php://input");
+$rqstData = json_decode($data, true);
+
 if ($rqstMethod === "POST"){
     
            //skapar en NY användare
@@ -79,8 +82,12 @@ if ($rqstMethod === "POST"){
 
             $found = false;
 
-            foreach ($users as $key => $user) {
-                if ($user["nameTag"] == $rqstData["nameTag"] && $user["password"] == $rqstData["password"]) {
+            //sparar i array, och sen i json-fil.
+            array_push($allUsers, $newUser);
+            saveJson("api/user.json", $allUsers);
+
+            foreach ($allUsers as $key => $user) {
+                if ($user["nameTag"] == $_POST["nameTag"] && $user["password"] == $_POST["password"]) {
                     $_SESSION["userID"] = $user["id"];
                     $_SESSION["nameTag"] = $user["nameTag"];
                     $_SESSION["isLoggedIn"] = true;
@@ -92,11 +99,6 @@ if ($rqstMethod === "POST"){
             } else {
                 statusCode(463);
             }
-
-            //sparar i array, och sen i json-fil.
-            array_push($allUsers, $newUser);
-            saveJson("api/user.json", $allUsers);
-            //statusCode(["User is added."]);
             header("Location: index.php");
             exit();
         } else {

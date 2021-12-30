@@ -43,7 +43,7 @@ function requestChangeUserName(nameTag, newNameTag){
 }
 //requestChangeUserName("testUser", "Buster");
 
-//CREATE USER
+//LOGIN USER
 function requestLoginUser(nameTag, password){
     const data = {"nameTag": nameTag, "password": password};
     const req = new Request("server.php", {
@@ -67,10 +67,12 @@ function requestDeleteUser(userID){
 }
 //requestDeleteUser(4);
 
+
+
 let formWrapper = document.createElement("div");
 formWrapper.innerHTML = 
     `
-    <form id="login-user" action="createUser.php "method="POST" enctype="multipart/form-data">
+    <form id="create-user" action="createUser.php "method="POST" enctype="multipart/form-data">
         <input type="file" name="image">
         <input type="text" placeholder="nameTag" name="nameTag">
         <input type="text" placeholder="password" name="password">
@@ -80,8 +82,8 @@ formWrapper.innerHTML =
 
 document.querySelector("main").append(formWrapper);
 
-//LOGIN USER
-const form = document.getElementById("login-user");
+//CREATE USER
+const form = document.getElementById("create-user");
 form.addEventListener("button", (event) => {
     event.preventDefault();
     const data = new FormData(form);

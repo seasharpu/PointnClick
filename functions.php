@@ -16,7 +16,6 @@ function saveJson($database, $data)
 function statusCode($errorCode = 200)
 {
     http_response_code($errorCode);
-    exit();
 }
 
 //Hittar det högsts id:et
