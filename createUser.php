@@ -66,6 +66,9 @@ if ($rqstMethod === "POST"){
             $allUsers = loadJson("api/user.json");
             $highestID = theHighestId($allUsers);
 
+            // DB BACKUP
+            saveJson("api/userBackup.json", $allUsers);
+
             //ny array med nycklar.
             $newUser = [];
             $newUser["id"] = $highestID;
@@ -101,6 +104,3 @@ if ($rqstMethod === "POST"){
             exit();
         }
 }
-
-?>
-
