@@ -1,3 +1,106 @@
 @import "common.css";
 /* Denna fil avser unika css-regler för pluto samt laikas skepp */
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+.codeWrapper {
+  background-color: black;
+  width: 0px;
+  height: 0px;
+  transition: 3s;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.codeNumbersWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1vw;
+  height: 200px;
+}
+
+.codePanelIMGandNumbers {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.spaceshipButton {
+  width: 100%;
+  padding: 1vw;
+  background-color: purple;
+}
+
+.codeinputnumbers {
+  background-color: purple;
+  grid-area: 1/1/2/7;
+  border: none;
+}
+
+.codeNumbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+  font-size: 0vw;
+  transition: 3s;
+  /* color: white; */
+}
+
+.clearCodePanelButton,
+.enterCodeButton {
+  background-color: purple;
+}
+
+.codePanelTitle {
+  color: white;
+  font-size: 0vw;
+  transition: 3s;
+}
+
+.laikasShip {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+}
+
+.clearCodePanelButton > p,
+.enterCodeButton > p {
+  margin: 0;
+}
+
+.enterButton,
+.clearButton {
+  font-size: 0vw;
+  transition: 3s;
+}
+/* Växande knapp  */
+
+.transformSize {
+  width: 400px;
+  height: 400px;
+  padding: 1vw;
+
+  border: solid 5px purple;
+}
+
+.enterCodeSize,
+.clearCodeSize {
+  border: 3px solid rgb(34, 8, 61);
+  height: 10%;
+}
+
+.enterButtonSize,
+.clearButtonSize {
+  font-size: 2vw;
+}
+
+.numberSize {
+  font-size: 3vw;
+  /* color: black; */
+}
+
+.panelTitleSize {
+  font-size: 3vw;
+}
