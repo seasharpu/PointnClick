@@ -106,5 +106,12 @@
         "password": "grrrrrrrrrr",
         "profilePicture": "8d8f98cfb32122e788f9a4cb3170d718c359cebf.jpg",
         "inventory": []
+    },
+    {
+        "id": 16,
+        "nameTag": "fsdfsd",
+        "password": "fsfesf",
+        "profilePicture": "57dcc5947680c0ad20e54f343ba6a722889f5eac.jpg",
+        "inventory": []
     }
 ]
