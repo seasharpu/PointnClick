@@ -16,7 +16,7 @@ fetchPlanetNamesandIDs();
 //skapar planeter och lägger till info från planet.json när man klickar på en planet så som bakgrundsbild etc
 async function makePlanets(){
     let planetData = await fetchPlanetNamesandIDs();
-    //console.log(planetData);
+    // console.log(planetData);
    
     planetData.forEach(element => {
         let planetDiv = document.createElement("div");
@@ -28,11 +28,17 @@ async function makePlanets(){
             document.getElementById("location").innerHTML = element.name;
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
             document.querySelector(".background").setAttribute("id", element.id);
+            
             currentPlanetDialogue.push(element.NPC);
             
-            whichDialogue();
+            // whichDialogue();
             cleanBackground();
             backToSpaceship(); 
+
+            if (element.id == 6){
+                createCodePanel();
+            }
+
         })
     });
 }
@@ -46,7 +52,7 @@ function backgrounds() {
     document.querySelector("main").append(background);
 }
 // *FUNKTIONEN SOM BEHÖVS VARA IGÅNG FÖR ATT SE NÅGOT*
-//spaceShip();
+spaceShip();
 // SPACESHIP
 function spaceShip() {
     document.getElementById("hidden").innerHTML = "";

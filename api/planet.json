@@ -7,7 +7,7 @@
                 "dialogue": ["PartyPlanet1","PartyPlanet2","PartyPlanet3","PartyPlanet4","PartyPlanet4"]
             },
             "itemOnGround":4,
-            "backgroundImage": "assets/images/alien.png"
+            "backgroundImage": "assets/images/partyplanet.bmp"
         },
         {
             "id":2,
@@ -17,7 +17,7 @@
                 "dialogue": ["desertPlanet1","desertPlanet2","desertPlanet3","desertPlanet4","desertPlanet5"]
             },
             "itemOnGround":2,
-            "backgroundImage": "assets/images/alien.png"
+            "backgroundImage": "assets/images/tiledesert.png"
         },
         {
             "id":3,
@@ -38,7 +38,7 @@
                 "dialogue": ["junglePlanet1","junglePlanet2","junglePlanet3","junglePlanet4","junglePlanet5"]
             },
             "itemOnGround":5,
-            "backgroundImage": "assets/images/alien.png"
+            "backgroundImage": "assets/images/jungleplanet.png"
         },
         {
             "id":5,
@@ -49,7 +49,7 @@
             },
             "itemOnGround":3,
             "requiredItem":1,
-            "backgroundImage": "assets/images/alien.png"
+            "backgroundImage": "assets/images/Underwater.png"
         },
         {
             "id":6,
@@ -58,7 +58,7 @@
                 "name": "",
                 "dialogue": ["plutoPlanet1","plutoPlanet2","plutoPlanet3","plutoPlanet4","plutoPlanet5"]
             },
-            "backgroundImage": "assets/images/alien.png"
+            "backgroundImage": "assets/images/Pluto_v1.png"
         },
         {
             "laikaPassword": 12345

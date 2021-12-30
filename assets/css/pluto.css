@@ -1,40 +1,71 @@
 @import "common.css";
 /* Denna fil avser unika css-regler för pluto samt laikas skepp */
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+
+:root {
+  --transitionTime: 2s;
+}
+
+.wrapperShipDiv {
+  display: flex;
+
+  position: relative;
+  top: 290px;
+  left: 35px;
+}
 .codeWrapper {
-  background-color: black;
+  background-color: #aeaeae;
   width: 0px;
   height: 0px;
-  transition: 3s;
+  transform-origin: right top;
+  transition: var(--transitionTime);
 
   display: flex;
   flex-direction: column;
+
+  position: absolute;
+  top: 150px;
+  left: 120px;
+}
+
+.codeMessage {
+  margin: 0px;
 }
 
 .codeNumbersWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1vw;
+  grid-gap: 10px;
   height: 200px;
 }
 
 .codePanelIMGandNumbers {
-  background-color: black;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+
+  transition: var(--transitionTime);
 }
 
 .spaceshipButton {
   width: 100%;
-  padding: 1vw;
+  padding: 10px;
   background-color: purple;
 }
 
 .codeinputnumbers {
-  background-color: purple;
+  background-color: black;
   grid-area: 1/1/2/7;
   border: none;
+  font-family: var(--mainFont);
+  color: lime;
+  font-size: 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: var(--transitionTime);
 }
 
 .codeNumbers {
@@ -43,64 +74,119 @@
   align-items: center;
 
   background-color: white;
-  font-size: 0vw;
-  transition: 3s;
+  font-size: 0px;
+  font-family: var(--mainFont);
+  transition: var(--transitionTime);
   /* color: white; */
+}
+
+.codeNumbers:hover {
+  box-shadow: 5px 5px 0 #808080;
+  cursor: pointer;
 }
 
 .clearCodePanelButton,
 .enterCodeButton {
-  background-color: purple;
+  background-color: #813124;
+  box-shadow: 5px 5px 0 #525252;
+
+  font-family: var(--mainFont);
 }
 
 .codePanelTitle {
   color: white;
-  font-size: 0vw;
-  transition: 3s;
+  margin: 15px;
+  font-size: 0px;
+  transition: var(--transitionTime);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-family: var(--titleFont);
 }
 
 .laikasShip {
-  width: 50px;
-  height: 50px;
-  background-color: green;
+  width: 200px;
+  height: 200px;
+  background-image: url(/assets/images/laikaship.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+.buttonWrapperPanel {
+  flex-grow: 2;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .clearCodePanelButton > p,
 .enterCodeButton > p {
   margin: 0;
+
+  flex-grow: 1;
+  text-align: center;
 }
 
 .enterButton,
 .clearButton {
-  font-size: 0vw;
-  transition: 3s;
+  font-size: 0px;
+  transition: var(--transitionTime);
 }
 /* Växande knapp  */
 
 .transformSize {
   width: 400px;
   height: 400px;
-  padding: 1vw;
+  padding: 15px;
 
-  border: solid 5px purple;
+  border: solid 5px #808080;
+
+  margin: -350px -150px 0px 175px;
+}
+
+.codeScreenSize {
+  height: 40px;
+  margin-bottom: 20px;
+  border: solid 5px #808080;
 }
 
 .enterCodeSize,
 .clearCodeSize {
-  border: 3px solid rgb(34, 8, 61);
-  height: 10%;
+  border: 5px 5px 0 black;
+  height: 50px;
+  width: 165px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .enterButtonSize,
 .clearButtonSize {
-  font-size: 2vw;
+  font-size: 20px;
+}
+.enterButtonSize:hover,
+.clearButtonSize:hover {
+  cursor: pointer;
+}
+
+.screenNumberSize {
+  font-size: 20px;
 }
 
 .numberSize {
-  font-size: 3vw;
+  font-size: 25px;
+  box-shadow: 3px 3px 0 #813124;
   /* color: black; */
 }
 
 .panelTitleSize {
-  font-size: 3vw;
+  font-size: 30px;
 }
