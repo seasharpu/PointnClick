@@ -15,7 +15,7 @@ async function fetchItemsForPlanets () {
 
     currentID.forEach(obj => {
         itemData.forEach(element => {
-            if(element.id == obj) {
+            if(element.id === obj) {
                 itemsDiv.classList.add("planetsItem");
                 //itemsDiv.setAttribute("id", element.name);
                 document.querySelector(".background").prepend(itemsDiv);

@@ -28,13 +28,13 @@ async function makePlanets(){
             document.querySelector(".background").style.position = "static";
             document.getElementById("location").innerHTML = element.name;
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
-            //document.querySelector(".background").setAttribute("id", element.id);
             currentPlanetDialogue.push(element.NPC);
             currentID.push(element.id);
 
             fetchItemsForPlanets();
             whichDialogue();
             cleanBackground();
+            inventory();
             backToSpaceship(); 
         })
     });

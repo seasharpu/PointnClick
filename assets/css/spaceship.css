@@ -227,6 +227,10 @@
     height: 50px;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.planetsItem:hover {
+    cursor: pointer;
 
 }
 
