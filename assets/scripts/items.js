@@ -5,10 +5,8 @@ async function fetchItemsForPlanets () {
     const response = await fetch('./api/items.json')
     const data = await response.json()
     let itemData = await data;
+    
     //console.log(itemData);
-    let inventoryDiv = document.createElement("div");
-    document.querySelector(".background").prepend(inventoryDiv);
-    inventoryDiv.classList.add("inventoryDivtest");
 
     let itemsDiv = document.createElement("div");
     itemsDiv.innerHTML = "";
@@ -24,7 +22,7 @@ async function fetchItemsForPlanets () {
             }
         });
         itemsDiv.addEventListener("click", () => {
-            document.querySelector(".inventoryDivtest").append(itemsDiv);
+            document.querySelector(".itemboxes").append(itemsDiv);
 
         })
     })

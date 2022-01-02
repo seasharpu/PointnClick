@@ -34,8 +34,9 @@ async function makePlanets(){
             fetchItemsForPlanets();
             whichDialogue();
             cleanBackground();
-            inventory();
             backToSpaceship(); 
+
+            document.querySelector(".background").append(inventory());
         })
     });
 }
@@ -60,8 +61,10 @@ function spaceShip() {
     //document.querySelector(".spaceShipBackground").style.backgroundImage = "url('images/spaceship.bmp')";
     //document.querySelector(".spaceShipBackground").style.position = "static";
 
+    document.querySelector(".spaceShipBackground").append(inventory());
+
     backgrounds();
-    inventory();
+    //inventory();
     joystick();
 
     let spaceshipMusic = new Audio('/assets/audiofiles/slow-travel.wav');
@@ -100,7 +103,8 @@ function inventory(){
 
     inventory.append(chest);
     inventory.append(inventoryObjects);
-    document.querySelector(".spaceShipBackground").append(inventory);
+
+    //document.querySelector(".spaceShipBackground").append(inventory);
 
     chest.addEventListener("click", function(e) {
         chest.classList.toggle("chestOpen");
@@ -108,11 +112,20 @@ function inventory(){
         if(inventoryObjects.classList.contains("inventoryObjectsHidden")) {
             inventoryObjects.classList.remove("inventoryObjectsHidden");
             inventoryObjects.classList.add("inventoryObjectsOpen");
+            inventoryObjects.innerHTML = `<div class="itemboxes"></div>
+                                                                    <div class="itemboxes"></div>
+                                                                    <div class="itemboxes"></div>
+                                                                    <div class="itemboxes"></div>
+                                                                    <div class="itemboxes"></div>
+                                                                    <div class="itemboxes"></div>`;
         } else if (inventoryObjects.classList.contains("inventoryObjectsOpen")){
             inventoryObjects.classList.remove("inventoryObjectsOpen");
             inventoryObjects.classList.add("inventoryObjectsHidden");
+            inventoryObjects.innerHTML ="";
         }
+
     });
+    return inventory;
 }
 // GRUNDEN TILL JOYSTICK FUNCTIONEN
 function joystick() {
