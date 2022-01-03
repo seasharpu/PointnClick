@@ -22,27 +22,9 @@ async function whichDialogue (){
                     characterTalkBubble.classList.add("dialogueBubble")
                     characterDialogueWrapper.append(characterTalkBubble);
                 })
-            }
-         
+            } 
         })
     })
-    
-    
-       /* currentPlanetDialogue.forEach(obj => {
-        document.querySelector(".background").innerHTML="";
-        let dialogue = obj.dialogue;
-
-        let dialogueDiv = document.createElement("div");
-        document.querySelector(".background").prepend(dialogueDiv);
-        dialogueDiv.classList.add("dialogueDivtest");
-
-            dialogue.forEach(element => {
-                let characterTalkBubble = document.createElement("div");
-                characterTalkBubble.innerHTML = element;
-                characterTalkBubble.classList.add("dialogueBubble")
-                document.querySelector(".background").append(characterTalkBubble);
-            })
-    })*/
 }
 whichDialogue();
 

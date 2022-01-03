@@ -1,5 +1,13 @@
 "use strict";
 
+async function fetchUser() {
+    const response = await fetch('./api/user.json')
+    const data = await response.json()
+    let userData = await data;
+    console.log(userData);
+}
+fetchUser();
+
 //hämtar items från items.json
 async function fetchItemsForPlanets () {
     const response = await fetch('./api/items.json')
@@ -23,7 +31,6 @@ async function fetchItemsForPlanets () {
         });
         itemsDiv.addEventListener("click", () => {
             document.querySelector(".itemboxes").append(itemsDiv);
-
         })
     })
 }
