@@ -24,14 +24,26 @@ function MakerRegisterPage() {
     registerDiv.append(uploadProfilePicDiv);
     uploadProfilePicDiv.setAttribute("ID","uploadProfilePic");
 
-    //skapar 4st divvar för avatargubbarna 
-    // for (let i= 1; i <= 4; i++) {
-    //     let avatars = document.createElement("div");
-    //     avatars.classList.add("avatars");
-    //     avatarWrapperDiv.append(avatars);
+    for (let i= 1; i <= 4; i++) {
+        let avatars = document.createElement("div");
+        avatars.classList.add("avatars");
+        avatarWrapperDiv.append(avatars);
 
-    // }    
+    }    
 
+    //skapa new player from
+    let formDiv = document.createElement("div");
+    formDiv.setAttribute("ID", "formWrapperDiv");
+    registerDiv.append(formDiv);
+
+    formDiv.innerHTML = `
+        <form id="registerForm" action="/action_page.php" method="get">
+            <input type="text" placeholder="NameTag" name="nameTag">
+            <input type="text" placeholder="Password" name="password">
+            <button>Start Exploring</button>
+            <button>Cancel</button>
+        </form>
+    `
 
 
 
