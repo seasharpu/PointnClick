@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/start.css">
+    <link rel="stylesheet" href="assets/css/register.css">
     <link rel="stylesheet" href="assets/css/alien.css">
     <link rel="stylesheet" href="assets/css/jungle.css">
     <link rel="stylesheet" href="assets/css/pluto.css">
