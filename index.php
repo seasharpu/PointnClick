@@ -21,30 +21,33 @@
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <title>Saving Laika</title>
 </head>
-    <body>
-        <header id="location">
-        </header>
-        <main id="hidden">
-            <?php
-            //kollar om vi har en inloggad användare.
-            if (isset($_SESSION["id"], $_SESSION["nameTag"])){
-                $id = $_SESSION["id"];
-                $nameTag = $_SESSION["nameTag"];
-            } else {
-                $id = -1;
-                $nameTag = "";
-            }
-            echo "<script>const userID = $id</script>";
-            echo "<script>const userNameTag = $nameTag</script>";
-            ?>
-            <script src="/assets/scripts/requests.js"></script>
-            <script src="/assets/scripts/startPage.js"></script>
-            <script src="/assets/scripts/tutorial.js"></script>
-            <script src="/assets/scripts/spaceship.js"></script>
-            <script src="assets\scripts\statuscodemessages.js"></script>
-        </main>
-        <footer>
-            <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
-        </footer>
-    </body>
+
+<body>
+    <header id="location">
+    </header>
+    <main id="hidden">
+        <?php
+        //kollar om vi har en inloggad användare.
+        if (isset($_SESSION["id"], $_SESSION["nameTag"])) {
+            $id = $_SESSION["id"];
+            $nameTag = $_SESSION["nameTag"];
+        } else {
+            $id = -1;
+            $nameTag = "";
+        }
+        echo "<script>const userID = $id</script>";
+        echo "<script>const userNameTag = $nameTag</script>";
+        ?>
+        <script src="/assets/scripts/requests.js"></script>
+        <script src="/assets/scripts/startPage.js"></script>
+        <script src="/assets/scripts/tutorial.js"></script>
+        <script src="/assets/scripts/spaceship.js"></script>
+        <script src="assets\scripts\statuscodemessages.js"></script>
+        <script src="/assets/scripts/pluto.js"></script>
+    </main>
+    <footer>
+        <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
+    </footer>
+</body>
+
 </html>

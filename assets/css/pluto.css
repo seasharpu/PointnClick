@@ -1,3 +1,187 @@
 @import "common.css";
 /* Denna fil avser unika css-regler för pluto samt laikas skepp */
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+
+:root {
+  --transitionTime: 3s;
+}
+
+.wrapperShipDiv {
+  display: flex;
+
+  position: relative;
+  top: 290px;
+  left: 35px;
+}
+.codeWrapper {
+  background-color: #aeaeae;
+  width: 0px;
+  height: 0px;
+  transform-origin: right top;
+  transition: var(--transitionTime);
+
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 150px;
+  left: 120px;
+}
+
+.codeNumbersWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  height: 200px;
+}
+
+.codePanelIMGandNumbers {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  transition: var(--transitionTime);
+}
+
+.spaceshipButton {
+  width: 100%;
+  padding: 10px;
+  background-color: purple;
+}
+
+.codeinputnumbers {
+  background-color: black;
+  border: none;
+  font-family: var(--mainFont);
+  color: lime;
+  font-size: 0px;
+  flex-grow: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: calc(var(--transitionTime) - 2s);
+}
+
+.codeNumbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+  font-size: 0px;
+  font-family: var(--mainFont);
+  transition: calc(var(--transitionTime) - 1.5s);
+}
+
+.codeNumbers:hover {
+  box-shadow: 5px 5px 0 #808080;
+  cursor: pointer;
+}
+
+.clearCodePanelButton,
+.enterCodeButton {
+  background-color: #813124;
+  box-shadow: 5px 5px 0 #525252;
+
+  font-family: var(--mainFont);
+}
+
+.codePanelTitle {
+  color: white;
+  margin: 15px;
+  font-size: 0px;
+  transition: calc(var(--transitionTime) - 0.5s);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-family: var(--titleFont);
+}
+
+.laikasShip {
+  width: 200px;
+  height: 200px;
+  background-image: url(/assets/images/laikaship.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+.buttonWrapperPanel {
+  flex-grow: 2;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.clearCodePanelButton > p,
+.enterCodeButton > p {
+  margin: 0;
+
+  flex-grow: 1;
+  text-align: center;
+}
+
+.enterButton,
+.clearButton {
+  font-size: 0px;
+  transition: calc(var(--transitionTime) - 1s);
+}
+/* Växande knapp  */
+
+.transformSize {
+  width: 400px;
+  height: 400px;
+  padding: 15px;
+
+  border: solid 5px #808080;
+
+  margin: -350px -150px 0px 175px;
+}
+
+.codeScreenSize {
+  height: 40px;
+  margin-bottom: 20px;
+  border: solid 5px #808080;
+  transition: calc(var(--transitionTime) - 0.5s);
+}
+
+.enterCodeSize,
+.clearCodeSize {
+  border: 5px 5px 0 black;
+  height: 50px;
+  width: 165px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enterButtonSize,
+.clearButtonSize {
+  font-size: 20px;
+  transition: calc(var(--transitionTime) - 0.5s);
+}
+.enterButtonSize:hover,
+.clearButtonSize:hover {
+  cursor: pointer;
+}
+
+.screenNumberSize {
+  font-size: 20px;
+}
+
+.numberSize {
+  font-size: 25px;
+  box-shadow: 3px 3px 0 #813124;
+}
+
+.panelTitleSize {
+  font-size: 30px;
+}
