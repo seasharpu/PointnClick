@@ -3,7 +3,7 @@
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
 
 :root {
-  --transitionTime: 2s;
+  --transitionTime: 3s;
 }
 
 .wrapperShipDiv {
@@ -28,10 +28,6 @@
   left: 120px;
 }
 
-.codeMessage {
-  margin: 0px;
-}
-
 .codeNumbersWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -40,10 +36,9 @@
 }
 
 .codePanelIMGandNumbers {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr;
-
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
   transition: var(--transitionTime);
 }
 
@@ -55,17 +50,17 @@
 
 .codeinputnumbers {
   background-color: black;
-  grid-area: 1/1/2/7;
   border: none;
   font-family: var(--mainFont);
   color: lime;
   font-size: 0px;
+  flex-grow: 1;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  transition: var(--transitionTime);
+  transition: calc(var(--transitionTime) - 2s);
 }
 
 .codeNumbers {
@@ -76,8 +71,7 @@
   background-color: white;
   font-size: 0px;
   font-family: var(--mainFont);
-  transition: var(--transitionTime);
-  /* color: white; */
+  transition: calc(var(--transitionTime) - 1.5s);
 }
 
 .codeNumbers:hover {
@@ -97,7 +91,7 @@
   color: white;
   margin: 15px;
   font-size: 0px;
-  transition: var(--transitionTime);
+  transition: calc(var(--transitionTime) - 0.5s);
 
   display: flex;
   justify-content: center;
@@ -137,7 +131,7 @@
 .enterButton,
 .clearButton {
   font-size: 0px;
-  transition: var(--transitionTime);
+  transition: calc(var(--transitionTime) - 1s);
 }
 /* Växande knapp  */
 
@@ -155,6 +149,7 @@
   height: 40px;
   margin-bottom: 20px;
   border: solid 5px #808080;
+  transition: calc(var(--transitionTime) - 0.5s);
 }
 
 .enterCodeSize,
@@ -171,6 +166,7 @@
 .enterButtonSize,
 .clearButtonSize {
   font-size: 20px;
+  transition: calc(var(--transitionTime) - 0.5s);
 }
 .enterButtonSize:hover,
 .clearButtonSize:hover {
@@ -184,7 +180,6 @@
 .numberSize {
   font-size: 25px;
   box-shadow: 3px 3px 0 #813124;
-  /* color: black; */
 }
 
 .panelTitleSize {

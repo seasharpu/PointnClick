@@ -17,9 +17,7 @@ function createCodePanel(){
         let codeWrapper = document.createElement("div"); //main wrapper för innehållet
         wrapperShipDiv.append(codeWrapper);
         codeWrapper.classList.add("codeWrapper");
-        codeWrapper.innerHTML =`<h1 class="codePanelTitle">ENTER PASSAGE KEY
-                                    <p class= "codeMessage"></p>
-                                </h1>`;
+        codeWrapper.innerHTML =`<h1 class="codePanelTitle">ENTER KEY</h1>`;
         
         let codePanelIMGandNumbers = document.createElement("div"); //innehållet för bilder och input (siffror)
         codeWrapper.append(codePanelIMGandNumbers);
@@ -43,11 +41,17 @@ function createCodePanel(){
             codeNumbers.innerHTML = numberString;
 
             codeNumbers.addEventListener("click", () => { 
-                document.querySelector(".codeMessage").innerHTML ="";
                 let numberDiv = document.createElement("div"); 
                 let display = codeinputnumbers.innerHTML;
                 numberDiv.append(display); 
                 codeinputnumbers.innerHTML = `${display + numberString}`;
+                
+                if (codeinputnumbers.innerHTML.length > 6) {
+                    console.log("too long");
+                    codeinputnumbers.innerHTML = "";
+                    codeinputnumbers.innerHTML ="Password is too long!";
+                }
+
             })
         }
         let buttonWrapperPanel = document.createElement("div");
@@ -73,7 +77,7 @@ function createCodePanel(){
             }else {
                 console.log("not right")
                 document.querySelector(".codeinputnumbers").innerHTML = "";
-                document.querySelector(".codeMessage").innerHTML ="This is not the right code!";
+                document.querySelector(".codeinputnumbers").innerHTML ="This is not the right code!";
 
             }
         })
