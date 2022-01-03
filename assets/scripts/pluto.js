@@ -1,10 +1,12 @@
 "use strict";
 
+//Skapar kodpanelen när man är inne på Pluto.
 function createCodePanel(){
     let wrapperShipDiv = document.createElement("div");
     document.querySelector(".background").append(wrapperShipDiv);
     wrapperShipDiv.classList.add("wrapperShipDiv");
 
+    //Skapar "laikas skepp"
     function createLaikasShip(){
         let laikasShip = document.createElement("div");
         laikasShip.classList.add("laikasShip");
@@ -12,7 +14,7 @@ function createCodePanel(){
 
     }
     createLaikasShip();
-
+    //Själva kodpanelen
     function codePanel() {
         let codeWrapper = document.createElement("div"); //main wrapper för innehållet
         wrapperShipDiv.append(codeWrapper);
@@ -60,7 +62,7 @@ function createCodePanel(){
     }
 
     codePanel();
-
+    //Knappen för att kontrollera koden
     function codeControllerButton(){
         let enterCodeButton = document.createElement("div");
         document.querySelector(".buttonWrapperPanel").append(enterCodeButton);
@@ -85,7 +87,7 @@ function createCodePanel(){
 
     codeControllerButton();
 
-
+    //Knappen för att ta radera koden ur displayen
     function clearPanel (clearButton){
         clearButton = document.createElement("div");
         clearButton.classList.add("clearCodePanelButton");
@@ -99,7 +101,7 @@ function createCodePanel(){
     }
     clearPanel();
 
-
+    //Classer för att få panelen att växa större och mindre
     document.querySelector(".laikasShip").addEventListener("click", function(){
         console.log("click worked");
         let wrapper = document.querySelector(".codeWrapper");
