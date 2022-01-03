@@ -1,9 +1,5 @@
 "use strict";
 
-//OM const userID = -1 är ingen inloggad. Då laddas inloggningssidan in.
-//ELSE = kalla på spaceShipsidan.
-
-
 //tar emot ID på inloggad användare samt ID på item som ska deletas.
 function requestDeleteItem(userID, inventoryID){
     const data = {"userID": userID, "inventoryID": inventoryID};

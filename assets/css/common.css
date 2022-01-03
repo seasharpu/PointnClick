@@ -75,6 +75,9 @@ footer {
   z-index: 30;
   background-color: black;
 }
+.spacesShipBackground{
+  position:relative;
+}
 .statusCodeDiv{
   height: 100%;
   width: 100%;
