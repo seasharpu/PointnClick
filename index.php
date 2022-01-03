@@ -37,7 +37,7 @@
             echo "<script>const userID = $id</script>";
             echo "<script>const userNameTag = $nameTag</script>";
             ?>
-            <script src="/assets/scripts/requests.js"></script>
+            <!-- <script src="/assets/scripts/requests.js"></script> -->
             <script src="/assets/scripts/register.js"></script>
             <script src="/assets/scripts/tutorial.js"></script>
             <script src="/assets/scripts/spaceship.js"></script>
