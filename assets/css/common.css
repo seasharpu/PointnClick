@@ -74,6 +74,9 @@ footer {
   font-family: var(--mainFont);
   color: var(--mainTextC);
 }
+.spacesShipBackground{
+  position:relative;
+}
 .statusCodeDiv{
   height: 100%;
   width: 100%;
