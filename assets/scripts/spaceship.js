@@ -52,7 +52,7 @@ function backgrounds() {
     document.querySelector("main").append(background);
 }
 // *FUNKTIONEN SOM BEHÖVS VARA IGÅNG FÖR ATT SE NÅGOT*
-spaceShip();
+// spaceShip();
 // SPACESHIP
 function spaceShip() {
     document.getElementById("hidden").innerHTML = "";
