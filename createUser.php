@@ -60,7 +60,9 @@ if ($rqstMethod === "POST"){
             // Skapa ett unikt filnamn med TID + FILNAMN
             $uniqueFilename = sha1("$time$filename");
             // Skickar iväg bilden till vår mapp"
-            move_uploaded_file($tempname, "api/profileImages/$uniqueFilename.$ext");
+            move_uploaded_file($tempname, __DIR__ . "api/profileImages/$uniqueFilename.$ext");
+
+
 
             //när all info har kikats genom och kontrollerats, ska 
             //det läggas till i databasen. 
