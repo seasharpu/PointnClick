@@ -24,6 +24,7 @@ function makeStartPage() {
 
     let NameTagInput = document.createElement("input");
     document.querySelector(".logInWrapper").append(NameTagInput);
+    NameTagInput.setAttribute("ID", "nameTagInput");
 
     let PasswordText = document.createElement("h2");
     PasswordText.classList.add("PasswordText");
@@ -31,6 +32,7 @@ function makeStartPage() {
     PasswordText.innerHTML = "Password";
     let PassWordInput = document.createElement("input");
     document.querySelector(".logInWrapper").append(PassWordInput);
+    PassWordInput.setAttribute("ID", "passwordInput");
 
     let buttonsDiv = document.createElement("div");
     document.querySelector(".logInWrapper").append(buttonsDiv);
@@ -41,6 +43,14 @@ function makeStartPage() {
     document.querySelector(".buttonsDiv").append(newPlayerButton, signUpButton);
     newPlayerButton.innerHTML = "New player";
     signUpButton.innerHTML = "Sign in";
+    signUpButton.setAttribute("ID", "signInButton");
 }
 
-makeStartPage();
+//makeStartPage();
+
+
+document.getElementById("signInButton").addEventListener("click", function() {
+    let nametag = document.getElementById("nameTagInput").value;
+    let password = document.getElementById("passwordInput").value;
+    requestLoginUser(nametag, password);
+  });
