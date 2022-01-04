@@ -6,8 +6,6 @@ let currentID = [];
 spaceShip();
 backgrounds();
 backgroundDiv();
-//array för dialog som finns på den planet användaren har klickat på 
-let currentPlanetDialogue = [];
 
 function backgroundDiv() {
     //let backgrundDIv = document.createElement("div");
@@ -50,22 +48,18 @@ async function makePlanets(){
             
             currentID.push(element.id);
 
-            cleanBackground();
-            document.querySelector(".background").append(inventory());
-            fetchItemsForPlanets();
-            backToSpaceship(); 
-            whichDialogue();
-
             if (element.id == 6){
                 createCodePanel();
             }
 
-            document.querySelector(".background").style.zIndex = 100;
-            currentPlanetDialogue.push(element.NPC);
-            
-            //whichDialogue();
+            //document.querySelector(".background").style.zIndex = 100;
+    
             cleanBackground();
-            backToSpaceship();
+            document.querySelector(".background").append(inventory());
+            backToSpaceship(); 
+            fetchItemsForPlanets();
+            whichDialogue();
+            
         })
     });
 }
