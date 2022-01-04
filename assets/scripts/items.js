@@ -25,22 +25,17 @@ async function fetchItemsForPlanets () {
                 document.querySelector(".background").prepend(itemsDiv);
                 inventoryImage.push(item.image);
                 itemsDiv.style.backgroundImage = `url(${item.image})`;
-                console.log(inventoryImage);
             }
         });
 
         itemsDiv.addEventListener("click", () => {
-<<<<<<< Updated upstream
             document.querySelector(".itemboxes").append(itemsDiv);
+            document.querySelector(".itemboxes").classList.add("taken");
+            localStorage.setItem("takenInventoryBox", itemsDiv);
+
             if(document.querySelector(".itemboxes").contains(itemsDiv)){        
                 localStorage.setItem("itemInventory", inventoryImage);
                    //ska egentligen vara userID > -1
-=======
-            let itemboxes = document.querySelector(".itemboxes")
-            itemboxes.append(itemsDiv);
-            localStorage.setItem("ItemsDiv", JSON.stringify(itemboxes));
-            //ska egentligen vara userID > -1
->>>>>>> Stashed changes
             if(userID == -1) {
                 let itemID = localStorage.getItem("itemID");
                 //requestAddItem(userID, itemID);
@@ -55,4 +50,12 @@ async function fetchItemsForPlanets () {
                 //itemsDiv.style.backgroundImage = `url(${localInventory})`;
           
     })
+}
+
+function makeInventoryboxes(){
+    for(let i = 0; i <= 6; i++){
+        let itemboxes = document.createElement("div");
+        itemboxes.classList.add("itemboxes");
+        document.querySelector(".background").prepend(itemboxes);
+    }
 }

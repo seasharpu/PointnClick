@@ -19,7 +19,7 @@ fetchPlanetNamesandIDs();
 //skapar planeter och lägger till info från planet.json när man klickar på en planet så som bakgrundsbild etc
 async function makePlanets(){
     let planetData = await fetchPlanetNamesandIDs();
-   
+    backgrounds();
     //console.log(planetData);
     planetData.forEach(element => {
         let planetDiv = document.createElement("div");
@@ -44,6 +44,7 @@ async function makePlanets(){
             backToSpaceship(); 
             fetchItemsForPlanets();
             whichDialogue();
+            makeInventoryboxes();
             
         })
     });
@@ -112,17 +113,17 @@ function inventory(){
         if(inventoryObjects.classList.contains("inventoryObjectsHidden")) {
             inventoryObjects.classList.remove("inventoryObjectsHidden");
             inventoryObjects.classList.add("inventoryObjectsOpen");
-            inventoryObjects.innerHTML = `  <div class="itemboxes"></div>
+            /*inventoryObjects.innerHTML = `  <div class="itemboxes"></div>
                                             <div class="itemboxes"></div>
                                             <div class="itemboxes"></div>
                                             <div class="itemboxes"></div>
                                             <div class="itemboxes"></div>
-                                            <div class="itemboxes"></div>`;
+                                            <div class="itemboxes"></div>`;*/
                                             
         } else if (inventoryObjects.classList.contains("inventoryObjectsOpen")){
             inventoryObjects.classList.remove("inventoryObjectsOpen");
             inventoryObjects.classList.add("inventoryObjectsHidden");
-            inventoryObjects.innerHTML ="";
+            //inventoryObjects.innerHTML ="";
         }
 
     });
