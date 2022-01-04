@@ -2,29 +2,40 @@
 /* Denna fil avser unika css-regler för pluto samt laikas skepp */
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
 
+/*demon*/
+.wingedDemon{
+    height: 200px;
+    width: 200px;
+
+    left: 100px;
+    top: 170px;
+}
+
+/*MOLN*/
 .cloudSmall{
-    background-image: url("/assets/images/characters/molntrans.png");
     height: 120px;
     width: 120px;
+
     background-size: cover;
     background-position: center;
-
+  
     position:absolute;
+
     left: 100px;
     top: 170px;
 
     animation: moveclouds 40s linear infinite;
 }
 
-
 .cloudBig{
-    background-image: url("/assets/images/characters/molntrans.png");
     height: 200px;
     width: 200px;
+
     background-size: cover;
     background-position: center;
+  
+    position:absolute;
 
-    position: absolute;
     left: 100px;
     top: -30px;
 

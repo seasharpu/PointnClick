@@ -125,3 +125,11 @@ footer {
 }
 .statusCodeDiv .understood:hover{background-color: #b10334;}
 .statusCodeDiv .understood:active{background-color: #9f032f;}
+
+.character{
+
+  background-size: cover;
+  background-position: center;
+
+  position:absolute;
+}
