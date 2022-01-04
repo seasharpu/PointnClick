@@ -2,6 +2,26 @@
 
 //lägger till id-siffran beroende på vilken planet användaren är på 
 let currentID = [];
+// *FUNKTIONEN SOM BEHÖVS VARA IGÅNG FÖR ATT SE NÅGOT*
+spaceShip();
+backgrounds();
+backgroundDiv();
+//array för dialog som finns på den planet användaren har klickat på 
+let currentPlanetDialogue = [];
+
+function backgroundDiv() {
+    //let backgrundDIv = document.createElement("div");
+    let leftBlack = document.createElement("div");
+    let rightBlack = document.createElement("div");
+
+    leftBlack.classList.add("leftBlack");
+    rightBlack.classList.add("rightBlack");
+    //backgrundDIv.classList.add("backgrundDIv");
+    
+    //document.querySelector("wrapper").append(leftBlack);
+   //document.querySelector("wrapper").append(rightBlack);
+    //document.querySelector("wrapper").append(backgrundDIv);
+}
 
 //hämtar infon om planeterna från planet.json
 async function fetchPlanetNamesandIDs () {
@@ -18,11 +38,12 @@ async function makePlanets(){
     let planetData = await fetchPlanetNamesandIDs();
     // console.log(planetData);
    
+    //console.log(planetData);
     planetData.forEach(element => {
         let planetDiv = document.createElement("div");
         planetDiv.classList.add(element.name);
         document.querySelector(".space").append(planetDiv);
-
+        
         planetDiv.addEventListener("click", ()=> {
             document.querySelector(".background").style.position = "static";
             document.getElementById("location").innerHTML = element.name;
@@ -44,20 +65,23 @@ async function makePlanets(){
                 createCodePanel();
             }
 
+            document.querySelector(".background").style.zIndex = 100;
+            currentPlanetDialogue.push(element.NPC);
+            
+            //whichDialogue();
+            cleanBackground();
+            backToSpaceship();
         })
     });
 }
 
-makePlanets();
-
 // SKAPAR DIV SOM SKA ÄNDRA BAKRUND
 function backgrounds() {
+   // document.querySelector(".backround").innerHTML = "";
     let background = document.createElement("div");
     background.classList.add("background");
     document.querySelector("main").append(background);
 }
-// *FUNKTIONEN SOM BEHÖVS VARA IGÅNG FÖR ATT SE NÅGOT*
-// spaceShip();
 // SPACESHIP
 function spaceShip() {
     document.getElementById("hidden").innerHTML = "";
@@ -65,30 +89,22 @@ function spaceShip() {
     spaceShipBackground.classList.add("spaceShipBackground");
     document.querySelector("main").append(spaceShipBackground);
     document.getElementById("location").innerHTML = "Spaceship";
-    //document.querySelector(".spaceShipBackground").style.backgroundImage = "url('images/spaceship.bmp')";
-    //document.querySelector(".spaceShipBackground").style.position = "static";
-
-    document.querySelector(".spaceShipBackground").append(inventory());
-
+    
+    makePlanets();
     backgrounds();
     //inventory();
     joystick();
 
-    let leftBlack = document.createElement("div");
-    let rightBlack = document.createElement("div");
-    leftBlack.classList.add("leftBlack");
-    rightBlack.classList.add("rightBlack");
-    document.querySelector("main").append(leftBlack);
-    document.querySelector("main").append(rightBlack);
-
-   /* let spaceshipMusic = new Audio('/assets/audiofiles/slow-travel.wav');
-    spaceshipMusic.play(); */
+    
 }
 
 // Rensar bakgrunden
 function cleanBackground() {
     document.querySelector(".spaceShipBackground").style.display = "none";
     document.querySelector(".space").style.display = "none";
+    document.querySelector(".joystick").style.display = "none";
+    document.querySelector(".goLeft").style.display = "none";
+    document.querySelector(".goRight").style.display = "none";
 }
 
 //Back to spaceship
@@ -117,8 +133,7 @@ function inventory(){
 
     inventory.append(chest);
     inventory.append(inventoryObjects);
-
-    //document.querySelector(".spaceShipBackground").append(inventory);
+    document.querySelector("main").append(inventory);
 
     chest.addEventListener("click", function(e) {
         chest.classList.toggle("chestOpen");
@@ -151,22 +166,42 @@ function joystick() {
     goLeft.classList.add("goLeft");
     goRight.classList.add("goRight");
 
-    document.querySelector(".spaceShipBackground").append(joystick);
-    document.querySelector(".spaceShipBackground").append(goLeft);
-    document.querySelector(".spaceShipBackground").append(goRight);
+    document.querySelector("body").append(joystick);
+    document.querySelector("body").append(goLeft);
+    document.querySelector("body").append(goRight);
 
     // RYMDEN DÄR ALLA PALANETER FINNS
     let space = document.createElement("div");
-    document.querySelector("main").append(space);
+    document.querySelector("body").append(space);
     space.classList.add("space");
 
     // NÄR MAN KLICKAR PÅ JOYSTICKEN
-    goLeft.addEventListener("click", function() {
+    goLeft.addEventListener("click", function(e) {
         joystick.classList.toggle("joystickLeft");
         space.classList.toggle("spaceLeft");
+        if(joystick.classList.contains("joystickLeft")) {
+            document.querySelector(".goRight").style.pointerEvents = "none";
+            document.querySelector(".goRight").style.opacity = "0.6";
+            document.querySelector(".goLeft").style.backgroundImage = "url(/assets/images/joystick/g23185.png)";
+        } else {
+            document.querySelector(".goRight").style.pointerEvents = "all";
+            document.querySelector(".goLeft").style.backgroundImage = "url(/assets/images/joystick/g21493.png)";
+            document.querySelector(".goRight").style.opacity = "1";
+            
+        }
     });
-    goRight.addEventListener("click", function() {
+    goRight.addEventListener("click", function(e) {
         joystick.classList.toggle("joystickRight");
         space.classList.toggle("spaceRight");
+        if(joystick.classList.contains("joystickRight")) {
+            document.querySelector(".goLeft").style.pointerEvents = "none";
+            document.querySelector(".goRight").style.backgroundImage = "url(/assets/images/joystick/g21493.png)";
+            document.querySelector(".goLeft").style.opacity = "0.6";
+        } else {
+            document.querySelector(".goLeft").style.pointerEvents = "all";
+            document.querySelector(".goLeft").style.opacity = "1";
+            document.querySelector(".goRight").style.backgroundImage = "url(/assets/images/joystick/g23185.png)";
+        }
     });
 }
+  

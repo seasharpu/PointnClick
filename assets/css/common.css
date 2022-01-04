@@ -41,11 +41,10 @@ body {
   align-items: center;
   overflow: hidden;
 }
-
 header {
   margin: 0px;
   width: var(--screenWidth);
-  height: 75px;
+  height: 55px;
 
   display: flex;
   justify-content: center;
@@ -58,14 +57,18 @@ header {
 main {
   width: var(--screenWidth);
   height: var(--screenHeight);
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid white;
   position:relative;
+  z-index: 2;
+  pointer-events: none;
 }
 
 footer {
   width: var(--screenWidth);
-  height: 65px;
+  height: 66px;
 
   display: flex;
   justify-content: center;
@@ -75,6 +78,7 @@ footer {
   z-index: 30;
   background-color: black;
 }
+
 .statusCodeDiv{
   height: 100%;
   width: 100%;

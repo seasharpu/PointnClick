@@ -26,6 +26,6 @@ async function whichDialogue (){
         })
     })
 }
-whichDialogue();
+//whichDialogue();
 
 
