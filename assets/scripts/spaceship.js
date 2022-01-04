@@ -29,8 +29,6 @@ async function makePlanets(){
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
             document.querySelector(".background").setAttribute("id", element.id);
             
-            currentPlanetDialogue.push(element.NPC);
-            
             currentID.push(element.id);
 
             fetchItemsForPlanets();
@@ -57,7 +55,7 @@ function backgrounds() {
     document.querySelector("main").append(background);
 }
 // *FUNKTIONEN SOM BEHÖVS VARA IGÅNG FÖR ATT SE NÅGOT*
-// spaceShip();
+//spaceShip();
 // SPACESHIP
 function spaceShip() {
     document.getElementById("hidden").innerHTML = "";
