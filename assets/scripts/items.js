@@ -1,12 +1,11 @@
 "use strict";
 
-async function fetchUser() {
+async function fetchUser(userData) {
     const response = await fetch('./api/user.json')
     const data = await response.json()
-    let userData = await data;
-    console.log(userData);
+    userData = await data;
+    return userData;
 }
-fetchUser();
 
 //hämtar items från items.json
 async function fetchItemsForPlanets () {
@@ -18,10 +17,12 @@ async function fetchItemsForPlanets () {
 
     let itemsDiv = document.createElement("div");
     itemsDiv.innerHTML = "";
+    let users = await fetchUser();
 
     currentID.forEach(obj => {
         itemData.forEach(element => {
             if(element.id === obj) {
+    
                 itemsDiv.classList.add("planetsItem");
                 //itemsDiv.setAttribute("id", element.name);
                 document.querySelector(".background").prepend(itemsDiv);
@@ -29,6 +30,7 @@ async function fetchItemsForPlanets () {
                 itemsDiv.style.backgroundImage = `url(${element.image})`;
             }
         });
+      
         itemsDiv.addEventListener("click", () => {
             document.querySelector(".itemboxes").append(itemsDiv);
         })

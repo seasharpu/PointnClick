@@ -27,7 +27,7 @@ async function makePlanets(){
             document.querySelector(".background").style.position = "static";
             document.getElementById("location").innerHTML = element.name;
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
-            
+
             currentID.push(element.id);
 
             fetchItemsForPlanets();
@@ -66,8 +66,6 @@ function spaceShip() {
     //inventory();
     joystick();
 
-    let spaceshipMusic = new Audio('/assets/audiofiles/slow-travel.wav');
-    spaceshipMusic.play();
 }
 
 // Rensar bakgrunden
