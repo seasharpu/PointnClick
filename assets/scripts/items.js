@@ -13,34 +13,39 @@ async function fetchItemsForPlanets () {
     let itemData = await data;
     
     //console.log(itemData);
-
     let itemsDiv = document.createElement("div");
     itemsDiv.innerHTML = "";
+    let inventoryImage = [];
 
     currentID.forEach(currentid => {
         itemData.forEach(item => {
             if(item.id === currentid) {
                 localStorage.setItem("itemID", item.id);
-                console.log(item.id)
                 itemsDiv.classList.add("planetsItem");
-                //itemsDiv.setAttribute("id", element.name);
                 document.querySelector(".background").prepend(itemsDiv);
-                //itemsDiv.innerHTML = element.name;
+                inventoryImage.push(item.image);
                 itemsDiv.style.backgroundImage = `url(${item.image})`;
+                console.log(inventoryImage);
             }
         });
-      
+
         itemsDiv.addEventListener("click", () => {
             document.querySelector(".itemboxes").append(itemsDiv);
-            let toggledItemDiv = document.querySelector(".itemboxes").classList.toggle("inventoryWithItem");
-            localStorage.setItem("ItemsDiv", toggledItemDiv);
-            //ska egentligen vara userID > -1
+            if(document.querySelector(".itemboxes").contains(itemsDiv)){        
+                localStorage.setItem("itemInventory", inventoryImage);
+                   //ska egentligen vara userID > -1
             if(userID == -1) {
                 let itemID = localStorage.getItem("itemID");
                 //requestAddItem(userID, itemID);
-                console.log("hej");
+                //console.log("hej");
             }
+            }
+         
             
         })
+
+                //let localInventory = localStorage.getItem("itemInventory");
+                //itemsDiv.style.backgroundImage = `url(${localInventory})`;
+          
     })
 }
