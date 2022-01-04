@@ -54,22 +54,23 @@ if ($rqstMethod === "POST"){
             // Hämta ut filändelsen (och gör om till gemener)
             $ext = strtolower($info["extension"]);
             
-
-
-
             // Konvertera från int (siffra) till en sträng,
             // så vi kan slå samman dom nedan.
             $time = (string) time(); // Klockslaget i millisekunder
             // Skapa ett unikt filnamn med TID + FILNAMN
             $uniqueFilename = sha1("$time$filename");
-            // Skickar iväg bilden till vår mapp"
-            $path = __DIR__ .'/api/profileImages/';
             //sökväg för mappen
+            $path = __DIR__ .'/api/profileImages/';
+            // Skickar iväg bilden till vår mapp"
+
+            chmod('api/profileImages/', 0777);
+
+            
             move_uploaded_file($tempname, $path . "$uniqueFilename.$ext");
-
-
             //när all info har kikats genom och kontrollerats, ska 
             //det läggas till i databasen. 
+
+
 
             //id till ny användare.
             $allUsers = loadJson("api/user.json");

@@ -10,17 +10,51 @@
     },
     {
         "id": 2,
-        "nameTag": "lnkkl",
-        "password": "uukjbhh",
-        "inventory": [
-            2
-        ]
+        "nameTag": "dwqdqwd",
+        "password": "dwqdqdw",
+        "profilePicture": "b5e2853f2dc54a1e0bc420428dbda57422fb339c.jpg",
+        "inventory": []
     },
     {
         "id": 3,
-        "nameTag": "fwfwsc",
-        "password": "fewfcsdef",
-        "profilePicture": "999215d7529da4710ca7f322ebf1b491c464b63b.jpg",
+        "nameTag": "dwdew",
+        "password": "dewfew",
+        "profilePicture": "f4eb1a61eaafb06cc08ea475e9530342a90c606c.jpg",
+        "inventory": []
+    },
+    {
+        "id": 4,
+        "nameTag": "greg",
+        "password": "gregeg",
+        "profilePicture": "6866e67ce5ad07e83d23e3817b715de89cb878a9.jpg",
+        "inventory": []
+    },
+    {
+        "id": 5,
+        "nameTag": "fwFE",
+        "password": "FEWF",
+        "profilePicture": "f19e0735bce224ddb78824264a17c1ecf7b97bb6.jpg",
+        "inventory": []
+    },
+    {
+        "id": 6,
+        "nameTag": "gsgerg",
+        "password": "grage",
+        "profilePicture": "8e832742833012ac40d7476e20cca6dab1278b28.jpg",
+        "inventory": []
+    },
+    {
+        "id": 7,
+        "nameTag": "gergerg",
+        "password": "gregre",
+        "profilePicture": "c1ca1293edc4e548deaaae107172c589ef42088f.jpg",
+        "inventory": []
+    },
+    {
+        "id": 8,
+        "nameTag": "TEST",
+        "password": "TEST",
+        "profilePicture": "5e08df94f85281f349a0c3608af93ddf5f626360.jpg",
         "inventory": []
     }
 ]
