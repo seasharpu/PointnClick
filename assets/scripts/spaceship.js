@@ -77,9 +77,7 @@ function backgrounds() {
     background.classList.add("background");
     document.querySelector("main").append(background);
 }
-// *FUNKTIONEN SOM BEHÖVS VARA IGÅNG FÖR ATT SE NÅGOT*
-spaceShip();
-// SPACESHIP
+
 function spaceShip() {
     document.getElementById("hidden").innerHTML = "";
     let spaceShipBackground = document.createElement("div");
