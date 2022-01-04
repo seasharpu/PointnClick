@@ -1,7 +1,7 @@
 "use strict";
 
 //hämtar arrayen från spaceship.js och går igenom den och skapar divar för varje dialog
-async function whichDialogue (){
+async function whichDialogue() {
     const response = await fetch('./api/planet.json')
     const data = await response.json()
     let planetData = await data;
