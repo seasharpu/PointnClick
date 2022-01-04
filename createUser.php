@@ -61,16 +61,11 @@ if ($rqstMethod === "POST"){
             $uniqueFilename = sha1("$time$filename");
             //sökväg för mappen
             $path = __DIR__ .'/api/profileImages/';
-            // Skickar iväg bilden till vår mapp"
 
-            chmod('api/profileImages/', 0777);
-
-            
+            // Skickar bilden till vår mapp
             move_uploaded_file($tempname, $path . "$uniqueFilename.$ext");
             //när all info har kikats genom och kontrollerats, ska 
             //det läggas till i databasen. 
-
-
 
             //id till ny användare.
             $allUsers = loadJson("api/user.json");

@@ -56,5 +56,12 @@
         "password": "TEST",
         "profilePicture": "5e08df94f85281f349a0c3608af93ddf5f626360.jpg",
         "inventory": []
+    },
+    {
+        "id": 9,
+        "nameTag": "TEST",
+        "password": "TESTEE",
+        "profilePicture": "a039068c825b982b8328c190baece12c87680b8d.jpg",
+        "inventory": []
     }
 ]
