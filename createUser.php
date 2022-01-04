@@ -54,14 +54,18 @@ if ($rqstMethod === "POST"){
             // Hämta ut filändelsen (och gör om till gemener)
             $ext = strtolower($info["extension"]);
             
+
+
+
             // Konvertera från int (siffra) till en sträng,
             // så vi kan slå samman dom nedan.
             $time = (string) time(); // Klockslaget i millisekunder
             // Skapa ett unikt filnamn med TID + FILNAMN
             $uniqueFilename = sha1("$time$filename");
             // Skickar iväg bilden till vår mapp"
-            move_uploaded_file($tempname, __DIR__ . "api/profileImages/$uniqueFilename.$ext");
-
+            $path = __DIR__ .'/api/profileImages/';
+            //sökväg för mappen
+            move_uploaded_file($tempname, $path . "$uniqueFilename.$ext");
 
 
             //när all info har kikats genom och kontrollerats, ska 
