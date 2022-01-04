@@ -1,7 +1,7 @@
 "use strict";
 
-//array för dialog som finns på den planet användaren har klickat på 
-let currentPlanetDialogue = [];
+//lägger till id-siffran beroende på vilken planet användaren är på 
+let currentID = [];
 
 //hämtar infon om planeterna från planet.json
 async function fetchPlanetNamesandIDs () {
@@ -31,9 +31,14 @@ async function makePlanets(){
             
             currentPlanetDialogue.push(element.NPC);
             
-            // whichDialogue();
+            currentID.push(element.id);
+
+            fetchItemsForPlanets();
+            whichDialogue();
             cleanBackground();
             backToSpaceship(); 
+
+            document.querySelector(".background").append(inventory());
 
             if (element.id == 6){
                 createCodePanel();
@@ -63,8 +68,10 @@ function spaceShip() {
     //document.querySelector(".spaceShipBackground").style.backgroundImage = "url('images/spaceship.bmp')";
     //document.querySelector(".spaceShipBackground").style.position = "static";
 
+    document.querySelector(".spaceShipBackground").append(inventory());
+
     backgrounds();
-    inventory();
+    //inventory();
     joystick();
 
     let leftBlack = document.createElement("div");
@@ -74,8 +81,8 @@ function spaceShip() {
     document.querySelector("main").append(leftBlack);
     document.querySelector("main").append(rightBlack);
 
-    let spaceshipMusic = new Audio('/assets/audiofiles/slow-travel.wav');
-    spaceshipMusic.play();
+   /* let spaceshipMusic = new Audio('/assets/audiofiles/slow-travel.wav');
+    spaceshipMusic.play(); */
 }
 
 // Rensar bakgrunden
@@ -110,7 +117,8 @@ function inventory(){
 
     inventory.append(chest);
     inventory.append(inventoryObjects);
-    document.querySelector(".spaceShipBackground").append(inventory);
+
+    //document.querySelector(".spaceShipBackground").append(inventory);
 
     chest.addEventListener("click", function(e) {
         chest.classList.toggle("chestOpen");
@@ -118,11 +126,20 @@ function inventory(){
         if(inventoryObjects.classList.contains("inventoryObjectsHidden")) {
             inventoryObjects.classList.remove("inventoryObjectsHidden");
             inventoryObjects.classList.add("inventoryObjectsOpen");
+            inventoryObjects.innerHTML = `<div class="itemboxes"></div>
+                                                                    <div class="itemboxes"></div>
+                                                                    <div class="itemboxes"></div>
+                                                                    <div class="itemboxes"></div>
+                                                                    <div class="itemboxes"></div>
+                                                                    <div class="itemboxes"></div>`;
         } else if (inventoryObjects.classList.contains("inventoryObjectsOpen")){
             inventoryObjects.classList.remove("inventoryObjectsOpen");
             inventoryObjects.classList.add("inventoryObjectsHidden");
+            inventoryObjects.innerHTML ="";
         }
+
     });
+    return inventory;
 }
 // GRUNDEN TILL JOYSTICK FUNCTIONEN
 function joystick() {
