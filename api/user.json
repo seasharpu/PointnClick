@@ -5,6 +5,7 @@
         "password": "test123",
         "profilePicture": "99266523275a5c213f54ea25c856f8a1b1e1406b.jpg",
         "inventory": [
+            1,
             1
         ]
     },
