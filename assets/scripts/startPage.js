@@ -1,5 +1,5 @@
 "use strict";
-
+/*
 function makeStartPage() {
     document.querySelector("main").style.backgroundImage = "url('assets/images/space_background.png')";
 
@@ -43,4 +43,4 @@ function makeStartPage() {
     signUpButton.innerHTML = "Sign in";
 }
 
-makeStartPage(); 
+makeStartPage(); */
