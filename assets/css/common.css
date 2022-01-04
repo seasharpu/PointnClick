@@ -57,13 +57,10 @@ header {
 main {
   width: var(--screenWidth);
   height: var(--screenHeight);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid white;
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  z-index: 1000;
   position: relative;
 }
 

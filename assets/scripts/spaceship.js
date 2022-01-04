@@ -7,20 +7,6 @@ spaceShip();
 backgrounds();
 backgroundDiv();
 
-function backgroundDiv() {
-    //let backgrundDIv = document.createElement("div");
-    let leftBlack = document.createElement("div");
-    let rightBlack = document.createElement("div");
-
-    leftBlack.classList.add("leftBlack");
-    rightBlack.classList.add("rightBlack");
-    //backgrundDIv.classList.add("backgrundDIv");
-    
-    //document.querySelector("wrapper").append(leftBlack);
-   //document.querySelector("wrapper").append(rightBlack);
-    //document.querySelector("wrapper").append(backgrundDIv);
-}
-
 //hämtar infon om planeterna från planet.json
 async function fetchPlanetNamesandIDs () {
     const response = await fetch('./api/planet.json')
@@ -154,13 +140,13 @@ function joystick() {
     goLeft.classList.add("goLeft");
     goRight.classList.add("goRight");
 
-    document.querySelector("body").append(joystick);
-    document.querySelector("body").append(goLeft);
-    document.querySelector("body").append(goRight);
+    document.querySelector(".spaceShipBackground").append(joystick);
+    document.querySelector(".spaceShipBackground").append(goLeft);
+    document.querySelector(".spaceShipBackground").append(goRight);
 
     // RYMDEN DÄR ALLA PALANETER FINNS
     let space = document.createElement("div");
-    document.querySelector("body").append(space);
+    document.querySelector("main").append(space);
     space.classList.add("space");
 
     // NÄR MAN KLICKAR PÅ JOYSTICKEN
