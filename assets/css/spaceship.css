@@ -6,14 +6,16 @@
 .spaceShipBackground {
     height: var(--screenHeight);
     width: var(--screenWidth);
-    position: absolute;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    display: grid;
-     grid-template-columns: repeat(3, 1fr);
     background-image: url('/assets/images/spaceship.png');
-    z-index: 100;
+    z-index: 100000;
+    grid-column: 1;
+    grid-row: 1;
+    box-sizing: border-box;
+    border: 1px solid white;
+    
 }
 .backgroundDiv {
     background-color: var(--backgroundC);
@@ -21,21 +23,27 @@
     width: 1445px;
     z-index: 1;
 }
+wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  flex-grow: 1;
+  flex-basis: fill;
+}
 .rightBlack {
-    position: absolute;
-    background-color: black;
-    right: 0px;
-    height: 100%;
-    width: 512.5px;
-    z-index: 10;
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  z-index: 10000;
+  
 }
 .leftBlack {
-    position: absolute;
-    background-color: black;
-    left: 0px;
-    height: 100%;
-    width:  512.5px;
-    z-index: 10;
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  z-index: 10000;
 }
 /*En div som bytar bakrund beroende på vilken planet man är på*/
 .background {
@@ -55,14 +63,13 @@
     height: var(--screenHeight);
     width: 1450px;
     position: absolute;
-    left: -20px;
+    left: -200px;
     right: 0px;
     transition: 2s;
     transition-property: left, right;
-    background-image: url(/assets/images/space_background.png)
-    ;
-    z-index: 1;
-    
+    background-image: url(/assets/images/space_background.png);
+    grid-column: 1;
+    grid-row: 1;
 }
 .spaceLeft {
   position: absolute;
@@ -86,58 +93,57 @@
 .joystick {
   position: absolute;
   background-image: url(/assets/images/joystick/joystick_middle.png);
-  bottom: 130px;
-  left: 655px;
-  right: 655px;
+  bottom: 70px;
+  left: 437px;
+  right: 437px;
   height: 100px;
   width: 100px;
-  z-index: 30;
+  z-index: 10000;
 }
 .joystickLeft {
   background-image: url(/assets/images/joystick/joystick_left.png);
   background-repeat: no-repeat;
   position: absolute;
-  bottom: 130px;
-  left: 655px;
-  right: 655px;
+  bottom: 70px;
+  left: 437px;
+  right: 437px;
   height: 100px;
   width: 100px;
-  z-index: 30;
+  z-index: 10000;
 }
 .joystickRight {
   background-image: url(/assets/images/joystick/joystick_right.png);
   background-repeat: no-repeat;
   position: absolute;
-  bottom: 130px;
-  left: 655px;
-  right: 655px;
+  bottom: 70px;
+  left: 437px;
+  right: 437px;
   height: 100px;
   width: 100px;
-  z-index: 30;
+  z-index: 10000;
 }
 .goLeft {
   height: 50px;
   width: 50px;
   position: absolute;
-  bottom: 130px;
-  left: 590px;
+  bottom: 30px;
+  left: 350px;
   background-image: url(/assets/images/joystick/g21493.png);
   background-size: contain;
   cursor: pointer;
-  z-index: 30;
+  z-index: 10000;
 }
 .goRight {
   height: 50px;
   width: 50px;
   position: absolute;
-  bottom: 130px;
-  right: 590px;
+  bottom: 30px;
+  right: 350px;
   background-image: url(/assets/images/joystick/g23185.png);
   background-size: contain;
   cursor: pointer;
-  z-index: 30;
+  z-index: 10000;
 }
-
 /*Tillbaka knappen till spaceship*/
 .backToSpaceship {
   height: 50px;

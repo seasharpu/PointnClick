@@ -25,6 +25,8 @@
 <body>
     <header id="location">
     </header>
+    <wrapper>
+        <div class="leftBlack"></div>
     <main id="hidden">
         <?php
         //kollar om vi har en inloggad användare.
@@ -48,6 +50,8 @@
         <script src="/assets/scripts/items.js"></script>
         <script src="/assets/scripts/loading.js"></script>
     </main>
+    <div class="rightBlack"></div>
+    </wrapper>
     <footer>
         <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
     </footer>
