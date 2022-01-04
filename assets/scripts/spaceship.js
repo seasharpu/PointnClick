@@ -5,7 +5,6 @@ let currentID = [];
 // *FUNKTIONEN SOM BEHÖVS VARA IGÅNG FÖR ATT SE NÅGOT*
 spaceShip();
 backgrounds();
-backgroundDiv();
 
 //hämtar infon om planeterna från planet.json
 async function fetchPlanetNamesandIDs () {
@@ -67,7 +66,7 @@ function spaceShip() {
     document.getElementById("location").innerHTML = "Spaceship";
     
     makePlanets();
-    backgrounds();
+    //backgrounds();
     //inventory();
     joystick(); 
 }
