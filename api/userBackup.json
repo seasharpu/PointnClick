@@ -14,5 +14,12 @@
         "password": "11223",
         "profilePicture": "a05d41c3048e9a8fd99fc2f33d4c9a29a1a8957d.jpg",
         "inventory": []
+    },
+    {
+        "id": 3,
+        "nameTag": "olli_proffs95",
+        "password": "poppe",
+        "profilePicture": "25c9db0be98ec29ee722493b4a580f6cdb9f01ab.jpeg",
+        "inventory": []
     }
 ]

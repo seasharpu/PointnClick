@@ -21,5 +21,12 @@
         "password": "poppe",
         "profilePicture": "25c9db0be98ec29ee722493b4a580f6cdb9f01ab.jpeg",
         "inventory": []
+    },
+    {
+        "id": 4,
+        "nameTag": "AliceTheSecond",
+        "password": "1234",
+        "profilePicture": "e70dc942cdca4c8fe2440e0ed8e2a1a792609809.jpg",
+        "inventory": []
     }
 ]
