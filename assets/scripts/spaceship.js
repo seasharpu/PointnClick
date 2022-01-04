@@ -122,7 +122,9 @@ function inventory(){
             inventoryObjects.classList.remove("inventoryObjectsHidden");
             inventoryObjects.classList.add("inventoryObjectsOpen");
             inventoryObjects.innerHTML = `<div class="itemboxes"></div>
-                                                                    <div class="itemboxes"></div>
+                                                                    <div class="itemboxes">
+                                                                        <button>delete</button>
+                                                                    </div>
                                                                     <div class="itemboxes"></div>
                                                                     <div class="itemboxes"></div>
                                                                     <div class="itemboxes"></div>

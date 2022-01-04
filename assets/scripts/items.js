@@ -19,20 +19,21 @@ async function fetchItemsForPlanets () {
     itemsDiv.innerHTML = "";
     let users = await fetchUser();
 
-    currentID.forEach(obj => {
-        itemData.forEach(element => {
-            if(element.id === obj) {
-    
+    currentID.forEach(currentid => {
+        itemData.forEach(item => {
+            if(item.id === currentid) {
+                console.log(item.id)
                 itemsDiv.classList.add("planetsItem");
                 //itemsDiv.setAttribute("id", element.name);
                 document.querySelector(".background").prepend(itemsDiv);
                 //itemsDiv.innerHTML = element.name;
-                itemsDiv.style.backgroundImage = `url(${element.image})`;
+                itemsDiv.style.backgroundImage = `url(${item.image})`;
             }
         });
       
         itemsDiv.addEventListener("click", () => {
             document.querySelector(".itemboxes").append(itemsDiv);
+            //requestAddItem(userID, 5);
         })
     })
 }

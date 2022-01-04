@@ -1,5 +1,5 @@
-[
-    {
+{
+    "0": {
         "id": 1,
         "nameTag": "Buster",
         "password": "test123",
@@ -8,7 +8,7 @@
             1
         ]
     },
-    {
+    "1": {
         "id": 2,
         "nameTag": "lnkkl",
         "password": "uukjbhh",
@@ -17,4 +17,4 @@
             2
         ]
     }
-]
+}
