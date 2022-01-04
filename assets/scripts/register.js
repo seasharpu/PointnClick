@@ -20,9 +20,9 @@ function MakerRegisterPage() {
 
     document.querySelector(".wrapperDiv").append(registerDiv, avatarWrapperDiv);
 
-    let uploadProfilePicDiv = document.createElement("div");
-    registerDiv.append(uploadProfilePicDiv);
-    uploadProfilePicDiv.setAttribute("ID","uploadProfilePic");
+    // let uploadProfilePicDiv = document.createElement("div");
+    // registerDiv.append(uploadProfilePicDiv);
+    // uploadProfilePicDiv.setAttribute("ID","uploadProfilePic");
 
     for (let i= 1; i <= 4; i++) {
         let avatars = document.createElement("div");
@@ -39,10 +39,14 @@ function MakerRegisterPage() {
     formDiv.innerHTML = `
         <form id="registerForm" action="/createUser.php" method="POST" enctype="multipart/form-data">
             <input type="file" name="image">
+            <h2> NameTag</h2>
             <input type="text" placeholder="NameTag" name="nameTag">
+            <h2>Password</h2>
             <input type="text" placeholder="Password" name="password">
+            <div id="buttonsDiv">
             <button type"submit">Start Exploring</button>
             <button>Cancel</button>
+            </div>
         </form>
     `
 
