@@ -60,7 +60,7 @@ main {
   height: var(--screenHeight);
 
   border: 1px solid white;
-  position:relative;
+  position: relative;
 }
 
 footer {
@@ -75,19 +75,19 @@ footer {
   z-index: 30;
   background-color: black;
 }
-.statusCodeDiv{
+.statusCodeDiv {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.36);
   transition: background-color 1.5s ease;
 
-  position:absolute;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 /*kod för meddelande av statuskod*/
-.statusCodeDiv > div{
+.statusCodeDiv > div {
   font-family: var(--titleFont);
   background-color: var(--messageBackgroundC);
   border: 7px solid var(--buttonBorderC);
@@ -104,18 +104,112 @@ footer {
 
   transform: translate(-50%, -50%);
 }
-.statusCodeDiv > div h2{
+.statusCodeDiv > div h2 {
   font-family: var(--mainFont);
-  color:var(--mainTextC);
+  color: var(--mainTextC);
 }
-.statusCodeDiv > div p{
+.statusCodeDiv > div p {
   text-align: center;
-  margin: 5px 3px 0px 3px;}
-.statusCodeDiv .understood{
+  margin: 5px 3px 0px 3px;
+}
+.statusCodeDiv .understood {
   background-color: var(--exitButtonC);
   padding: 13px 20px 13px 20px;
-  color:var(--mainTextC);
+  color: var(--mainTextC);
   margin-top: 34px;
 }
-.statusCodeDiv .understood:hover{background-color: #b10334;}
-.statusCodeDiv .understood:active{background-color: #9f032f;}
+.statusCodeDiv .understood:hover {
+  background-color: #b10334;
+}
+.statusCodeDiv .understood:active {
+  background-color: #9f032f;
+}
+
+/* loadingDiv CSS */
+
+.ldWrapper {
+  height: var(--screenHeight);
+  width: var(--screenWidth);
+  background-image: url(/assets/images/backgroundspaceload.png);
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ldWrapperShip {
+  height: var(--screenHeight);
+  width: var(--screenWidth);
+  background-image: url(/assets/images/Zone-202.png);
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#travelingText {
+  margin: 0px 10px 0px 10px;
+  color: var(--mainTextC);
+  font-family: var(--mainFont);
+}
+
+#spaceshipImgMoving {
+  height: 100px;
+  width: 100px;
+  background-image: url(/assets/images/movingspaceship.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#beamgif {
+  height: 150px;
+  width: 150px;
+  background-image: url(/assets/images/beam.gif);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  position: relative;
+  top: -40px;
+}
+
+.lds-dots {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 37px;
+}
+.lds-dots div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 8px;
+  background: #fff;
+  animation: lds-dots 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-dots div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.lds-dots div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.lds-dots div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-dots {
+  0% {
+    top: 8px;
+    height: 14px;
+  }
+  50%,
+  100% {
+    top: 24px;
+    height: 5px;
+  }
+}
