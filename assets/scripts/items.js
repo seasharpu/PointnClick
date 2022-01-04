@@ -1,11 +1,10 @@
 "use strict";
-
-async function fetchUser(userData) {
+/*async function fetchUser() {
     const response = await fetch('./api/user.json')
     const data = await response.json()
-    userData = await data;
+    let userData = await data;
     return userData;
-}
+}*/
 
 //hämtar items från items.json
 async function fetchItemsForPlanets () {
@@ -17,11 +16,11 @@ async function fetchItemsForPlanets () {
 
     let itemsDiv = document.createElement("div");
     itemsDiv.innerHTML = "";
-    let users = await fetchUser();
 
     currentID.forEach(currentid => {
         itemData.forEach(item => {
             if(item.id === currentid) {
+                localStorage.setItem("itemID", item.id);
                 console.log(item.id)
                 itemsDiv.classList.add("planetsItem");
                 //itemsDiv.setAttribute("id", element.name);
@@ -33,7 +32,15 @@ async function fetchItemsForPlanets () {
       
         itemsDiv.addEventListener("click", () => {
             document.querySelector(".itemboxes").append(itemsDiv);
-            //requestAddItem(userID, 5);
+            let toggledItemDiv = document.querySelector(".itemboxes").classList.toggle("inventoryWithItem");
+            localStorage.setItem("ItemsDiv", toggledItemDiv);
+            //ska egentligen vara userID > -1
+            if(userID == -1) {
+                let itemID = localStorage.getItem("itemID");
+                //requestAddItem(userID, itemID);
+                console.log("hej");
+            }
+            
         })
     })
 }
