@@ -65,7 +65,7 @@ function spaceShip() {
     spaceShipBackground.classList.add("spaceShipBackground");
     document.querySelector("main").append(spaceShipBackground);
     document.getElementById("location").innerHTML = "Spaceship";
-    
+    blinking();
     makePlanets();
     backgrounds();
     //inventory();
@@ -132,6 +132,12 @@ function inventory(){
 }
 // GRUNDEN TILL JOYSTICK FUNCTIONEN
 function joystick() {
+
+     // RYMDEN DÄR ALLA PALANETER FINNS
+     let space = document.createElement("div");
+     document.querySelector("main").append(space);
+     space.classList.add("space");
+ 
     let joystick = document.createElement("div");
     let goLeft = document.createElement("div");
     let goRight = document.createElement("div");
@@ -140,15 +146,11 @@ function joystick() {
     goLeft.classList.add("goLeft");
     goRight.classList.add("goRight");
 
-    document.querySelector(".spaceShipBackground").append(joystick);
-    document.querySelector(".spaceShipBackground").append(goLeft);
-    document.querySelector(".spaceShipBackground").append(goRight);
+    document.querySelector("main").append(joystick);
+    document.querySelector("main").append(goLeft);
+    document.querySelector("main").append(goRight);
 
-    // RYMDEN DÄR ALLA PALANETER FINNS
-    let space = document.createElement("div");
-    document.querySelector("main").append(space);
-    space.classList.add("space");
-
+   
     // NÄR MAN KLICKAR PÅ JOYSTICKEN
     goLeft.addEventListener("click", function(e) {
         joystick.classList.toggle("joystickLeft");
@@ -178,4 +180,18 @@ function joystick() {
         }
     });
 }
-  
+
+function blinking() {
+    let blink1 = document.createElement("div");
+    blink1.classList.add("blink1");
+    document.querySelector(".spaceShipBackground").append(blink1);
+
+    let blink2 = document.createElement("div");
+    blink2.classList.add("blink2");
+    document.querySelector(".spaceShipBackground").append(blink2);
+
+    let blink3 = document.createElement("div");
+    blink3.classList.add("blink3");
+    document.querySelector(".spaceShipBackground").append(blink3);
+
+}
