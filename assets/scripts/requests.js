@@ -67,18 +67,7 @@ function requestDeleteUser(userID){
 }
 //requestDeleteUser(4);
 
-let formWrapper = document.createElement("div");
-formWrapper.innerHTML = 
-    `
-    <form id="login-user" action="createUser.php "method="POST" enctype="multipart/form-data">
-        <input type="file" name="image">
-        <input type="text" placeholder="nameTag" name="nameTag">
-        <input type="text" placeholder="password" name="password">
-        <button id="button">Upload</button>
-    </form>
-    `;
 
-document.querySelector("main").append(formWrapper);
 
 //LOGIN USER
 const form = document.getElementById("registerForm");

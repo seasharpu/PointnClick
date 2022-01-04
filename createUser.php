@@ -3,6 +3,9 @@ session_start();
 require_once "functions.php";
 $rqstMethod = $_SERVER["REQUEST_METHOD"];
 
+$data = file_get_contents("php://input");
+$rqstData = json_decode($data, true);
+
 if ($rqstMethod === "POST"){
     
            //skapar en NY användare
@@ -56,15 +59,20 @@ if ($rqstMethod === "POST"){
             $time = (string) time(); // Klockslaget i millisekunder
             // Skapa ett unikt filnamn med TID + FILNAMN
             $uniqueFilename = sha1("$time$filename");
-            // Skickar iväg bilden till vår mapp"
-            move_uploaded_file($tempname, "api/profileImages/$uniqueFilename.$ext");
+            //sökväg för mappen
+            $path = 'api/profileImages/';
 
+            //Skickar bilden till vår mapp
+            move_uploaded_file($tempname, $path . "$uniqueFilename.$ext");
             //när all info har kikats genom och kontrollerats, ska 
             //det läggas till i databasen. 
 
             //id till ny användare.
             $allUsers = loadJson("api/user.json");
             $highestID = theHighestId($allUsers);
+
+            // DB BACKUP
+            saveJson("api/userBackup.json", $allUsers);
 
             //ny array med nycklar.
             $newUser = [];
@@ -76,8 +84,12 @@ if ($rqstMethod === "POST"){
 
             $found = false;
 
-            foreach ($users as $key => $user) {
-                if ($user["nameTag"] == $rqstData["nameTag"] && $user["password"] == $rqstData["password"]) {
+            //sparar i array, och sen i json-fil.
+            array_push($allUsers, $newUser);
+            saveJson("api/user.json", $allUsers);
+
+            foreach ($allUsers as $key => $user) {
+                if ($user["nameTag"] == $_POST["nameTag"] && $user["password"] == $_POST["password"]) {
                     $_SESSION["userID"] = $user["id"];
                     $_SESSION["nameTag"] = $user["nameTag"];
                     $_SESSION["isLoggedIn"] = true;
@@ -89,11 +101,6 @@ if ($rqstMethod === "POST"){
             } else {
                 statusCode(463);
             }
-
-            //sparar i array, och sen i json-fil.
-            array_push($allUsers, $newUser);
-            saveJson("api/user.json", $allUsers);
-            //statusCode(["User is added."]);
             header("Location: index.php");
             exit();
         } else {
@@ -101,6 +108,4 @@ if ($rqstMethod === "POST"){
             exit();
         }
 }
-
 ?>
-
