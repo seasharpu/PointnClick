@@ -16,7 +16,7 @@
   }
   
   .registerDiv {
-    background-color: var(--mainButtonC);
+    
     grid-row: 1/ span 2;
     display: flex;
     justify-content: center;
@@ -24,7 +24,7 @@
   }
   
   .avatarWrapperDiv{
-    background-color: var(--mainButtonC);
+    
     grid-row: 1/ span 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -89,9 +89,29 @@
     display: flex;
     justify-content: center;
     margin: 20px;
+    color: var(--mainButtonC);
   }
 
   button {
     width: 100%;
     height: 50px;
+    text-decoration: none;
+    background-color: var(--mainButtonC);
+    border: 2px solid var(--buttonBorderC);
+  }
+
+  #uploadepicture {
+    display: flex;
+    justify-content: center;
+  }
+
+  
+
+  input[type="file"]{
+    display: none;
+  }
+
+  label {
+    color: white;
+    background-color: var(--mainButtonC);
   }

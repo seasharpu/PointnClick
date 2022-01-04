@@ -38,14 +38,19 @@ function MakerRegisterPage() {
 
     formDiv.innerHTML = `
         <form id="registerForm" action="/createUser.php" method="POST" enctype="multipart/form-data">
-            <input type="file" name="image">
+            <div id="uploadpicture">
+                <input type="file" name="image" id="file">
+                <label for="file">
+                    Ladda upp en profilbild
+                </label>
+            </div>
             <h2> NameTag</h2>
             <input type="text" placeholder="NameTag" name="nameTag">
             <h2>Password</h2>
             <input type="text" placeholder="Password" name="password">
             <div id="buttonsDiv">
-            <button type"submit">Start Exploring</button>
-            <button>Cancel</button>
+                <button type"submit">Start Exploring</button>
+                <button>Cancel</button>
             </div>
         </form>
     `
