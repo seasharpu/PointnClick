@@ -43,4 +43,4 @@ function makeStartPage() {
     signUpButton.innerHTML = "Sign in";
 }
 
-makeStartPage(); 
+makeStartPage(); makeStartPage(); 
