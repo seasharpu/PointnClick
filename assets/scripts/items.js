@@ -30,10 +30,17 @@ async function fetchItemsForPlanets () {
         });
 
         itemsDiv.addEventListener("click", () => {
+<<<<<<< Updated upstream
             document.querySelector(".itemboxes").append(itemsDiv);
             if(document.querySelector(".itemboxes").contains(itemsDiv)){        
                 localStorage.setItem("itemInventory", inventoryImage);
                    //ska egentligen vara userID > -1
+=======
+            let itemboxes = document.querySelector(".itemboxes")
+            itemboxes.append(itemsDiv);
+            localStorage.setItem("ItemsDiv", JSON.stringify(itemboxes));
+            //ska egentligen vara userID > -1
+>>>>>>> Stashed changes
             if(userID == -1) {
                 let itemID = localStorage.getItem("itemID");
                 //requestAddItem(userID, itemID);
