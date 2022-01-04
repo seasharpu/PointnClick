@@ -81,7 +81,7 @@ formWrapper.innerHTML =
 document.querySelector("main").append(formWrapper);
 
 //LOGIN USER
-const form = document.getElementById("login-user");
+const form = document.getElementById("registerForm");
 form.addEventListener("button", (event) => {
     event.preventDefault();
     const data = new FormData(form);

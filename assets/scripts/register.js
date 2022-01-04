@@ -37,10 +37,11 @@ function MakerRegisterPage() {
     registerDiv.append(formDiv);
 
     formDiv.innerHTML = `
-        <form id="registerForm" action="/createUser.php" method="get">
+        <form id="registerForm" action="/createUser.php" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image">
             <input type="text" placeholder="NameTag" name="nameTag">
             <input type="text" placeholder="Password" name="password">
-            <button>Start Exploring</button>
+            <button type"submit">Start Exploring</button>
             <button>Cancel</button>
         </form>
     `
