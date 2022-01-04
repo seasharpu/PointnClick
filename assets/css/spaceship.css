@@ -14,24 +14,29 @@
     align-items: center;
     justify-content: center;
     background-image: url('/assets/images/spaceship.png');
-    z-index: 2;
-    
+    z-index: 100;
+}
+.backgroundDiv {
+    background-color: var(--backgroundC);
+    height:  var(--screenHeight);
+    width: 1445px;
+    z-index: 1;
 }
 .rightBlack {
     position: absolute;
     background-color: black;
     right: 0px;
     height: 100%;
-    width: 235px;
-    z-index: 2;
+    width: 512.5px;
+    z-index: 10;
 }
 .leftBlack {
     position: absolute;
     background-color: black;
     left: 0px;
     height: 100%;
-    width: 235px;
-    z-index: 2;
+    width:  512.5px;
+    z-index: 10;
 }
 /*En div som bytar bakrund beroende på vilken planet man är på*/
 .background {
@@ -45,24 +50,28 @@
 /*Denna diven är alla planeter placerade i*/
 .space {
     height: var(--screenHeight);
-    width: 2500px;
+    width: 1450px;
     position: absolute;
-    left: 0;
-    right: 0;
-    transition: left 2s ease, right 2s;
+    left: -20px;
+    right: 0px;
+    transition: 2s;
+    transition-property: left, right;
     background-image: url(/assets/images/space_background.png)
     ;
     z-index: 1;
+    
 }
 .spaceLeft {
   position: absolute;
-  right: 2000px;
-  left: 500px;
+  right: -100px;
+  left: 200px;
+  width: 1450px;
 }
 .spaceRight {
   position: absolute;
-  left: 2000px;
-  right: 50px;
+  left: -350px;
+  right: 300px;
+  width: 1450px;
 }
 /*När man hovrar över en planet*/
 .space > div:hover {
@@ -74,37 +83,56 @@
 .joystick {
   position: absolute;
   background-image: url(/assets/images/joystick/joystick_middle.png);
-  bottom: 50px;
+  bottom: 130px;
+  left: 655px;
+  right: 655px;
   height: 100px;
   width: 100px;
+  z-index: 30;
 }
 .joystickLeft {
   background-image: url(/assets/images/joystick/joystick_left.png);
-  z-index: 100;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 130px;
+  left: 655px;
+  right: 655px;
+  height: 100px;
+  width: 100px;
+  z-index: 30;
 }
 .joystickRight {
   background-image: url(/assets/images/joystick/joystick_right.png);
-  z-index: 100;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 130px;
+  left: 655px;
+  right: 655px;
+  height: 100px;
+  width: 100px;
+  z-index: 30;
 }
 .goLeft {
   height: 50px;
   width: 50px;
   position: absolute;
-  bottom: 50px;
-  left: 430px;
+  bottom: 130px;
+  left: 590px;
   background-image: url(/assets/images/joystick/g21493.png);
   background-size: contain;
   cursor: pointer;
+  z-index: 30;
 }
 .goRight {
   height: 50px;
   width: 50px;
   position: absolute;
-  bottom: 50px;
-  right: 430px;
+  bottom: 130px;
+  right: 590px;
   background-image: url(/assets/images/joystick/g23185.png);
   background-size: contain;
   cursor: pointer;
+  z-index: 30;
 }
 
 /*Tillbaka knappen till spaceship*/
@@ -114,9 +142,9 @@
   background-color: rgb(121, 7, 7);
   color: white;
 
-   /* position: relative;
+   position: relative;
     top: 590px;
-    left: 10px;*/
+    left: 10px;
 
   display: flex;
   align-items: center;
@@ -129,8 +157,9 @@
   border-bottom: black 1px solid;
   background-color: rgba(128, 128, 128, 0.582);
   position: relative;
-  bottom: 265px;
-  left: 430px;
+  bottom: 565px;
+  right: -430px;
+  z-index: 10;
 }
 .chest {
   height: 100px;
@@ -167,13 +196,13 @@
 }
 /*PLANETERNA SOM MAN KLICKAR PÅ *!warning!* (Ska läggas till bilder istället för runda divar)*/
 .underwaterPlanet {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     background-image: url(/assets/images/planets/neptunlikeplanet.png);
     background-size: contain;
     border-radius: 50%;
     position: absolute;
-    left: 100px;
+    left: 45px;
     top: 100px;
     transition: 1s;
 }
@@ -207,7 +236,7 @@
     border-radius: 50%;
     position: absolute;
     left: 200px;
-    top: 280px;
+    top: 380px;
     transition: 2s;
 }
 .desertPlanet {
@@ -217,7 +246,7 @@
     background-size: contain;
     border-radius: 50%;
     position: absolute;
-    left: 1100px;
+    left: 1300px;
     top: 270px;
     transition: 2s;
 }
@@ -231,6 +260,7 @@
     left: 450px;
     top: 300px;
     transition: 2s;
+    
 }
 
 .dialogueBubble {

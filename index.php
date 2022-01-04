@@ -22,8 +22,10 @@
     <title>Saving Laika</title>
 </head>
     <body>
+       
         <header id="location">
         </header>
+       
         <main id="hidden">
             <?php
             //kollar om vi har en inloggad användare.
@@ -43,8 +45,10 @@
             <script src="/assets/scripts/spaceship.js"></script>
             <script src="assets\scripts\statuscodemessages.js"></script>
         </main>
+       
         <footer>
             <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
         </footer>
+        
     </body>
 </html>

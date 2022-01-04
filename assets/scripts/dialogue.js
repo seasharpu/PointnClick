@@ -14,6 +14,6 @@ function whichDialogue (){
         })
     })
 }
-whichDialogue();
+//whichDialogue();
 
 
