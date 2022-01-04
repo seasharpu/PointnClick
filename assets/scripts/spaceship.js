@@ -66,8 +66,6 @@ function spaceShip() {
     document.getElementById("location").innerHTML = "Spaceship";
     
     makePlanets();
-    //backgrounds();
-    //inventory();
     joystick(); 
 }
 
@@ -89,7 +87,7 @@ function backToSpaceship() {
 
     backToSpaceship.addEventListener("click", function() {
         document.querySelector(".background").style.display = "none";
-        makePlanets();
+        //makePlanets();
         spaceShip();
     });
 }
