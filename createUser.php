@@ -62,7 +62,7 @@ if ($rqstMethod === "POST"){
             //sökväg för mappen
             $path = __DIR__ .'/api/profileImages/';
 
-            // Skickar bilden till vår mapp
+            //Skickar bilden till vår mapp
             move_uploaded_file($tempname, $path . "$uniqueFilename.$ext");
             //när all info har kikats genom och kontrollerats, ska 
             //det läggas till i databasen. 
