@@ -44,7 +44,7 @@ async function makePlanets(){
             backToSpaceship(); 
             fetchItemsForPlanets();
             whichDialogue();
-            makeInventoryboxes();
+        
             
         })
     });
@@ -107,23 +107,30 @@ function inventory(){
     inventory.append(inventoryObjects);
     document.querySelector("main").append(inventory);
 
-    chest.addEventListener("click", function(e) {
+    chest.addEventListener("click", function() {
         chest.classList.toggle("chestOpen");
-
+       
         if(inventoryObjects.classList.contains("inventoryObjectsHidden")) {
             inventoryObjects.classList.remove("inventoryObjectsHidden");
             inventoryObjects.classList.add("inventoryObjectsOpen");
-            /*inventoryObjects.innerHTML = `  <div class="itemboxes"></div>
+            inventoryObjects.innerHTML = `  <div class="itemboxes"></div>
                                             <div class="itemboxes"></div>
                                             <div class="itemboxes"></div>
                                             <div class="itemboxes"></div>
                                             <div class="itemboxes"></div>
-                                            <div class="itemboxes"></div>`;*/
+                                            <div class="itemboxes"></div>`;
+            
+            let itemboxesArr = document.querySelectorAll(".itemboxes");
+            for(let i=0; i < itemboxesArr.length; i++){
+                inventoryimg.forEach(img => {
+                    itemboxesArr[i].innerHTML = `<img src= "${img}">`;
+                })
+            }
                                             
         } else if (inventoryObjects.classList.contains("inventoryObjectsOpen")){
             inventoryObjects.classList.remove("inventoryObjectsOpen");
             inventoryObjects.classList.add("inventoryObjectsHidden");
-            //inventoryObjects.innerHTML ="";
+            inventoryObjects.innerHTML ="";
         }
 
     });
