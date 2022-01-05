@@ -5,7 +5,7 @@ let currentID = [];
 // *FUNKTIONEN SOM BEHÖVS VARA IGÅNG FÖR ATT SE NÅGOT*
 spaceShip();
 backgrounds();
-backgroundDiv();
+
 
 //hämtar infon om planeterna från planet.json
 async function fetchPlanetNamesandIDs () {
@@ -31,7 +31,7 @@ async function makePlanets(){
             document.querySelector(".background").style.position = "static";
             document.getElementById("location").innerHTML = element.name;
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
-            
+            document.querySelector(".background").style.pointerEvents = `all`;
             currentID.push(element.id);
 
             if (element.id == 6){
@@ -65,6 +65,12 @@ function spaceShip() {
     spaceShipBackground.classList.add("spaceShipBackground");
     document.querySelector("main").append(spaceShipBackground);
     document.getElementById("location").innerHTML = "Spaceship";
+
+    var spaceMusic = new Audio('assets/audiofiles/slow-travel.wav');
+    spaceMusic.play();
+
+    spaceMusic.loop = true;
+
     blinking();
     makePlanets();
     backgrounds();
@@ -134,23 +140,26 @@ function inventory(){
 function joystick() {
 
      // RYMDEN DÄR ALLA PALANETER FINNS
-     let space = document.createElement("div");
-     document.querySelector("main").append(space);
-     space.classList.add("space");
- 
-    let joystick = document.createElement("div");
+    let space = document.createElement("div");
+    document.querySelector("main").append(space);
+    space.classList.add("space");
+    
+    let joystickDiv = document.createElement("div");
+    joystickDiv.classList.add("joystickDiv");
+    document.querySelector("main").append(joystickDiv);
+
     let goLeft = document.createElement("div");
+    let joystick = document.createElement("div");
     let goRight = document.createElement("div");
 
-    joystick.classList.add("joystick");
     goLeft.classList.add("goLeft");
+    joystick.classList.add("joystick");
     goRight.classList.add("goRight");
 
-    document.querySelector("main").append(joystick);
-    document.querySelector("main").append(goLeft);
-    document.querySelector("main").append(goRight);
+    document.querySelector(".joystickDiv").append(goLeft);
+    document.querySelector(".joystickDiv").append(joystick);
+    document.querySelector(".joystickDiv").append(goRight);
 
-   
     // NÄR MAN KLICKAR PÅ JOYSTICKEN
     goLeft.addEventListener("click", function(e) {
         joystick.classList.toggle("joystickLeft");
@@ -193,5 +202,9 @@ function blinking() {
     let blink3 = document.createElement("div");
     blink3.classList.add("blink3");
     document.querySelector(".spaceShipBackground").append(blink3);
+
+    let blink4 = document.createElement("div");
+    blink4.classList.add("blink4");
+    document.querySelector(".spaceShipBackground").append(blink4);
 
 }
