@@ -14,7 +14,7 @@
             "name": "desertPlanet",
             "NPC": {
                 "name": "",
-                "dialogue": ["desertPlanet1","desertPlanet2","desertPlanet3","desertPlanet4","desertPlanet5"]
+                "dialogue": ["Greetings, traveler. What brings you do this desert planet?","While i wondered the desert i saw equipment suited for underwater planets. A bit strange considering theres no water here","Farewell traveler and good luck"]
             },
             "itemOnGround":2,
             "backgroundImage": "assets/images/tiledesert.png"
