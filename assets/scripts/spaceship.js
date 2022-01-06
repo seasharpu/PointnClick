@@ -32,6 +32,7 @@ async function makePlanets(){
             document.getElementById("location").innerHTML = element.name;
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
             document.querySelector(".background").style.pointerEvents = `all`;
+            document.querySelector(".joystickDiv").style.display = "none";
             currentID.push(element.id);
 
             if (element.id == 6){
@@ -93,7 +94,7 @@ function backToSpaceship() {
     let backToSpaceship = document.createElement("div");
     backToSpaceship.classList.add("backToSpaceship");
     backToSpaceship.innerHTML = "BACK TO SPACESHIP"
-    document.querySelector(".joystickDiv").append(backToSpaceship);
+    document.querySelector(".background").append(backToSpaceship);
 
     backToSpaceship.addEventListener("click", function() {
         document.querySelector(".background").style.display = "none";
