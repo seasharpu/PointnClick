@@ -16,10 +16,11 @@
     <link rel="stylesheet" href="assets/css/spaceship.css">
     <link rel="stylesheet" href="assets/css/tutorial.css">
     <link rel="stylesheet" href="assets/css/water.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="shortcut icon" type="image/jpg" href="Favicon_Image_Location" />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@800&family=DotGothic16&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
     <title>Saving Laika</title>
 </head>
 
