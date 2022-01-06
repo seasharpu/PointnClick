@@ -26,14 +26,14 @@ header("Access-Control-Allow-Origin: *");
 //och när vi behöver klla om någon är inloggad
 if ($contentType == "application/json") {
 
-    if (isset($_GET["error"])) {
-        $errorCode = $_GET["error"];
+    if (isset($_GET["id"])) {
+        $errorCode = $_GET["id"];
         if ($errorCode == 210) {
             statusCode(210);
         } else if ($errorCode == 463) {
             statusCode(436);
         } else if ($errorCode == 464) {
-            statusCode(436);
+            statusCode(464);
         }
     }
 
