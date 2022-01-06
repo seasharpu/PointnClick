@@ -28,6 +28,8 @@ async function makePlanets(){
         document.querySelector(".space").append(planetDiv);
         
         planetDiv.addEventListener("click", ()=> {
+            loadingDivPlanet();
+
             document.querySelector(".background").style.position = "static";
             document.getElementById("location").innerHTML = element.name;
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
@@ -97,9 +99,13 @@ function backToSpaceship() {
     document.querySelector(".background").append(backToSpaceship);
 
     backToSpaceship.addEventListener("click", function() {
-        document.querySelector(".background").style.display = "none";
-        makePlanets();
-        spaceShip();
+        // document.querySelector(".background").style.display = "none";
+        loadingDivSpaceship();
+
+        setTimeout(() => {
+            makePlanets();
+            spaceShip();  
+        }, 2000);
     });
 }
 

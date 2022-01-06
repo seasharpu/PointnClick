@@ -135,6 +135,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
 }
 .ldWrapperShip {
   height: var(--screenHeight);
@@ -146,6 +147,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
 }
 
 #travelingText {

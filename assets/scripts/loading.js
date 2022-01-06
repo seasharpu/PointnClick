@@ -1,8 +1,6 @@
 "use strict";
 
 function loadingDivPlanet(){
-    let loadingDivMain = document.getElementById("hidden");
-    loadingDivMain.innerHTML = "";
 
     let loadingDivWrapper = document.createElement("div");
     loadingDivWrapper.classList.add("ldWrapper");
@@ -12,12 +10,14 @@ function loadingDivPlanet(){
         <h2 id="travelingText">Traveling to planet</h2>
         <div id="spaceshipImgMoving"></div>
     `
-    loadingDivMain.append(loadingDivWrapper);
+    document.getElementById("hidden").append(loadingDivWrapper);
+
+    setTimeout(() => {
+        loadingDivWrapper.style.display = "none";
+    }, 2000);
 }
 
 function loadingDivSpaceship(){
-    let loadingDivMain = document.getElementById("hidden");
-    loadingDivMain.innerHTML = "";
 
     let loadingDivWrapper = document.createElement("div");
     loadingDivWrapper.classList.add("ldWrapperShip");
@@ -27,6 +27,10 @@ function loadingDivSpaceship(){
         <h2 id="travelingText">Beaming up to spaceship</h2>
         <div id="beamgif"></div>
     `
-    loadingDivMain.append(loadingDivWrapper);
+    document.getElementById("hidden").append(loadingDivWrapper);
+
+    setTimeout(() => {
+        loadingDivWrapper.style.display = "none";
+    }, 2000);
 }
 
