@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="assets/css/water.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="Favicon_Image_Location" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
     <title>Saving Laika</title>
 </head>
 
@@ -27,30 +28,30 @@
     </header>
     <wrapper>
         <div class="leftBlack"></div>
-    <main id="hidden">
-        <?php
-        //kollar om vi har en inloggad användare.
-        if (isset($_SESSION["id"], $_SESSION["nameTag"])) {
-            $id = $_SESSION["id"];
-            $nameTag = $_SESSION["nameTag"];
-        } else {
-            $id = -1;
-            $nameTag = "";
-        }
-        echo "<script>const userID = $id</script>";
-        echo "<script>const userNameTag = $nameTag</script>";
-        ?>
-        <script src="/assets/scripts/requests.js"></script>
-        <script src="/assets/scripts/startPage.js"></script>
-        <script src="/assets/scripts/tutorial.js"></script>
-        <script src="/assets/scripts/spaceship.js"></script>
-        <script src="/assets/scripts/dialogue.js"></script>
-        <script src="assets\scripts\statuscodemessages.js"></script>
-        <script src="/assets/scripts/pluto.js"></script>
-        <script src="/assets/scripts/items.js"></script>
-        <script src="/assets/scripts/loading.js"></script>
-    </main>
-    <div class="rightBlack"></div>
+        <main id="hidden">
+            <?php
+            //kollar om vi har en inloggad användare.
+            if (isset($_SESSION["id"], $_SESSION["nameTag"])) {
+                $id = $_SESSION["id"];
+                $nameTag = $_SESSION["nameTag"];
+            } else {
+                $id = -1;
+                $nameTag = "";
+            }
+            echo "<script>const userID = $id</script>";
+            echo "<script>const userNameTag = $nameTag</script>";
+            ?>
+            <script src="/assets/scripts/requests.js"></script>
+            <script src="/assets/scripts/startPage.js"></script>
+            <script src="/assets/scripts/tutorial.js"></script>
+            <script src="/assets/scripts/spaceship.js"></script>
+            <script src="/assets/scripts/dialogue.js"></script>
+            <script src="assets\scripts\statuscodemessages.js"></script>
+            <script src="/assets/scripts/pluto.js"></script>
+            <script src="/assets/scripts/items.js"></script>
+            <script src="/assets/scripts/loading.js"></script>
+        </main>
+        <div class="rightBlack"></div>
     </wrapper>
     <footer>
         <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
