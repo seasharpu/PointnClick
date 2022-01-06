@@ -60,21 +60,17 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  z-index: 1000;
   position: relative;
-  
 }
 
 footer {
   width: var(--screenWidth);
   height: 66px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: var(--mainFont);
   color: var(--mainTextC);
-  z-index: 30;
   background-color: black;
 }
 .statusCodeDiv {
