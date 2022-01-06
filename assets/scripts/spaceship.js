@@ -46,7 +46,7 @@ async function makePlanets(){
             document.querySelector(".background").append(inventory());
             backToSpaceship(); 
             // fetchItemsForPlanets();
-            whichDialogue();
+            // whichDialogue();
             
         })
     });
