@@ -45,7 +45,7 @@ async function makePlanets(){
             cleanBackground();
             document.querySelector(".background").append(inventory());
             backToSpaceship(); 
-            fetchItemsForPlanets();
+            // fetchItemsForPlanets();
             whichDialogue();
             
         })

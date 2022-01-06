@@ -154,11 +154,22 @@ function createCodePanel(){
     });
 }
 
+//Skapar den lilla lådan med kodordningen
 function createBox(){
     let box = document.createElement("div");
     box.classList.add("cardboardBox");
-
     document.querySelector(".background").append(box);
 
+    let notepad = document.createElement("div");
+    notepad.classList.add("notepad");
+    document.querySelector(".background").append(notepad);
+
+    box.addEventListener("click",() => {
+        if (notepad.classList.contains("notepadBig")){
+            notepad.classList.remove("notepadBig");
+        } else {
+            notepad.classList.add("notepadBig");
+        }
+    });
 }
 
