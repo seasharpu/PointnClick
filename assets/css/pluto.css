@@ -54,7 +54,7 @@
   flex-grow: 1;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
   transition: calc(var(--transitionTime) - 2s);
@@ -139,7 +139,7 @@
 
   border: solid 5px #808080;
 
-  margin: -350px -150px 0px 175px;
+  margin: -60px -75px 0px 200px;
 }
 
 .codeScreenSize {
@@ -181,4 +181,18 @@
 
 .panelTitleSize {
   font-size: 30px;
+}
+
+.cardboardBox {
+  height: 50px;
+  width: 50px;
+
+  background-image: url(/assets/images/box.png);
+  background-size: cover;
+
+  grid-row: 2;
+  grid-column: 2;
+
+  margin-left: 20px;
+  margin-top: 240px;
 }
