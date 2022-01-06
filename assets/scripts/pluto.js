@@ -46,12 +46,14 @@ function createCodePanel(){
                 let numberDiv = document.createElement("div"); 
                 let display = codeinputnumbers.innerHTML;
                 numberDiv.append(display); 
-                codeinputnumbers.innerHTML = `${display + numberString}`;
+                codeinputnumbers.innerHTML = `${display}<p class="displayNumberDiv">${numberString}</p>`;
                 
-                if (codeinputnumbers.innerHTML.length > 6) {
+                let displayNumberDiv = document.querySelectorAll(".displayNumberDiv");
+
+                if (displayNumberDiv.length > 6) {
                     console.log("too long");
                     codeinputnumbers.innerHTML = "";
-                    codeinputnumbers.innerHTML ="Password is too long!";
+                    codeinputnumbers.innerHTML = `<p>Password is too long!</p>`;
                 }
 
             })
@@ -79,7 +81,7 @@ function createCodePanel(){
             }else {
                 console.log("not right")
                 document.querySelector(".codeinputnumbers").innerHTML = "";
-                document.querySelector(".codeinputnumbers").innerHTML ="This is not the right code!";
+                document.querySelector(".codeinputnumbers").innerHTML = `<p>This is not the right code!</p>`;
 
             }
         })
@@ -151,3 +153,12 @@ function createCodePanel(){
         }
     });
 }
+
+function createBox(){
+    let box = document.createElement("div");
+    box.classList.add("cardboardBox");
+
+    document.querySelector(".background").append(box);
+
+}
+

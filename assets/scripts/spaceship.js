@@ -36,6 +36,7 @@ async function makePlanets(){
 
             if (element.id == 6){
                 createCodePanel();
+                createBox();
             }
 
             //document.querySelector(".background").style.zIndex = 100;
