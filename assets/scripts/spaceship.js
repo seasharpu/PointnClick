@@ -43,6 +43,7 @@ async function makePlanets(){
             document.querySelector(".background").append(inventory());
             backToSpaceship(); 
             fetchItemsForPlanets();
+            userAnditemsID();
             whichDialogue();
         
             
@@ -113,29 +114,34 @@ function inventory(){
         if(inventoryObjects.classList.contains("inventoryObjectsHidden")) {
             inventoryObjects.classList.remove("inventoryObjectsHidden");
             inventoryObjects.classList.add("inventoryObjectsOpen");
-            inventoryObjects.innerHTML = `  <div class="itemboxes"></div>
-                                            <div class="itemboxes"></div>
-                                            <div class="itemboxes"></div>
-                                            <div class="itemboxes"></div>
-                                            <div class="itemboxes"></div>
-                                            <div class="itemboxes"></div>`;
+            inventoryObjects.innerHTML = `  <div class="itemboxes1"></div>
+                                            <div class="itemboxes2"></div>
+                                            <div class="itemboxes3"></div>
+                                            <div class="itemboxes4"></div>
+                                            <div class="itemboxes5"></div>
+                                            <div class="itemboxes6"></div>`;
+
+                                             
             
-            let itemboxesArr = document.querySelectorAll(".itemboxes");
-            for(let i=0; i < itemboxesArr.length; i++){
-                inventoryimg.forEach(img => {
-                    itemboxesArr[i].innerHTML = `<img src= "${img}">`;
-                })
-            }
+            
+         
+
+                //let itemboxesArr = document.querySelectorAll(".itemboxes");
+                for(let i = 0; i <= inventoryimg.length; i++){
+                   document.querySelector(`itemboxes${i}`);
+                }
+            
                                             
         } else if (inventoryObjects.classList.contains("inventoryObjectsOpen")){
             inventoryObjects.classList.remove("inventoryObjectsOpen");
             inventoryObjects.classList.add("inventoryObjectsHidden");
-            inventoryObjects.innerHTML ="";
+            //inventoryObjects.innerHTML ="";
         }
 
     });
     return inventory;
 }
+
 // GRUNDEN TILL JOYSTICK FUNCTIONEN
 function joystick() {
     let joystick = document.createElement("div");

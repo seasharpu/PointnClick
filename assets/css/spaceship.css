@@ -274,3 +274,7 @@
 .itemboxes {
     background-color: white;
 }
+
+.itemClicked {
+    display: none;
+}

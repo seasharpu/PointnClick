@@ -13,7 +13,7 @@ async function fetchitems(){
     return itemData;
 }
 
-async function userControl(){
+/*async function userControl(){
     const userID = 2;
     let users = await fetchUser();
     let itemData = await fetchitems();
@@ -31,14 +31,19 @@ async function userControl(){
             })     
         }
     })
-}
+}*/
+
 let inventoryimg = [];
-console.log(inventoryimg);
+let currentUserIDInventory = [];
+let items = [];
 //hämtar items från items.json
 async function fetchItemsForPlanets () {
     const userID = 2;
     let users = await fetchUser();
     let itemData = await fetchitems();
+
+    items.push(itemData);
+    //console.log(document.querySelector(".inventoryObjectsOpen"));
    
     currentID.forEach(currentid => {
         itemData.forEach(item => {
@@ -46,8 +51,8 @@ async function fetchItemsForPlanets () {
                 users.forEach(user => {
                     if(userID === user.id) {
                         let currentUserInventory = user.inventory;
+                        currentUserIDInventory.push(user.inventory);
                         if(currentUserInventory.includes(item.id) === false) {
-                         
                             let itemsDiv = document.createElement("div");
                             itemsDiv.classList.add("planetsItem");
                             document.querySelector(".background").prepend(itemsDiv);
@@ -55,9 +60,23 @@ async function fetchItemsForPlanets () {
                            
                             itemsDiv.addEventListener("click", () => {
                                 itemsDiv.innerHTML = "";
-                                inventoryimg.push(item.image);
-        
-                                document.querySelector(".itemboxes").append(itemsDiv);
+                                //document.querySelector(".planetsItem").classList.add("itemClicked");
+                                //document.querySelector(".itemboxes").append(itemsDiv);
+                                //inventoryimg.push(item.image);
+
+                                /*let itemboxesArr = document.querySelectorAll(".itemboxes");
+                                for(let i = 0; i < itemboxesArr.length; i++) {
+                                    //let oneitembox = [i]; 
+                                    //console.log(oneitembox);
+                                    document.querySelector(`.itemboxes${i}`).append(item.image);
+                                    console.log(itemboxesArr[i]);
+                                }*/
+                    
+                                /*if(document.querySelector(".itemboxes").contains(itemsDiv) === false) {
+                                    document.querySelector(".itemboxes").append(itemsDiv);
+
+                                }*/
+                                //document.querySelector(".itemboxes").append(itemsDiv);
                                 //document.querySelector(".itemboxes").classList.add(item.id);
                                 //requestAddItem(userID, item.id);
                             })
@@ -68,3 +87,19 @@ async function fetchItemsForPlanets () {
         });         
     })
 }
+
+async function userAnditemsID (){
+    console.log(items);
+    console.log(currentUserIDInventory);
+
+    currentUserIDInventory.forEach(userInventoryID => {
+        items.forEach(item => {
+            if(userInventoryID === item.id) {
+                console.log(item.id);
+                console.log(item.image);
+            }
+        })
+    })
+
+}
+
