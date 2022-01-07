@@ -1,7 +1,31 @@
 <?php session_start();
-require_once "functions.php"; ?>
+require_once "functions.php";
+
+if (isset($_GET["id"])) {
+    $errorCode = $_GET["id"];
+    if ($errorCode == 210) {
+        statusCode(210);
+    } else if ($errorCode == 463) {
+        statusCode(436);
+    } else if ($errorCode == 464) {
+        statusCode(464);
+    } else if ($errorCode == 468) {
+        statusCode(468);
+    } else if ($errorCode == 467) {
+        statusCode(467);
+    } else if ($errorCode == 464) {
+        statusCode(464);
+    } else if ($errorCode == 466) {
+        statusCode(466);
+    } else if ($errorCode == 465) {
+        statusCode(465);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
+
+
 
 <head>
     <meta charset="UTF-8">
@@ -37,27 +61,10 @@ require_once "functions.php"; ?>
             <?php
 
             require_once "functions.php";
-
-            if (isset($_GET["id"])) {
-                $errorCode = $_GET["id"];
-                if ($errorCode == 210) {
-                    statusCode(210);
-                } else if ($errorCode == 463) {
-                    statusCode(436);
-                } else if ($errorCode == 464) {
-                    statusCode(464);
-                } else if ($errorCode == 468) {
-                    statusCode(468);
-                } else if ($errorCode == 467) {
-                    statusCode(467);
-                } else if ($errorCode == 464) {
-                    statusCode(464);
-                } else if ($errorCode == 466) {
-                    statusCode(466);
-                } else if ($errorCode == 465) {
-                    statusCode(465);
-                }
+            if (file_exists("api/user.json")) {
+                echo '<div id="testare">tjenare</div>';
             }
+
             //kollar om vi har en inloggad användare.
             if (isset($_SESSION["id"], $_SESSION["nameTag"])) {
                 $id = $_SESSION["id"];
