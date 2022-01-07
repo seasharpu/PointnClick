@@ -45,7 +45,7 @@
             "name": "underwaterPlanet",
             "NPC": {
                 "name": "",
-                "dialogue": ["waterPlanet1","waterPlanet2","waterPlanet3","waterPlanet4","waterPlanet5"]
+                "dialogue": ["Hello, I am underwater.","Why did the star decide to take a vacation? It needed some space.","I dont even know what a... dog is?","Smell ya later!"]
             },
             "itemOnGround":3,
             "requiredItem":1,

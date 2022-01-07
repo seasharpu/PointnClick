@@ -197,8 +197,8 @@ function insideLaikasShip () {
     laikaTheDog.classList.add("laikaTheDog");
 
     document.querySelector(".background").append(laikasWrapper);
-    
     laikasWrapper.append(laikaTheDog);
+    laikaTheDog.style.backgroundImage = `url(./assets/images/watermelon.png)`;
 
     let creditsDiv = document.createElement("div");
     creditsDiv.classList.add("creditsDiv");
@@ -213,11 +213,28 @@ function insideLaikasShip () {
 
     laikaTheDog.addEventListener("click", () => {
         let laikasDialogueBubble = document.createElement("div");
+        laikasDialogueBubble.classList.add("laikasDialogueBubble");
         laikasDialogueBubble.style.backgroundImage = `url(./assets/images/talkbubble.png)`;
 
-        document.querySelector(".laikasWrapper").append(laikasDialogueBubble);
+        document.querySelector(".laikasWrapper").prepend(laikasDialogueBubble);
+        let fireworksgif = document.createElement("div");
+        fireworksgif.classList.add("fireworksgif");
+        fireworksgif.style.backgroundImage = `url(./assets/images/fireworks.gif)`;
+        document.querySelector(".background").append(fireworksgif);
+
+        setTimeout(() => {
+            popUpEndGame(); //lägga in ordentlig grej här
+            console.log("HEJ")
+        }, 5000);
     })
 
 
+
+}
+
+function popUpEndGame(){
+   let endDiv = document.createElement("div");
+   endDiv.innerHTML="THIS IS THE END";
+   document.querySelector(".background").append(endDiv);
 
 }
