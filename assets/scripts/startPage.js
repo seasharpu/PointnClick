@@ -44,10 +44,10 @@ function makeStartPage() {
     newPlayerButton.innerHTML = "New player";
     signUpButton.innerHTML = "Sign in";
     signUpButton.setAttribute("ID", "signInButton");
+    newPlayerButton.setAttribute("ID", "newPlayerButton");
 }
 
 makeStartPage();
-
 
 document.getElementById("signInButton").addEventListener("click", function () {
     let nametag = document.getElementById("nameTagInput").value;
@@ -56,3 +56,9 @@ document.getElementById("signInButton").addEventListener("click", function () {
     spaceShip();
     backgrounds();
 });
+
+document.getElementById("newPlayerButton").addEventListener("click", function () {
+    document.querySelector("#hidden").innerHTML = "";
+    MakerRegisterPage();
+});
+

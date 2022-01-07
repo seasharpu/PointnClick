@@ -99,7 +99,8 @@ if ($rqstMethod === "POST") {
         if (!$found) {
             header("Location: index.html?id=463");
         }
-        header("Location: index.php");
+        // $createdUser = true;
+        header("Location: index.php?createdUser=true");
         exit();
     } else {
         header("Location: index.html?id=464");

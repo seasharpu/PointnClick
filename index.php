@@ -32,7 +32,7 @@ require_once "functions.php"; ?>
     <header id="location">
     </header>
     <wrapper>
-        <div class="leftBlack"></div>
+        <!-- <div class="leftBlack"></div> -->
         <main id="hidden">
             <?php
 
@@ -65,15 +65,20 @@ require_once "functions.php"; ?>
             } else {
                 $id = -1;
                 $nameTag = "";
+                
+            }
+            if (isset($_GET["createdUser"])) {
+                echo "<script>const createdUser = true </script>";
+                echo "hejhej echo";
             }
             echo "<script>const userID = $id</script>";
             echo "<script>const userNameTag = $nameTag</script>";
             ?>
             <script src="/assets/scripts/requests.js"></script>
+            <script src="/assets/scripts/tutorial.js"></script>
             <script src="/assets/scripts/register.js"></script>
             <script src="/assets/scripts/startPage.js"></script>
-            <script src="/assets/scripts/tutorial.js"></script>
-            <!-- <script src="/assets/scripts/spaceship.js"></script> -->
+            <script src="/assets/scripts/spaceship.js"></script>
             <script src="/assets/scripts/dialogue.js"></script>
             <script src="assets\scripts\statuscodemessages.js"></script>
             <script src="/assets/scripts/pluto.js"></script>
@@ -81,7 +86,7 @@ require_once "functions.php"; ?>
             <script src="/assets/scripts/loading.js"></script>
             <script src="assets\scripts\formPlanet.js"></script>
         </main>
-        <div class="rightBlack"></div>
+        <!-- <div class="rightBlack"></div> -->
     </wrapper>
     <footer>
         <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>

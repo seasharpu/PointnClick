@@ -47,22 +47,29 @@ function MakerRegisterPage() {
             <h2>Password</h2>
             <input type="text" placeholder="Password" name="password">
             <div id="buttonsDiv">
-                <button type"submit">Start Exploring</button>
+                <button type"submit" id="startExploring">Start Exploring</button>
                 <button>Cancel</button>
             </div>
         </form>
     `
-
-
-
-
 }
 
-MakerRegisterPage();
+//MakerRegisterPage();
 
 //för så att bilden man laddar upp kan förhandsvisas
 function loadfile(event){
     var output=document.getElementById("prePic");
     document.getElementById("prePic").classList.add("show")
     output.src=URL.createObjectURL(event.target.files[0]);
+}
+
+// document.getElementById("startExploring").addEventListener("click", function () {
+
+
+// });
+
+if (createdUser == true){
+    document.querySelector("#hidden").innerHTML = "";
+    createTutorial();
+    console.log("hjejk");
 }

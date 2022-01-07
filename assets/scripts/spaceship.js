@@ -6,6 +6,12 @@ let currentID = [];
 // spaceShip();
 // backgrounds();
 
+// if (userID > 0) {
+//     spaceShip();
+//     backgrounds();
+// } else {
+//     makeStartPage();
+// }
 
 //hämtar infon om planeterna från planet.json
 async function fetchPlanetNamesandIDs () {

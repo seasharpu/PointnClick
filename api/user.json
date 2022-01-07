@@ -31,16 +31,16 @@
     },
     {
         "id": 5,
-        "nameTag": "Mercie",
-        "password": "mercie",
-        "profilePicture": "0f531c1a77f9751662dcba84201e4e650108577f.jpg",
+        "nameTag": "aaaa",
+        "password": "aaaa",
+        "profilePicture": "b00438e4324ad7d488490975a12509ec304c4acb.jpg",
         "inventory": []
     },
     {
         "id": 6,
-        "nameTag": "pelle",
-        "password": "test123",
-        "profilePicture": "eaf6d0cecf3a4feb7f0811d996790e60ea8c7be1.jpg",
+        "nameTag": "sdfgh",
+        "password": "sdrghj",
+        "profilePicture": "798dd32f73518c5056df0605aec435f4ff781c5d.jpg",
         "inventory": []
     }
 ]

@@ -1,5 +1,6 @@
 "use strict";
 
+
 //tar emot ID på inloggad användare samt ID på item som ska deletas.
 function requestDeleteItem(userID, inventoryID){
     const data = {"userID": userID, "inventoryID": inventoryID};
@@ -79,7 +80,7 @@ function requestDeleteUser(userID){
 // document.querySelector("main").append(formWrapper);
 
 //CREATE USER
-// const form = document.getElementById("create-user");
+// const form = document.getElementById("registerForm");
 // form.addEventListener("button", (event) => {
 //     event.preventDefault();
 //     const data = new FormData(form);
