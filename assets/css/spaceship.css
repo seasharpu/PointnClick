@@ -80,6 +80,8 @@ wrapper {
 }
 /*När man hovrar över en planet*/
 .space > div:hover {
+  height: 140px;
+  width: 140px;
   cursor: pointer;
 }
 /*JOYSTICK*/
@@ -223,19 +225,19 @@ wrapper {
 
 /*PLANETERNA SOM MAN KLICKAR PÅ *!warning!* (Ska läggas till bilder istället för runda divar)*/
 .underwaterPlanet {
-  height: 200px;
-  width: 200px;
+  height: 120px;
+  width: 120px;
   background-image: url(/assets/images/planets/neptunlikeplanet.png);
   background-size: contain;
   border-radius: 50%;
   position: absolute;
-  left: 45px;
-  top: 100px;
+  left: 60px;
+  top: 150px;
   transition: 1s;
 }
 .alienPlanet {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   background-image: url(/assets/images/planets/machine_world.png);
   background-size: contain;
   border-radius: 50%;
@@ -245,8 +247,8 @@ wrapper {
   transition: 2s;
 }
 .junglePlanet {
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   background-image: url(/assets/images/planets/exoplanet.png);
   background-size: contain;
   border-radius: 50%;
@@ -256,8 +258,8 @@ wrapper {
   transition: 2s;
 }
 .partyPlanet {
-  height: 65px;
-  width: 65px;
+  height: 105px;
+  width: 105px;
   background-image: url(/assets/images/planets/dryhotplanet.png);
   background-size: contain;
   border-radius: 50%;
@@ -278,8 +280,8 @@ wrapper {
   transition: 2s;
 }
 .plutoPlanet {
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   background-image: url(/assets/images/planets/sphereplanet.png);
   background-size: contain;
   border-radius: 50%;
@@ -299,6 +301,12 @@ wrapper {
   background-repeat: no-repeat;
 
   grid-column: 1;
+
+  /*  background-color: white;
+  width: 150px;
+  height: 70px;
+  position: absolute;
+  right: -50px; */
 }
 
 /*ITEMS CSS */

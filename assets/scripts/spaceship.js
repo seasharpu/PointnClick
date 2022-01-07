@@ -119,7 +119,7 @@ function backToSpaceship() {
         loadingDivSpaceship();
 
         setTimeout(() => {
-            makePlanets();
+            //makePlanets();
             spaceShip();  
         }, 2000);
     });

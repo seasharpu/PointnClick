@@ -20,7 +20,7 @@
     //463 - hittade inte användaren 
     //464 - något fält i skapa användare är tomt
     //465 - bild är för stor 
-    //466 - något error kom upp ui samband med _FILES[image][error]
+    //466 - något error kom upp i samband med _FILES[image][error]
     //467 - lösen vill ha mer än 3 tecken
     //468 - användare finns ej - vid inloggning
     //469 - fel inmatning vid inloggning
@@ -81,7 +81,7 @@ function getStatusCode(responseFromFetch){
             statusCodeDiv("User was not found. Huh?");
         };//kan inte hitta användaren
         if(responseFromFetch.status == 464){
-            statusCodeDiv("Please fill all the fields.");
+            statusCodeDiv("Please fill in all the fields.");
         };//fält i skapa användare är tomt
         if(responseFromFetch.status == 465){
             statusCodeDiv("Picture is too large! Try something smaller than 400kb.");
