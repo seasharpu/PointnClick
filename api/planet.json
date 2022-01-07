@@ -59,8 +59,5 @@
                 "dialogue": ["plutoPlanet1","plutoPlanet2","plutoPlanet3","plutoPlanet4","plutoPlanet5"]
             },
             "backgroundImage": "assets/images/Pluto_v1.png"
-        },
-        {
-            "laikaPassword": 12345
-        } 
+        }
     ]
