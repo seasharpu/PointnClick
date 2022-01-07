@@ -80,7 +80,7 @@ formWrapper.innerHTML =
     </form>
     `;
 
-document.querySelector("main").append(formWrapper);
+// document.querySelector("main").append(formWrapper);
 
 //CREATE USER
 const form = document.getElementById("create-user");
