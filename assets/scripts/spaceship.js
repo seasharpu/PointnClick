@@ -68,25 +68,33 @@ function backgrounds() {
     background.classList.add("background");
     document.querySelector("main").append(background);
 }
-  // MUSIK
-function music(){
-    var spaceMusic = new Audio('assets/audiofiles/slow-travel.wav');
-        spaceMusic.play(); 
+  // MUSIK OCH LJUDEFFEKTER
+const spaceMusic = new Audio('assets/audiofiles/slow-travel.wav');
+function spaceMusicPlay(){
+        spaceMusic.loop = true;
+        spaceMusic.load();
+        spaceMusic.play();
+    }   
+spaceMusicPlay();
+function clickSound() {
+    var click = new Audio('assets/audiofiles/click.wav');
+    click.play(); 
 }
-music();
 function spaceShip() {
+    
     document.getElementById("hidden").innerHTML = "";
     let spaceShipBackground = document.createElement("div");
     spaceShipBackground.classList.add("spaceShipBackground");
     document.querySelector("main").append(spaceShipBackground);
     document.getElementById("location").innerHTML = "Spaceship";
-
+    
     blinking();
     makePlanets();
     backgrounds();
     inventory();
     joystick(); 
     profile();
+    
 }
 
 // Profilbild och nameTag
@@ -182,6 +190,14 @@ function joystick() {
     blink6.classList.add("blink6");
     document.querySelector(".space").append(blink6);
 
+    let blink7 = document.createElement("div");
+    blink7.classList.add("blink7");
+    document.querySelector(".space").append(blink7);
+
+    let blink8 = document.createElement("div");
+    blink8.classList.add("blink8");
+    document.querySelector(".space").append(blink8);
+
     // Joysticken
     let joystickDiv = document.createElement("div");
     joystickDiv.classList.add("joystickDiv");
@@ -206,9 +222,11 @@ function joystick() {
         if(joystick.classList.contains("joystickLeft")) {
             document.querySelector(".goRight").style.pointerEvents = "none";
             document.querySelector(".goRight").style.opacity = "0.8";
+            clickSound();
         } else {
             document.querySelector(".goRight").style.pointerEvents = "all";
             document.querySelector(".goRight").style.opacity = "1";
+            clickSound();
         }
     });
     goRight.addEventListener("click", function(e) {
@@ -217,9 +235,11 @@ function joystick() {
         if(joystick.classList.contains("joystickRight")) {
             document.querySelector(".goLeft").style.pointerEvents = "none";
             document.querySelector(".goLeft").style.opacity = "0.8";
+            clickSound();
         } else {
             document.querySelector(".goLeft").style.pointerEvents = "all";
             document.querySelector(".goLeft").style.opacity = "1";
+            clickSound();
         }
     });
 }

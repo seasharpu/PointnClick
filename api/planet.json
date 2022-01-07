@@ -7,7 +7,7 @@
                 "dialogue": ["PartyPlanet1","PartyPlanet2","PartyPlanet3","PartyPlanet4","PartyPlanet4"]
             },
             "itemOnGround":4,
-            "backgroundImage": "assets/images/partyplanet.bmp"
+            "backgroundImage": "assets/images/party_planet.png"
         },
         {
             "id":2,
