@@ -49,23 +49,18 @@ function talkingCharacter(divElementClassname, nameOfImage){
 
     divElementClassname.style.backgroundImage = `url('/assets/images/characters/${nameOfImage}.png')`; 
 
-    //dialogbubbla till karaktär
-    let dialogueBubble = document.createElement("div");
-    dialogueBubble.classList.add("dialogueBubble");
-    let character = document.querySelector(".character");
-    character.append(dialogueBubble);
     //...funktionen för dialogbiten
 
     setInterval(() => {
         divElementClassname.style.backgroundImage = `url('/assets/images/characters/${nameOfImage}.gif')`;
-        audioTalk.remove();
     }, 3000);
 }
-//funktion som hämtar ut användarens avatar-bild.
+//här behövs funktion som hämtar ut användarens avatar-bild.
 //den sätts in i funktionen implementelement("playerAvatar", userAvatar)
 //då userAvatar är variabeln för användarens avatar - bilden.
 
 //dessa funktioner kallar på när respektive planet trycks på.
+formPlutoPlanet();
 function formPlutoPlanet(){
     //element för PLUTO
     //implementElement("playerCharacter", "spacemanSam");

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/start.css">
     <link rel="stylesheet" href="assets/css/alien.css">
     <link rel="stylesheet" href="assets/css/jungle.css">
-    <link rel="stylesheet" href="assets/css/pluto.css">
+    <link rel="stylesheet" href="assets\css\plutoV1">
     <link rel="stylesheet" href="assets/css/desert.css">
     <link rel="stylesheet" href="assets/css/rave.css">
     <link rel="stylesheet" href="assets/css/spaceship.css">
