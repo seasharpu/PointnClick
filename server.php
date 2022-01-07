@@ -49,7 +49,7 @@ if ($contentType == "application/json") {
                 statusCode(469);
             }
             //lägger till ETT ITEM i användarens array
-        } elseif (isset($rqstData["inventoryID"], $rqstData["userID"])) {
+        } elseif (isset($rqstData["inventoryID"], $_SESSION["userID"])) {
             $users = loadJson("api/user.json");
             $items = loadJson("api/items.json");
             $found = FALSE;
