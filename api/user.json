@@ -28,5 +28,12 @@
         "password": "1234",
         "profilePicture": "e70dc942cdca4c8fe2440e0ed8e2a1a792609809.jpg",
         "inventory": []
+    },
+    {
+        "id": 5,
+        "nameTag": "Mercie",
+        "password": "mercie",
+        "profilePicture": "0f531c1a77f9751662dcba84201e4e650108577f.jpg",
+        "inventory": []
     }
 ]
