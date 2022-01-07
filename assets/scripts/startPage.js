@@ -47,7 +47,7 @@ function makeStartPage() {
     newPlayerButton.setAttribute("ID", "newPlayerButton");
 }
 
-//makeStartPage();
+makeStartPage();
 
 document.getElementById("signInButton").addEventListener("click", function () {
     let nametag = document.getElementById("nameTagInput").value;
