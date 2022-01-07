@@ -44,14 +44,22 @@ function makeStartPage() {
     newPlayerButton.innerHTML = "New player";
     signUpButton.innerHTML = "Sign in";
     signUpButton.setAttribute("ID", "signInButton");
+    newPlayerButton.setAttribute("ID", "newPlayerButton");
 }
 
 makeStartPage();
 
-
+//logga in
 document.getElementById("signInButton").addEventListener("click", function() {
     let nametag = document.getElementById("nameTagInput").value;
     let password = document.getElementById("passwordInput").value;
     requestLoginUser(nametag, password);
-    header("Location: spaceship.js");
+    spaceShip();
+    backgrounds();
+    
   });
+
+//new player 
+document.getElementById("newPlayerButton").addEventListener("click", function() {
+    
+}
