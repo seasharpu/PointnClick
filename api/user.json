@@ -35,5 +35,12 @@
         "password": "mercie",
         "profilePicture": "0f531c1a77f9751662dcba84201e4e650108577f.jpg",
         "inventory": []
+    },
+    {
+        "id": 6,
+        "nameTag": "pelle",
+        "password": "test123",
+        "profilePicture": "eaf6d0cecf3a4feb7f0811d996790e60ea8c7be1.jpg",
+        "inventory": []
     }
 ]
