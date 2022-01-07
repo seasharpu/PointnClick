@@ -65,7 +65,7 @@ require_once "functions.php"; ?>
             } else {
                 $id = -1;
                 $nameTag = "";
-                
+
             }
             if (isset($_GET["createdUser"])) {
                 echo "<script>const createdUser = true </script>";

@@ -46,4 +46,11 @@ function createTutorial(){
     background.append(headerDiv, gridMain, bottomDiv);
     headerDiv.append(tutorialTitleParent);
     bottomDiv.append(button);
+
+    document.querySelector("#buttonSpaceShip").addEventListener("click", function () {
+        document.querySelector("#hidden").innerHTML = "";
+        spaceShip();
+        backgrounds();
+    
+    });
 }

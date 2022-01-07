@@ -47,11 +47,17 @@ function MakerRegisterPage() {
             <h2>Password</h2>
             <input type="text" placeholder="Password" name="password">
             <div id="buttonsDiv">
-                <button type"submit" id="startExploring">Start Exploring</button>
+                <button type="submit" id="startExploring">Start Exploring</button>
                 <button>Cancel</button>
             </div>
         </form>
     `
+
+    document.querySelector("#startExploring").addEventListener("click", function () {
+        document.querySelector("#hidden").innerHTML = "";
+        createTutorial();
+    
+    });
 }
 
 //MakerRegisterPage();
@@ -63,13 +69,14 @@ function loadfile(event){
     output.src=URL.createObjectURL(event.target.files[0]);
 }
 
-// document.getElementById("startExploring").addEventListener("click", function () {
 
 
-// });
-
-if (createdUser == true){
-    document.querySelector("#hidden").innerHTML = "";
-    createTutorial();
-    console.log("hjejk");
-}
+// console.log(createdUser);
+// if (createdUser == true){
+    
+//     document.querySelector("main").innerHTML = "";
+//     // document.querySelector(".logInWrapper").innerHTML = "HEJ";
+//     // document.querySelector(".titleTextDiv").innerHTML = "HEJHEJ";
+//     createTutorial();
+//     console.log("den är true");
+// }
