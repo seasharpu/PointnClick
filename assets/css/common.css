@@ -73,7 +73,13 @@ footer {
   color: var(--mainTextC);
   background-color: black;
 }
-.statusCodeDiv {
+.spacesShipBackground{
+  position:relative;
+}
+.spacesShipBackground{
+  position:relative;
+}
+.statusCodeDiv{
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.36);
@@ -121,6 +127,23 @@ footer {
 }
 .statusCodeDiv .understood:active {
   background-color: #9f032f;
+}
+
+/*karaktärer för planeten*/
+
+.character{
+  background-size: cover;
+  background-position: center;
+
+  position:absolute;
+}
+.playerCharacter{
+  background-size: cover;
+  background-position: center;
+
+  position:absolute;
+  width: 100px;
+  height: 100px;
 }
 
 /* loadingDiv CSS */

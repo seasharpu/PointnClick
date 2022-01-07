@@ -50,6 +50,7 @@ async function makePlanets(){
             // fetchItemsForPlanets();
             // whichDialogue();
             
+            
         })
     });
 }
@@ -61,8 +62,12 @@ function backgrounds() {
     background.classList.add("background");
     document.querySelector("main").append(background);
 }
-
-
+  // MUSIK
+function music(){
+    var spaceMusic = new Audio('assets/audiofiles/slow-travel.wav');
+        spaceMusic.play(); 
+}
+music();
 function spaceShip() {
     document.getElementById("hidden").innerHTML = "";
     let spaceShipBackground = document.createElement("div");
@@ -70,18 +75,29 @@ function spaceShip() {
     document.querySelector("main").append(spaceShipBackground);
     document.getElementById("location").innerHTML = "Spaceship";
 
-    var spaceMusic = new Audio('assets/audiofiles/slow-travel.wav');
-    spaceMusic.play();
-
-    spaceMusic.loop = true;
-
     blinking();
     makePlanets();
     backgrounds();
-    //inventory();
+    inventory();
     joystick(); 
+    profile();
 }
 
+// Profilbild och nameTag
+function profile() {
+    let profileDiv = document.createElement("div");
+    let profilePic = document.createElement("div");
+    let profileName = document.createElement("div");
+
+    profileDiv.classList.add("profileDiv");
+    profilePic.classList.add("profilePic");
+    profileName.classList.add("profileName");
+
+    profileName.innerHTML = "Jonna";
+    document.querySelector(".spaceShipBackground").append(profileDiv);
+    document.querySelector(".profileDiv").append(profileName);
+    document.querySelector(".profileDiv").append(profilePic);
+}
 // Rensar bakgrunden
 function cleanBackground() {
     document.querySelector(".spaceShipBackground").style.display = "none";
@@ -103,7 +119,7 @@ function backToSpaceship() {
         loadingDivSpaceship();
 
         setTimeout(() => {
-            makePlanets();
+            //makePlanets();
             spaceShip();  
         }, 2000);
     });
@@ -218,6 +234,4 @@ function blinking() {
     let blink4 = document.createElement("div");
     blink4.classList.add("blink4");
     document.querySelector(".spaceShipBackground").append(blink4);
-
-   
 }

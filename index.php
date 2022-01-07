@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start(); require_once "functions.php";?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +22,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@800&family=DotGothic16&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="assets\favicon.ico" />
     <title>Saving Laika</title>
 </head>
 
@@ -53,6 +55,7 @@
             <script src="/assets/scripts/pluto.js"></script>
             <script src="/assets/scripts/items.js"></script>
             <script src="/assets/scripts/loading.js"></script>
+            <script src="assets\scripts\formPlanet.js"></script>
         </main>
         <div class="rightBlack"></div>
     </wrapper>
