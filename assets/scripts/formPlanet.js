@@ -60,7 +60,6 @@ function talkingCharacter(divElementClassname, nameOfImage){
 //då userAvatar är variabeln för användarens avatar - bilden.
 
 //dessa funktioner kallar på när respektive planet trycks på.
-formPlutoPlanet();
 function formPlutoPlanet(){
     //element för PLUTO
     //implementElement("playerCharacter", "spacemanSam");
