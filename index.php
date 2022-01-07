@@ -46,7 +46,7 @@
             <script src="assets\scripts\formPlanet.js"></script>
         </main>
         <footer>
-            <h4 id="footer-tile">© 2021 - Click n'Point studios <?php echo checkIfLoggedIn()?></h4>
+            <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
         </footer>
     </body>
 </html>

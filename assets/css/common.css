@@ -127,9 +127,17 @@ footer {
 .statusCodeDiv .understood:active{background-color: #9f032f;}
 
 .character{
-
   background-size: cover;
   background-position: center;
 
   position:absolute;
+}
+.playerCharacter{
+  background-size: cover;
+  background-position: center;
+
+  position:absolute;
+  width: 100px;
+  height: 100px;
+
 }

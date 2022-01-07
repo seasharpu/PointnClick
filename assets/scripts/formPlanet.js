@@ -18,6 +18,14 @@ function implementCharacterElement(nameOfClass, nameOfImageFile){
     return character;
 }
 
+//vad för attribut som behövs för karaktärens klass:
+//{
+//width:
+//height:
+//top:
+//left:
+//}
+
 //skapar ett element och klass till den. ange klassnamn själv
 //och den styla den i planetens css-fil.
 function implementElement(nameOfClass, nameOfImageFile){
@@ -41,46 +49,51 @@ function talkingCharacter(divElementClassname, nameOfImage){
 
     divElementClassname.style.backgroundImage = `url('/assets/images/characters/${nameOfImage}.png')`; 
 
-    //ljud för den pratande karaktären
-    let audioTalk = document.createElement("audio");
-    audioTalk.setAttribute = "autoplay";
-    document.querySelector("#hidden").append(audioTalk);
-    audioTalk.innerHTML = `
-    <source src="audiofiles/pacman-wakka.wav" type="audio/wav">
-    `;
+    //dialogbubbla till karaktär
+    let dialogueBubble = document.createElement("div");
+    dialogueBubble.classList.add("dialogueBubble");
+    let character = document.querySelector(".character");
+    character.append(dialogueBubble);
+    //...funktionen för dialogbiten
+
     setInterval(() => {
         divElementClassname.style.backgroundImage = `url('/assets/images/characters/${nameOfImage}.gif')`;
         audioTalk.remove();
     }, 3000);
 }
+//funktion som hämtar ut användarens avatar-bild.
+//den sätts in i funktionen implementelement("playerAvatar", userAvatar)
+//då userAvatar är variabeln för användarens avatar - bilden.
 
-formPlutoPlanet();
+//dessa funktioner kallar på när respektive planet trycks på.
 function formPlutoPlanet(){
     //element för PLUTO
+    //implementElement("playerCharacter", "spacemanSam");
     implementElement("cloudSmall", "molntrans");
     implementElement("cloudBig", "molntrans");
     implementCharacterElement("wingedDemon", "winged-demon");
 }
-formAlienPlanet();
 function formAlienPlanet(){
     //element för ALIEN
+    implementElement("playerCharacter", "spacemanSam");
     implementCharacterElement("insect", "insect");
 }
-formDesertPlanet();
 function formDesertPlanet(){
     //element för DESERT
+    implementElement("playerCharacter", "spacemanSam");
     implementCharacterElement("dragon", "dragon");
 }
 function formWaterPlanet(){
     //element för WATER
     implementCharacterElement("");
 }
-formJunglePlanet();
 function formJunglePlanet(){
     //element för JUNGLE
+    implementElement("playerCharacter", "spacemanSam");
     implementCharacterElement("fireworm", "fireworm");
 }
 function formPartyPlanet(){
     //element för PARTY
+    implementElement("playerCharacter", "spacemanSam");
     implementCharacterElement("");
 }

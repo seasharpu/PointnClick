@@ -1,3 +1,9 @@
 @import "common.css";
 /* Denna fil avser unika css-regler för djungleplaneten */
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+
+/*användarens karaktär*/
+.playerCharacter .playerJungle{
+    left: 0px;
+    top: 0px;
+  }
