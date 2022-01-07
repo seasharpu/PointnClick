@@ -46,7 +46,7 @@ function makeStartPage() {
     signUpButton.setAttribute("ID", "signInButton");
 }
 
-makeStartPage();
+//makeStartPage();
 
 
 document.getElementById("signInButton").addEventListener("click", function () {
