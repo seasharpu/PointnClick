@@ -195,6 +195,32 @@ wrapper {
   gap: 7px;
   padding: 8px;
 }
+/*Profile*/
+.profileDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  right: 16px;
+  bottom: 0px;
+  height: 200px;
+  width: 130px;
+}
+.profileName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 5px;
+  font-family: var(--mainFont);
+}
+.profilePic {
+  width: 130px;
+  height: 130px;
+  border: solid 1px white;
+}
+
 /*PLANETERNA SOM MAN KLICKAR PÅ *!warning!* (Ska läggas till bilder istället för runda divar)*/
 .underwaterPlanet {
   height: 200px;
