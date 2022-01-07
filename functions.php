@@ -30,3 +30,14 @@ function theHighestId($array)
     $userID = $userID + 1;
     return $userID;
 }
+
+function checkIfLoggedIn(){
+    if (isset($_SESSION["IsLoggedIn"])){
+        if ($_SESSION["IsLoggedIn"] == true){
+            return $_SESSION["nameTag"];
+        }
+    }
+    else {
+        return null;
+    }
+}
