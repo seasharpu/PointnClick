@@ -1,0 +1,136 @@
+@import "common.css";
+/* Denna fil avser unika css-regler för alienplaneten */
+/* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+
+* {
+    font-family: var(--mainFont);
+  }
+  
+  .wrapperDiv {
+      width: 95%;
+      height: 95%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+    }
+  
+    .GridWrapperDiv {
+      width: var(--screenWidth);
+      height: var(--screenHeight);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .registerDiv {
+      
+      grid-row: 1/ span 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .avatarWrapperDiv{
+      
+      grid-row: 1/ span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+  
+    .avatars {
+      background-color: black;
+      margin: 5px;
+    }
+  
+    .avatarWrapperDiv > div {
+      /* background-color: blueviolet; */
+    }
+  
+    .avatarWrapperDiv div:first-child {
+      background-image: url(/assets/images/characters/avatar1.png);
+      background-size: cover;
+      background-position: center;
+    }
+  
+    .avatarWrapperDiv div:nth-child(2) {
+      background-image: url(/assets/images/characters/avatar2.png);
+      background-size: cover;
+      background-position: center;
+    }
+  
+    .avatarWrapperDiv div:nth-child(3) {
+      background-image: url(/assets/images/characters/avatar3.png);
+      background-size: cover;
+      background-position: center;
+    }
+  
+    .avatarWrapperDiv div:nth-child(4) {
+      background-image: url(/assets/images/characters/avatar4.png);
+      background-size: cover;
+      background-position: center;
+    }
+  
+    #uploadpicture {
+      display: flex;
+      justify-content: center;
+    }
+  
+    #formWrapperDiv {
+      width: 200px;
+    }
+  
+    #registerForm {
+        display: flex;
+        flex-direction: column;
+    }
+  
+    input {
+      height: 50px;
+    }
+  
+    #buttonsDiv {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  
+    h2 {
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+      color: var(--mainButtonC);
+    }
+  
+    button {
+      width: 100%;
+      height: 50px;
+      text-decoration: none;
+      background-color: var(--mainButtonC);
+      border: 2px solid var(--buttonBorderC);
+    }
+  
+    #uploadepicture {
+      display: flex;
+      justify-content: center;
+    }
+  
+    input[type="file"]{
+      display: none;
+    }
+  
+    label {
+      color: white;
+      background-color: var(--mainButtonC);
+      height: 50px;
+      width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .show{
+      width: 200px;
+      height: 200px;
+  
+    }
