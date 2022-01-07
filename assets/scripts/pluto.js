@@ -49,7 +49,8 @@ function createCodePanel(){
                 codeinputnumbers.innerHTML = `${display}<p class="displayNumberDiv">${numberString}</p>`;
                 
                 let displayNumberDiv = document.querySelectorAll(".displayNumberDiv");
-
+                var click = new Audio('assets/audiofiles/click.wav');
+                click.play(); 
                 if (displayNumberDiv.length > 6) {
                     console.log("too long");
                     codeinputnumbers.innerHTML = "";
@@ -73,10 +74,13 @@ function createCodePanel(){
         let password = `123456`;
 
         enterCodeButton.addEventListener("click", () => {
+            var click = new Audio('assets/audiofiles/click.wav');
+            click.play(); 
             let codeValues = document.querySelector(".codeinputnumbers").innerHTML;
             console.log(codeValues);
-    
             if(codeValues === password) {
+                var rightCode = new Audio('assets/audiofiles/vgmenuselect.wav');
+                rightCode.play(); 
                 console.log("this is right");
             }else {
                 console.log("not right")
@@ -97,6 +101,8 @@ function createCodePanel(){
         clearButton.innerHTML=`<p class="clearButton">CLEAR CODE</p>`;
         
         clearButton.addEventListener("click", () => {
+            var click = new Audio('assets/audiofiles/click.wav');
+            click.play(); 
             document.querySelector(".codeinputnumbers").innerHTML = "";
         })
 
@@ -105,6 +111,8 @@ function createCodePanel(){
 
     //Classer för att få panelen att växa större och mindre
     document.querySelector(".laikasShip").addEventListener("click", function(){
+        var rightCode = new Audio('assets/audiofiles/vgmenuselect.wav');
+        rightCode.play(); 
         console.log("click worked");
         let wrapper = document.querySelector(".codeWrapper");
         let numberWrapper = document.querySelector(".codeNumbersWrapper");
@@ -163,12 +171,14 @@ function createBox(){
     let notepad = document.createElement("div");
     notepad.classList.add("notepad");
     document.querySelector(".background").append(notepad);
-
+    var paperSound = new Audio('assets/audiofiles/paper.wav');
     box.addEventListener("click",() => {
         if (notepad.classList.contains("notepadBig")){
             notepad.classList.remove("notepadBig");
+            paperSound.play(); 
         } else {
             notepad.classList.add("notepadBig");
+            paperSound.play(); 
         }
     });
 }

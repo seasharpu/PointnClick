@@ -25,7 +25,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets\favicon.ico" />
     <title>Saving Laika</title>
 </head>
-
 <body>
     <header id="location">
     </header>
