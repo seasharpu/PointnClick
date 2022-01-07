@@ -1,7 +1,10 @@
 "use strict";
-
+function loadingMusic() {
+    var loadingMusic = new Audio('assets/audiofiles/start-level.wav');
+    loadingMusic.play(); 
+}
 function loadingDivPlanet(){
-
+    loadingMusic();
     let loadingDivWrapper = document.createElement("div");
     loadingDivWrapper.classList.add("ldWrapper");
 
@@ -11,14 +14,14 @@ function loadingDivPlanet(){
         <div id="spaceshipImgMoving"></div>
     `
     document.getElementById("hidden").append(loadingDivWrapper);
-
+    
     setTimeout(() => {
         loadingDivWrapper.style.display = "none";
     }, 2000);
 }
 
 function loadingDivSpaceship(){
-
+    loadingMusic();
     let loadingDivWrapper = document.createElement("div");
     loadingDivWrapper.classList.add("ldWrapperShip");
 
