@@ -79,18 +79,18 @@ formWrapper.innerHTML =
 // document.querySelector("main").append(formWrapper);
 
 //CREATE USER
-const form = document.getElementById("create-user");
-form.addEventListener("button", (event) => {
-    event.preventDefault();
-    const data = new FormData(form);
-    console.log(data);
+// const form = document.getElementById("create-user");
+// form.addEventListener("button", (event) => {
+//     event.preventDefault();
+//     const data = new FormData(form);
+//     console.log(data);
 
-    const req = new Request("createUser.php", {
-        method: "POST",
-        body: data
-    });
-    fetch(req).then(response => getStatusCode(response));
+//     const req = new Request("createUser.php", {
+//         method: "POST",
+//         body: data
+//     });
+//     fetch(req).then(response => getStatusCode(response));
 
-});
+// });
 
 

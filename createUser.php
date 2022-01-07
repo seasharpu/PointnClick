@@ -96,9 +96,7 @@ if ($rqstMethod === "POST") {
                 $found = true;
             }
         }
-        if ($found) {
-            header("Location: index.html?id=210");
-        } else {
+        if (!$found) {
             header("Location: index.html?id=463");
         }
         header("Location: index.php");

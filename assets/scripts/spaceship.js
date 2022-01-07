@@ -3,8 +3,8 @@
 //lägger till id-siffran beroende på vilken planet användaren är på 
 let currentID = [];
 // *FUNKTIONEN SOM BEHÖVS VARA IGÅNG FÖR ATT SE NÅGOT*
-spaceShip();
-backgrounds();
+// spaceShip();
+// backgrounds();
 
 
 //hämtar infon om planeterna från planet.json

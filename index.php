@@ -1,4 +1,5 @@
-<?php session_start(); require_once "functions.php";?>
+<?php session_start();
+require_once "functions.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
