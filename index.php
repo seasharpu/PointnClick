@@ -27,11 +27,12 @@ require_once "functions.php"; ?>
     <link rel="shortcut icon" type="image/x-icon" href="assets\favicon.ico" />
     <title>Saving Laika</title>
 </head>
+
 <body>
     <header id="location">
     </header>
     <wrapper>
-        <!-- <div class="leftBlack"></div> -->
+        <div class="leftBlack"></div>
         <main id="hidden">
             <?php
 
@@ -64,7 +65,6 @@ require_once "functions.php"; ?>
             } else {
                 $id = -1;
                 $nameTag = "";
-
             }
             if (isset($_GET["createdUser"])) {
                 echo "<script>const createdUser = true </script>";
@@ -85,7 +85,7 @@ require_once "functions.php"; ?>
             <script src="/assets/scripts/loading.js"></script>
             <script src="assets\scripts\formPlanet.js"></script>
         </main>
-        <!-- <div class="rightBlack"></div> -->
+        <div class="rightBlack"></div>
     </wrapper>
     <footer>
         <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>

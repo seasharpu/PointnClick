@@ -30,13 +30,13 @@ wrapper {
   flex-grow: 1;
 }
 .rightBlack {
-  width: 100%;
+  flex-grow: 1;
   background-color: black;
   height: 100%;
   z-index: 3;
 }
 .leftBlack {
-  width: 100%;
+  flex-grow: 1;
   background-color: black;
   height: 100%;
   z-index: 3;
