@@ -62,7 +62,7 @@ if ($contentType == "application/json") {
             //hitta den specifika användaren.
             foreach ($users as $key => $user) {
 
-                if ($rqstData["userID"] == $user["id"]) {
+                if ($_SESSION["userID"] == $user["id"]) {
                     $userKey = $key;
                     $userID = $user["id"];
                 }
@@ -87,7 +87,7 @@ if ($contentType == "application/json") {
     //Ändra användarnamn
     //Behöver nytt användarnamn
     if ($rqstMethod === "PATCH") {
-        if (isset($rqstData["newNameTag"], $rqstData["nameTag"])) {
+        if (isset($rqstData["newNameTag"], $_SESSION["userID"])) {
             $users = loadJson("api/user.json");
             $newNameTag = $rqstData["newNameTag"];
             $foundUser = false;
@@ -95,12 +95,12 @@ if ($contentType == "application/json") {
             // DB BACKUP
             saveJson("api/userBackup.json", $users);
 
-            if (strlen($rqstData["nameTag"]) <= 2) {
+            if (strlen($_SESSION["userID"]) <= 2) {
                 statusCode(468);
             }
 
             foreach ($users as $key => $user) {
-                if ($rqstData["nameTag"] == $user["nameTag"]) {
+                if ($_SESSION["userID"] == $user["nameTag"]) {
                     $foundUser = true;
                     $users[$key]["nameTag"] = $newNameTag;
                 }
@@ -112,7 +112,7 @@ if ($contentType == "application/json") {
                 statusCode(462);
             }
             ///DELETE INVENTORY ITEM
-        } elseif (isset($rqstData["inventoryID"], $rqstData["userID"])) {
+        } elseif (isset($rqstData["inventoryID"], $_SESSION["userID"])) {
             $users = loadJson("api/user.json");
             $found = FALSE;
             $userID = null;
@@ -122,7 +122,7 @@ if ($contentType == "application/json") {
 
             //hitta den specifika användaren.
             foreach ($users as $key => $user) {
-                if ($rqstData["userID"] == $user["id"]) {
+                if ($_SESSION["userID"] == $user["id"]) {
                     $userID = $user["id"];
                     $index = $key;
                 }
@@ -148,13 +148,13 @@ if ($contentType == "application/json") {
     if ($rqstMethod === "DELETE") {
 
         //tar bort ANVÄNDAREN. behöver userID, och specifikt INTE inventoryID. 
-        if (isset($rqstData["deleteUserID"]) && !isset($rqstData["inventoryID"])) {
+        if (isset($_SESSION["userID"]) && !isset($rqstData["inventoryID"])) {
 
             $users = loadJson("api/user.json");
             $found = FALSE;
 
             foreach ($users as $key => $user) {
-                if ($rqstData["deleteUserID"] == $user["id"]) {
+                if ($_SESSION["userID"] == $user["id"]) {
                     $found = TRUE;
                     array_splice($users, $key, 1);
                 }
