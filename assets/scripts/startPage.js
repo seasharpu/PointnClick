@@ -53,4 +53,5 @@ document.getElementById("signInButton").addEventListener("click", function() {
     let nametag = document.getElementById("nameTagInput").value;
     let password = document.getElementById("passwordInput").value;
     requestLoginUser(nametag, password);
+    header("Location: spaceship.js");
   });
