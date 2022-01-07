@@ -33,19 +33,23 @@ if ($rqstMethod === "POST") {
         //nameTag är färre än 3 bokstäver
         if (strlen($nameTag) <= 2) {
             statusCode(468);
+            header("Location: index.html?id=468");
         }
         //lösenord är färre än 4 bokstäver
         if (strlen($password) <= 3) {
             statusCode(467);
+            header("Location: index.html?id=467");
         }
         //hantering för bild som användaren laddar upp
         if ($error !== 0) {
             statusCode(466);
+            header("Location: index.html?id=466");
             exit();
         }
         // Filen får inte vara större än ca 500kb
         if ($size > (0.5 * 1000 * 1000)) {
             statusCode(465);
+            header("Location: index.html?id=465");
             exit();
         }
 
@@ -96,9 +100,7 @@ if ($rqstMethod === "POST") {
                 $found = true;
             }
         }
-        if ($found) {
-            header("Location: index.html?id=210");
-        } else {
+        if (!$found) {
             header("Location: index.html?id=463");
         }
         header("Location: index.php");

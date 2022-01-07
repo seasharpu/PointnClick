@@ -34,6 +34,16 @@ if ($contentType == "application/json") {
             statusCode(436);
         } else if ($errorCode == 464) {
             statusCode(464);
+        } else if ($errorCode == 468) {
+            statusCode(468);
+        } else if ($errorCode == 467) {
+            statusCode(467);
+        } else if ($errorCode == 464) {
+            statusCode(464);
+        } else if ($errorCode == 466) {
+            statusCode(466);
+        } else if ($errorCode == 465) {
+            statusCode(465);
         }
     }
 
