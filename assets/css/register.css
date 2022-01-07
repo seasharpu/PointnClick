@@ -1,9 +1,12 @@
+* {
+  font-family: var(--mainFont);
+}
 
 .wrapperDiv {
     width: 95%;
     height: 95%;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
   }
 
@@ -36,38 +39,41 @@
     margin: 5px;
   }
 
+  .avatarWrapperDiv > div {
+    /* background-color: blueviolet; */
+  }
+
   .avatarWrapperDiv div:first-child {
-    background-image: url(/assets/images/avatar1.png);
+    background-image: url(/api/characterImages/avatar1.png);
     background-size: cover;
     background-position: center;
   }
 
   .avatarWrapperDiv div:nth-child(2) {
-    background-image: url(/assets/images/avatar2.png);
+    background-image: url(/api/characterImages/avatar2.png);
     background-size: cover;
     background-position: center;
   }
 
   .avatarWrapperDiv div:nth-child(3) {
-    background-image: url(/assets/images/avatar3.png);
+    background-image: url(/api/characterImages/avatar3.png);
     background-size: cover;
     background-position: center;
   }
 
   .avatarWrapperDiv div:nth-child(4) {
-    background-image: url(/assets/images/avatar4.png);
+    background-image: url(/api/characterImages/avatar4.png);
     background-size: cover;
     background-position: center;
   }
 
-  #uploadProfilePic {
-    background-color: purple;
-    width: 200px;
-    height: 100px;
+  #uploadpicture {
+    display: flex;
+    justify-content: center;
   }
 
   #formWrapperDiv {
-
+    width: 200px;
   }
 
   #registerForm {
@@ -105,8 +111,6 @@
     justify-content: center;
   }
 
-  
-
   input[type="file"]{
     display: none;
   }
@@ -114,4 +118,15 @@
   label {
     color: white;
     background-color: var(--mainButtonC);
+    height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .show{
+    width: 200px;
+    height: 200px;
+
   }

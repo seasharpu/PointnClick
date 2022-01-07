@@ -51,5 +51,12 @@
         "password": "anka5",
         "profilePicture": "af02203f7d73655beaf440ccbdfa90ab08d34d2f.jpg",
         "inventory": []
+    },
+    {
+        "id": 8,
+        "nameTag": "Anka",
+        "password": "anka123",
+        "profilePicture": "dbd60b2615ec930bad8cd2fd32d3deea753f3f27.jpg",
+        "inventory": []
     }
 ]

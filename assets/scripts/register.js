@@ -20,9 +20,6 @@ function MakerRegisterPage() {
 
     document.querySelector(".wrapperDiv").append(registerDiv, avatarWrapperDiv);
 
-    // let uploadProfilePicDiv = document.createElement("div");
-    // registerDiv.append(uploadProfilePicDiv);
-    // uploadProfilePicDiv.setAttribute("ID","uploadProfilePic");
 
     for (let i= 1; i <= 4; i++) {
         let avatars = document.createElement("div");
@@ -39,11 +36,12 @@ function MakerRegisterPage() {
     formDiv.innerHTML = `
         <form id="registerForm" action="/createUser.php" method="POST" enctype="multipart/form-data">
             <div id="uploadpicture">
-                <input type="file" name="image" id="file">
+                <input type="file" name="image" id="file" onchange="loadfile(event)">
                 <label for="file">
                     Ladda upp en profilbild
                 </label>
             </div>
+            <img id="prePic">
             <h2> NameTag</h2>
             <input type="text" placeholder="NameTag" name="nameTag">
             <h2>Password</h2>
@@ -61,3 +59,11 @@ function MakerRegisterPage() {
 }
 
 MakerRegisterPage();
+
+//för så att bilden man laddar upp kan förhandsvisas
+function loadfile(event){
+    var output=document.getElementById("prePic");
+    document.getElementById("prePic").classList.add("show")
+    output.src=URL.createObjectURL(event.target.files[0]);
+}
+
