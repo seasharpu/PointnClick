@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/alien.css">
     <link rel="stylesheet" href="assets/css/jungle.css">
     <link rel="stylesheet" href="assets/css/pluto.css">
+    <link rel="stylesheet" href="assets/css/register.css">
     <link rel="stylesheet" href="assets/css/desert.css">
     <link rel="stylesheet" href="assets/css/rave.css">
     <link rel="stylesheet" href="assets/css/spaceship.css">
@@ -43,9 +44,10 @@
             echo "<script>const userNameTag = $nameTag</script>";
             ?>
             <script src="/assets/scripts/requests.js"></script>
+            <script src="/assets/scripts/register.js"></script>
             <script src="/assets/scripts/startPage.js"></script>
             <script src="/assets/scripts/tutorial.js"></script>
-            <script src="/assets/scripts/spaceship.js"></script>
+            <!-- <script src="/assets/scripts/spaceship.js"></script> -->
             <script src="/assets/scripts/dialogue.js"></script>
             <script src="assets\scripts\statuscodemessages.js"></script>
             <script src="/assets/scripts/pluto.js"></script>
