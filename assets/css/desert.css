@@ -3,21 +3,21 @@
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
 
 /*användarens karaktär*/
-.playerCharacter .playerDesert{
-    left: 0px;
-    top: 0px;
-  }
+.playerCharacter .playerDesert {
+  left: 0px;
+  top: 0px;
+}
 
 .desertPlayerCharacter {
-position: absolute;
-left:90px;
-bottom:80px;
-  }
+  position: absolute;
+  left: 90px;
+  bottom: 80px;
+}
 
-  .dragon {
-    height: 100px;
-    width: 200px;
-    
-    left: 400px;
-    bottom: 90px;
-  }
+.dragon {
+  height: 250px;
+  width: 450px;
+
+  left: 400px;
+  bottom: 90px;
+}
