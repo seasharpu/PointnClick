@@ -2,7 +2,7 @@
 
 //REGISTER SIDA
 function MakerRegisterPage() {
-    document.querySelector("main").style.backgroundImage = "url('assets/images/space_background.png')";
+    document.querySelector("main").style.backgroundImage = "url('assets/images/background2.gif')";
  
     let GridWrapperDiv = document.createElement("div");
     document.querySelector("main").append(GridWrapperDiv);
@@ -38,17 +38,17 @@ function MakerRegisterPage() {
             <div id="uploadpicture">
                 <input type="file" name="image" id="file" onchange="loadfile(event)">
                 <label for="file">
-                    Ladda upp en profilbild
+                    Choose profile picture
                 </label>
             </div>
             <img id="prePic">
-            <h2 class="placeholderTitle"> NameTag</h2>
-            <input type="text" placeholder="NameTag" name="nameTag">
-            <h2 class="placeholderTitle">Password</h2>
-            <input type="text" placeholder="Password" name="password">
+            <h2 class="registerTitle"> NameTag</h2>
+            <input type="text" name="nameTag">
+            <h2 class="registerTitle">Password</h2>
+            <input type="text" name="password">
             <div id="buttonsDiv">
                 <button type="submit" id="startExploring">Start Exploring</button>
-                <button>Cancel</button>
+                <button id="cancelButton">Cancel</button>
             </div>
         </form>
     `
