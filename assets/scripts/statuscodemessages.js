@@ -56,9 +56,15 @@ function statusCodeDivEnd(message){
         <h2>Message</h2>
         <p class="statusColor">${message}</p>
         <div class="understood">OK</div>
-
+        <div class="buttonTospaceship">Go back to spaceship </div>
     </div>
     `;
+
+    button.addEventListener("click", () => {
+            document.querySelector("#hidden").innerHTML = "";
+            spaceShip();
+            backgrounds();
+    })
 
     return div;
 }
