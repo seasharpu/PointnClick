@@ -150,13 +150,13 @@ function cleanBackground() {
 function backToSpaceship() {
     let backToSpaceship = document.createElement("div");
     backToSpaceship.classList.add("backToSpaceship");
-    backToSpaceship.innerHTML = "BACK TO SPACESHIP"
+    backToSpaceship.innerHTML = `<p>BACK<br>TO SPACESHIP</p>`
     document.querySelector(".background").append(backToSpaceship);
 
     backToSpaceship.addEventListener("click", function() {
         // document.querySelector(".background").style.display = "none";
         loadingDivSpaceship();
-
+        clickSound();
         setTimeout(() => {
             //makePlanets();
             spaceShip();  

@@ -3,13 +3,21 @@
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
 
 /*användarens karaktär*/
-.playerCharacter .playerJungle{
-    left: 0px;
-    top: 0px;
-  }
+.playerCharacter .playerJungle {
+  left: 0px;
+  top: 0px;
+}
 
 .junglePlayerCharacter {
-position: absolute;
-left: 200px;
-bottom: 50px;
+  position: absolute;
+  left: 200px;
+  bottom: 50px;
+}
+
+.fireworm {
+  height: 230px;
+  width: 230px;
+  left: 500px;
+  bottom: -19px;
+  transform: scaleX(-1);
 }

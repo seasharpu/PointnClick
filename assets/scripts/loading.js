@@ -1,6 +1,6 @@
 "use strict";
 function loadingMusic() {
-    var loadingMusic = new Audio('assets/audiofiles/start-level.wav');
+    var loadingMusic = new Audio('assets/audiofiles/wave2.wav');
     loadingMusic.play(); 
 }
 function loadingDivPlanet(){
