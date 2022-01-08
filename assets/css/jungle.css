@@ -13,3 +13,11 @@ position: absolute;
 left: 200px;
 bottom: 50px;
 }
+
+.fireworm {
+  height: 100px;
+  width: 100px;
+  left: 500px;
+  bottom: 30px;
+  transform: scaleX(-1);
+}
