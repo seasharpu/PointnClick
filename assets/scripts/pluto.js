@@ -209,20 +209,38 @@ function insideLaikasShip () {
                                 <p>Mercie</p>
                                 <p>Alice</p></div>`;
 
-    laikaTheDog.addEventListener("click", () => {
+    
         let laikasDialogueBubble = document.createElement("div");
         laikasDialogueBubble.classList.add("laikasDialogueBubble");
-        laikasDialogueBubble.style.backgroundImage = `url(./assets/images/talkbubble.png)`;
-
-        document.querySelector(".laikasWrapper").prepend(laikasDialogueBubble);
+        
         let fireworksgif = document.createElement("div");
         fireworksgif.classList.add("fireworksgif");
         fireworksgif.style.backgroundImage = `url(./assets/images/fireworks.gif)`;
+        
+        laikaTheDog.addEventListener("click", () => {
+        laikasDialogueBubble.style.backgroundImage = `url(./assets/images/talkbubble.png)`;
+
+        document.querySelector(".laikasWrapper").prepend(laikasDialogueBubble);
+       
         document.querySelector(".background").append(fireworksgif);
 
         setTimeout(() => {
-            statusCodeDiv("YOU DID IT")
-        }, 5000);
+            statusCodeDivEnd("Congratulations, you have completed your quest! You can either choose to stay and explore, OR exit world. What’s it going to be space-legend?");
+            
+            document.querySelector(".understoodToStay").addEventListener("click", (event)=> {
+                let statusCodeDiv = event.target.parentElement.parentElement;
+               // document.querySelector("#hidden").innerHTML = "";
+                statusCodeDiv.remove();
+                spaceShip();
+                backgrounds();
+            })
+    
+            document.querySelector(".buttonToexit").addEventListener("click", (event) => {
+                let statusCodeDiv = event.target.parentElement.parentElement;
+                statusCodeDiv.remove();
+                exit();
+            })
+        }, 10000);
     })
 }
 
