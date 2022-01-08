@@ -272,8 +272,8 @@
 .creditTextWrapper >  p:nth-child(6), 
 .creditTextWrapper >  p:nth-child(7) {
    opacity: 0;
-  -webkit-animation: type2 2s steps(40, end), blink .3s step-end infinite alternate;
-  animation: type2 2s steps(40, end), blink 3.s step-end infinite alternate;
+  -webkit-animation: type2 2s steps(40, end), blink .2s step-end infinite alternate;
+  animation: type2 2s steps(40, end), blink 2.s step-end infinite alternate;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 } 
