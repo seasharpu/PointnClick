@@ -71,7 +71,8 @@ function createCodePanel(){
         document.querySelector(".buttonWrapperPanel").append(enterCodeButton);
         enterCodeButton.classList.add("enterCodeButton");
         enterCodeButton.innerHTML=`<p class="enterButton">ENTER CODE</p>`;
-        let password = `123456`;
+        let password = `
+        <p class="displayNumberDiv">1</p><p class="displayNumberDiv">2</p><p class="displayNumberDiv">3</p><p class="displayNumberDiv">4</p><p class="displayNumberDiv">5</p><p class="displayNumberDiv">6</p>`;
 
         enterCodeButton.addEventListener("click", () => {
             var click = new Audio('assets/audiofiles/click.wav');
@@ -86,7 +87,6 @@ function createCodePanel(){
                 console.log("not right")
                 document.querySelector(".codeinputnumbers").innerHTML = "";
                 document.querySelector(".codeinputnumbers").innerHTML = `<p>This is not the right code!</p>`;
-
             }
         })
     }

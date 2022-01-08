@@ -81,6 +81,7 @@ if ($rqstMethod === "POST") {
         $newUser["password"] = $password;
         $newUser["profilePicture"] = "$uniqueFilename.$ext";
         $newUser["inventory"] = [];
+        $newUser["laikaFound"] = false;
 
         $found = false;
 
