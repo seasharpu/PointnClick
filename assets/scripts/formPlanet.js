@@ -80,6 +80,7 @@ function formDesertPlanet(){
 function formWaterPlanet(){
     //element för WATER
     implementElement("playerCharacter", "spacemanSam");
+    implementCharacterElement("pinkjelly", "pinkjelly");
 }
 function formJunglePlanet(){
     //element för JUNGLE
@@ -89,5 +90,5 @@ function formJunglePlanet(){
 function formPartyPlanet(){
     //element för PARTY
     implementElement("playerCharacter", "spacemanSam");
-    //implementCharacterElement("");
+    implementCharacterElement("mike", "mike");
 }
