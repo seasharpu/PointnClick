@@ -53,11 +53,11 @@ function MakerRegisterPage() {
         </form>
     `
 
-    document.querySelector("#startExploring").addEventListener("click", function () {
-        document.querySelector("#hidden").innerHTML = "";
-        createTutorial();
+    // document.querySelector("#startExploring").addEventListener("click", function () {
+    //     document.querySelector("#hidden").innerHTML = "";
+    //     createTutorial();
     
-    });
+    // });
 }
 
 //MakerRegisterPage();

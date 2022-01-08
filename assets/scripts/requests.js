@@ -2,8 +2,8 @@
 
 
 //tar emot ID på inloggad användare samt ID på item som ska deletas.
-function requestDeleteItem(inventoryID){
-    const data = {"inventoryID": inventoryID};
+function requestDeleteItem(userID,inventoryID){
+    const data = {"userID": userID,"inventoryID": inventoryID};
     const req = new Request("server.php", {
         method: "PATCH",
         body: JSON.stringify(data),
@@ -15,8 +15,8 @@ function requestDeleteItem(inventoryID){
 
 //tar emot ID på inloggad användare samt ID på item som ska läggas till
 //i användarens inventoryArray.
-function requestAddItem(inventoryID){
-    const data = {"inventoryID": inventoryID};
+function requestAddItem(userID, inventoryID){
+    const data = {"userID": userID,"inventoryID": inventoryID};
     const req = new Request("server.php", {
         method: "POST",
         body: JSON.stringify(data),
