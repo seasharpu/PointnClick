@@ -13,7 +13,7 @@ function implementCharacterElement(nameOfClass, nameOfImageFile){
     character.classList.add(`${nameOfClass}`);
     character.classList.add("character");
     character.style.backgroundImage = `url('/assets/images/characters/${nameOfImageFile}.gif')`; 
-    spaceShipBackground.append(character);
+    document.querySelector(".background").append(character);
 
     return character;
 }

@@ -13,3 +13,12 @@
     left:300px;
     bottom:155px;
   }
+  
+  .insect {
+    height: 100px;
+    width: 100px;
+
+    position: absolute;
+    left: 600px;
+    bottom: 300px;
+  }
