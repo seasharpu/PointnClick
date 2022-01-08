@@ -46,7 +46,7 @@ function createCodePanel(){
                 let numberDiv = document.createElement("div"); 
                 let display = codeinputnumbers.innerHTML;
                 numberDiv.append(display); 
-                codeinputnumbers.innerHTML = `${display}<p class="displayNumberDiv">${numberString}</p>`;
+                codeinputnumbers.innerHTML = `${display + numberString}`;
                 
                 let displayNumberDiv = document.querySelectorAll(".displayNumberDiv");
                 var click = new Audio('assets/audiofiles/click.wav');
@@ -71,7 +71,7 @@ function createCodePanel(){
         document.querySelector(".buttonWrapperPanel").append(enterCodeButton);
         enterCodeButton.classList.add("enterCodeButton");
         enterCodeButton.innerHTML=`<p class="enterButton">ENTER CODE</p>`;
-        let password = `123456`;
+        let laikaPassword = `123456`;
 
         enterCodeButton.addEventListener("click", () => {
             var click = new Audio('assets/audiofiles/click.wav');
@@ -82,6 +82,9 @@ function createCodePanel(){
                 var rightCode = new Audio('assets/audiofiles/vgmenuselect.wav');
                 rightCode.play(); 
                 console.log("this is right");
+                //anropa LAIKA funktion här
+                document.querySelector(".background").innerHTML="";
+                insideLaikasShip();
             }else {
                 console.log("not right")
                 document.querySelector(".codeinputnumbers").innerHTML = "";
@@ -183,3 +186,54 @@ function createBox(){
     });
 }
 
+function insideLaikasShip () {
+    document.querySelector(".background").style.backgroundImage = `url(./assets/images/laikasShipinside.png)`;
+
+    let laikasWrapper = document.createElement("laikasWrapper");
+    laikasWrapper.classList.add("laikasWrapper");
+
+    let laikaTheDog = document.createElement("div");
+    laikaTheDog.classList.add("laikaTheDog");
+
+    document.querySelector(".background").append(laikasWrapper);
+    laikasWrapper.append(laikaTheDog);
+    laikaTheDog.style.backgroundImage = `url(./assets/images/watermelon.png)`;
+
+    let creditsDiv = document.createElement("div");
+    creditsDiv.classList.add("creditsDiv");
+    document.querySelector(".background").append(creditsDiv);
+    creditsDiv.innerHTML = `<div class="creditTextWrapper"><h2> LAIKAS CREW </h2>
+                                <p>Olivia</p>
+                                <p>Matilda</p>
+                                <p>Alexander</p>
+                                <p>Jonna</p>
+                                <p>Mercie</p>
+                                <p>Alice</p></div>`;
+
+    laikaTheDog.addEventListener("click", () => {
+        let laikasDialogueBubble = document.createElement("div");
+        laikasDialogueBubble.classList.add("laikasDialogueBubble");
+        laikasDialogueBubble.style.backgroundImage = `url(./assets/images/talkbubble.png)`;
+
+        document.querySelector(".laikasWrapper").prepend(laikasDialogueBubble);
+        let fireworksgif = document.createElement("div");
+        fireworksgif.classList.add("fireworksgif");
+        fireworksgif.style.backgroundImage = `url(./assets/images/fireworks.gif)`;
+        document.querySelector(".background").append(fireworksgif);
+
+        setTimeout(() => {
+            popUpEndGame(); //lägga in ordentlig grej här
+            console.log("HEJ")
+        }, 5000);
+    })
+
+
+
+}
+
+function popUpEndGame(){
+   let endDiv = document.createElement("div");
+   endDiv.innerHTML="THIS IS THE END";
+   document.querySelector(".background").append(endDiv);
+
+}
