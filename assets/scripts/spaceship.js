@@ -42,13 +42,34 @@ async function makePlanets(){
             document.querySelector(".background").style.pointerEvents = `all`;
             document.querySelector(".joystickDiv").style.display = "none";
             currentID.push(element.id);
-
+            
             if (element.id == 6){
                 createCodePanel();
                 createBox();
+                formPlutoPlanet();
+                document.querySelector(".playerCharacter").classList.add("plutoPlayerCharacter");
+            }
+            if (element.id == 5) {
+                formWaterPlanet();
+                document.querySelector(".playerCharacter").classList.add("waterPlayerCharacter");
+                
             }
             if (element.id == 4) {
                 formJunglePlanet();
+                document.querySelector(".playerCharacter").classList.add("junglePlayerCharacter");
+                
+            }
+            if (element.id == 3) {
+                formAlienPlanet();
+                document.querySelector(".playerCharacter").classList.add("alienPlayerCharacter");
+            }
+            if (element.id == 2) {
+                formDesertPlanet();
+                document.querySelector(".playerCharacter").classList.add("desertPlayerCharacter");
+            }
+            if (element.id == 1) {
+                formPartyPlanet();
+                document.querySelector(".playerCharacter").classList.add("partyPlayerCharacter");
             }
 
             //document.querySelector(".background").style.zIndex = 100;

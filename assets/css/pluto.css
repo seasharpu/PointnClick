@@ -5,7 +5,11 @@
 :root {
   --transitionTime: 3s;
 }
-
+.plutoPlayerCharacter {
+  position: absolute;
+  left: 400px;
+  bottom: 100px;
+}
 .wrapperShipDiv {
   display: flex;
   justify-content: center;
@@ -249,7 +253,7 @@
   height: 200px;
   width: 200px;
 
-  left: 100px;
+  left: 590px;
   top: 170px;
 }
 

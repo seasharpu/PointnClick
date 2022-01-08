@@ -35,7 +35,7 @@ function implementElement(nameOfClass, nameOfImageFile){
     element.classList.add(`${nameOfClass}`);
     //lägger in diven i spaceshipBackground, vilket är planeten.
     element.style.backgroundImage = `url('/assets/images/characters/${nameOfImageFile}.png')`; 
-    spaceShipBackground.append(element);
+    document.querySelector(".background").append(element);
 
     return element;
 }
@@ -62,7 +62,7 @@ function talkingCharacter(divElementClassname, nameOfImage){
 //dessa funktioner kallar på när respektive planet trycks på.
 function formPlutoPlanet(){
     //element för PLUTO
-    //implementElement("playerCharacter", "spacemanSam");
+    implementElement("playerCharacter", "spacemanSam");
     implementElement("cloudSmall", "molntrans");
     implementElement("cloudBig", "molntrans");
     implementCharacterElement("wingedDemon", "winged-demon");
@@ -79,7 +79,7 @@ function formDesertPlanet(){
 }
 function formWaterPlanet(){
     //element för WATER
-    implementCharacterElement("");
+    implementElement("playerCharacter", "spacemanSam");
 }
 function formJunglePlanet(){
     //element för JUNGLE
@@ -89,5 +89,5 @@ function formJunglePlanet(){
 function formPartyPlanet(){
     //element för PARTY
     implementElement("playerCharacter", "spacemanSam");
-    implementCharacterElement("");
+    //implementCharacterElement("");
 }

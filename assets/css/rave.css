@@ -7,3 +7,9 @@
     left: 0px;
     top: 0px;
   }
+
+.partyPlayerCharacter {
+  position: absolute;
+  left: 200px;
+  bottom: 40px;
+}
