@@ -139,6 +139,25 @@ if ($contentType == "application/json") {
             }
             saveJson("api/user.json", $users);
             statusCode(213);
+            //Ändra status för Laika
+        } elseif (isset($rqstData["laikaFound"], $rqstData["userID"])) {
+            echo "hej";
+            $users = loadJson("api/user.json");
+            $foundUser = false;
+
+            // DB BACKUP
+            saveJson("api/userBackup.json", $users);
+
+            foreach ($users as $key => $user) {
+                if ($rqstData["userID"] == $user["id"]) {
+                    $foundUser = true;
+                    $users[$key]["laikaFound"] = true;
+                }
+            }
+
+            if ($foundUser) {
+                saveJson("./api/user.json", $users);
+            }
         } else {
             statusCode(461);
         }

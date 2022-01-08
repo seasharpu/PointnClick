@@ -186,6 +186,7 @@ function createBox(){
 }
 
 function insideLaikasShip () {
+    requestLaikaStatus(true, 2); //måste ändras till userID!!
     document.querySelector(".background").style.backgroundImage = `url(./assets/images/laikasShipinside.png)`;
 
     let laikasWrapper = document.createElement("laikasWrapper");

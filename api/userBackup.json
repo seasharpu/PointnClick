@@ -13,7 +13,8 @@
         "nameTag": "TETSTSTTSE",
         "password": "11223",
         "profilePicture": "a05d41c3048e9a8fd99fc2f33d4c9a29a1a8957d.jpg",
-        "inventory": []
+        "inventory": [],
+        "laikaFound": false
     },
     {
         "id": 3,
@@ -111,6 +112,13 @@
         "nameTag": "ooooo",
         "password": "kokok",
         "profilePicture": "31aaa3b81464b390cd614a40040c7d5323834ebd.jpg",
+        "inventory": []
+    },
+    {
+        "id": 17,
+        "nameTag": "uyyyyy",
+        "password": "yyyy",
+        "profilePicture": "53fadd120b1b975b444a284209b04f6016d8354b.jpg",
         "inventory": []
     }
 ]
