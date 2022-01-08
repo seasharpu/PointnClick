@@ -94,6 +94,7 @@ function spaceShip() {
     inventory();
     joystick(); 
     profile();
+    exit();
     
 }
 
@@ -260,4 +261,13 @@ function blinking() {
     let blink4 = document.createElement("div");
     blink4.classList.add("blink4");
     document.querySelector(".spaceShipBackground").append(blink4);
+}
+
+function exit() {
+    let exitDiv = document.createElement("div");
+    exitDiv.classList.add("exitDiv");
+    document.querySelector(".joystickDiv").append(exitDiv);
+    exitDiv.innerHTML = `
+    <a href='exit.php'>exit</a>
+`;
 }

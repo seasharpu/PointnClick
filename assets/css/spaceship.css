@@ -425,3 +425,22 @@ wrapper {
     opacity: 0;
   }
 }
+
+.exitDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  height: 40px;
+  width: 70px;
+  background-color: rgb(121, 7, 7);
+  opacity: 0.7;
+}
+.exitDiv > a {
+  text-decoration: none;
+  font-family: var(--mainFont);
+  color: white;
+}
