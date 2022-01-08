@@ -39,6 +39,7 @@
 
 .totText {
   font-family: var(--mainFont);
+  font-size: x-small;
 }
 
 #textOne,

@@ -331,7 +331,7 @@
   width: 7.3em;
 } 
 
-.creditTextWrapper h2,
+.creditTextWrapper > h2,
 .creditTextWrapper >  p:nth-child(2), 
 .creditTextWrapper >  p:nth-child(3), 
 .creditTextWrapper >  p:nth-child(4), 

@@ -43,32 +43,27 @@
       margin: 5px;
     }
   
-    .avatarWrapperDiv > div {
-      /* background-color: blueviolet; */
+    .avatarWrapperDiv div:first-child,  .avatarWrapperDiv div:nth-child(2),  .avatarWrapperDiv div:nth-child(3), .avatarWrapperDiv div:nth-child(4) {
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
     }
-  
     .avatarWrapperDiv div:first-child {
       background-image: url(/assets/images/characters/avatar1.png);
-      background-size: cover;
-      background-position: center;
+     
     }
   
     .avatarWrapperDiv div:nth-child(2) {
       background-image: url(/assets/images/characters/avatar2.png);
-      background-size: cover;
-      background-position: center;
+     
     }
   
     .avatarWrapperDiv div:nth-child(3) {
       background-image: url(/assets/images/characters/avatar3.png);
-      background-size: cover;
-      background-position: center;
     }
   
     .avatarWrapperDiv div:nth-child(4) {
       background-image: url(/assets/images/characters/avatar4.png);
-      background-size: cover;
-      background-position: center;
     }
   
     #uploadpicture {
@@ -95,7 +90,7 @@
       margin-top: 10px;
     }
   
-    h2 {
+    .placeholderTitle {
       display: flex;
       justify-content: center;
       margin: 20px;

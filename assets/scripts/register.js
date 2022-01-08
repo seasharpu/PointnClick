@@ -42,9 +42,9 @@ function MakerRegisterPage() {
                 </label>
             </div>
             <img id="prePic">
-            <h2> NameTag</h2>
+            <h2 class="placeholderTitle"> NameTag</h2>
             <input type="text" placeholder="NameTag" name="nameTag">
-            <h2>Password</h2>
+            <h2 class="placeholderTitle">Password</h2>
             <input type="text" placeholder="Password" name="password">
             <div id="buttonsDiv">
                 <button type="submit" id="startExploring">Start Exploring</button>

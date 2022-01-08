@@ -45,6 +45,25 @@ function statusCodeDiv(message){
 }
 
 
+function statusCodeDivEnd(message){
+    let div = document.createElement("div");
+    div.classList.add("statusCodeDiv");
+    document.querySelector("main").append(div);
+    let button = document.createElement("div");
+
+    div.innerHTML = `
+    <div>
+        <h2>Message</h2>
+        <p class="statusColor">${message}</p>
+        <div class="understood">OK</div>
+
+    </div>
+    `;
+
+    return div;
+}
+
+
 
 function getStatusCode(responseFromFetch){
 

@@ -221,8 +221,7 @@ function insideLaikasShip () {
         document.querySelector(".background").append(fireworksgif);
 
         setTimeout(() => {
-            popUpEndGame(); //lägga in ordentlig grej här
-            console.log("HEJ")
+            statusCodeDiv("YOU DID IT")
         }, 5000);
     })
 }
