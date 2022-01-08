@@ -132,8 +132,8 @@ footer {
 .buttonToexit, .understoodToStay {
   background-color: var(--exitButtonC);
   color: var(--mainTextC);
-  margin-top: 4px;
-  width: 130px;
+  padding: 11px;
+  text-decoration: none;
 
   display: flex;
   justify-content: center;
@@ -151,8 +151,8 @@ footer {
 }
 .stayORexitButtons {
   display: flex;
-  width: 155%;
-  margin-top: 33px;
+  width: 130%;
+  margin-top: 3px;
   justify-content: space-evenly;
 }
 /*karaktärer för planeten*/

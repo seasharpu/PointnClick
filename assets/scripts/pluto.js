@@ -184,7 +184,7 @@ function createBox(){
         }
     });
 }
-
+//skapar allt som krävs för insidan av Laikas spaceship inklusive statusDiv som uppdaterar spelaren 
 function insideLaikasShip () {
     document.querySelector(".background").style.backgroundImage = `url(./assets/images/laikasShipinside.png)`;
 
@@ -197,6 +197,7 @@ function insideLaikasShip () {
     document.querySelector(".background").append(laikasWrapper);
     laikasWrapper.append(laikaTheDog);
     laikaTheDog.style.backgroundImage = `url(./assets/images/laika.gif)`;
+    implementElement("playerCharacter", "spacemanSam");
 
     let creditsDiv = document.createElement("div");
     creditsDiv.classList.add("creditsDiv");
@@ -219,6 +220,11 @@ function insideLaikasShip () {
         
         laikaTheDog.addEventListener("click", () => {
         laikasDialogueBubble.style.backgroundImage = `url(./assets/images/talkbubble.png)`;
+        let laikasSpeech = document.createElement("p");
+        laikasSpeech.classList.add("laikasSpeech");
+        laikasSpeech.innerHTML="You must be here to save me? Thank you space legend!";
+
+        laikasDialogueBubble.append(laikasSpeech);
 
         document.querySelector(".laikasWrapper").prepend(laikasDialogueBubble);
        
@@ -238,15 +244,13 @@ function insideLaikasShip () {
             document.querySelector(".buttonToexit").addEventListener("click", (event) => {
                 let statusCodeDiv = event.target.parentElement.parentElement;
                 statusCodeDiv.remove();
-                exit();
             })
         }, 10000);
     })
 }
 
-function popUpEndGame(){
-   let endDiv = document.createElement("div");
-   endDiv.innerHTML="THIS IS THE END";
-   document.querySelector(".background").append(endDiv);
-
+async function ifLaikaisFound (){
+    let users = await fetchUser();
+    console.log(users);
 }
+ifLaikaisFound ()
