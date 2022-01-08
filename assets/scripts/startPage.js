@@ -59,14 +59,17 @@ function makeStartPage() {
 makeStartPage();
 
 document.getElementById("signInButton").addEventListener("click", function () {
+    clickSound();
     let nametag = document.getElementById("nameTagInput").value;
     let password = document.getElementById("passwordInput").value;
     requestLoginUser(nametag, password);
     spaceShip();
     backgrounds();
+    
 });
 
 document.getElementById("newPlayerButton").addEventListener("click", function () {
+    clickSound();
     document.querySelector("#hidden").innerHTML = "";
     MakerRegisterPage();
 });
