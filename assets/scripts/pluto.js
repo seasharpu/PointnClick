@@ -46,7 +46,7 @@ function createCodePanel(){
                 let numberDiv = document.createElement("div"); 
                 let display = codeinputnumbers.innerHTML;
                 numberDiv.append(display); 
-                codeinputnumbers.innerHTML = `${display + numberString}`;
+                codeinputnumbers.innerHTML = `${display}<p class="displayNumberDiv">${numberString}</p>`;
                 
                 let displayNumberDiv = document.querySelectorAll(".displayNumberDiv");
                 var click = new Audio('assets/audiofiles/click.wav');
@@ -71,8 +71,7 @@ function createCodePanel(){
         document.querySelector(".buttonWrapperPanel").append(enterCodeButton);
         enterCodeButton.classList.add("enterCodeButton");
         enterCodeButton.innerHTML=`<p class="enterButton">ENTER CODE</p>`;
-        let password = `
-        <p class="displayNumberDiv">1</p><p class="displayNumberDiv">2</p><p class="displayNumberDiv">3</p><p class="displayNumberDiv">4</p><p class="displayNumberDiv">5</p><p class="displayNumberDiv">6</p>`;
+        let password = `<p class="displayNumberDiv">1</p><p class="displayNumberDiv">2</p><p class="displayNumberDiv">3</p><p class="displayNumberDiv">4</p><p class="displayNumberDiv">5</p><p class="displayNumberDiv">6</p>`;
 
         enterCodeButton.addEventListener("click", () => {
             var click = new Audio('assets/audiofiles/click.wav');
