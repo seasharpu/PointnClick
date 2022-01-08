@@ -41,11 +41,12 @@
         <script src="/assets/scripts/requests.js"></script>
         <script src="/assets/scripts/startPage.js"></script>
         <script src="/assets/scripts/tutorial.js"></script>
+        <script src="/assets/scripts/items.js"></script>
         <script src="/assets/scripts/spaceship.js"></script>
         <script src="/assets/scripts/dialogue.js"></script>
         <script src="assets\scripts\statuscodemessages.js"></script>
         <script src="/assets/scripts/pluto.js"></script>
-        <script src="/assets/scripts/items.js"></script>
+
     </main>
     <footer>
         <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>

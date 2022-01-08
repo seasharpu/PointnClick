@@ -35,46 +35,15 @@ async function fetchitems(){
 
 let inventoryimg = [];
 
+
 //let currentUserIMGInventory = [];
-
-async function fetchItemsForPlanets () {
-    const userID = 2;
-    let users = await fetchUser();
-    let itemData = await fetchitems();
-    let currentUserIDInventory = [];
-
-    //items.push(itemData);
-    //console.log(document.querySelector(".inventoryObjectsOpen"));
-    
-    currentID.forEach(currentid => {
-        itemData.forEach(item => {
-            if(item.id === currentid) {
-                users.forEach(user => {
-                    if(userID === user.id) {
-                        currentUserIDInventory = user.inventory;
-                        console.log(user.inventory);
-
-                        if(currentUserIDInventory.includes(item.id) === false) {
-                            let itemsDiv = document.createElement("div");
-                            itemsDiv.classList.add("planetsItem");
-                            document.querySelector(".background").prepend(itemsDiv);
-                            itemsDiv.style.backgroundImage = `url(${item.image})`;
-                            
-                        } 
-                    }
-                })
-            }
-        });         
-    })
-
-}
 
 async function fetchUserInventoryIMGS () {
     const userID = 2;
     let users = await fetchUser();
     let itemData = await fetchitems();
 
-    let currentUserIDInventory = [];
+
     let currentUserIMGInventory = [];
 
     
