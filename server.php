@@ -100,7 +100,7 @@ if ($contentType == "application/json") {
             }
 
             foreach ($users as $key => $user) {
-                if ($_SESSION["userID"] == $user["nameTag"]) {
+                if ($_SESSION["nameTag"] == $user["nameTag"]) {
                     $foundUser = true;
                     $users[$key]["nameTag"] = $newNameTag;
                 }
