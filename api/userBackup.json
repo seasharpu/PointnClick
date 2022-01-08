@@ -18,9 +18,10 @@
         "password": "uukjbhh",
         "profilePicture": "cc7c956c21dee60890ad21ea13b49496f4469148.jpg",
         "inventory": [
-            1,
             3,
-            5
+            5,
+            4,
+            1
         ]
     }
 ]

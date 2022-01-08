@@ -6,28 +6,33 @@ let currentID = [];
 spaceShip();
 backgrounds();
 
-//hämtar planeters items utifrån användarens inventory.
-async function fetchItemsForPlanets (userInvArray) {    
-    if(userInvArray.includes(item.id) === false) {
-        let itemsDiv = document.createElement("div");
-        itemsDiv.classList.add("planetsItem");
-        document.querySelector(".background").prepend(itemsDiv);
-        itemsDiv.style.backgroundImage = `url(${item.image})`
-    } 
-}
+//hämtar planeters items utifrån användarens 
+//inventory samt planetens itemOnGround.
+async function fetchItemsForPlanets (userInvArray, currentPlanetID) {  
+    let itemData = await fetchitems();
 
+            currentPlanetID.forEach(idOfPlanet => {
+                itemData.forEach(item => {
+                    if (idOfPlanet == item.id ){
+                        if(userInvArray.includes(item.id) == false){
+                            let itemsDiv = document.createElement("div");
+                            itemsDiv.classList.add("planetsItem");
+                            document.querySelector(".background").prepend(itemsDiv);
+                            itemsDiv.style.backgroundImage = `url(${item.image})`
+                        } 
+                    }
+                })
+            })
+        }
 //jämför planetens ["requiredItem"] med användarens inventory
 //om de inte finns i inventory - FALSE. Annars TRUE.
 async function userRequiredItem(requiredItem, userInvArray){
-    let found = "njo";
+    let found = true;
 
     for (let i = 0; i < userInvArray.length; i++) {
-
         if (requiredItem == undefined){
-            found = true;
             //avslutar for-loopen direkt. ingen 
             //idé att fortsätta om requiredItem är undefined
-            console.log(found);
             return found;
         }
         //kollar om requiredItem stämmer överens om
@@ -87,19 +92,15 @@ async function makePlanets(){
                 return currentUserIDInventory;
             }
 
-            //console.log(element.requiredItem.length); 
-
-            //if (element.requiredItem.length )
-
             let currentUserIDInventory = await getUserInventory();
             
-            let hasUserRequiredItem = userRequiredItem(element.requiredItem, currentUserIDInventory);
-            //console.log(userRequiredItem(element.requiredItem, currentUserIDInventory));
-            
+            let hasUserRequiredItem = await userRequiredItem(element.requiredItem, currentUserIDInventory);
+            console.log(userRequiredItem(element.requiredItem, currentUserIDInventory));
+            console.log(hasUserRequiredItem);
             if (hasUserRequiredItem == true){
                 //console.log(element.requiredItem);
                 
-                //console.log(element);
+                console.log("hej");
                 document.querySelector(".background").style.position = "static";
                 document.getElementById("location").innerHTML = element.name;
                 document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
@@ -107,16 +108,14 @@ async function makePlanets(){
                 if (element.id == 6){
                     createCodePanel();
                 }
-
                 cleanBackground();
-                fetchItemsForPlanets();
+                fetchItemsForPlanets(currentUserIDInventory, currentID);
                 document.querySelector(".background").append(inventory());
                 backToSpaceship(); 
                 whichDialogue();
             } else {
                 planetDiv.classList.add("unavailablePlanet");
-            }
-            ;
+            };
         })
     });
     //tömmer nuvarande ID tills nästa planet.

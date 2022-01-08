@@ -52,7 +52,7 @@ async function fetchUserInventoryIMGS () {
             if(item.id === currentid) {
                 users.forEach(user => {
                     if(userID === user.id) {
-                        currentUserIDInventory = user.inventory;
+                        let currentUserIDInventory = user.inventory;
 
                         //får ut användarens inventory i bilder.
                         currentUserIDInventory.forEach(userInventoryID => {

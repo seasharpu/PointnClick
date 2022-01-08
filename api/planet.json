@@ -38,7 +38,6 @@
                 "dialogue": ["junglePlanet1","junglePlanet2","junglePlanet3","junglePlanet4","junglePlanet5"]
             },
             "itemOnGround":5,
-            "requiredItem":9,
             "backgroundImage": "assets/images/jungleplanet.png"
         },
         {
