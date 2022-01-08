@@ -87,6 +87,18 @@ if (isset($_GET["id"])) {
             <script src="/assets/scripts/items.js"></script>
             <script src="/assets/scripts/loading.js"></script>
             <script src="assets\scripts\formPlanet.js"></script>
+
+
+            <?php
+            if (isset($_GET["createdUser"])) {
+                $createdCode = $_GET["createdUser"];
+                if ($createdCode == true) {
+                    echo '<script>document.querySelector("#hidden").innerHTML = ""</script>';
+                    echo "<script>createTutorial()</script>";
+                }
+            }
+            ?>
+
         </main>
         <div class="rightBlack"></div>
     </wrapper>
