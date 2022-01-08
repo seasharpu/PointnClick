@@ -34,7 +34,6 @@ if ($contentType == "application/json") {
             $users = loadJson("api/user.json");
             $found = false;
 
-
             foreach ($users as $key => $user) {
                 if ($user["nameTag"] == $rqstData["nameTag"] && $user["password"] == $rqstData["password"]) {
                     $_SESSION["userID"] = $user["id"];
@@ -61,7 +60,6 @@ if ($contentType == "application/json") {
 
             //hitta den specifika användaren.
             foreach ($users as $key => $user) {
-
                 if ($rqstData["userID"] == $user["id"]) {
                     $userKey = $key;
                     $userID = $user["id"];
@@ -116,8 +114,10 @@ if ($rqstMethod === "PATCH") {
         ///DELETE INVENTORY ITEM
     } elseif (isset($rqstData["inventoryID"], $rqstData["userID"])) {
         $users = loadJson("api/user.json");
+        $items = loadJson("api/items.json");
         $found = FALSE;
         $userID = null;
+
 
         // DB BACKUP
         saveJson("api/userBackup.json", $users);
@@ -125,17 +125,19 @@ if ($rqstMethod === "PATCH") {
         //hitta den specifika användaren.
         foreach ($users as $key => $user) {
             if ($rqstData["userID"] == $user["id"]) {
+                $userKey = $key;
                 $userID = $user["id"];
-                $index = $key;
+                echo $user["id"];
             }
         }
-        //den specifika användarens inventory.
-        foreach ($users[$index]["inventory"] as $key => $userItem) {
-            if ($rqstData["inventoryID"] == $userItem) {
+
+        foreach ($items as $key => $item) {
+            if ($rqstData["inventoryID"] == $item["id"]) {
                 $found = TRUE;
-                array_splice($users[$index]["inventory"], $key, 1);
+                array_splice($users[$userKey]["inventory"], $key, 1);
             }
         }
+
         if ($found == FALSE) {
             statusCode(460);
         }

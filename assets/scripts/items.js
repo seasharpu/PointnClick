@@ -34,72 +34,71 @@ async function fetchitems(){
 }*/
 
 let inventoryimg = [];
-let currentUserIDInventory = [];
-let items = [];
-//hämtar items från items.json
+
+//let currentUserIMGInventory = [];
+
 async function fetchItemsForPlanets () {
     const userID = 2;
     let users = await fetchUser();
     let itemData = await fetchitems();
+    let currentUserIDInventory = [];
 
-    items.push(itemData);
+    //items.push(itemData);
     //console.log(document.querySelector(".inventoryObjectsOpen"));
-   
+    
     currentID.forEach(currentid => {
         itemData.forEach(item => {
             if(item.id === currentid) {
                 users.forEach(user => {
                     if(userID === user.id) {
-                        let currentUserInventory = user.inventory;
-                        currentUserIDInventory.push(user.inventory);
-                        if(currentUserInventory.includes(item.id) === false) {
+                        currentUserIDInventory = user.inventory;
+                        console.log(user.inventory);
+
+                        if(currentUserIDInventory.includes(item.id) === false) {
                             let itemsDiv = document.createElement("div");
                             itemsDiv.classList.add("planetsItem");
                             document.querySelector(".background").prepend(itemsDiv);
                             itemsDiv.style.backgroundImage = `url(${item.image})`;
-                           
-                            itemsDiv.addEventListener("click", () => {
-                                itemsDiv.innerHTML = "";
-                                //document.querySelector(".planetsItem").classList.add("itemClicked");
-                                //document.querySelector(".itemboxes").append(itemsDiv);
-                                //inventoryimg.push(item.image);
-
-                                /*let itemboxesArr = document.querySelectorAll(".itemboxes");
-                                for(let i = 0; i < itemboxesArr.length; i++) {
-                                    //let oneitembox = [i]; 
-                                    //console.log(oneitembox);
-                                    document.querySelector(`.itemboxes${i}`).append(item.image);
-                                    console.log(itemboxesArr[i]);
-                                }*/
-                    
-                                /*if(document.querySelector(".itemboxes").contains(itemsDiv) === false) {
-                                    document.querySelector(".itemboxes").append(itemsDiv);
-
-                                }*/
-                                //document.querySelector(".itemboxes").append(itemsDiv);
-                                //document.querySelector(".itemboxes").classList.add(item.id);
-                                //requestAddItem(userID, item.id);
-                            })
+                            
                         } 
                     }
                 })
             }
         });         
     })
+
 }
 
-async function userAnditemsID (){
-    console.log(items);
-    console.log(currentUserIDInventory);
+async function fetchUserInventoryIMGS () {
+    const userID = 2;
+    let users = await fetchUser();
+    let itemData = await fetchitems();
 
-    currentUserIDInventory.forEach(userInventoryID => {
-        items.forEach(item => {
-            if(userInventoryID === item.id) {
-                console.log(item.id);
-                console.log(item.image);
+    let currentUserIDInventory = [];
+    let currentUserIMGInventory = [];
+
+    
+    currentID.forEach(currentid => {
+        itemData.forEach(item => {
+            if(item.id === currentid) {
+                users.forEach(user => {
+                    if(userID === user.id) {
+                        currentUserIDInventory = user.inventory;
+
+                        //får ut användarens inventory i bilder.
+                        currentUserIDInventory.forEach(userInventoryID => {
+                            itemData.forEach(item => {
+                                if(userInventoryID === item.id) {
+                                    currentUserIMGInventory.push(item.image);
+                                }
+                            })
+                        })
+                    }
+                })
             }
-        })
+        });         
     })
-
+    return currentUserIMGInventory;
 }
+
 

@@ -40,15 +40,16 @@ async function makePlanets(){
             //document.querySelector(".background").style.zIndex = 100;
     
             cleanBackground();
+            fetchItemsForPlanets();
             document.querySelector(".background").append(inventory());
             backToSpaceship(); 
-            fetchItemsForPlanets();
-            userAnditemsID();
             whichDialogue();
-        
+
             
         })
     });
+    //tömmer nuvarande ID tills nästa planet.
+    currentID = [];
 }
 
 // SKAPAR DIV SOM SKA ÄNDRA BAKRUND
@@ -109,38 +110,101 @@ function inventory(){
     document.querySelector("main").append(inventory);
 
     chest.addEventListener("click", function() {
+        inventoryObjects.innerHTML = "";
         chest.classList.toggle("chestOpen");
-       
+        
         if(inventoryObjects.classList.contains("inventoryObjectsHidden")) {
             inventoryObjects.classList.remove("inventoryObjectsHidden");
             inventoryObjects.classList.add("inventoryObjectsOpen");
-            inventoryObjects.innerHTML = `  <div class="itemboxes1"></div>
-                                            <div class="itemboxes2"></div>
-                                            <div class="itemboxes3"></div>
-                                            <div class="itemboxes4"></div>
-                                            <div class="itemboxes5"></div>
-                                            <div class="itemboxes6"></div>`;
 
-                                             
-            
-            
-         
+        updateUserInventorySlots();
 
-                //let itemboxesArr = document.querySelectorAll(".itemboxes");
-                for(let i = 0; i <= inventoryimg.length; i++){
-                   document.querySelector(`itemboxes${i}`);
-                }
-            
-                                            
         } else if (inventoryObjects.classList.contains("inventoryObjectsOpen")){
             inventoryObjects.classList.remove("inventoryObjectsOpen");
             inventoryObjects.classList.add("inventoryObjectsHidden");
-            //inventoryObjects.innerHTML ="";
         }
 
-    });
+    })
     return inventory;
+};
+
+//hämtar ett ID av item med hjälp av en src från bild.
+async function getItemIDFromPic(src){
+    let items = await fetchitems();
+    let itemID = 0;
+
+    items.forEach(item => {
+        if (item.image == src){
+            itemID = item.id;
+        }
+    });
+    return itemID;
 }
+
+async function updateUserInventorySlots(){
+    let inventoryObjects = document.querySelector(".inventoryObjectsOpen") || document.querySelector(".inventoryObjectsHidden");
+    inventoryObjects.innerHTML = "";
+    let currentUserIMGInventory = await fetchUserInventoryIMGS();
+    //skapar slotsen för inventory. 
+    //lägger in användarens inv som bilder
+
+    for (let i = 0; i < 6; i++) {
+        let itemID = await getItemIDFromPic(currentUserIMGInventory[i]);
+        let itemBoxes = document.createElement("div");
+        let deleteButton = document.createElement("div");
+
+        itemBoxes.innerHTML = "";
+        
+        itemBoxes.classList.add("itemboxes");
+        itemBoxes.innerHTML = `<img src="${currentUserIMGInventory[i]}">`;
+
+        deleteButton.classList.add("deleteButton");
+        deleteButton.innerHTML = "<span class='removeItem'>REMOVE</span>";
+
+        //om ett item nyss har deletats av användaren, 
+        //ska den inte få mouseover funktionen.
+        if (itemBoxes.classList.contains("deletedItem")){
+            itemBoxes.innerHTML = "";
+        }
+        
+        //blir undefined om det inte är ett item på
+        //det indexet. då töms divven. 
+        if (itemBoxes.innerHTML.includes('<img src="undefined">') || itemBoxes.classList.contains("deletedItem")){
+            itemBoxes.innerHTML = "";
+        } else {
+        //skapar en deletebutton vid hovring på itembox, om det 
+        //finns ett item i rutan.
+        itemBoxes.addEventListener("mouseover", () => {
+            itemBoxes.append(deleteButton);
+            if (itemBoxes.classList.contains("deletedItem")){
+                itemBoxes.lastChild.style.display = "none";
+            }
+        })
+
+        itemBoxes.addEventListener("mouseout", () => {
+            deleteButton.remove();
+        });
+        }
+        
+        let removeTextButton = deleteButton.firstChild;
+        //tar bort ett item baserat på dess id.
+        removeTextButton.addEventListener("click", () => {
+            itemBoxes.classList.add("deletedItem");
+
+            setTimeout(() => {
+                //2 ska vara userID när vi fått igång session["id"];
+                console.log(itemID);
+                requestDeleteItem(2, itemID);
+            }, 3000);
+
+            itemBoxes.innerHTML = "";
+            deleteButton.remove();
+        })
+    inventoryObjects.append(itemBoxes);
+    }
+}
+
+
 
 // GRUNDEN TILL JOYSTICK FUNCTIONEN
 function joystick() {
@@ -190,4 +254,3 @@ function joystick() {
         }
     });
 }
-  

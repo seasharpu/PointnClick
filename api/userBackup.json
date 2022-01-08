@@ -5,6 +5,10 @@
         "password": "test123",
         "profilePicture": "99266523275a5c213f54ea25c856f8a1b1e1406b.jpg",
         "inventory": [
+            5,
+            4,
+            2,
+            3,
             1
         ]
     },
@@ -14,7 +18,10 @@
         "password": "uukjbhh",
         "profilePicture": "cc7c956c21dee60890ad21ea13b49496f4469148.jpg",
         "inventory": [
-            2
+            1,
+            2,
+            3,
+            5
         ]
     }
 ]
