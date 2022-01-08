@@ -13,6 +13,49 @@ let currentID = [];
 //     makeStartPage();
 // }
 
+
+//hämtar planeters items utifrån användarens 
+//inventory samt planetens itemOnGround.
+async function fetchItemsForPlanets (userInvArray, currentPlanetID) {  
+    let itemData = await fetchitems();
+
+        currentPlanetID.forEach(idOfPlanet => {
+            itemData.forEach(item => {
+                if (idOfPlanet == item.id ){
+                    if(userInvArray.includes(item.id) == false){
+                        let itemsDiv = document.createElement("div");
+                        itemsDiv.classList.add("planetsItem");
+                        document.querySelector(".background").prepend(itemsDiv);
+                        itemsDiv.style.backgroundImage = `url(${item.image})`
+                    } 
+                }
+            })
+        })
+    }
+
+//jämför planetens ["requiredItem"] med användarens inventory
+//om de inte finns i inventory - FALSE. Annars TRUE.
+async function userRequiredItem(requiredItem, userInvArray){
+    let found = true;
+
+    for (let i = 0; i < userInvArray.length; i++) {
+        if (requiredItem == undefined){
+            //avslutar for-loopen direkt. ingen 
+            //idé att fortsätta om requiredItem är undefined
+            return found;
+        }
+        //kollar om requiredItem stämmer överens om
+        //användarens inventory.
+        if(userInvArray[i] == requiredItem){
+            found = true;
+            break;
+        } else {//
+            found = false;
+        }
+    }
+    console.log(found);
+    return found;
+}
 //hämtar infon om planeterna från planet.json
 async function fetchPlanetNamesandIDs () {
     const response = await fetch('./api/planet.json')
@@ -26,39 +69,65 @@ fetchPlanetNamesandIDs();
 //skapar planeter och lägger till info från planet.json när man klickar på en planet så som bakgrundsbild etc
 async function makePlanets(){
     let planetData = await fetchPlanetNamesandIDs();
-   
-    //console.log(planetData);
+    //backgrounds();
     planetData.forEach(element => {
+
         let planetDiv = document.createElement("div");
         planetDiv.classList.add(element.name);
         document.querySelector(".space").append(planetDiv);
         
-        planetDiv.addEventListener("click", ()=> {
-            loadingDivPlanet();
+        planetDiv.addEventListener("click", async function(){
 
-            document.querySelector(".background").style.position = "static";
-            document.getElementById("location").innerHTML = element.name;
-            document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
-            document.querySelector(".background").style.pointerEvents = `all`;
-            document.querySelector(".joystickDiv").style.display = "none";
             currentID.push(element.id);
 
-            if (element.id == 6){
-                createCodePanel();
-                createBox();
+            async function getUserInventory () {
+                const userID = 2;
+                let users = await fetchUser();
+                let itemData = await fetchitems();
+                let currentUserIDInventory
+
+                currentID.forEach(currentid => {
+                    itemData.forEach(item => {
+                        if(item.id === currentid) {
+                            users.forEach(user => {
+                                if(userID === user.id) {
+                                    currentUserIDInventory = user.inventory;
+                                }
+                            })
+                        }
+                    });         
+                })
+                return currentUserIDInventory;
             }
 
-            //document.querySelector(".background").style.zIndex = 100;
-    
-            cleanBackground();
-            document.querySelector(".background").append(inventory());
-            backToSpaceship(); 
-            // fetchItemsForPlanets();
-            // whichDialogue();
+            let currentUserIDInventory = await getUserInventory();
             
-            
+            let hasUserRequiredItem = await userRequiredItem(element.requiredItem, currentUserIDInventory);
+            console.log(userRequiredItem(element.requiredItem, currentUserIDInventory));
+            console.log(hasUserRequiredItem);
+            if (hasUserRequiredItem == true){
+                //console.log(element.requiredItem);
+                
+                console.log("hej");
+                document.querySelector(".background").style.position = "static";
+                document.getElementById("location").innerHTML = element.name;
+                document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
+                
+                if (element.id == 6){
+                    createCodePanel();
+                }
+                cleanBackground();
+                fetchItemsForPlanets(currentUserIDInventory, currentID);
+                document.querySelector("#hidden").append(inventory());
+                backToSpaceship(); 
+                whichDialogue();
+            } else {
+                planetDiv.classList.add("unavailablePlanet");
+            };
         })
     });
+    //tömmer nuvarande ID tills nästa planet.
+    currentID = [];
 }
 
 // SKAPAR DIV SOM SKA ÄNDRA BAKRUND
@@ -68,7 +137,9 @@ function backgrounds() {
     background.classList.add("background");
     document.querySelector("main").append(background);
 }
-  // MUSIK OCH LJUDEFFEKTER
+
+
+// MUSIK OCH LJUDEFFEKTER
 const spaceMusic = new Audio('assets/audiofiles/slow-travel.wav');
 function spaceMusicPlay(){
         spaceMusic.loop = true;
@@ -76,6 +147,7 @@ function spaceMusicPlay(){
         spaceMusic.play();
     }   
 spaceMusicPlay();
+
 function clickSound() {
     var click = new Audio('assets/audiofiles/click.wav');
     click.play(); 
@@ -90,7 +162,7 @@ function spaceShip() {
     
     blinking();
     makePlanets();
-    backgrounds();
+    //backgrounds();
     inventory();
     joystick(); 
     profile();
@@ -155,25 +227,99 @@ function inventory(){
 
     chest.addEventListener("click", function(e) {
         chest.classList.toggle("chestOpen");
-
+        
         if(inventoryObjects.classList.contains("inventoryObjectsHidden")) {
             inventoryObjects.classList.remove("inventoryObjectsHidden");
             inventoryObjects.classList.add("inventoryObjectsOpen");
-            inventoryObjects.innerHTML = `<div class="itemboxes"></div>
-                                                                    <div class="itemboxes"></div>
-                                                                    <div class="itemboxes"></div>
-                                                                    <div class="itemboxes"></div>
-                                                                    <div class="itemboxes"></div>
-                                                                    <div class="itemboxes"></div>`;
+
+            updateUserInventorySlots();
+
         } else if (inventoryObjects.classList.contains("inventoryObjectsOpen")){
             inventoryObjects.classList.remove("inventoryObjectsOpen");
             inventoryObjects.classList.add("inventoryObjectsHidden");
-            inventoryObjects.innerHTML ="";
         }
 
-    });
+    })
     return inventory;
+};
+
+//hämtar ett ID av item med hjälp av en src från bild.
+async function getItemIDFromPic(src){
+    let items = await fetchitems();
+    let itemID = 0;
+
+    items.forEach(item => {
+        if (item.image == src){
+            itemID = item.id;
+        }
+    });
+    return itemID;
 }
+
+async function updateUserInventorySlots(){
+    let inventoryObjects = document.querySelector(".inventoryObjectsOpen") || document.querySelector(".inventoryObjectsHidden");
+    inventoryObjects.innerHTML = "";
+    let currentUserIMGInventory = await fetchUserInventoryIMGS();
+    //skapar slotsen för inventory. 
+    //lägger in användarens inv som bilder
+
+    for (let i = 0; i < 6; i++) {
+        let itemID = await getItemIDFromPic(currentUserIMGInventory[i]);
+        let itemBoxes = document.createElement("div");
+        let deleteButton = document.createElement("div");
+
+        itemBoxes.innerHTML = "";
+        
+        itemBoxes.classList.add("itemboxes");
+        itemBoxes.innerHTML = `<img src="${currentUserIMGInventory[i]}">`;
+
+        deleteButton.classList.add("deleteButton");
+        deleteButton.innerHTML = "<span class='removeItem'>REMOVE</span>";
+
+        //om ett item nyss har deletats av användaren, 
+        //ska den inte få mouseover funktionen.
+        if (itemBoxes.classList.contains("deletedItem")){
+            itemBoxes.innerHTML = "";
+        }
+        
+        //blir undefined om det inte är ett item på
+        //det indexet. då töms divven. 
+        if (itemBoxes.innerHTML.includes('<img src="undefined">') || itemBoxes.classList.contains("deletedItem")){
+            itemBoxes.innerHTML = "";
+        } else {
+        //skapar en deletebutton vid hovring på itembox, om det 
+        //finns ett item i rutan.
+        itemBoxes.addEventListener("mouseover", () => {
+            itemBoxes.append(deleteButton);
+            if (itemBoxes.classList.contains("deletedItem")){
+                itemBoxes.lastChild.style.display = "none";
+            }
+        })
+
+        itemBoxes.addEventListener("mouseout", () => {
+            deleteButton.remove();
+        });
+        }
+        
+        let removeTextButton = deleteButton.firstChild;
+        //tar bort ett item baserat på dess id.
+        removeTextButton.addEventListener("click", () => {
+            itemBoxes.classList.add("deletedItem");
+
+            setTimeout(() => {
+                //2 ska vara userID när vi fått igång session["id"];
+                requestDeleteItem(2, itemID);
+            }, 3000);
+
+            itemBoxes.innerHTML = "";
+            deleteButton.remove();
+        })
+    inventoryObjects.append(itemBoxes);
+    }
+}
+
+
+
 // GRUNDEN TILL JOYSTICK FUNCTIONEN
 function joystick() {
      // RYMDEN DÄR ALLA PALANETER FINNS

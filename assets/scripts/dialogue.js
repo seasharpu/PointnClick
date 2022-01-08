@@ -26,6 +26,5 @@ async function whichDialogue() {
         })
     })
 }
-//whichDialogue();
 
 
