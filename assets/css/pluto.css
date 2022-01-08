@@ -239,66 +239,75 @@
 }
 
 /*användarens karaktär*/
-.playerCharacter .playerPluto{
-    left: 0px;
-    top: 0px;
-  }
+.playerCharacter .playerPluto {
+  left: 0px;
+  top: 0px;
+}
 
 /*demon*/
-.wingedDemon{
-    height: 200px;
-    width: 200px;
+.wingedDemon {
+  height: 200px;
+  width: 200px;
 
-    left: 100px;
-    top: 170px;
+  left: 100px;
+  top: 170px;
 }
 
 /*MOLN*/
-.cloudSmall{
-    height: 120px;
-    width: 120px;
+.cloudSmall {
+  height: 120px;
+  width: 120px;
 
-    background-size: cover;
-    background-position: center;
-  
-    position:absolute;
+  background-size: cover;
+  background-position: center;
 
-    left: 100px;
-    top: 170px;
+  position: absolute;
 
-    animation: moveclouds 40s linear infinite;
+  left: 100px;
+  top: 170px;
+
+  animation: moveclouds 40s linear infinite;
 }
 
-.cloudBig{
-    height: 200px;
-    width: 200px;
+.cloudBig {
+  height: 200px;
+  width: 200px;
 
-    background-size: cover;
-    background-position: center;
-  
-    position:absolute;
+  background-size: cover;
+  background-position: center;
 
-    left: 100px;
-    top: -30px;
+  position: absolute;
 
-    animation: moveclouds 30s linear infinite;
+  left: 100px;
+  top: -30px;
+
+  animation: moveclouds 30s linear infinite;
 }
 
-.cloud:before, .cloud:after {
-    position: absolute; 
-    transform: rotate(30deg);
-    position: absolute; top: -15px; left: 10px;
+.cloud:before,
+.cloud:after {
+  position: absolute;
+  transform: rotate(30deg);
+  position: absolute;
+  top: -15px;
+  left: 10px;
 }
 
 .cloud:after {
-	width: 120px; height: 120px;
-	top: -55px; left: auto; right: 15px;
+  width: 120px;
+  height: 120px;
+  top: -55px;
+  left: auto;
+  right: 15px;
 }
 
-
 @keyframes moveclouds {
-	0% {margin-left: 1000px;}
-	100% {margin-left: -1000px;}
+  0% {
+    margin-left: 1000px;
+  }
+  100% {
+    margin-left: -1000px;
+  }
 }
 
 .creditsDiv {
@@ -313,70 +322,68 @@
   background-color: rgba(0, 0, 0, 0.623);
   border: black solid 7px;
   color: lime;
-  
+
   width: 115px;
 
   display: inline-block;
-
-
 }
 
-.creditTextWrapper h2, .creditTextWrapper > p {
-  border-right: .15em solid orange;
+.creditTextWrapper h2,
+.creditTextWrapper > p {
+  border-right: 0.15em solid orange;
   white-space: nowrap;
   overflow: hidden;
 }
 
 .creditTextWrapper h2 {
   width: 7.3em;
-} 
+}
 
 .creditTextWrapper > h2,
-.creditTextWrapper >  p:nth-child(2), 
-.creditTextWrapper >  p:nth-child(3), 
-.creditTextWrapper >  p:nth-child(4), 
-.creditTextWrapper >  p:nth-child(5), 
-.creditTextWrapper >  p:nth-child(6), 
-.creditTextWrapper >  p:nth-child(7) {
-   opacity: 0;
-  -webkit-animation: type2 2s steps(40, end), blink .2s step-end infinite alternate;
-  animation: type2 2s steps(40, end), blink 2.s step-end infinite alternate;
+.creditTextWrapper > p:nth-child(2),
+.creditTextWrapper > p:nth-child(3),
+.creditTextWrapper > p:nth-child(4),
+.creditTextWrapper > p:nth-child(5),
+.creditTextWrapper > p:nth-child(6),
+.creditTextWrapper > p:nth-child(7) {
+  opacity: 0;
+  -webkit-animation: type2 2s steps(40, end),
+    blink 0.2s step-end infinite alternate;
+  animation: type2 2s steps(40, end), blink 2s step-end infinite alternate;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-} 
+}
 
 .creditTextWrapper > p:nth-child(2) {
   width: 3em;
   -webkit-animation-delay: 2s;
   animation-delay: 2s;
-
 }
 
 .creditTextWrapper > p:nth-child(3) {
   width: 4em;
   -webkit-animation-delay: 2s;
   animation-delay: 4s;
-
 }
 
-.creditTextWrapper > p:nth-child(4){
+.creditTextWrapper > p:nth-child(4) {
   width: 5em;
   -webkit-animation-delay: 2s;
   animation-delay: 6s;
 }
 
-.creditTextWrapper > p:nth-child(5){
+.creditTextWrapper > p:nth-child(5) {
   width: 3em;
   -webkit-animation-delay: 2s;
   animation-delay: 8s;
 }
 
-.creditTextWrapper > p:nth-child(6){
+.creditTextWrapper > p:nth-child(6) {
   width: 4em;
   -webkit-animation-delay: 2s;
   animation-delay: 10s;
 }
-.creditTextWrapper > p:nth-child(7){
+.creditTextWrapper > p:nth-child(7) {
   width: 3em;
   -webkit-animation-delay: 2s;
   animation-delay: 12s;
@@ -387,7 +394,7 @@
     width: 0;
   }
   99.9% {
-    border-right: .15em solid orange;
+    border-right: 0.15em solid orange;
   }
   100% {
     border: none;
@@ -399,7 +406,7 @@
     width: 0;
   }
   99.9% {
-    border-right: .15em solid orange;
+    border-right: 0.15em solid orange;
   }
   100% {
     border: none;
@@ -414,7 +421,7 @@
     opacity: 1;
   }
   99.9% {
-    border-right: .15em solid orange;
+    border-right: 0.15em solid orange;
   }
   100% {
     opacity: 1;
@@ -430,7 +437,7 @@
     opacity: 1;
   }
   99.9% {
-    border-right: .15em solid orange;
+    border-right: 0.15em solid orange;
   }
   100% {
     opacity: 1;
@@ -450,11 +457,11 @@
 }
 
 .laikasWrapper {
-  grid-area: 2/2/3/3;
+  grid-area: 3/2/3/3;
 }
 
 .laikaTheDog {
-  height: 70px;
+  height: 150px;
   background-repeat: no-repeat;
   background-size: contain;
 }

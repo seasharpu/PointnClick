@@ -196,7 +196,7 @@ function insideLaikasShip () {
 
     document.querySelector(".background").append(laikasWrapper);
     laikasWrapper.append(laikaTheDog);
-    laikaTheDog.style.backgroundImage = `url(./assets/images/watermelon.png)`;
+    laikaTheDog.style.backgroundImage = `url(./assets/images/laika.gif)`;
 
     let creditsDiv = document.createElement("div");
     creditsDiv.classList.add("creditsDiv");
