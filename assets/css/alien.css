@@ -7,3 +7,9 @@
     left: 0px;
     top: 0px;
   }
+
+  .alienPlayerCharacter {
+    position: absolute;
+    left:300px;
+    bottom:155px;
+  }
