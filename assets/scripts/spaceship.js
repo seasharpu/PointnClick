@@ -47,6 +47,9 @@ async function makePlanets(){
                 createCodePanel();
                 createBox();
             }
+            if (element.id == 4) {
+                formJunglePlanet();
+            }
 
             //document.querySelector(".background").style.zIndex = 100;
     
