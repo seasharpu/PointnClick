@@ -41,8 +41,8 @@ function makeStartPage() {
     let newPlayerButton = document.createElement("div");
     let signUpButton = document.createElement("div");
     document.querySelector(".buttonsDiv").append(newPlayerButton, signUpButton);
-    newPlayerButton.innerHTML = "New player";
-    signUpButton.innerHTML = "Sign in";
+    newPlayerButton.innerHTML = "<p>New player</p>";
+    signUpButton.innerHTML = "<p>Sign in</p>";
     signUpButton.setAttribute("ID", "signInButton");
     newPlayerButton.setAttribute("ID", "newPlayerButton");
 }

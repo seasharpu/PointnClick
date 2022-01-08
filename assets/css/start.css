@@ -2,48 +2,79 @@
 /* Denna fil avser unika css-regler för startsidan */
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
 .titleText {
-    font-family: var(--mainFont);
-    color: var(--mainTextC);
-    font-size: 70px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .logInWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 400px;
-    height: 300px;
-    margin: auto;
-  }
-  
-  .NameTagText, .PasswordText{
-    text-align: center;
-    font-family: var(--mainFont);
-    margin: 0;
-    color:var(--inputTitlesC);
-  }
-  
-  .logInWrapper > input {
-    margin-left: auto;
-    margin-right: auto;
-    height: 40px;
-    width: 60%;
-  }
-  
-  .buttonsDiv {
-    width: 60%;
-    height: 100px;
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .buttonsDiv > div {
-    background-color: var(--mainButtonC);
-    width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  font-family: var(--titleFont);
+  color: var(--mainTextC);
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.titleTextDiv {
+  height: 200px;
+  grid-row: 1;
+  grid-column: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logInWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 300px;
+
+  grid-row: 1 / span 2;
+  grid-column: 1;
+  margin: auto;
+}
+
+.NameTagText,
+.PasswordText {
+  text-align: center;
+  font-family: var(--mainFont);
+  margin: 0;
+  color: var(--inputTitlesC);
+}
+
+.logInWrapper > input {
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  width: 60%;
+}
+
+.buttonsDiv {
+  width: 80%;
+  height: 80px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+
+  color: white;
+}
+
+.buttonsDiv > div {
+  background-image: url(/assets/images/purplebutton.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+#newPlayerButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+#newPlayerButton > p {
+  margin: 0px;
+}
