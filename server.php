@@ -87,7 +87,7 @@ if ($contentType == "application/json") {
     //Ändra användarnamn
     //Behöver nytt användarnamn
     if ($rqstMethod === "PATCH") {
-        if (isset($rqstData["newNameTag"], $_SESSION["userID"])) {
+        if (isset($rqstData["newNameTag"], $_SESSION["nameTag"])) {
             $users = loadJson("api/user.json");
             $newNameTag = $rqstData["newNameTag"];
             $foundUser = false;
@@ -95,7 +95,7 @@ if ($contentType == "application/json") {
             // DB BACKUP
             saveJson("api/userBackup.json", $users);
 
-            if (strlen($_SESSION["userID"]) <= 2) {
+            if (strlen($_SESSION["nameTag"]) <= 2) {
                 statusCode(468);
             }
 
