@@ -89,7 +89,10 @@ input {
   justify-content: center;
   margin-top: 10px;
 }
-
+#cancelButton > a {
+  text-decoration: none;
+  color: white;
+}
 .registerTitle {
   display: flex;
   justify-content: center;
@@ -150,7 +153,9 @@ label {
 
   cursor: pointer;
 }
-
+label:hover {
+  cursor: pointer;
+}
 .show {
   width: 200px;
   height: 200px;
