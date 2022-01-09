@@ -30,7 +30,7 @@ async function fetchItemsForPlanets () {
                 itemsDiv.style.backgroundImage = `url(${element.image})`;
             }
         });
-      
+    
         itemsDiv.addEventListener("click", () => {
             document.querySelector(".itemboxes").append(itemsDiv);
         })

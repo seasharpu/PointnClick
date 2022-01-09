@@ -56,7 +56,7 @@
             "name": "plutoPlanet",
             "NPC": {
                 "name": "",
-                "dialogue": ["plutoPlanet1","plutoPlanet2","plutoPlanet3","plutoPlanet4","plutoPlanet5"]
+                "dialogue": ["Hello there tiny creature. Please do not be alarmed by my appearance.","I sought out this small planet for solace.","However, I have a feeling this planet's name has a hidden meaning.","See that box down there? I cannot make any sense of it.","Good luck on your journey, space-thingy."]
             },
             "backgroundImage": "assets/images/Pluto_v1.png"
         }
