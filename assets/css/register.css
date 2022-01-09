@@ -41,10 +41,6 @@
   margin: 5px;
 }
 
-.avatarWrapperDiv > div {
-  /* background-color: blueviolet; */
-}
-
 .avatarWrapperDiv div:first-child {
   background-image: url(/assets/images/characters/avatar1.png);
   background-size: cover;

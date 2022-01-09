@@ -76,19 +76,27 @@ async function makePlanets(){
                 whichDialogue();
 
             } else {
-                let overlay = document.createElement("div");
-                overlay.classList.add("overlay");
-                planetDiv.classList.add("unavailablePlanet");
-                planetDiv.append(unavailablePlanet());
-                planetDiv.append(overlay);
-                setTimeout(() => {
-                    planetDiv.classList.remove("unavailablePlanet");
-                    planetDiv.firstChild.remove();
-                    overlay.remove();
-                }, 4000);
-                currentID = [];
+                if (!planetDiv.classList.contains("unavailablePlanet")){
+                    let overlay = document.createElement("div");
+                    overlay.classList.add("overlay");
+                    planetDiv.classList.add("unavailablePlanet");
+                    let padlock = document.createElement("div");
+                    padlock.classList.add("padlock");
+
+                    planetDiv.append(unavailablePlanet());
+                    planetDiv.append(overlay, padlock);
+
+                    setTimeout(() => {
+                        planetDiv.classList.remove("unavailablePlanet");
+                        planetDiv.firstChild.remove();
+                        overlay.remove();
+                        padlock.remove();
+                    }, 5000);
+                    currentID = [];
+                }
             };
         })
+        
     });
     //tömmer nuvarande ID tills nästa planet.
     console.log(currentID);
@@ -99,7 +107,7 @@ async function makePlanets(){
 function unavailablePlanet (){
     let text = document.createElement("p");
     text.classList.add("error");
-    text.innerHTML = "You cannot visit this planet yet. Do you have the needed item?";
+    text.innerHTML = "You cannot visit this planet yet. Do you have the required item?";
     return text;
 }
 
