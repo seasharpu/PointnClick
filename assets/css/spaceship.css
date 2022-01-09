@@ -54,9 +54,6 @@ wrapper {
   display: grid;
   grid-template-columns: repeat(3, 325px);
   grid-template-rows: auto;
-  border: white 1px solid;
-  box-sizing: border-box;
-  
 }
 /*Denna diven är alla planeter placerade i*/
 .space {
@@ -67,9 +64,7 @@ wrapper {
   right: 0px;
   transition: 2s;
   transition-property: left, right;
-  background-image: url(/assets/images/backgroundtest1.gif);
-  /* background-size: contain;
-  background-position: center; */
+  background-image: url(/assets/images/space_background.png);
 }
 .spaceLeft {
   position: absolute;
@@ -165,10 +160,8 @@ wrapper {
   background-position: center;
   color: white;
   margin-bottom: 10px;
-  margin-left: 13px;
+  margin-left: 10px;
   display: flex;
-  text-align: center;
-  font-size: 10px;
   align-items: center;
   justify-content: center;
   z-index: 10000;
@@ -178,12 +171,6 @@ wrapper {
 }
 .backToSpaceship:hover {
   cursor: pointer;
-}
-.backToSpaceship:active {
-  background-image: url(/assets/images/redbuttondown.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 /*INVENTORY*/
 .inventory {
@@ -320,8 +307,8 @@ wrapper {
   background-size: contain;
   border-radius: 50%;
   position: absolute;
-  left: 115px;
-  top: 188px;
+  left: 60px;
+  top: 150px;
   transition: 1s;
 }
 .alienPlanet {
@@ -332,7 +319,7 @@ wrapper {
   border-radius: 50%;
   position: absolute;
   left: 550px;
-  top: 172px;
+  top: 100px;
   transition: 2s;
 }
 .junglePlanet {
@@ -357,7 +344,6 @@ wrapper {
   top: 380px;
   transition: 2s;
 }
-
 .desertPlanet {
   height: 100px;
   width: 100px;
@@ -377,7 +363,7 @@ wrapper {
   border-radius: 50%;
   position: absolute;
   left: 450px;
-  top: 350px;
+  top: 300px;
   transition: 2s;
 }
 
@@ -546,31 +532,4 @@ wrapper {
   70% {
     opacity: 0;
   }
-}
-
-.exitDiv {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  position: absolute;
-  left: 90px;
-  bottom: 1px;
-  height: 100px;
-  width: 70px;
-  background-image: url(/assets/images/redbuttonup.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.exitDiv:active {
-  background-image: url(/assets/images/redbuttondown.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.exitDiv > a {
-  text-decoration: none;
-  font-family: var(--mainFont);
-  color: white;
 }

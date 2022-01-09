@@ -218,7 +218,7 @@ function backToSpaceship() {
     backToSpaceship.addEventListener("click", function() {
         // document.querySelector(".background").style.display = "none";
         loadingDivSpaceship();
-        clickSound();
+
         setTimeout(() => {
             //makePlanets();
             spaceShip();  

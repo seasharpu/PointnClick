@@ -49,6 +49,7 @@ function requestLoginUser(nameTag, password){
         headers: {"Content-type": "application/json"}
     });
     fetch(req).then(response => getStatusCode(response));
+   
 }
 //requestLoginUser("AlexanderDenStore", "batman123");
 
