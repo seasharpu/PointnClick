@@ -92,8 +92,8 @@ async function makePlanets(){
                         overlay.remove();
                         padlock.remove();
                     }, 5000);
-                    currentID = [];
                 }
+                currentID = [];
             };
         })
         
