@@ -36,12 +36,24 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
+
+      margin-left: 100px;
     }
   
     .avatars {
       background-color: black;
       margin: 5px;
+      height: 200px;
+      width: 200px;
     }
+    #avatarHeader {
+      color: white;
+      text-align: center;
+      margin-left: 100px;
+      margin-bottom: 20px;
+      background-color: var(--mainButtonC);
+    }
+    
   
     .avatarWrapperDiv div:first-child,  .avatarWrapperDiv div:nth-child(2),  .avatarWrapperDiv div:nth-child(3), .avatarWrapperDiv div:nth-child(4) {
       background-size: contain;
@@ -77,7 +89,7 @@
   
     #registerForm {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
   
     input {

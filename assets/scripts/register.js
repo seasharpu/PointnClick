@@ -35,6 +35,7 @@ function MakerRegisterPage() {
 
     formDiv.innerHTML = `
         <form id="registerForm" action="/createUser.php" method="POST" enctype="multipart/form-data">
+        <div id="regiFormWrapper">
             <div id="uploadpicture">
                 <input type="file" name="image" id="file" onchange="loadfile(event)">
                 <label for="file">
@@ -50,19 +51,22 @@ function MakerRegisterPage() {
                 <button type="submit" id="startExploring">Start Exploring</button>
                 <button>Cancel</button>
             </div>
+        </div>
+        <div id="avaterFormWrpper">
+        <div id="avatarHeader">Choose your avatar</div>
             <div class="avatarWrapperDiv">
-                <label>
-                    <input type="radio" name="avatarPic" checked>
-                    <img src="assets/images/characters/avatar1.png">
-                </label>
                 <div class="avatars"><input type="radio" id="avatar1" name="avatarPic" value="HTML"></div>
-                <div class="avatars"></div>
-                <div class="avatars"></div>
-                <div class="avatars"></div>
+                <div class="avatars"><input type="radio" id="avatar2" name="avatarPic" value="HTML"></div>
+                <div class="avatars"><input type="radio" id="avatar3" name="avatarPic" value="HTML"></div>
+                <div class="avatars"><input type="radio" id="avatar4" name="avatarPic" value="HTML"></div>
             </div>
+        </div>
         </form>
     `;
-
+/*<label>
+                    <input type="radio" name="avatarPic" checked>
+                    <img src="assets/images/characters/avatar1.png">
+                </label>*/
     //document.querySelector("#startExploring").addEventListener("click", function () {
     //    document.querySelector("#hidden").innerHTML = "";
     //    createTutorial();
