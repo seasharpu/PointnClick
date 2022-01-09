@@ -1,26 +1,5 @@
 <?php session_start();
 require_once "functions.php";
-
-if (isset($_GET["id"])) {
-    $errorCode = $_GET["id"];
-    if ($errorCode == 210) {
-        statusCode(210);
-    } else if ($errorCode == 463) {
-        statusCode(436);
-    } else if ($errorCode == 464) {
-        statusCode(464);
-    } else if ($errorCode == 468) {
-        statusCode(468);
-    } else if ($errorCode == 467) {
-        statusCode(467);
-    } else if ($errorCode == 464) {
-        statusCode(464);
-    } else if ($errorCode == 466) {
-        statusCode(466);
-    } else if ($errorCode == 465) {
-        statusCode(465);
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,6 +32,7 @@ if (isset($_GET["id"])) {
 </head>
 
 <body>
+
     <header id="location">
     </header>
     <wrapper>
@@ -92,6 +72,31 @@ if (isset($_GET["id"])) {
             <script src="/assets/scripts/loading.js"></script>
             <script src="assets\scripts\formPlanet.js"></script>
 
+    <?php
+    if (isset($_GET["id"])) {
+        $errorCode = $_GET["id"];
+        if ($errorCode == 210) {
+            statusCode(210);
+        } else if ($errorCode == 463) {
+            //statusCode(468);
+            echo "<script>statusCodeDiv('yooooo')</script>";
+
+        } else if ($errorCode == 464) {
+            statusCode(464);
+        } else if ($errorCode == 468) {
+            statusCode(468);
+        } else if ($errorCode == 467) {
+            statusCode(467);
+        } else if ($errorCode == 464) {
+            statusCode(464);
+        } else if ($errorCode == 466) {
+            statusCode(466);
+        } else if ($errorCode == 465) {
+            statusCode(465);
+        }
+    }
+    ?>
+
 
             <?php
             if (isset($_GET["createdUser"])) {
@@ -110,5 +115,7 @@ if (isset($_GET["id"])) {
         <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
     </footer>
 </body>
+
+
 
 </html>

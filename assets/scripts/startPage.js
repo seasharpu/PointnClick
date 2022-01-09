@@ -79,6 +79,7 @@ document.getElementById("signInButton").addEventListener("click", function () {
     
 
     setTimeout(() => {
+        //
         let message = document.querySelector(".statusColor");
         if (message.style.color = "red"){
         document.querySelector(".understood").addEventListener("click", () => {
