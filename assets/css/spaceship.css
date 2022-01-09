@@ -172,7 +172,7 @@ wrapper {
   align-items: center;
   justify-content: center;
   z-index: 10000;
-
+  position: absolute;
   align-self: end;
   font-family: var(--mainFont);
 }
