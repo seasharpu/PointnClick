@@ -4,20 +4,21 @@ require_once "functions.php";
 
 $rqstMethod = $_SERVER["REQUEST_METHOD"];
 
-$data = file_get_contents("php://input");
-$rqstData = json_decode($data, true);
-
-
-
 if ($rqstMethod === "POST") {
-echo $_POST["nameTag"];
-echo $_POST["password"];
-var_dump($_POST);
 
     if (isset($_POST["nameTag"], $_POST["password"])) {
         //loggar in en redan EXISTERANDE användare
         //nameTag & password
-        echo "nueeee";
+
+        $nameTag = $_POST["nameTag"];
+        $password = $_POST["password"];
+
+        if ($email == "" || $password == ""){
+            //TOMMA FÄLT !!
+            header("Location: /sign-in.php?error=1");
+            statusCode(464);
+            exit();
+        }
 
         $users = loadJson("api/user.json");
         $found = false;
@@ -33,6 +34,7 @@ var_dump($_POST);
         }
         if ($found) {
             header("Location: index.php?userFound=1");
+            exit();
         } else {
             statusCode(469);
         }
