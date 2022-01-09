@@ -112,5 +112,12 @@
         "password": "kokok",
         "profilePicture": "31aaa3b81464b390cd614a40040c7d5323834ebd.jpg",
         "inventory": []
+    },
+    {
+        "id": 17,
+        "nameTag": "uyyyyy",
+        "password": "yyyy",
+        "profilePicture": "53fadd120b1b975b444a284209b04f6016d8354b.jpg",
+        "inventory": []
     }
 ]

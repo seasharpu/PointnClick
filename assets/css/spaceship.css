@@ -159,7 +159,7 @@ wrapper {
   cursor: pointer;
 }
 .backToSpaceship:active {
-  background-image:url(/assets/images/redbuttondown.png);
+  background-image: url(/assets/images/redbuttondown.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -281,6 +281,7 @@ wrapper {
   top: 380px;
   transition: 2s;
 }
+
 .desertPlanet {
   height: 100px;
   width: 100px;
@@ -443,7 +444,7 @@ wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   position: absolute;
   left: 90px;
   bottom: 1px;

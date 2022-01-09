@@ -1,7 +1,7 @@
 [
         {
             "id":1,
-            "name": "Partyplanet",
+            "name": "partyPlanet",
             "NPC": {
                 "name": "",
                 "dialogue": ["PartyPlanet1","PartyPlanet2","PartyPlanet3","PartyPlanet4","PartyPlanet4"]
