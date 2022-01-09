@@ -44,7 +44,7 @@ async function makePlanets(){
         });
         
         planetDiv.addEventListener("click", async function(){
-            loadingDivPlanet();
+            
             currentID.push(element.id);
         
             async function getUserInventory () {
@@ -60,11 +60,12 @@ async function makePlanets(){
                 })
                 return currentUserIDInventory;
             }
-
+            
             let currentUserIDInventory = await getUserInventory();
             let hasUserRequiredItem = await userRequiredItem(element.requiredItem, currentUserIDInventory);
             
             if (hasUserRequiredItem == true){
+                loadingDivPlanet();
                 backgrounds();
                 //document.querySelector(".background").style.position = "static";
                 document.getElementById("location").innerHTML = element.location;
@@ -72,7 +73,6 @@ async function makePlanets(){
                 document.querySelector(".background").style.pointerEvents = `all`;
                 document.querySelector(".joystickDiv").style.display = "none";
                 
-                    
                     if (element.id == 6){
                         createCodePanel();
                         createBox();

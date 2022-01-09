@@ -164,7 +164,7 @@ wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10000;
+
   position: absolute;
   align-self: end;
   font-family: var(--mainFont);
@@ -182,6 +182,7 @@ wrapper {
   top: 0px;
   right: 0px;
   justify-self: end;
+  z-index: 1;
 }
 .chest {
   height: 100px;
