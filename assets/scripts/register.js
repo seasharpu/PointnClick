@@ -15,18 +15,18 @@ function MakerRegisterPage() {
     let registerDiv = document.createElement("div");
     registerDiv.classList.add("registerDiv");
 
-    let avatarWrapperDiv = document.createElement("div");
-    avatarWrapperDiv.classList.add("avatarWrapperDiv");
+    //let avatarWrapperDiv = document.createElement("div");
+    //avatarWrapperDiv.classList.add("avatarWrapperDiv");
 
-    document.querySelector(".wrapperDiv").append(registerDiv, avatarWrapperDiv);
+    document.querySelector(".wrapperDiv").append(registerDiv);
 
 
-    for (let i= 1; i <= 4; i++) {
-        let avatars = document.createElement("div");
-        avatars.classList.add("avatars");
-        avatarWrapperDiv.append(avatars);
+    //for (let i= 1; i <= 4; i++) {
+    //    let avatars = document.createElement("div");
+    //    avatars.classList.add("avatars");
+    //    avatarWrapperDiv.append(avatars);
 
-    }    
+    //}   
 
     //skapa new player from
     let formDiv = document.createElement("div");
@@ -42,22 +42,33 @@ function MakerRegisterPage() {
                 </label>
             </div>
             <img id="prePic">
-            <h2 class="placeholderTitle"> NameTag</h2>
-            <input type="text" placeholder="NameTag" name="nameTag">
-            <h2 class="placeholderTitle">Password</h2>
-            <input type="text" placeholder="Password" name="password">
+                <h2 class="placeholderTitle"> NameTag</h2>
+                <input type="text" placeholder="NameTag" name="nameTag">
+                <h2 class="placeholderTitle">Password</h2>
+                <input type="text" placeholder="Password" name="password">
             <div id="buttonsDiv">
                 <button type="submit" id="startExploring">Start Exploring</button>
                 <button>Cancel</button>
             </div>
+            <div class="avatarWrapperDiv">
+                <label>
+                    <input type="radio" name="avatarPic" checked>
+                    <img src="assets/images/characters/avatar1.png">
+                </label>
+                <div class="avatars"><input type="radio" id="avatar1" name="avatarPic" value="HTML"></div>
+                <div class="avatars"></div>
+                <div class="avatars"></div>
+                <div class="avatars"></div>
+            </div>
         </form>
-    `
+    `;
 
-    document.querySelector("#startExploring").addEventListener("click", function () {
-        document.querySelector("#hidden").innerHTML = "";
-        createTutorial();
+    //document.querySelector("#startExploring").addEventListener("click", function () {
+    //    document.querySelector("#hidden").innerHTML = "";
+    //    createTutorial();
     
-    });
+    //});
+    return registerDiv;
 }
 
 //MakerRegisterPage();
