@@ -13,7 +13,7 @@ if ($rqstMethod === "POST") {
         $nameTag = $_POST["nameTag"];
         $password = $_POST["password"];
 
-        if ($email == "" || $password == ""){
+        if ($nameTag == "" || $password == ""){
             //TOMMA FÄLT !!
             header("Location: /sign-in.php?error=1");
             statusCode(464);
