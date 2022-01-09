@@ -85,9 +85,13 @@
 
   flex-basis: 0;
   flex-grow: 1;
+  color: var(--mainTextC);
 }
 #buttonsDivStart > button:active {
   background: url(/assets/images/buttonpress.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 #buttonsDivStart > button:hover {
   cursor: pointer;

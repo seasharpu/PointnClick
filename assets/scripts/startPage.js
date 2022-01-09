@@ -67,7 +67,7 @@ function makeStartPage() {
             <input type="password" name="password">
             <div id="buttonsDivStart">
                 <button class="loginButton" type="submit">Login</button>
-                <button class="createUser" type="button">Create User</button>
+                <button class="createUser" type="button">New Player</button>
             </div>
         </form>
     `;
