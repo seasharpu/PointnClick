@@ -2,9 +2,10 @@
         {
             "id":1,
             "name": "partyPlanet",
+            "location": "Party Planet",
             "NPC": {
                 "name": "",
-                "dialogue": ["PartyPlanet1","PartyPlanet2","PartyPlanet3","PartyPlanet4","PartyPlanet4"]
+                "dialogue": ["Wanna party??!","Once this was the coolest place in space","it's not anymore..","PARTYTIME!!","Look at the screen..."]
             },
             "itemOnGround":4,
             "backgroundImage": "assets/images/party_planet.png"
@@ -12,6 +13,7 @@
         {
             "id":2,
             "name": "desertPlanet",
+            "location": "Desert Planet",
             "NPC": {
                 "name": "",
                 "dialogue": ["Greetings, traveler. What brings you do this desert planet?","While i wondered the desert i saw equipment suited for underwater planets. A bit strange considering theres no water here","Farewell traveler and good luck"]
@@ -22,6 +24,7 @@
         {
             "id":3,
             "name": "alienPlanet",
+            "location": "Alien Planet",
             "NPC": {
                 "name": "",
                 "dialogue": ["alienPlanet1","alienPlanet2","alienPlanet3","alienPlanet4","alienPlanet5"]
@@ -33,6 +36,7 @@
         {
             "id":4,
             "name": "junglePlanet",
+            "location": "Jungle Planet",
             "NPC": {
                 "name": "",
                 "dialogue": ["junglePlanet1","junglePlanet2","junglePlanet3","junglePlanet4","junglePlanet5"]
@@ -43,6 +47,7 @@
         {
             "id":5,
             "name": "underwaterPlanet",
+            "location": "Water Planet",
             "NPC": {
                 "name": "",
                 "dialogue": ["Hello, I am underwater.","Why did the star decide to take a vacation? It needed some space.","I dont even know what a... dog is?","Smell ya later!"]
@@ -54,6 +59,7 @@
         {
             "id":6,
             "name": "plutoPlanet",
+            "location": "Pluto",
             "NPC": {
                 "name": "",
                 "dialogue": ["plutoPlanet1","plutoPlanet2","plutoPlanet3","plutoPlanet4","plutoPlanet5"]

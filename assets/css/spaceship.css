@@ -89,8 +89,25 @@ wrapper {
   width: 140px;
   cursor: pointer;
 }
+/*Display där man ser namner på planeten*/
+.displayDiv {
+  background-image: url(/assets/images/display.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 70px;
+  position: absolute;
+  left: 661px;
+  font-size: 13px;
+  bottom: 20px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+}
 /*JOYSTICK*/
-
 .joystickDiv {
   position: absolute;
   display: flex;

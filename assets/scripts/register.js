@@ -48,7 +48,7 @@ function MakerRegisterPage() {
             <input type="text" name="password">
             <div id="buttonsDiv">
                 <button type="submit" id="startExploring">Start Exploring</button>
-                <button id="cancelButton">Cancel</button>
+                <button id="cancelButton"><a href='exit.php'>Cancel</a></button>
             </div>
         </form>
     `
