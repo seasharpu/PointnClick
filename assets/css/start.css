@@ -68,7 +68,9 @@
   flex-basis: 0;
   flex-grow: 1;
 }
-
+.buttonsDiv:hover {
+  cursor: pointer;
+}
 #newPlayerButton {
   display: flex;
   justify-content: center;

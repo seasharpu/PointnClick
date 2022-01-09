@@ -79,7 +79,9 @@
         display: flex;
         flex-direction: column;
     }
-  
+  #startExploring:hover {
+    cursor: pointer;
+  }
     input {
       height: 50px;
     }
@@ -89,7 +91,9 @@
       justify-content: center;
       margin-top: 10px;
     }
-  
+    #buttonsDiv:hover {
+      cursor: pointer;
+    }
     .placeholderTitle {
       display: flex;
       justify-content: center;
@@ -103,8 +107,12 @@
       text-decoration: none;
       background-color: var(--mainButtonC);
       border: 2px solid var(--buttonBorderC);
+      
     }
-  
+    button > a {
+      color: black;
+      text-decoration: none;
+    }
     #uploadepicture {
       display: flex;
       justify-content: center;
@@ -123,7 +131,9 @@
       justify-content: center;
       align-items: center;
     }
-  
+  label:hover {
+    cursor: pointer;
+  }
     .show{
       width: 200px;
       height: 200px;
