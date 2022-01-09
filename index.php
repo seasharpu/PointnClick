@@ -55,7 +55,7 @@ require_once "functions.php";
             }
             if (isset($_GET["createdUser"])) {
                 echo "<script>const createdUser = true </script>";
-                echo "hejhej echo";
+                //echo "hejhej echo";
             }
             echo "<script>const userID = $id</script>";
             echo "<script>const userNameTag = $nameTag</script>";
@@ -73,26 +73,72 @@ require_once "functions.php";
             <script src="assets\scripts\formPlanet.js"></script>
 
     <?php
+    //tar fram felmeddelanden som skickats från createUser.php
     if (isset($_GET["id"])) {
         $errorCode = $_GET["id"];
         if ($errorCode == 210) {
             statusCode(210);
         } else if ($errorCode == 463) {
             //statusCode(468);
-            echo "<script>statusCodeDiv('yooooo')</script>";
+            echo "<script>statusCodeDiv('User was not found. Huh?')</script>";
+            echo "<script>
+                    document.querySelector('.understood').addEventListener('click', (event) =>{
+                    document.querySelector('.statusCodeDiv').remove();
+                    });
+                    MakerRegisterPage();
+                </script>";
 
         } else if ($errorCode == 464) {
-            statusCode(464);
+            //statusCode(464);
+            echo "<script>statusCodeDiv('User was not found. Huh?')</script>";
+            echo "<script>
+                    document.querySelector('.understood').addEventListener('click', (event) =>{
+                    document.querySelector('.statusCodeDiv').remove();
+                    });
+                </script>";
         } else if ($errorCode == 468) {
-            statusCode(468);
+            //statusCode(468);
+            echo "<script>statusCodeDiv('Please add more than 2 characters to your new name tag.')</script>";
+            echo "<script>
+                    document.querySelector('.understood').addEventListener('click', (event) =>{
+                    document.querySelector('.statusCodeDiv').remove();
+                    });
+                </script>";
         } else if ($errorCode == 467) {
-            statusCode(467);
+            //statusCode(467);
+            echo "<script>statusCodeDiv('Please add more than 3 characters to your password.')</script>";
+            echo "<script>
+                    document.querySelector('.understood').addEventListener('click', (event) =>{
+                    document.querySelector('.statusCodeDiv').remove();
+                    });
+                    MakerRegisterPage();
+                </script>";
         } else if ($errorCode == 464) {
-            statusCode(464);
+            //statusCode(464);
+            echo "<script>statusCodeDiv('Please fill in all the fields.')</script>";
+            echo "<script>
+                    document.querySelector('.understood').addEventListener('click', (event) =>{
+                    document.querySelector('.statusCodeDiv').remove();
+                    });
+                </script>";
         } else if ($errorCode == 466) {
-            statusCode(466);
+            //statusCode(466);
+            echo "<script>statusCodeDiv('Something went wrong with your picture. Please try again.')</script>";
+            echo "<script>
+                document.querySelector('.understood').addEventListener('click', (event) =>{
+                document.querySelector('.statusCodeDiv').remove();
+                });
+                MakerRegisterPage();
+                </script>";
         } else if ($errorCode == 465) {
-            statusCode(465);
+            //statusCode(465);
+            echo "<script>statusCodeDiv('Picture is too large! Try something smaller than 400kb.')</script>";
+            echo "<script>
+                    document.querySelector('.understood').addEventListener('click', (event) =>{
+                    document.querySelector('.statusCodeDiv').remove();
+                    });
+                    MakerRegisterPage();
+                </script>";
         }
     }
     ?>

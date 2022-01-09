@@ -135,5 +135,13 @@
         "profilePicture": "388e57a27640ca90f637bc200f64b1908f7915f3.jpeg",
         "inventory": [],
         "laikaFound": false
+    },
+    {
+        "id": 20,
+        "nameTag": "t",
+        "password": "t",
+        "profilePicture": "89a4ebc2686b9e9a108119496b9c1fbf76efd359.jpg",
+        "inventory": [],
+        "laikaFound": false
     }
 ]
