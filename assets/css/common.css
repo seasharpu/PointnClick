@@ -73,13 +73,13 @@ footer {
   color: var(--mainTextC);
   background-color: black;
 }
-.spacesShipBackground{
-  position:relative;
+.spacesShipBackground {
+  position: relative;
 }
-.spacesShipBackground{
-  position:relative;
+.spacesShipBackground {
+  position: relative;
 }
-.statusCodeDiv{
+.statusCodeDiv {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.36);
@@ -116,7 +116,7 @@ footer {
   text-align: center;
   margin: 5px 3px 0px 3px;
 }
-.statusCodeDiv .understood{
+.statusCodeDiv .understood {
   background-color: var(--exitButtonC);
   padding: 13px 20px 13px 20px;
   color: var(--mainTextC);
@@ -129,7 +129,8 @@ footer {
   background-color: #9f032f;
 }
 
-.buttonToexit, .understoodToStay {
+.buttonToexit,
+.understoodToStay {
   background-color: var(--exitButtonC);
   color: var(--mainTextC);
   padding: 11px;
@@ -139,10 +140,12 @@ footer {
   justify-content: center;
 }
 
-.understoodToStay:hover, .buttonToexit:hover {
+.understoodToStay:hover,
+.buttonToexit:hover {
   background-color: #b10334;
 }
-.understoodToStay:active, .buttonToexit:active {
+.understoodToStay:active,
+.buttonToexit:active {
   background-color: #9f032f;
 }
 
@@ -157,13 +160,13 @@ footer {
 }
 /*karaktärer för planeten*/
 
-.character{
+.character {
   background-size: cover;
   background-position: center;
 
-  position:absolute;
+  position: absolute;
 }
-.playerCharacter{
+.playerCharacter {
   background-size: cover;
   background-position: center;
 
@@ -184,7 +187,6 @@ footer {
   justify-content: center;
   align-items: center;
   position: absolute;
-  border: white 1px solid;
   box-sizing: border-box;
   z-index: 10;
 }
@@ -199,7 +201,6 @@ footer {
   justify-content: center;
   align-items: center;
   position: absolute;
-  border: white 1px solid;
   box-sizing: border-box;
   z-index: 10;
 }
