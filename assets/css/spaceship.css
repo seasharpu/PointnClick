@@ -107,9 +107,8 @@ wrapper {
   width: 100px;
 }
 .joystickLeft {
-  background-image: url(/assets/images/joystick/joystick_right-2.png);
+  background-image: url(/assets/images/joystick/joystick_left-2.png);
   background-repeat: no-repeat;
-  transform: scaleX(-1);
 
   height: 100px;
   width: 100px;
@@ -123,15 +122,14 @@ wrapper {
 .goLeft {
   height: 50px;
   width: 50px;
-  background-image: url(/assets/images/joystick/arrow.png);
+  background-image: url(/assets/images/joystick/arrow_left.png);
   background-size: contain;
-  transform: scaleX(-1);
   cursor: pointer;
 }
 .goRight {
   height: 50px;
   width: 50px;
-  background-image: url(/assets/images/joystick/arrow.png);
+  background-image: url(/assets/images/joystick/arrow_right.png);
   background-size: contain;
   cursor: pointer;
 }
@@ -306,20 +304,19 @@ wrapper {
 
 /*DIALOG CSS*/
 
-.dialogueBubble {
-  height: 50px;
-
-  background-image: url(/assets/images/talkbubble.png);
+.innerDialogue{
+  font-size: x-small;
+  height: 129px;
+  width: 265px;
+  
+  background-image: url(/assets/images/talkbubble_left.png);
   background-size: contain;
   background-repeat: no-repeat;
+}
 
-  grid-column: 1;
-
-  /*  background-color: white;
-  width: 150px;
-  height: 70px;
-  position: absolute;
-  right: -50px; */
+.characterDialogueWrapper {
+  height: 129px;
+  width: 265px;
 }
 
 /*ITEMS CSS */

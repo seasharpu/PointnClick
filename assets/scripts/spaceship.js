@@ -111,6 +111,8 @@ function spaceShip() {
     spaceShipBackground.classList.add("spaceShipBackground");
     document.querySelector("main").append(spaceShipBackground);
     document.getElementById("location").innerHTML = "Spaceship";
+    let tt = characterDialogue.length = 0; //tömmer inte? 
+    console.log(tt);
     
     blinking();
     makePlanets();
@@ -245,12 +247,16 @@ function joystick() {
         joystick.classList.toggle("joystickLeft");
         space.classList.toggle("spaceLeft");
         if(joystick.classList.contains("joystickLeft")) {
-            document.querySelector(".goRight").style.pointerEvents = "none";
-            document.querySelector(".goRight").style.opacity = "0.8";
+            document.querySelector(".goLeft").style.pointerEvents = "none";
+            document.querySelector(".goLeft").style.opacity = "0.8";
+
+            //document.querySelector(".goRight").style.pointerEvents = "all";
+            //document.querySelector(".goRight").style.opacity = "1";
             clickSound();
         } else {
             document.querySelector(".goRight").style.pointerEvents = "all";
             document.querySelector(".goRight").style.opacity = "1";
+            
             clickSound();
         }
     });
@@ -258,8 +264,11 @@ function joystick() {
         joystick.classList.toggle("joystickRight");
         space.classList.toggle("spaceRight");
         if(joystick.classList.contains("joystickRight")) {
-            document.querySelector(".goLeft").style.pointerEvents = "none";
-            document.querySelector(".goLeft").style.opacity = "0.8";
+            document.querySelector(".goRight").style.pointerEvents = "none";
+            document.querySelector(".goRight").style.opacity = "0.8";
+
+            //document.querySelector(".goLeft").style.pointerEvents = "all";
+            //document.querySelector(".goLeft").style.opacity = "1";
             clickSound();
         } else {
             document.querySelector(".goLeft").style.pointerEvents = "all";

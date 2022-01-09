@@ -56,7 +56,7 @@ function statusCodeDivEnd(message){
         <h2>Message</h2>
         <p class="statusColorexitORstay">${message}</p>
         <div class="stayORexitButtons">
-            <div class="understoodToStay">Stay and explore</div>
+            <div class="understoodToStay">Ok</div>
             <div class="buttonToexit"><a href='exit.php'>Exit world</a></div>
         </div>    
     </div>

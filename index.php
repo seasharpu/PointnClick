@@ -87,8 +87,8 @@ if (isset($_GET["id"])) {
             <script src="/assets/scripts/spaceship.js"></script>
             <script src="/assets/scripts/dialogue.js"></script>
             <script src="assets\scripts\statuscodemessages.js"></script>
-            <script src="/assets/scripts/pluto.js"></script>
             <script src="/assets/scripts/items.js"></script>
+            <script src="/assets/scripts/pluto.js"></script>
             <script src="/assets/scripts/loading.js"></script>
             <script src="assets\scripts\formPlanet.js"></script>
 
@@ -107,7 +107,7 @@ if (isset($_GET["id"])) {
         <div class="rightBlack"></div>
     </wrapper>
     <footer>
-        <h4 id="footer-tile">© 2021 - Click n'Point studios</h4>
+        <h4 id="footer-tile">© 2022 - Click n'Point studios</h4>
     </footer>
 </body>
 
