@@ -85,7 +85,6 @@ if (isset($_GET["id"])) {
                 echo "<script>const userNameTag = '$nameTag'</script>";
             }
 
-
             ?>
             <script src="/assets/scripts/requests.js"></script>
             <script src="/assets/scripts/tutorial.js"></script>
