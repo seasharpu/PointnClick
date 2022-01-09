@@ -38,10 +38,15 @@
   justify-content: center;
   align-items: center;
   width: 400px;
-  height: 300px;
+  height: 100%;
 
   grid-row: 1 / span 2;
   grid-column: 1;
+}
+
+.passwordTitle,
+.nameTitle {
+  font-family: var(--titleFont);
 }
 
 .NameTagText,
@@ -60,8 +65,7 @@
   text-align: center;
 }
 
-.buttonsDiv {
-  width: 80%;
+#buttonsDivStart {
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -69,27 +73,27 @@
   color: white;
 }
 
-.buttonsDiv > div {
-  background-image: url(/assets/images/button.png);
+#buttonsDivStart > button {
+  background: url(/assets/images/button.png);
   background-size: contain;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
+  border: none;
 
   flex-basis: 0;
   flex-grow: 1;
+  color: var(--mainTextC);
 }
-.buttonsDiv > div:active {
-  background-image: url(/assets/images/buttonpress.png);
+#buttonsDivStart > button:active {
+  background: url(/assets/images/buttonpress.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-
-#newPlayerButton > p:hover {
-  cursor: pointer;
-}
-
-#signInButton > p:hover {
+#buttonsDivStart > button:hover {
   cursor: pointer;
 }
 
