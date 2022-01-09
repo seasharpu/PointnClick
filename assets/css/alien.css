@@ -22,3 +22,11 @@
     left: 600px;
     bottom: 300px;
   }
+
+.alien .planetsItem{
+  position: absolute;
+  left: 895px;
+  top: 580px;
+  height: 50px;
+  width: 50px;
+}

@@ -13,3 +13,11 @@
     left: 700px;
     bottom: 300px;
 }
+
+.underwater .planetsItem{
+    position: absolute;
+    left: 650px;
+    top: 584px;
+    height: 45px;
+    width: 45px;
+}

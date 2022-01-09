@@ -21,3 +21,11 @@
   left: 400px;
   bottom: 90px;
 }
+
+.desert .planetsItem{
+  position: absolute;
+  left: 330px;
+  top: 440px;
+  height: 50px;
+  width: 50px;
+}

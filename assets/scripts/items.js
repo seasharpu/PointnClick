@@ -1,4 +1,5 @@
 "use strict";
+const userID = globalUserID;
 async function fetchUser() {
     const response = await fetch('./api/user.json')
     const data = await response.json()
@@ -73,7 +74,6 @@ async function userRequiredItem(requiredItem, userInvArray){
 //jämför användarens items med bilderna i item.json.
 //skickar ut en array med bilder av användarens items
 async function fetchUserInventoryIMGS () {
-    const userID = 2;
     let users = await fetchUser();
     let itemData = await fetchitems();
 

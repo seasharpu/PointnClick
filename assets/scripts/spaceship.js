@@ -64,6 +64,7 @@ async function makePlanets(){
                         currentUserIDInventory = user.inventory;
                     }
                 })
+                console.log(currentUserIDInventory);
                 return currentUserIDInventory;
             }
             
@@ -87,24 +88,29 @@ async function makePlanets(){
                     }
                     if (element.id == 5) {
                         formWaterPlanet();
+                        document.querySelector("main").classList.add("underwater");
                         document.querySelector(".playerCharacter").classList.add("waterPlayerCharacter");
                         
                     }
                     if (element.id == 4) {
                         formJunglePlanet();
+                        document.querySelector("main").classList.add("jungle");
                         document.querySelector(".playerCharacter").classList.add("junglePlayerCharacter");
                         
                     }
                     if (element.id == 3) {
                         formAlienPlanet();
+                        document.querySelector("main").classList.add("alien");
                         document.querySelector(".playerCharacter").classList.add("alienPlayerCharacter");
                     }
                     if (element.id == 2) {
                         formDesertPlanet();
+                        document.querySelector("main").classList.add("desert");
                         document.querySelector(".playerCharacter").classList.add("desertPlayerCharacter");
                     }
                     if (element.id == 1) {
                         formPartyPlanet();
+                        document.querySelector("main").classList.add("party");
                         document.querySelector(".playerCharacter").classList.add("partyPlayerCharacter");
                     }
 
