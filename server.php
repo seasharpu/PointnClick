@@ -44,7 +44,7 @@ if ($contentType == "application/json") {
                 }
             }
             if ($found) {
-                statusCode(210);
+                header("Location: index.php?userFound=1");
             } else {
                 statusCode(469);
             }
@@ -168,6 +168,7 @@ if ($contentType == "application/json") {
         }
     }
 } else {
+    echo "inte json";
     statusCode(405);
 }
 

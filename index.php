@@ -53,11 +53,13 @@ if (isset($_GET["id"])) {
 </head>
 
 <body>
+
     <header id="location">
     </header>
     <wrapper>
         <div class="leftBlack"></div>
         <main id="hidden">
+            <script src="/assets/scripts/startPage.js"></script>
             <?php
 
             require_once "functions.php";
@@ -66,8 +68,8 @@ if (isset($_GET["id"])) {
             }
 
             //kollar om vi har en inloggad användare.
-            if (isset($_SESSION["id"], $_SESSION["nameTag"])) {
-                $id = $_SESSION["id"];
+            if (isset($_SESSION["userID"], $_SESSION["nameTag"])) {
+                $id = $_SESSION["userID"];
                 $nameTag = $_SESSION["nameTag"];
             } else {
                 $id = -1;
@@ -77,18 +79,24 @@ if (isset($_GET["id"])) {
                 echo "<script>const createdUser = true </script>";
                 echo "hejhej echo";
             }
-            echo "<script>const userID = $id</script>";
-            echo "<script>const userNameTag = $nameTag</script>";
+
+            if (isset($_GET["userFound"])) {
+                echo "<script>const globalUserID = $id</script>";
+                echo "<script>const userNameTag = $nameTag</script>";
+            }
+
+
             ?>
             <script src="/assets/scripts/requests.js"></script>
             <script src="/assets/scripts/tutorial.js"></script>
             <script src="/assets/scripts/register.js"></script>
-            <script src="/assets/scripts/startPage.js"></script>
+
             <script src="/assets/scripts/spaceship.js"></script>
             <script src="/assets/scripts/dialogue.js"></script>
             <script src="assets\scripts\statuscodemessages.js"></script>
-            <script src="/assets/scripts/pluto.js"></script>
             <script src="/assets/scripts/items.js"></script>
+            <script src="/assets/scripts/pluto.js"></script>
+
             <script src="/assets/scripts/loading.js"></script>
             <script src="assets\scripts\formPlanet.js"></script>
 
