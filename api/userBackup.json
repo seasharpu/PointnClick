@@ -139,5 +139,13 @@
         "profilePicture": "388e57a27640ca90f637bc200f64b1908f7915f3.jpeg",
         "inventory": [],
         "laikaFound": false
+    },
+    {
+        "id": 20,
+        "nameTag": "Tester",
+        "password": "teeth",
+        "profilePicture": "bce72c38438716e7626428965e8d8cf14fd6b437.jpeg",
+        "inventory": [],
+        "laikaFound": false
     }
 ]

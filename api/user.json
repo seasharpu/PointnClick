@@ -147,5 +147,13 @@
         "profilePicture": "bce72c38438716e7626428965e8d8cf14fd6b437.jpeg",
         "inventory": [],
         "laikaFound": false
+    },
+    {
+        "id": 21,
+        "nameTag": "Blub",
+        "password": "Blubb",
+        "profilePicture": "9d4f8cfc7cb6353059d1c94df038c13a5ca91ecd.jpeg",
+        "inventory": [],
+        "laikaFound": false
     }
 ]

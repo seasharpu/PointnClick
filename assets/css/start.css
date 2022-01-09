@@ -49,6 +49,13 @@
   font-family: var(--titleFont);
 }
 
+.passwordTitle {
+  display: flex;
+  justify-content: center;
+  color: var(--mainButtonC);
+  font-family: var(--titleFont);
+}
+
 .NameTagText,
 .PasswordText {
   margin: 15px;

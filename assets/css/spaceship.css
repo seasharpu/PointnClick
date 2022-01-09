@@ -64,7 +64,7 @@ wrapper {
   right: 0px;
   transition: 2s;
   transition-property: left, right;
-  background-image: url(/assets/images/space_background.png);
+  background-image: url(/assets/images/backgroundtest1.gif);
 }
 .spaceLeft {
   position: absolute;
