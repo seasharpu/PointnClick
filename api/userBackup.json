@@ -119,5 +119,13 @@
         "password": "yyyy",
         "profilePicture": "53fadd120b1b975b444a284209b04f6016d8354b.jpg",
         "inventory": []
+    },
+    {
+        "id": 18,
+        "nameTag": "LivTheMighty",
+        "password": "test1234",
+        "profilePicture": "7a78c79bcf05df9187db5f2b6d186432a8ee3088.jpeg",
+        "inventory": [],
+        "laikaFound": false
     }
 ]
