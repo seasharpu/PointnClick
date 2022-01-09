@@ -200,7 +200,8 @@ function profile() {
     profilePic.classList.add("profilePic");
     profileName.classList.add("profileName");
 
-    profileName.innerHTML = "Jonna";
+    profileName.innerHTML = `${userNameTag}`;
+    document.querySelector("profilePic").style.backgroundImage = "";
     document.querySelector(".spaceShipBackground").append(profileDiv);
     document.querySelector(".profileDiv").append(profileName);
     document.querySelector(".profileDiv").append(profilePic);
