@@ -10,9 +10,13 @@ if (globalUserID == undefined){
     console.log("not inlogged");
 }
 if (globalUserID  > 0) {
+
+    document.querySelector("#hidden").innerHTML = "";
+    //document.querySelector(".background").remove();
+
     spaceShip();
     backgrounds();
-    makeStartPage();
+    //makeStartPage();
 }
 
 //hämtar infon om planeterna från planet.json
