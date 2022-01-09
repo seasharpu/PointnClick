@@ -41,44 +41,25 @@ async function makePlanets(){
             async function getUserInventory () {
                 const userID = 2;
                 let users = await fetchUser();
-                let itemData = await fetchitems();
                 let currentUserIDInventory = [];
                 //console.log(currentUserIDInventory);
 
                 //console.log();
 
-                currentID.forEach(currentid => {
-                    //console.log(currentid);
-                    itemData.forEach(item => {
-                        console.log(item.id);
-                        console.log(currentid);
-                        if(item.id === currentid || currentID == 6) {
-                            users.forEach(user => {
-                                //console.log();
-                                if(userID === user.id) {
-                                    currentUserIDInventory = user.inventory;
-                                    
-                                }
-                            })
-                        }
-                    });         
+                users.forEach(user => {
+                    if (user.id == userID){
+                        currentUserIDInventory = user.inventory;
+                    }
                 })
-                console.log(currentUserIDInventory);
                 return currentUserIDInventory;
             }
 
             let currentUserIDInventory = await getUserInventory();
-            //console.log(currentUserIDInventory)
             
             let hasUserRequiredItem = await userRequiredItem(element.requiredItem, currentUserIDInventory);
-            //console.log(userRequiredItem(element.requiredItem, currentUserIDInventory));
             
             if (hasUserRequiredItem == true){
-                //console.log(hasUserRequiredItem);
-
                 backgrounds();
-                //console.log(currentUserIDInventory);
-                console.log("hej");
                 document.querySelector(".background").style.position = "static";
                 document.getElementById("location").innerHTML = element.name;
                 document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
@@ -86,8 +67,6 @@ async function makePlanets(){
                 if (element.id == 6){
                     createCodePanel();
                     createBox();
-                    //console.log(currentUserIDInventory);
-                    //console.log(element);
                 }
 
                 cleanBackground();

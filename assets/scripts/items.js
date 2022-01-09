@@ -36,8 +36,6 @@ async function fetchItemsForPlanets (userInvArray, currentPlanetID) {
 //om de inte finns i inventory - FALSE. Annars TRUE.
 async function userRequiredItem(requiredItem, userInvArray){
     let found = true;
-    //console.log(userInvArray);
-    //console.log(requiredItem);
 
     for (let i = 0; i < userInvArray.length; i++) {
         if (requiredItem == undefined){
@@ -53,44 +51,38 @@ async function userRequiredItem(requiredItem, userInvArray){
             } else {
                 found = true;
             }
-
+            //STANNA. Om den hittat.
             break;
-        } else {//
+        } else {
             found = false;
         }
     }
-    console.log(found);
     return found;
 }
 
+//jämför användarens items med bilderna i item.json.
+//skickar ut en array med bilder av användarens items
 async function fetchUserInventoryIMGS () {
     const userID = 2;
     let users = await fetchUser();
     let itemData = await fetchitems();
 
-
     let currentUserIMGInventory = [];
+    let currentUserIDInventory = [];
 
-    
-    currentID.forEach(currentid => {
+    users.forEach(user => {
+        if (user.id == userID){
+            currentUserIDInventory = user.inventory;
+            console.log(currentUserIDInventory);
+        }
+    })
+
+    currentUserIDInventory.forEach(userInventoryID => {
         itemData.forEach(item => {
-            if(item.id === currentid) {
-                users.forEach(user => {
-                    if(userID === user.id) {
-                        let currentUserIDInventory = user.inventory;
-
-                        //får ut användarens inventory i bilder.
-                        currentUserIDInventory.forEach(userInventoryID => {
-                            itemData.forEach(item => {
-                                if(userInventoryID === item.id) {
-                                    currentUserIMGInventory.push(item.image);
-                                }
-                            })
-                        })
-                    }
-                })
+            if(userInventoryID === item.id) {
+                currentUserIMGInventory.push(item.image);
             }
-        });         
+        })
     })
     return currentUserIMGInventory;
 }
