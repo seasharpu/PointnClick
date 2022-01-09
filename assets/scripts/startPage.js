@@ -55,61 +55,68 @@ function makeStartPage() {
     signUpButton.innerHTML = "<p>Sign in</p>";
     signUpButton.setAttribute("ID", "signInButton");
     newPlayerButton.setAttribute("ID", "newPlayerButton");
+
+    //LOGGA IN
+    document.getElementById("signInButton").addEventListener("click", function () {
+        clickSound();
+    
+        let nametag = document.getElementById("nameTagInput").value;
+        let password = document.getElementById("passwordInput").value;
+    
+    
+    
+        //PRELIMINÄR LÖSNING
+    
+        setTimeout(() => {
+            //om statuskoden visar på fel, ska användaren
+            //få chans att läsa vad som var fel, och sen trycka tillbaka
+            let message = document.querySelector(".statusColor");
+            if (message.style.color = "red"){
+                //document.querySelector(".spaceShipBackground").style.backgroundImage = "none";
+                //document.querySelector(".joystickDiv").style.display = "none";
+                //document.querySelector(".space").style.display = "none";
+                //document.querySelector(".profileDiv").style.display = "none";
+                //document.querySelector(".exit").style.display = "none";
+            }
+        }, 600);
+        
+    
+        setTimeout(() => {
+            //
+            let message = document.querySelector(".statusColor");
+            if (message.style.color = "red"){
+            document.querySelector(".understood").addEventListener("click", () => {
+                document.querySelector("main").innerHTML = "";
+                makeStartPage();
+            })
+        }
+    
+        }, 1000);
+        
+    
+    
+        //om det är tomt i fälten.
+        if (nametag.length == 0 || password.length == 0){
+            document.querySelector("main").append(statusCodeDiv("Please fill in all the fields."));
+    
+            document.querySelector(".understood").addEventListener("click", (event) =>{
+                //let statusCodeDiv = event.target.parentElement.parentElement;
+                document.querySelector(".statusCodeDiv").remove();
+                makeStartPage();
+            })
+        }
+    
+    
+        requestLoginUser(nametag, password);
+        spaceShip();
+        backgrounds();
+    
+    })
 }
 
 makeStartPage();
 
-document.getElementById("signInButton").addEventListener("click", function () {
-    clickSound();
 
-    //PRELIMINÄR LÖSNING
-
-    setTimeout(() => {
-        //om statuskoden visar på fel, ska användaren
-        //få chans att läsa vad som var fel, och sen trycka tillbaka
-        let message = document.querySelector(".statusColor");
-        if (message.style.color = "red"){
-            document.querySelector(".spaceShipBackground").style.backgroundImage = "none";
-            document.querySelector(".joystickDiv").style.display = "none";
-            document.querySelector(".space").style.display = "none";
-            document.querySelector(".profileDiv").style.display = "none";
-            //document.querySelector(".exit").style.display = "none";
-        }
-    }, 500);
-    
-
-    setTimeout(() => {
-        //
-        let message = document.querySelector(".statusColor");
-        if (message.style.color = "red"){
-        document.querySelector(".understood").addEventListener("click", () => {
-            document.querySelector("main").innerHTML = "";
-            makeStartPage();
-        })
-    }
-
-    }, 800);
-    
-    let nametag = document.getElementById("nameTagInput").value;
-    let password = document.getElementById("passwordInput").value;
-
-    //om det är tomt i fälten.
-    if (nametag.length == 0 || password.length == 0){
-        document.querySelector("main").append(statusCodeDiv("Please fill in all the fields."));
-
-        document.querySelector(".understood").addEventListener("click", (event) =>{
-            let statusCodeDiv = event.target.parentElement.parentElement;
-            statusCodeDiv.remove();
-        })
-        return;
-    }
-
-
-    requestLoginUser(nametag, password);
-    spaceShip();
-    backgrounds();
-
-})
 
 
 
