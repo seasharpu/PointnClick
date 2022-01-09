@@ -21,68 +21,94 @@ async function fetchPlanetNamesandIDs () {
     return planetData;
 }
 
+
 fetchPlanetNamesandIDs();
 
 //skapar planeter och lägger till info från planet.json när man klickar på en planet så som bakgrundsbild etc
 async function makePlanets(){
     let planetData = await fetchPlanetNamesandIDs();
-   
-    //console.log(planetData);
+    //backgrounds();
     planetData.forEach(element => {
+
         let planetDiv = document.createElement("div");
         planetDiv.classList.add(element.name);
         document.querySelector(".space").append(planetDiv);
         
-        planetDiv.addEventListener("click", ()=> {
-            loadingDivPlanet();
+        planetDiv.addEventListener("click", async function(){
 
-            document.querySelector(".background").style.position = "static";
-            document.getElementById("location").innerHTML = element.name;
-            document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
-            document.querySelector(".background").style.pointerEvents = `all`;
-            document.querySelector(".joystickDiv").style.display = "none";
             currentID.push(element.id);
-            
-            if (element.id == 6){
-                createCodePanel();
-                createBox();
-                formPlutoPlanet();
-                document.querySelector(".playerCharacter").classList.add("plutoPlayerCharacter");
-            }
-            if (element.id == 5) {
-                formWaterPlanet();
-                document.querySelector(".playerCharacter").classList.add("waterPlayerCharacter");
-                
-            }
-            if (element.id == 4) {
-                formJunglePlanet();
-                document.querySelector(".playerCharacter").classList.add("junglePlayerCharacter");
-                
-            }
-            if (element.id == 3) {
-                formAlienPlanet();
-                document.querySelector(".playerCharacter").classList.add("alienPlayerCharacter");
-            }
-            if (element.id == 2) {
-                formDesertPlanet();
-                document.querySelector(".playerCharacter").classList.add("desertPlayerCharacter");
-            }
-            if (element.id == 1) {
-                formPartyPlanet();
-                document.querySelector(".playerCharacter").classList.add("partyPlayerCharacter");
+
+            async function getUserInventory () {
+                const userID = 2;
+                let users = await fetchUser();
+                let currentUserIDInventory = [];
+                //console.log(currentUserIDInventory);
+
+                //console.log();
+
+                users.forEach(user => {
+                    if (user.id == userID){
+                        currentUserIDInventory = user.inventory;
+                    }
+                })
+                return currentUserIDInventory;
             }
 
-            //document.querySelector(".background").style.zIndex = 100;
-    
-            cleanBackground();
-            document.querySelector(".background").append(inventory());
-            backToSpaceship(); 
-            // fetchItemsForPlanets();
-            // whichDialogue();
+            let currentUserIDInventory = await getUserInventory();
             
+            let hasUserRequiredItem = await userRequiredItem(element.requiredItem, currentUserIDInventory);
             
+            if (hasUserRequiredItem == true){
+                backgrounds();
+                document.querySelector(".background").style.position = "static";
+                document.getElementById("location").innerHTML = element.name;
+                document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
+                
+                if (element.id == 6){
+                    createCodePanel();
+                    createBox();
+                }
+
+                cleanBackground();
+                fetchItemsForPlanets(currentUserIDInventory, currentID);
+                document.querySelector("#hidden").append(inventory());
+                backToSpaceship(); 
+                whichDialogue();
+
+            } else {
+                if (!planetDiv.classList.contains("unavailablePlanet")){
+                    let overlay = document.createElement("div");
+                    overlay.classList.add("overlay");
+                    planetDiv.classList.add("unavailablePlanet");
+                    let padlock = document.createElement("div");
+                    padlock.classList.add("padlock");
+
+                    planetDiv.append(unavailablePlanet());
+                    planetDiv.append(overlay, padlock);
+
+                    setTimeout(() => {
+                        planetDiv.classList.remove("unavailablePlanet");
+                        planetDiv.firstChild.remove();
+                        overlay.remove();
+                        padlock.remove();
+                    }, 5000);
+                    currentID = [];
+                }
+            };
         })
+        
     });
+    //tömmer nuvarande ID tills nästa planet.
+    console.log(currentID);
+    console.log("currentID");
+    currentID = [];
+}
+
+function unavailablePlanet (){
+    let text = document.createElement("p");
+    text.classList.add("error");
+    text.innerHTML = "You cannot visit this planet yet. Do you have the required item?";
+    return text;
 }
 
 // SKAPAR DIV SOM SKA ÄNDRA BAKRUND
@@ -92,7 +118,9 @@ function backgrounds() {
     background.classList.add("background");
     document.querySelector("main").append(background);
 }
-  // MUSIK OCH LJUDEFFEKTER
+
+
+// MUSIK OCH LJUDEFFEKTER
 const spaceMusic = new Audio('assets/audiofiles/slow-travel.wav');
 function spaceMusicPlay(){
         spaceMusic.loop = true;
@@ -100,6 +128,7 @@ function spaceMusicPlay(){
         spaceMusic.play();
     }   
 spaceMusicPlay();
+
 function clickSound() {
     var click = new Audio('assets/audiofiles/click.wav');
     click.play(); 
@@ -114,11 +143,10 @@ function spaceShip() {
     
     blinking();
     makePlanets();
-    backgrounds();
+    //backgrounds();
     inventory();
     joystick(); 
     profile();
-    exit();
     
 }
 
@@ -150,13 +178,13 @@ function cleanBackground() {
 function backToSpaceship() {
     let backToSpaceship = document.createElement("div");
     backToSpaceship.classList.add("backToSpaceship");
-    backToSpaceship.innerHTML = `<p>BACK<br>TO SPACESHIP</p>`
-    document.querySelector(".background").append(backToSpaceship);
+    backToSpaceship.innerHTML = "BACK TO SPACESHIP"
+    document.querySelector("#hidden").append(backToSpaceship);
 
     backToSpaceship.addEventListener("click", function() {
         // document.querySelector(".background").style.display = "none";
         loadingDivSpaceship();
-        clickSound();
+
         setTimeout(() => {
             //makePlanets();
             spaceShip();  
@@ -180,25 +208,99 @@ function inventory(){
 
     chest.addEventListener("click", function(e) {
         chest.classList.toggle("chestOpen");
-
+        
         if(inventoryObjects.classList.contains("inventoryObjectsHidden")) {
             inventoryObjects.classList.remove("inventoryObjectsHidden");
             inventoryObjects.classList.add("inventoryObjectsOpen");
-            inventoryObjects.innerHTML = `<div class="itemboxes"></div>
-                                                                    <div class="itemboxes"></div>
-                                                                    <div class="itemboxes"></div>
-                                                                    <div class="itemboxes"></div>
-                                                                    <div class="itemboxes"></div>
-                                                                    <div class="itemboxes"></div>`;
+
+            updateUserInventorySlots();
+
         } else if (inventoryObjects.classList.contains("inventoryObjectsOpen")){
             inventoryObjects.classList.remove("inventoryObjectsOpen");
             inventoryObjects.classList.add("inventoryObjectsHidden");
-            inventoryObjects.innerHTML ="";
         }
 
-    });
+    })
     return inventory;
+};
+
+//hämtar ett ID av item med hjälp av en src från bild.
+async function getItemIDFromPic(src){
+    let items = await fetchitems();
+    let itemID = 0;
+
+    items.forEach(item => {
+        if (item.image == src){
+            itemID = item.id;
+        }
+    });
+    return itemID;
 }
+
+async function updateUserInventorySlots(){
+    let inventoryObjects = document.querySelector(".inventoryObjectsOpen") || document.querySelector(".inventoryObjectsHidden");
+    inventoryObjects.innerHTML = "";
+    let currentUserIMGInventory = await fetchUserInventoryIMGS();
+    //skapar slotsen för inventory. 
+    //lägger in användarens inv som bilder
+
+    for (let i = 0; i < 6; i++) {
+        let itemID = await getItemIDFromPic(currentUserIMGInventory[i]);
+        let itemBoxes = document.createElement("div");
+        let deleteButton = document.createElement("div");
+
+        itemBoxes.innerHTML = "";
+        
+        itemBoxes.classList.add("itemboxes");
+        itemBoxes.innerHTML = `<img src="${currentUserIMGInventory[i]}">`;
+
+        deleteButton.classList.add("deleteButton");
+        deleteButton.innerHTML = "<span class='removeItem'>DELETE</span>";
+
+        //om ett item nyss har deletats av användaren, 
+        //ska den inte få mouseover funktionen.
+        if (itemBoxes.classList.contains("deletedItem")){
+            itemBoxes.innerHTML = "";
+        }
+        
+        //blir undefined om det inte är ett item på
+        //det indexet. då töms divven. 
+        if (itemBoxes.innerHTML.includes('<img src="undefined">') || itemBoxes.classList.contains("deletedItem")){
+            itemBoxes.innerHTML = "";
+        } else {
+        //skapar en deletebutton vid hovring på itembox, om det 
+        //finns ett item i rutan.
+        itemBoxes.addEventListener("mouseover", () => {
+            itemBoxes.append(deleteButton);
+            if (itemBoxes.classList.contains("deletedItem")){
+                itemBoxes.lastChild.style.display = "none";
+            }
+        })
+
+        itemBoxes.addEventListener("mouseout", () => {
+            deleteButton.remove();
+        });
+        }
+        
+        let removeTextButton = deleteButton.firstChild;
+        //tar bort ett item baserat på dess id.
+        removeTextButton.addEventListener("click", () => {
+            itemBoxes.classList.add("deletedItem");
+
+            setTimeout(() => {
+                //2 ska vara userID när vi fått igång session["id"];
+                requestDeleteItem(2, itemID);
+            }, 3000);
+
+            itemBoxes.innerHTML = "";
+            deleteButton.remove();
+        })
+    inventoryObjects.append(itemBoxes);
+    }
+}
+
+
+
 // GRUNDEN TILL JOYSTICK FUNCTIONEN
 function joystick() {
      // RYMDEN DÄR ALLA PALANETER FINNS
@@ -285,14 +387,4 @@ function blinking() {
     let blink4 = document.createElement("div");
     blink4.classList.add("blink4");
     document.querySelector(".spaceShipBackground").append(blink4);
-}
-
-function exit() {
-    let exitDiv = document.createElement("div");
-    exitDiv.classList.add("exitDiv");
-    document.querySelector(".joystickDiv").append(exitDiv);
-    exitDiv.innerHTML = `
-    <a href='exit.php'>exit</a>
-`;
-    return exitDiv;
 }

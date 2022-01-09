@@ -41,28 +41,28 @@
   margin: 5px;
 }
 
-.avatarWrapperDiv div:first-child,
-.avatarWrapperDiv div:nth-child(2),
-.avatarWrapperDiv div:nth-child(3),
-.avatarWrapperDiv div:nth-child(4) {
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 .avatarWrapperDiv div:first-child {
   background-image: url(/assets/images/characters/avatar1.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .avatarWrapperDiv div:nth-child(2) {
   background-image: url(/assets/images/characters/avatar2.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .avatarWrapperDiv div:nth-child(3) {
   background-image: url(/assets/images/characters/avatar3.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .avatarWrapperDiv div:nth-child(4) {
   background-image: url(/assets/images/characters/avatar4.png);
+  background-size: cover;
+  background-position: center;
 }
 
 #uploadpicture {
@@ -81,7 +81,6 @@
 
 input {
   height: 50px;
-  text-align: center;
 }
 
 #buttonsDiv {
@@ -90,39 +89,19 @@ input {
   margin-top: 10px;
 }
 
-.registerTitle {
+h2 {
   display: flex;
   justify-content: center;
+  margin: 20px;
   color: var(--mainButtonC);
-  font-family: var(--titleFont);
 }
 
-#startExploring,
-#cancelButton {
-  display: inline-block;
-  border: none;
-  padding: 25px;
-  margin: 0;
+button {
+  width: 100%;
+  height: 50px;
   text-decoration: none;
-  background: url(/assets/images/button.png);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-
-  color: #ffffff;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-#startExploring:active,
-#cancelButton:active {
-  background: url(/assets/images/buttonpress.png);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-color: var(--mainButtonC);
+  border: 2px solid var(--buttonBorderC);
 }
 
 #uploadepicture {
@@ -136,26 +115,15 @@ input[type="file"] {
 
 label {
   color: white;
-  background: url(/assets/images/button.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  height: 100px;
-  width: 150px;
+  background-color: var(--mainButtonC);
+  height: 50px;
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-
-  cursor: pointer;
 }
 
 .show {
   width: 200px;
   height: 200px;
-}
-
-#startExploring {
-  font-size: 13px;
 }

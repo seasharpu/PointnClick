@@ -13,7 +13,9 @@
         "nameTag": "TETSTSTTSE",
         "password": "11223",
         "profilePicture": "a05d41c3048e9a8fd99fc2f33d4c9a29a1a8957d.jpg",
-        "inventory": []
+        "inventory": [
+            5
+        ]
     },
     {
         "id": 3,
@@ -119,13 +121,5 @@
         "password": "yyyy",
         "profilePicture": "53fadd120b1b975b444a284209b04f6016d8354b.jpg",
         "inventory": []
-    },
-    {
-        "id": 18,
-        "nameTag": "LivTheMighty",
-        "password": "test1234",
-        "profilePicture": "7a78c79bcf05df9187db5f2b6d186432a8ee3088.jpeg",
-        "inventory": [],
-        "laikaFound": false
     }
 ]
