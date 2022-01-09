@@ -247,7 +247,7 @@ async function updateUserInventorySlots(){
         itemBoxes.innerHTML = `<img src="${currentUserIMGInventory[i]}">`;
 
         deleteButton.classList.add("deleteButton");
-        deleteButton.innerHTML = "<span class='removeItem'>REMOVE</span>";
+        deleteButton.innerHTML = "<span class='removeItem'>DELETE</span>";
 
         //om ett item nyss har deletats av användaren, 
         //ska den inte få mouseover funktionen.
