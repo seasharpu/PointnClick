@@ -27,7 +27,7 @@
             "location": "Alien Planet",
             "NPC": {
                 "name": "",
-                "dialogue": ["alienPlanet1","alienPlanet2","alienPlanet3","alienPlanet4","alienPlanet5"]
+                "dialogue": ["Intruder! State your business!","A dog? I do not know what that is but there's certainly no such creature here!","Be careful not to step on our eggs!","THE HIVE IS FOREVER","You're still here? BE GONE HIVE INTRUDER!"]
             },
             "itemOnGround":1,
             "requiredItem":2,
