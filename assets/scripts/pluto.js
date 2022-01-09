@@ -198,7 +198,7 @@ function insideLaikasShip () {
     laikasWrapper.append(laikaTheDog);
     laikaTheDog.style.backgroundImage = `url(./assets/images/laika.gif)`;
     implementElement("playerCharacter", "spacemanSam");
-
+    document.querySelector(".playerCharacter").classList.add("laikaPlayerCharacter");
     let creditsDiv = document.createElement("div");
     creditsDiv.classList.add("creditsDiv");
     document.querySelector(".background").append(creditsDiv);

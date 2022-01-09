@@ -32,12 +32,21 @@ async function makePlanets(){
         let planetDiv = document.createElement("div");
         planetDiv.classList.add(element.name);
         document.querySelector(".space").append(planetDiv);
+        // När man hovrar över en planet ser man planetens namn
+        planetDiv.addEventListener("mouseout", ()=>{
+            document.querySelector(".displayDiv").innerHTML = "";
+        });
         
+        planetDiv.addEventListener("mouseenter", ()=>{
+            document.querySelector(".displayDiv").innerHTML = element.location;
+            clickSound();
+        });
+      
         planetDiv.addEventListener("click", ()=> {
             loadingDivPlanet();
 
             document.querySelector(".background").style.position = "static";
-            document.getElementById("location").innerHTML = element.name;
+            document.getElementById("location").innerHTML = element.location;
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
             document.querySelector(".background").style.pointerEvents = `all`;
             document.querySelector(".joystickDiv").style.display = "none";
@@ -104,6 +113,8 @@ function clickSound() {
     var click = new Audio('assets/audiofiles/click.wav');
     click.play(); 
 }
+
+
 function spaceShip() {
     
     document.getElementById("hidden").innerHTML = "";
@@ -119,7 +130,7 @@ function spaceShip() {
     joystick(); 
     profile();
     exit();
-    
+    planetDisplay();
 }
 
 // Profilbild och nameTag
@@ -206,23 +217,6 @@ function joystick() {
     document.querySelector("main").append(space);
     space.classList.add("space");
 
-    // stjärnorna i rymden
-    let blink5 = document.createElement("div");
-    blink5.classList.add("blink5");
-    document.querySelector(".space").append(blink5);
-
-    let blink6 = document.createElement("div");
-    blink6.classList.add("blink6");
-    document.querySelector(".space").append(blink6);
-
-    let blink7 = document.createElement("div");
-    blink7.classList.add("blink7");
-    document.querySelector(".space").append(blink7);
-
-    let blink8 = document.createElement("div");
-    blink8.classList.add("blink8");
-    document.querySelector(".space").append(blink8);
-
     // Joysticken
     let joystickDiv = document.createElement("div");
     joystickDiv.classList.add("joystickDiv");
@@ -296,3 +290,8 @@ function exit() {
 `;
     return exitDiv;
 }
+function planetDisplay(){
+    let displayDiv = document.createElement("div");
+    displayDiv.classList.add("displayDiv");
+    document.querySelector(".joystickDiv").append(displayDiv);
+    }

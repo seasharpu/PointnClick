@@ -485,3 +485,8 @@
   width: 222px;
   margin: 13px;
 }
+.laikaPlayerCharacter {
+  position: absolute;
+  left: 100px;
+  bottom: 70px;
+}
