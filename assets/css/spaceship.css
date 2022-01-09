@@ -54,6 +54,9 @@ wrapper {
   display: grid;
   grid-template-columns: repeat(3, 325px);
   grid-template-rows: auto;
+  border: white 1px solid;
+  box-sizing: border-box;
+  
 }
 /*Denna diven är alla planeter placerade i*/
 .space {
