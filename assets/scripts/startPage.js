@@ -50,4 +50,3 @@ document.querySelector(".createUser").addEventListener("click", function () {
     document.querySelector("#hidden").innerHTML = "";
     MakerRegisterPage();
 });
-

@@ -48,19 +48,17 @@ function MakerRegisterPage() {
             <input type="text" name="password">
             <div id="buttonsDiv">
                 <button type="submit" id="startExploring">Start Exploring</button>
-                <button id="cancelButton"><a href='exit.php'>Cancel</a></button>
+                <button id="cancelButton">Cancel</button>
             </div>
         </form>
-    `
+    `;
 
-    // document.querySelector("#startExploring").addEventListener("click", function () {
-    //     document.querySelector("#hidden").innerHTML = "";
-    //     createTutorial();
-    
-    // });
+    document.querySelector("#cancelButton").addEventListener("click", () => {
+        clickSound();
+        document.querySelector("#hidden").innerHTML = "";
+        makeStartPage();
+    })
 }
-
-//MakerRegisterPage();
 
 //för så att bilden man laddar upp kan förhandsvisas
 function loadfile(event){
@@ -70,13 +68,3 @@ function loadfile(event){
 }
 
 
-
-// console.log(createdUser);
-// if (createdUser == true){
-    
-//     document.querySelector("main").innerHTML = "";
-//     // document.querySelector(".logInWrapper").innerHTML = "HEJ";
-//     // document.querySelector(".titleTextDiv").innerHTML = "HEJHEJ";
-//     createTutorial();
-//     console.log("den är true");
-// }

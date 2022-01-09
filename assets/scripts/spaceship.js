@@ -2,16 +2,18 @@
 
 //lägger till id-siffran beroende på vilken planet användaren är på 
 let currentID = [];
+
 // *FUNKTIONEN SOM BEHÖVS VARA IGÅNG FÖR ATT SE NÅGOT*
 // spaceShip();
 // backgrounds();
-
-// if (userID > 0) {
-//     spaceShip();
-//     backgrounds();
-// } else {
-//     makeStartPage();
-// }
+if (globalUserID == undefined){
+    console.log("not inlogged");
+}
+if (globalUserID  > 0) {
+    spaceShip();
+    backgrounds();
+    makeStartPage();
+}
 
 //hämtar infon om planeterna från planet.json
 async function fetchPlanetNamesandIDs () {
@@ -48,7 +50,7 @@ async function makePlanets(){
             currentID.push(element.id);
         
             async function getUserInventory () {
-                const userID = 2;
+                let userID = globalUserID;
                 
                 let users = await fetchUser();
                 let currentUserIDInventory = [];
@@ -272,7 +274,7 @@ async function getItemIDFromPic(src){
 }
 
 async function updateUserInventorySlots(){
-    const userID = 2;
+    let userID = globalUserID;
     let inventoryObjects = document.querySelector(".inventoryObjectsOpen") || document.querySelector(".inventoryObjectsHidden");
     inventoryObjects.innerHTML = "";
     let currentUserIMGInventory = await fetchUserInventoryIMGS();
