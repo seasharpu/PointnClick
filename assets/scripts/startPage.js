@@ -71,29 +71,12 @@ function makeStartPage() {
             </div>
         </form>
     `;
-
-
-    document.querySelector(formContainerDiv).append(formDiv);
-
-//LOGIN USER
-//const form = document.getElementById("loginForm");
-//form.addEventListener("submit", (event) => {
-//    event.preventDefault();
-//    const data = new FormData(form);
-//    console.log(data);
-//
-//
-//    const req = new Request("/loginUser.php", {
-//        method: "POST",
-//        body: JSON.stringify(data),
-//        });
-//
-//        fetch(req)
-//        .then(response => {
-//            console.log(response);
-//            })
-//});
-
 }
 makeStartPage();
+
+document.querySelector(".createUser").addEventListener("click", function () {
+    clickSound();
+    document.querySelector("#hidden").innerHTML = "";
+    MakerRegisterPage();
+});
 

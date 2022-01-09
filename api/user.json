@@ -13,7 +13,11 @@
         "nameTag": "TETSTSTTSE",
         "password": "11223",
         "profilePicture": "a05d41c3048e9a8fd99fc2f33d4c9a29a1a8957d.jpg",
-        "inventory": [1,2,5]
+        "inventory": [
+            1,
+            2,
+            5
+        ]
     },
     {
         "id": 3,
@@ -133,6 +137,14 @@
         "nameTag": "TestLiv",
         "password": "12345",
         "profilePicture": "388e57a27640ca90f637bc200f64b1908f7915f3.jpeg",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 20,
+        "nameTag": "Tester",
+        "password": "teeth",
+        "profilePicture": "bce72c38438716e7626428965e8d8cf14fd6b437.jpeg",
         "inventory": [],
         "laikaFound": false
     }
