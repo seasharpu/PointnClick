@@ -13,30 +13,55 @@ async function fetchitems(){
     return itemData;
 }
 
-/*async function userControl(){
-    const userID = 2;
-    let users = await fetchUser();
+//hämtar planeters items utifrån användarens 
+//inventory samt planetens itemOnGround.
+async function fetchItemsForPlanets (userInvArray, currentPlanetID) {  
     let itemData = await fetchitems();
 
-    users.forEach(user => {
-        if(userID === user.id) {
+        currentPlanetID.forEach(idOfPlanet => {
             itemData.forEach(item => {
-                let currentUserInventory = user.inventory;
-                //console.log(currentUserInventory);
-                if(currentUserInventory.includes(item.id) === false) {
-                    console.log(currentUserInventory.includes(item.id));
-                    let itemsDiv = document.createElement("div");
-                    console.log(itemsDiv);
-                } 
-            })     
+                if (idOfPlanet == item.id ){
+                    if(userInvArray.includes(item.id) == false){
+                        let itemsDiv = document.createElement("div");
+                        itemsDiv.classList.add("planetsItem");
+                        document.querySelector(".background").prepend(itemsDiv);
+                        itemsDiv.style.backgroundImage = `url(${item.image})`
+                    } 
+                }
+            })
+        })
+    }
+
+//jämför planetens ["requiredItem"] med användarens inventory
+//om de inte finns i inventory - FALSE. Annars TRUE.
+async function userRequiredItem(requiredItem, userInvArray){
+    let found = true;
+    //console.log(userInvArray);
+    //console.log(requiredItem);
+
+    for (let i = 0; i < userInvArray.length; i++) {
+        if (requiredItem == undefined){
+            //avslutar for-loopen direkt. ingen 
+            //idé att fortsätta om requiredItem är undefined
+            return found;
         }
-    })
-}*/
+        //kollar om requiredItem stämmer överens om
+        //användarens inventory.
+        if(userInvArray[i] == requiredItem){
+            if (userInvArray.length == 0) {
+                return found = false;
+            } else {
+                found = true;
+            }
 
-let inventoryimg = [];
-
-
-//let currentUserIMGInventory = [];
+            break;
+        } else {//
+            found = false;
+        }
+    }
+    console.log(found);
+    return found;
+}
 
 async function fetchUserInventoryIMGS () {
     const userID = 2;

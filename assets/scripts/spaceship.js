@@ -13,49 +13,6 @@ let currentID = [];
 //     makeStartPage();
 // }
 
-
-//hämtar planeters items utifrån användarens 
-//inventory samt planetens itemOnGround.
-async function fetchItemsForPlanets (userInvArray, currentPlanetID) {  
-    let itemData = await fetchitems();
-
-        currentPlanetID.forEach(idOfPlanet => {
-            itemData.forEach(item => {
-                if (idOfPlanet == item.id ){
-                    if(userInvArray.includes(item.id) == false){
-                        let itemsDiv = document.createElement("div");
-                        itemsDiv.classList.add("planetsItem");
-                        document.querySelector(".background").prepend(itemsDiv);
-                        itemsDiv.style.backgroundImage = `url(${item.image})`
-                    } 
-                }
-            })
-        })
-    }
-
-//jämför planetens ["requiredItem"] med användarens inventory
-//om de inte finns i inventory - FALSE. Annars TRUE.
-async function userRequiredItem(requiredItem, userInvArray){
-    let found = true;
-
-    for (let i = 0; i < userInvArray.length; i++) {
-        if (requiredItem == undefined){
-            //avslutar for-loopen direkt. ingen 
-            //idé att fortsätta om requiredItem är undefined
-            return found;
-        }
-        //kollar om requiredItem stämmer överens om
-        //användarens inventory.
-        if(userInvArray[i] == requiredItem){
-            found = true;
-            break;
-        } else {//
-            found = false;
-        }
-    }
-    console.log(found);
-    return found;
-}
 //hämtar infon om planeterna från planet.json
 async function fetchPlanetNamesandIDs () {
     const response = await fetch('./api/planet.json')
@@ -63,6 +20,7 @@ async function fetchPlanetNamesandIDs () {
     let planetData = await data;
     return planetData;
 }
+
 
 fetchPlanetNamesandIDs();
 
@@ -84,30 +42,42 @@ async function makePlanets(){
                 const userID = 2;
                 let users = await fetchUser();
                 let itemData = await fetchitems();
-                let currentUserIDInventory
+                let currentUserIDInventory = [];
+                //console.log(currentUserIDInventory);
+
+                //console.log();
 
                 currentID.forEach(currentid => {
+                    //console.log(currentid);
                     itemData.forEach(item => {
-                        if(item.id === currentid) {
+                        console.log(item.id);
+                        console.log(currentid);
+                        if(item.id === currentid || currentID == 6) {
                             users.forEach(user => {
+                                //console.log();
                                 if(userID === user.id) {
                                     currentUserIDInventory = user.inventory;
+                                    
                                 }
                             })
                         }
                     });         
                 })
+                console.log(currentUserIDInventory);
                 return currentUserIDInventory;
             }
 
             let currentUserIDInventory = await getUserInventory();
+            //console.log(currentUserIDInventory)
             
             let hasUserRequiredItem = await userRequiredItem(element.requiredItem, currentUserIDInventory);
-            console.log(userRequiredItem(element.requiredItem, currentUserIDInventory));
-            console.log(hasUserRequiredItem);
+            //console.log(userRequiredItem(element.requiredItem, currentUserIDInventory));
+            
             if (hasUserRequiredItem == true){
-                //console.log(element.requiredItem);
-                
+                //console.log(hasUserRequiredItem);
+
+                backgrounds();
+                //console.log(currentUserIDInventory);
                 console.log("hej");
                 document.querySelector(".background").style.position = "static";
                 document.getElementById("location").innerHTML = element.name;
@@ -115,19 +85,43 @@ async function makePlanets(){
                 
                 if (element.id == 6){
                     createCodePanel();
+                    createBox();
+                    //console.log(currentUserIDInventory);
+                    //console.log(element);
                 }
+
                 cleanBackground();
                 fetchItemsForPlanets(currentUserIDInventory, currentID);
                 document.querySelector("#hidden").append(inventory());
                 backToSpaceship(); 
                 whichDialogue();
+
             } else {
+                let overlay = document.createElement("div");
+                overlay.classList.add("overlay");
                 planetDiv.classList.add("unavailablePlanet");
+                planetDiv.append(unavailablePlanet());
+                planetDiv.append(overlay);
+                setTimeout(() => {
+                    planetDiv.classList.remove("unavailablePlanet");
+                    planetDiv.firstChild.remove();
+                    overlay.remove();
+                }, 4000);
+                currentID = [];
             };
         })
     });
     //tömmer nuvarande ID tills nästa planet.
+    console.log(currentID);
+    console.log("currentID");
     currentID = [];
+}
+
+function unavailablePlanet (){
+    let text = document.createElement("p");
+    text.classList.add("error");
+    text.innerHTML = "You cannot visit this planet yet. Do you have the needed item?";
+    return text;
 }
 
 // SKAPAR DIV SOM SKA ÄNDRA BAKRUND
@@ -198,7 +192,7 @@ function backToSpaceship() {
     let backToSpaceship = document.createElement("div");
     backToSpaceship.classList.add("backToSpaceship");
     backToSpaceship.innerHTML = "BACK TO SPACESHIP"
-    document.querySelector(".background").append(backToSpaceship);
+    document.querySelector("#hidden").append(backToSpaceship);
 
     backToSpaceship.addEventListener("click", function() {
         // document.querySelector(".background").style.display = "none";
