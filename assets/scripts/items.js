@@ -37,26 +37,46 @@ async function fetchItemsForPlanets (userInvArray, currentPlanetID) {
 async function userRequiredItem(requiredItem, userInvArray){
     let found = true;
 
+    console.log(requiredItem);
+    console.log(userInvArray);
+
+        //om användaren ännu inte har något i sin array
+        //och det inte krävs ett requiredItem ska de komma
+        //förbi ändå.&& requiredItem == undefined
+        console.log(userInvArray.length);
+        if (userInvArray.length == 0 && requiredItem == undefined) {
+            console.log("arr är tom");
+            found = false;
+            
+            if (requiredItem == undefined){
+                found = true;
+                console.log("arr är tom och item är undefined");
+                return found;
+            }
+            return found;
+        } 
+
     for (let i = 0; i < userInvArray.length; i++) {
         if (requiredItem == undefined){
             //avslutar for-loopen direkt. ingen 
             //idé att fortsätta om requiredItem är undefined
+            console.log("rq item är undefined");
             return found;
         }
+
         //kollar om requiredItem stämmer överens om
         //användarens inventory.
         if(userInvArray[i] == requiredItem){
-            if (userInvArray.length == 0) {
-                return found = false;
-            } else {
-                found = true;
-            }
-            //STANNA. Om den hittat.
+            console.log("hittat item i användarens arr");
+            found = true;
+            //STANNA. Om den hittat. wooo
             break;
         } else {
+            console.log("inte hittat item i användarens arr");
             found = false;
         }
     }
+    console.log(found);
     return found;
 }
 

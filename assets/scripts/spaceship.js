@@ -40,6 +40,7 @@ async function makePlanets(){
 
             async function getUserInventory () {
                 const userID = 2;
+                
                 let users = await fetchUser();
                 let currentUserIDInventory = [];
                 //console.log(currentUserIDInventory);
@@ -55,7 +56,6 @@ async function makePlanets(){
             }
 
             let currentUserIDInventory = await getUserInventory();
-            
             let hasUserRequiredItem = await userRequiredItem(element.requiredItem, currentUserIDInventory);
             
             if (hasUserRequiredItem == true){
@@ -99,8 +99,6 @@ async function makePlanets(){
         
     });
     //tömmer nuvarande ID tills nästa planet.
-    console.log(currentID);
-    console.log("currentID");
     currentID = [];
 }
 
