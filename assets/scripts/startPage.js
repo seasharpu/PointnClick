@@ -60,58 +60,59 @@ function makeStartPage() {
     document.querySelector("main").append(formDiv);
 
     formDiv.innerHTML = `
-        <form id="registerForm" action="/server.php" method="POST">
+        <form id="loginForm" action="loginUser.php" method="POST">
             <h2 class="registerTitle"> NameTag</h2>
             <input type="text" name="nameTag">
             <h2 class="registerTitle">Password</h2>
-            <input type="text" name="password">
+            <input type="password" name="password">
             <div id="buttonsDiv">
-                <button type="submit">Start Exploring</button>
-                <button id="cancelButton">Cancel</button>
+                <button class="loginButton" type="submit">Login</button>
+                <button class="createUser" type="button">Create User</button>
             </div>
         </form>
-    `
-
-
-document.querySelector("main").append(formWrapper);
-
-//CREATE USER
-const form = document.getElementById("registerForm");
-form.addEventListener("button", (event) => {
-    event.preventDefault();
-   const data = new FormData(form);
- 
-
-   const req = new Request("createUser.php", {
-       method: "POST",
-       body: JSON.stringify(data)
-     });
-
-
- });
+    `;
 
 
 
 
+document.querySelector("main").append(formDiv);
 
+//LOGIN USER
+//const form = document.getElementById("loginForm");
+//form.addEventListener("submit", (event) => {
+//    event.preventDefault();
+//    const data = new FormData(form);
+//    console.log(data);
+//
+//
+//    const req = new Request("/loginUser.php", {
+//        method: "POST",
+//        body: JSON.stringify(data),
+//        });
+//
+//        fetch(req)
+//        .then(response => {
+//            console.log(response);
+//            })
+//});
 
 }
-
 makeStartPage();
 
-document.getElementById("signInButton").addEventListener("click", function () {
-    clickSound();
-    let nametag = document.getElementById("nameTagInput").value;
-    let password = document.getElementById("passwordInput").value;
-    requestLoginUser(nametag, password);
-    spaceShip();
-    backgrounds();
-    
-});
 
-document.getElementById("newPlayerButton").addEventListener("click", function () {
-    clickSound();
-    document.querySelector("#hidden").innerHTML = "";
-    MakerRegisterPage();
-});
+//document.getElementById("signInButton").addEventListener("click", function () {
+//    clickSound();
+//    let nametag = document.getElementById("nameTagInput").value;
+//    let password = document.getElementById("passwordInput").value;
+//    requestLoginUser(nametag, password);
+//    spaceShip();
+//    backgrounds();
+//    
+//});
+//
+//document.getElementById("newPlayerButton").addEventListener("click", function () {
+//    clickSound();
+//    document.querySelector("#hidden").innerHTML = "";
+//    MakerRegisterPage();
+//});
 

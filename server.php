@@ -25,31 +25,11 @@ header("Access-Control-Allow-Origin: *");
 //ändra nycklar till SESSION, där det sker inloggning 
 //och när vi behöver klla om någon är inloggad
 if ($contentType == "application/json") {
-
     //kod funkar endast om inskickat material är json.
     if ($rqstMethod === "POST") {
-        //loggar in en redan EXISTERANDE användare
-        //nameTag & password
-        if (isset($rqstData["nameTag"], $rqstData["password"]) && !isset($_FILES["images"])) {
-            $users = loadJson("api/user.json");
-            $found = false;
-
-
-            foreach ($users as $key => $user) {
-                if ($user["nameTag"] == $rqstData["nameTag"] && $user["password"] == $rqstData["password"]) {
-                    $_SESSION["userID"] = $user["id"];
-                    $_SESSION["nameTag"] = $user["nameTag"];
-                    $_SESSION["isLoggedIn"] = true;
-                    $found = true;
-                }
-            }
-            if ($found) {
-                header("Location: index.php?userFound=1");
-            } else {
-                statusCode(469);
-            }
+        
             //lägger till ETT ITEM i användarens array
-        } elseif (isset($rqstData["inventoryID"], $_SESSION["userID"])) {
+        if (isset($rqstData["inventoryID"], $_SESSION["userID"])) {
             $users = loadJson("api/user.json");
             $items = loadJson("api/items.json");
             $found = FALSE;
