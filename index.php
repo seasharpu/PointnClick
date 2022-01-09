@@ -82,7 +82,7 @@ if (isset($_GET["id"])) {
 
             if (isset($_GET["userFound"])) {
                 echo "<script>const globalUserID = $id</script>";
-                echo "<script>const userNameTag = $nameTag</script>";
+                echo "<script>const userNameTag = '$nameTag'</script>";
             }
 
 
