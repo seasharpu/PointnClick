@@ -70,6 +70,9 @@ function getStatusCode(responseFromFetch){
 
     //alla olika statuskoder som kan komma upp, som har "skapats" i respons
     //till if-satser i server.php
+        //
+        //RÄTTMEDDELANDEN
+        //
         if(responseFromFetch.status == 210){
             statusCodeDiv("Successfully logged in!");
         };//lyckas logga in.
@@ -85,11 +88,14 @@ function getStatusCode(responseFromFetch){
         if(responseFromFetch.status == 214){
             statusCodeDiv("You have successfully removed your user.");
         };//borttaggning av användare success
+        //
+        //FELMEDDELANDEN
+        //
         if(responseFromFetch.status == 405){
             statusCodeDiv("Wrong format. Would you please try that again?");
         };//content type är inte JSON. av ngn anledning
         if(responseFromFetch.status == 460){
-            statusCodeDiv("You cannot add this item. Please try again.");
+            statusCodeDiv("Item was not found. Please try again.");
         };//item hittades inte i användarens itemarray
         if(responseFromFetch.status == 461){
             statusCodeDiv("Not enought information. Please try again.");
