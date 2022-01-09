@@ -3,164 +3,141 @@
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
 
 * {
-  font-family: var(--mainFont);
-}
+    font-family: var(--mainFont);
+  }
+  
+  .wrapperDiv {
+      width: 95%;
+      height: 95%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+    }
+  
+    .GridWrapperDiv {
+      width: var(--screenWidth);
+      height: var(--screenHeight);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .registerDiv {
+      
+      grid-row: 1/ span 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .avatarWrapperDiv{
+      
+      grid-row: 1/ span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
 
-.wrapperDiv {
-  width: 95%;
-  height: 95%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-}
-
-.GridWrapperDiv {
-  width: var(--screenWidth);
-  height: var(--screenHeight);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.registerDiv {
-  grid-row: 1 / span 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.avatarWrapperDiv {
-  grid-row: 1 / span 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-
-.avatars {
-  background-color: black;
-  margin: 5px;
-}
-
-.avatarWrapperDiv div:first-child,
-.avatarWrapperDiv div:nth-child(2),
-.avatarWrapperDiv div:nth-child(3),
-.avatarWrapperDiv div:nth-child(4) {
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.avatarWrapperDiv div:first-child {
-  background-image: url(/assets/images/characters/avatar1.png);
-}
-
-.avatarWrapperDiv div:nth-child(2) {
-  background-image: url(/assets/images/characters/avatar2.png);
-}
-
-.avatarWrapperDiv div:nth-child(3) {
-  background-image: url(/assets/images/characters/avatar3.png);
-}
-
-.avatarWrapperDiv div:nth-child(4) {
-  background-image: url(/assets/images/characters/avatar4.png);
-}
-
-#uploadpicture {
-  display: flex;
-  justify-content: center;
-}
-
-#formWrapperDiv {
-  width: 200px;
-}
-
-#registerForm {
-  display: flex;
-  flex-direction: column;
-}
-
-input {
-  height: 50px;
-  text-align: center;
-}
-
-#buttonsDiv {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-#cancelButton > a {
-  text-decoration: none;
-  color: white;
-}
-.registerTitle {
-  display: flex;
-  justify-content: center;
-  color: var(--mainButtonC);
-  font-family: var(--titleFont);
-}
-
-#startExploring,
-#cancelButton {
-  display: inline-block;
-  border: none;
-  padding: 25px;
-  margin: 0;
-  text-decoration: none;
-  background: url(/assets/images/button.png);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-
-  color: #ffffff;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-#startExploring:active,
-#cancelButton:active {
-  background: url(/assets/images/buttonpress.png);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-#uploadepicture {
-  display: flex;
-  justify-content: center;
-}
-
-input[type="file"] {
-  display: none;
-}
-
-label {
-  color: white;
-  background: url(/assets/images/button.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  height: 100px;
-  width: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  cursor: pointer;
-}
-label:hover {
-  cursor: pointer;
-}
-.show {
-  width: 200px;
-  height: 200px;
-}
-
-#startExploring {
-  font-size: 13px;
-}
+      margin-left: 100px;
+    }
+  
+    .avatars {
+      background-color: black;
+      margin: 5px;
+      height: 200px;
+      width: 200px;
+    }
+    #avatarHeader {
+      color: white;
+      text-align: center;
+      margin-left: 100px;
+      margin-bottom: 20px;
+      background-color: var(--mainButtonC);
+    }
+    
+  
+    .avatarWrapperDiv div:first-child,  .avatarWrapperDiv div:nth-child(2),  .avatarWrapperDiv div:nth-child(3), .avatarWrapperDiv div:nth-child(4) {
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .avatarWrapperDiv div:first-child {
+      background-image: url(/assets/images/characters/avatar1.png);
+     
+    }
+  
+    .avatarWrapperDiv div:nth-child(2) {
+      background-image: url(/assets/images/characters/avatar2.png);
+     
+    }
+  
+    .avatarWrapperDiv div:nth-child(3) {
+      background-image: url(/assets/images/characters/avatar3.png);
+    }
+  
+    .avatarWrapperDiv div:nth-child(4) {
+      background-image: url(/assets/images/characters/avatar4.png);
+    }
+  
+    #uploadpicture {
+      display: flex;
+      justify-content: center;
+    }
+  
+    #formWrapperDiv {
+      width: 200px;
+    }
+  
+    #registerForm {
+        display: flex;
+        flex-direction: row;
+    }
+  
+    input {
+      height: 50px;
+    }
+  
+    #buttonsDiv {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  
+    .placeholderTitle {
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+      color: var(--mainButtonC);
+    }
+  
+    button {
+      width: 100%;
+      height: 50px;
+      text-decoration: none;
+      background-color: var(--mainButtonC);
+      border: 2px solid var(--buttonBorderC);
+    }
+  
+    #uploadepicture {
+      display: flex;
+      justify-content: center;
+    }
+  
+    input[type="file"]{
+      display: none;
+    }
+  
+    label {
+      color: white;
+      background-color: var(--mainButtonC);
+      height: 50px;
+      width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .show{
+      width: 200px;
+      height: 200px;
+  
+    }

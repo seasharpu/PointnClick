@@ -15,18 +15,18 @@ function MakerRegisterPage() {
     let registerDiv = document.createElement("div");
     registerDiv.classList.add("registerDiv");
 
-    let avatarWrapperDiv = document.createElement("div");
-    avatarWrapperDiv.classList.add("avatarWrapperDiv");
+    //let avatarWrapperDiv = document.createElement("div");
+    //avatarWrapperDiv.classList.add("avatarWrapperDiv");
 
-    document.querySelector(".wrapperDiv").append(registerDiv, avatarWrapperDiv);
+    document.querySelector(".wrapperDiv").append(registerDiv);
 
 
-    for (let i= 1; i <= 4; i++) {
-        let avatars = document.createElement("div");
-        avatars.classList.add("avatars");
-        avatarWrapperDiv.append(avatars);
+    //for (let i= 1; i <= 4; i++) {
+    //    let avatars = document.createElement("div");
+    //    avatars.classList.add("avatars");
+    //    avatarWrapperDiv.append(avatars);
 
-    }    
+    //}   
 
     //skapa new player from
     let formDiv = document.createElement("div");
@@ -35,6 +35,7 @@ function MakerRegisterPage() {
 
     formDiv.innerHTML = `
         <form id="registerForm" action="/createUser.php" method="POST" enctype="multipart/form-data">
+        <div id="regiFormWrapper">
             <div id="uploadpicture">
                 <input type="file" name="image" id="file" onchange="loadfile(event)">
                 <label for="file">
@@ -42,14 +43,24 @@ function MakerRegisterPage() {
                 </label>
             </div>
             <img id="prePic">
-            <h2 class="registerTitle"> NameTag</h2>
-            <input type="text" name="nameTag">
-            <h2 class="registerTitle">Password</h2>
-            <input type="text" name="password">
+                <h2 class="placeholderTitle"> NameTag</h2>
+                <input type="text" placeholder="NameTag" name="nameTag">
+                <h2 class="placeholderTitle">Password</h2>
+                <input type="text" placeholder="Password" name="password">
             <div id="buttonsDiv">
                 <button type="submit" id="startExploring">Start Exploring</button>
                 <button id="cancelButton"><a href='exit.php'>Cancel</a></button>
             </div>
+        </div>
+        <div id="avaterFormWrpper">
+        <div id="avatarHeader">Choose your avatar</div>
+            <div class="avatarWrapperDiv">
+                <div class="avatars"><input type="radio" id="avatar1" name="avatarPic" value="HTML"></div>
+                <div class="avatars"><input type="radio" id="avatar2" name="avatarPic" value="HTML"></div>
+                <div class="avatars"><input type="radio" id="avatar3" name="avatarPic" value="HTML"></div>
+                <div class="avatars"><input type="radio" id="avatar4" name="avatarPic" value="HTML"></div>
+            </div>
+        </div>
         </form>
     `
 

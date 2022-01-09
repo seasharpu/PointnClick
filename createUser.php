@@ -19,7 +19,7 @@ if ($rqstMethod === "POST") {
     //    "
     //}
 
-    if (isset($_POST["nameTag"], $_POST["password"], $_FILES["image"])) {
+    if (isset($_POST["nameTag"], $_POST["password"], $_FILES["image"], $_POST["avatarPic"])) {
         $nameTag = $_POST["nameTag"];
         $password = $_POST["password"];
 
@@ -79,6 +79,7 @@ if ($rqstMethod === "POST") {
         $newUser["id"] = $highestID;
         $newUser["nameTag"] = $nameTag;
         $newUser["password"] = $password;
+        $newUser["avatarPic"] = $avatar;
         $newUser["profilePicture"] = "$uniqueFilename.$ext";
         $newUser["inventory"] = [];
         $newUser["laikaFound"] = false;
