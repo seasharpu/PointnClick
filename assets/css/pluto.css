@@ -472,9 +472,16 @@
 .laikasDialogueBubble {
   background-size: contain;
   background-repeat: no-repeat;
-  height: 65px;
+  height: 114px;
+  display: flex;
 }
 
 .fireworksgif {
   background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.laikasSpeech {
+  width: 222px;
+  margin: 13px;
 }

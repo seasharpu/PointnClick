@@ -294,4 +294,5 @@ function exit() {
     exitDiv.innerHTML = `
     <a href='exit.php'>exit</a>
 `;
+    return exitDiv;
 }

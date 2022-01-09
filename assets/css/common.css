@@ -116,7 +116,7 @@ footer {
   text-align: center;
   margin: 5px 3px 0px 3px;
 }
-.statusCodeDiv .understood {
+.statusCodeDiv .understood{
   background-color: var(--exitButtonC);
   padding: 13px 20px 13px 20px;
   color: var(--mainTextC);
@@ -129,6 +129,32 @@ footer {
   background-color: #9f032f;
 }
 
+.buttonToexit, .understoodToStay {
+  background-color: var(--exitButtonC);
+  color: var(--mainTextC);
+  padding: 11px;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+}
+
+.understoodToStay:hover, .buttonToexit:hover {
+  background-color: #b10334;
+}
+.understoodToStay:active, .buttonToexit:active {
+  background-color: #9f032f;
+}
+
+.statusColorexitORstay {
+  color: var(--mainTextC);
+}
+.stayORexitButtons {
+  display: flex;
+  width: 130%;
+  margin-top: 3px;
+  justify-content: space-evenly;
+}
 /*karaktärer för planeten*/
 
 .character{

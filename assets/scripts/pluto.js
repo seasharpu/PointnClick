@@ -184,7 +184,7 @@ function createBox(){
         }
     });
 }
-
+//skapar allt som krävs för insidan av Laikas spaceship inklusive statusDiv som uppdaterar spelaren 
 function insideLaikasShip () {
     document.querySelector(".background").style.backgroundImage = `url(./assets/images/laikasShipinside.png)`;
 
@@ -197,6 +197,7 @@ function insideLaikasShip () {
     document.querySelector(".background").append(laikasWrapper);
     laikasWrapper.append(laikaTheDog);
     laikaTheDog.style.backgroundImage = `url(./assets/images/laika.gif)`;
+    implementElement("playerCharacter", "spacemanSam");
 
     let creditsDiv = document.createElement("div");
     creditsDiv.classList.add("creditsDiv");
@@ -209,26 +210,47 @@ function insideLaikasShip () {
                                 <p>Mercie</p>
                                 <p>Alice</p></div>`;
 
-    laikaTheDog.addEventListener("click", () => {
+    
         let laikasDialogueBubble = document.createElement("div");
         laikasDialogueBubble.classList.add("laikasDialogueBubble");
-        laikasDialogueBubble.style.backgroundImage = `url(./assets/images/talkbubble.png)`;
-
-        document.querySelector(".laikasWrapper").prepend(laikasDialogueBubble);
+        
         let fireworksgif = document.createElement("div");
         fireworksgif.classList.add("fireworksgif");
         fireworksgif.style.backgroundImage = `url(./assets/images/fireworks.gif)`;
+        
+        laikaTheDog.addEventListener("click", () => {
+        laikasDialogueBubble.style.backgroundImage = `url(./assets/images/talkbubble.png)`;
+        let laikasSpeech = document.createElement("p");
+        laikasSpeech.classList.add("laikasSpeech");
+        laikasSpeech.innerHTML="You must be here to save me? Thank you space legend!";
+
+        laikasDialogueBubble.append(laikasSpeech);
+
+        document.querySelector(".laikasWrapper").prepend(laikasDialogueBubble);
+       
         document.querySelector(".background").append(fireworksgif);
 
         setTimeout(() => {
-            statusCodeDiv("YOU DID IT")
-        }, 5000);
+            statusCodeDivEnd("Congratulations, you have completed your quest! You can either choose to stay and explore, OR exit world. What’s it going to be space-legend?");
+            
+            document.querySelector(".understoodToStay").addEventListener("click", (event)=> {
+                let statusCodeDiv = event.target.parentElement.parentElement;
+               // document.querySelector("#hidden").innerHTML = "";
+                statusCodeDiv.remove();
+                spaceShip();
+                backgrounds();
+            })
+    
+            document.querySelector(".buttonToexit").addEventListener("click", (event) => {
+                let statusCodeDiv = event.target.parentElement.parentElement;
+                statusCodeDiv.remove();
+            })
+        }, 10000);
     })
 }
 
-function popUpEndGame(){
-   let endDiv = document.createElement("div");
-   endDiv.innerHTML="THIS IS THE END";
-   document.querySelector(".background").append(endDiv);
-
+async function ifLaikaisFound (){
+    let users = await fetchUser();
+    console.log(users);
 }
+ifLaikaisFound ()

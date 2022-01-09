@@ -54,18 +54,13 @@ function statusCodeDivEnd(message){
     div.innerHTML = `
     <div>
         <h2>Message</h2>
-        <p class="statusColor">${message}</p>
-        <div class="understood">OK</div>
-        <div class="buttonTospaceship">Go back to spaceship </div>
+        <p class="statusColorexitORstay">${message}</p>
+        <div class="stayORexitButtons">
+            <div class="understoodToStay">Stay and explore</div>
+            <div class="buttonToexit"><a href='exit.php'>Exit world</a></div>
+        </div>    
     </div>
     `;
-
-    button.addEventListener("click", () => {
-            document.querySelector("#hidden").innerHTML = "";
-            spaceShip();
-            backgrounds();
-    })
-
     return div;
 }
 
