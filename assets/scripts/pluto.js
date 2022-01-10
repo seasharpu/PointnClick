@@ -71,7 +71,7 @@ function createCodePanel(){
         document.querySelector(".buttonWrapperPanel").append(enterCodeButton);
         enterCodeButton.classList.add("enterCodeButton");
         enterCodeButton.innerHTML=`<p class="enterButton">ENTER CODE</p>`;
-        let password = `<p class="displayNumberDiv">1</p><p class="displayNumberDiv">2</p><p class="displayNumberDiv">3</p><p class="displayNumberDiv">4</p><p class="displayNumberDiv">5</p><p class="displayNumberDiv">6</p>`;
+        let password = `<p class="displayNumberDiv">2</p><p class="displayNumberDiv">1</p><p class="displayNumberDiv">7</p><p class="displayNumberDiv">7</p><p class="displayNumberDiv">9</p><p class="displayNumberDiv">3</p>`;
 
         enterCodeButton.addEventListener("click", () => {
             var click = new Audio('assets/audiofiles/click.wav');
@@ -223,9 +223,9 @@ function insideLaikasShip () {
         fireworksgif.style.backgroundImage = `url(./assets/images/fireworks.gif)`;
         
         laikaTheDog.addEventListener("click", () => {
-        laikasDialogueBubble.style.backgroundImage = `url(./assets/images/talkbubble_right.png)`;
+        laikasDialogueBubble.style.backgroundImage = `url(./assets/images/talkbubble_left.png)`;
         laikasSpeech.classList.add("laikasSpeech");
-        laikasSpeech.innerHTML="You must be here to save me? Thank you space legend!";
+        laikasSpeech.innerHTML="You must be here to save me? Thank you space-legend!";
 
         laikasDialogueBubble.append(laikasSpeech);
 
@@ -240,7 +240,7 @@ function insideLaikasShip () {
                 statusCodeDiv.remove();
                 document.querySelector(".background").append(exit());
             })
-        }, 10000);
+        }, 8000);
     })
 }
 

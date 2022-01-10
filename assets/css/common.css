@@ -124,13 +124,14 @@ footer {
 }
 .statusCodeDiv .understood:hover {
   background-color: #b10334;
+  cursor: pointer;
 }
 .statusCodeDiv .understood:active {
   background-color: #9f032f;
 }
 
-.statusColor{
-  color:red;
+.statusColor {
+  color: red;
 }
 
 .buttonToexit,
@@ -169,6 +170,10 @@ footer {
   background-position: center;
 
   position: absolute;
+}
+
+.character:hover {
+  cursor: pointer;
 }
 .playerCharacter {
   background-size: cover;
@@ -279,13 +284,11 @@ footer {
   left: 90px;
 }*/
 
-
-
-.planetsItem{
+.planetsItem {
   position: absolute;
 }
 
-.noSee{
+.noSee {
   display: none;
 }
 
@@ -293,15 +296,22 @@ footer {
   animation-name: wiggle;
   animation-duration: 1000ms;
   animation-iteration-count: infinite;
-
 }
 
 @keyframes wiggle {
-  0% {transform: rotate(1deg);}
-  25% {transform: rotate(-1deg);}
-  50% {transform: rotate(2deg);}
-  75% {transform: rotate(-2deg);}
-  100% {transform: rotate(1deg);}
+  0% {
+    transform: rotate(1deg);
+  }
+  25% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(1deg);
+  }
 }
-
-

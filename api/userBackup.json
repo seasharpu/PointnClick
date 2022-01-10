@@ -141,8 +141,7 @@
         "profilePicture": "388e57a27640ca90f637bc200f64b1908f7915f3.jpeg",
         "inventory": [
             1,
-            5,
-            2
+            5
         ],
         "laikaFound": false
     },
@@ -167,7 +166,12 @@
         "nameTag": "Liv",
         "password": "1234",
         "profilePicture": "fa6c0cd73e02c9e2a3f0ceefff8a04cdde1b6adb.jpeg",
-        "inventory": [],
-        "laikaFound": false
+        "inventory": [
+            1,
+            2,
+            5,
+            3
+        ],
+        "laikaFound": true
     }
 ]
