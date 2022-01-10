@@ -6,7 +6,8 @@
         "inventory": [
             1,
             1
-        ]
+        ],
+        "laikaFound": true
     },
     {
         "id": 2,
@@ -154,6 +155,14 @@
         "nameTag": "Blub",
         "password": "Blubb",
         "profilePicture": "9d4f8cfc7cb6353059d1c94df038c13a5ca91ecd.jpeg",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 22,
+        "nameTag": "Alice",
+        "password": "hejhej",
+        "profilePicture": "173bc3b7b02b0ed5b56dc0344253b9cc1cf5d4cc.jpg",
         "inventory": [],
         "laikaFound": false
     }

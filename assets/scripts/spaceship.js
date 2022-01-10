@@ -195,7 +195,7 @@ function spaceShip() {
 function profile() {
     let profileDiv = document.createElement("div");
     let profilePic = document.createElement("div");
-    let profileName = document.createElement("input");
+    let profileName = document.createElement("div");
 
     profileDiv.classList.add("profileDiv");
     profilePic.classList.add("profilePic");
@@ -342,66 +342,56 @@ async function updateUserInventorySlots(){
     }
 }
 
-
-
-// GRUNDEN TILL JOYSTICK FUNCTIONEN
 function joystick() {
-     // RYMDEN DÄR ALLA PALANETER FINNS
-    let space = document.createElement("div");
-    document.querySelector("main").append(space);
-    space.classList.add("space");
+    // RYMDEN DÄR ALLA PALANETER FINNS
+   let space = document.createElement("div");
+   document.querySelector("main").append(space);
+   space.classList.add("space");
 
-    // Joysticken
-    let joystickDiv = document.createElement("div");
-    joystickDiv.classList.add("joystickDiv");
-    document.querySelector("main").append(joystickDiv);
+   // Joysticken
+   let joystickDiv = document.createElement("div");
+   joystickDiv.classList.add("joystickDiv");
+   document.querySelector("main").append(joystickDiv);
 
-    let goLeft = document.createElement("div");
-    let joystick = document.createElement("div");
-    let goRight = document.createElement("div");
+   let goLeft = document.createElement("div");
+   let joystick = document.createElement("div");
+   let goRight = document.createElement("div");
 
-    goLeft.classList.add("goLeft");
-    joystick.classList.add("joystick");
-    goRight.classList.add("goRight");
+   goLeft.classList.add("goLeft");
+   joystick.classList.add("joystick");
+   goRight.classList.add("goRight");
 
-    document.querySelector(".joystickDiv").append(goLeft);
-    document.querySelector(".joystickDiv").append(joystick);
-    document.querySelector(".joystickDiv").append(goRight);
+   document.querySelector(".joystickDiv").append(goLeft);
+   document.querySelector(".joystickDiv").append(joystick);
+   document.querySelector(".joystickDiv").append(goRight);
 
-    // NÄR MAN KLICKAR PÅ JOYSTICKEN
-    goLeft.addEventListener("click", function(e) {
-        joystick.classList.toggle("joystickLeft");
-        space.classList.toggle("spaceLeft");
-        if(joystick.classList.contains("joystickLeft")) {
-            document.querySelector(".goLeft").style.pointerEvents = "none";
-            document.querySelector(".goLeft").style.opacity = "0.8";
-
-            //document.querySelector(".goRight").style.pointerEvents = "all";
-            //document.querySelector(".goRight").style.opacity = "1";
-            clickSound();
-        } else {
-            document.querySelector(".goRight").style.pointerEvents = "all";
-            document.querySelector(".goRight").style.opacity = "1";
-            
-            clickSound();
-        }
-    });
-    goRight.addEventListener("click", function(e) {
-        joystick.classList.toggle("joystickRight");
-        space.classList.toggle("spaceRight");
-        if(joystick.classList.contains("joystickRight")) {
-            document.querySelector(".goRight").style.pointerEvents = "none";
-            document.querySelector(".goRight").style.opacity = "0.8";
-
-            //document.querySelector(".goLeft").style.pointerEvents = "all";
-            //document.querySelector(".goLeft").style.opacity = "1";
-            clickSound();
-        } else {
-            document.querySelector(".goLeft").style.pointerEvents = "all";
-            document.querySelector(".goLeft").style.opacity = "1";
-            clickSound();
-        }
-    });
+   // NÄR MAN KLICKAR PÅ JOYSTICKEN
+   goLeft.addEventListener("click", function(e) {
+       joystick.classList.toggle("joystickLeft");
+       space.classList.toggle("spaceLeft");
+       if(joystick.classList.contains("joystickLeft")) {
+           document.querySelector(".goRight").style.pointerEvents = "none";
+           document.querySelector(".goRight").style.opacity = "0.8";
+           clickSound();
+       } else {
+           document.querySelector(".goRight").style.pointerEvents = "all";
+           document.querySelector(".goRight").style.opacity = "1";
+           clickSound();
+       }
+   });
+   goRight.addEventListener("click", function(e) {
+       joystick.classList.toggle("joystickRight");
+       space.classList.toggle("spaceRight");
+       if(joystick.classList.contains("joystickRight")) {
+           document.querySelector(".goLeft").style.pointerEvents = "none";
+           document.querySelector(".goLeft").style.opacity = "0.8";
+           clickSound();
+       } else {
+           document.querySelector(".goLeft").style.pointerEvents = "all";
+           document.querySelector(".goLeft").style.opacity = "1";
+           clickSound();
+       }
+   });
 }
 
 function blinking() {

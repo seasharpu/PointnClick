@@ -55,7 +55,7 @@
 
 #picOne {
   grid-row: 1;
-  background-image: url(/assets/images/tempAstro.jpeg);
+  background-image: url(/assets/images/tutorial_img_1.png);
   background-size: contain;
 }
 
@@ -64,7 +64,7 @@
 }
 
 #picTwo {
-  background-image: url(/assets/images/tempSpace.jpeg);
+  background-image: url(/assets/images/tutorial_img_2.png);
   background-size: cover;
 }
 

@@ -223,7 +223,7 @@ function insideLaikasShip () {
         fireworksgif.style.backgroundImage = `url(./assets/images/fireworks.gif)`;
         
         laikaTheDog.addEventListener("click", () => {
-        laikasDialogueBubble.style.backgroundImage = `url(./assets/images/talkbubble.png)`;
+        laikasDialogueBubble.style.backgroundImage = `url(./assets/images/talkbubble_right.png)`;
         laikasSpeech.classList.add("laikasSpeech");
         laikasSpeech.innerHTML="You must be here to save me? Thank you space legend!";
 

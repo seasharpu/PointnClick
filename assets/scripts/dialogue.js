@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 //array med dialog från planet användaren befinner sig på 
 let characterDialogue = [];
 let i = -1;
@@ -40,7 +38,7 @@ async function whichDialogue(character) {
             }
         });               
     })
-}
+
 
     let innerDialogue = document.createElement("div");
     innerDialogue.classList.add("innerDialogue");
@@ -52,8 +50,8 @@ async function whichDialogue(character) {
         var click = new Audio('assets/audiofiles/sf_chabadabada.mp3');
         click.play();  
     })
-}
 
+}
 //tar bort gammal dialog ur arrayen
 function emptyDialogueArray(){
     console.log("empty?");
