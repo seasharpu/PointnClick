@@ -1,12 +1,15 @@
 [
     {
-        "id": 1,
-        "nameTag": "Buster",
+        "id": 2,
+        "nameTag": "Marvin",
         "password": "test123",
+        "profilePicture": "8802ddf974434854420d1cdc10ea9e1f305a7c7b.png",
+        "avatar": "/assets/images/characters/avatar2.png",
         "inventory": [
-            5,
             1,
-            4
-        ]
+            2,
+            5
+        ],
+        "laikaFound": false
     }
 ]

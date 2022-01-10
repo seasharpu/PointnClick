@@ -52,7 +52,6 @@ function createCodePanel(){
                 var click = new Audio('assets/audiofiles/click.wav');
                 click.play(); 
                 if (displayNumberDiv.length > 6) {
-                    console.log("too long");
                     codeinputnumbers.innerHTML = "";
                     codeinputnumbers.innerHTML = `<p>Password is too long!</p>`;
                 }
@@ -77,16 +76,13 @@ function createCodePanel(){
             var click = new Audio('assets/audiofiles/click.wav');
             click.play(); 
             let codeValues = document.querySelector(".codeinputnumbers").innerHTML;
-            console.log(codeValues);
             if(codeValues === password) {
                 var rightCode = new Audio('assets/audiofiles/vgmenuselect.wav');
                 rightCode.play(); 
-                console.log("this is right");
                 //anropa LAIKA funktion här
                 document.querySelector(".background").innerHTML="";
                 insideLaikasShip();
             }else {
-                console.log("not right")
                 document.querySelector(".codeinputnumbers").innerHTML = "";
                 document.querySelector(".codeinputnumbers").innerHTML = `<p>This is not the right code!</p>`;
             }
@@ -115,7 +111,6 @@ function createCodePanel(){
     document.querySelector(".laikasShip").addEventListener("click", function(){
         var rightCode = new Audio('assets/audiofiles/vgmenuselect.wav');
         rightCode.play(); 
-        console.log("click worked");
         let wrapper = document.querySelector(".codeWrapper");
         let numberWrapper = document.querySelector(".codeNumbersWrapper");
         let panelTitle = document.querySelector(".codePanelTitle");

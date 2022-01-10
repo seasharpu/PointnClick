@@ -47,12 +47,6 @@ async function makePlanets(){
         });
         
         planetDiv.addEventListener("click", async function(){
-            //tar bort den förra planetens classNamn
-            //document.querySelector("main").classList.remove(`${element.name}DIV`);
-            //if (document.querySelector("main").classList.contains(`${element.name}DIV`)){
-            //    console.log("yay");
-            //    
-            //}
             
             currentID.push(element.id);
         
@@ -235,7 +229,6 @@ function profile() {
     profileName.classList.add("profileName");
 
     profileName.innerHTML = `${userNameTag}`;
-    //document.querySelector("profilePic").style.backgroundImage = "";
     document.querySelector(".spaceShipBackground").append(profileDiv);
     document.querySelector(".profileDiv").append(profileName);
     document.querySelector(".profileDiv").append(profilePic);
