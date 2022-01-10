@@ -15,7 +15,7 @@ if ($rqstMethod === "POST") {
 
         if ($nameTag == "" || $password == "") {
             //TOMMA FÄLT !!
-            header("Location: /sign-in.php?id=464");
+            header("Location: index.php?id=464");
         }
 
         $users = loadJson("api/user.json");
