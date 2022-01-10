@@ -92,7 +92,6 @@ require_once "functions.php";
                     echo "<script>createTutorial()</script>";
                 }
             }
-           
             ?>
 
             <?php
@@ -162,7 +161,7 @@ require_once "functions.php";
             </script>";
                 } else if ($errorCode == 469) {
                     //statusCode(469);
-                    echo "<script>statusCodeDiv('Input fields are empty.')</script>";
+                    echo "<script>statusCodeDiv('Fill all the fields.')</script>";
                     echo "<script>
                 document.querySelector('.understood').addEventListener('click', (event) =>{
                 document.querySelector('.statusCodeDiv').remove();
