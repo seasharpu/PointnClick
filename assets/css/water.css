@@ -14,11 +14,19 @@
     bottom: 300px;
 }
 
+.pinkjelly .characterDialogueWrapper{
+    position: absolute;
+    left: -220px;
+    top: -100px;
+}
+
 .underWaterPlanetDIV .planetsItem{
     left: 650px;
     top: 584px;
   
 }
+
+
 
 .Watermelon{
     height: 100%;

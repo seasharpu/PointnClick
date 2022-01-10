@@ -19,6 +19,11 @@
   left: 530px;
   bottom: 150px;
 }
+.mike .characterDialogueWrapper{
+  position: absolute;
+  left: -200px;
+  top: -100px;
+}
 
 .partyPlanetDIV .planetsItem{
   position: absolute;

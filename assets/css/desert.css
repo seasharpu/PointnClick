@@ -22,6 +22,12 @@
   bottom: 90px;
 }
 
+.dragon .characterDialogueWrapper{
+  position: absolute;
+  left: -10px;
+  top: 0px;
+}
+
 
 .desertPlanetDIV .planetsItem{
   left: 330px;

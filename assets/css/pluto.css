@@ -258,6 +258,10 @@
   left: 690px;
   top: 10px;
 }
+.wingedDemon .characterDialogueWrapper{
+  position: absolute;
+  left: -200px;
+}
 
 /*MOLN*/
 .cloudSmall {

@@ -13,7 +13,7 @@
     left:300px;
     bottom:155px;
   }
-  
+
   .insect {
     height: 100px;
     width: 100px;
@@ -22,6 +22,12 @@
     left: 600px;
     bottom: 300px;
   }
+
+.insect .characterDialogueWrapper{
+  position: absolute;
+  left: -250px;
+  top: -100px;
+}
 
 .alienPlanetDIV .planetsItem{
   left: 890px;

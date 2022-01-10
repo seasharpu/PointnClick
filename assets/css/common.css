@@ -129,6 +129,10 @@ footer {
   background-color: #9f032f;
 }
 
+.statusColor{
+  color:red;
+}
+
 .buttonToexit,
 .understoodToStay {
   background-color: var(--exitButtonC);

@@ -21,6 +21,12 @@
   bottom: -19px;
 }
 
+.fireworm .characterDialogueWrapper{
+  position: absolute;
+  left: -200px;
+  top:-50px;
+}
+
 .junglePlanetDIV .planetsItem{
   left: 248px;
   top: 250px;

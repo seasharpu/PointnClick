@@ -46,16 +46,18 @@ async function whichDialogue(character) {
     
     document.querySelector(`.${character}`).addEventListener("click", () => { 
         innerDialogue.textContent = nextDialogue(); 
+
         document.querySelector(".characterDialogueWrapper").append(innerDialogue); 
         var click = new Audio('assets/audiofiles/sf_chabadabada.mp3');
         click.play();  
     })
 
 }
+
+
+
 //tar bort gammal dialog ur arrayen
 function emptyDialogueArray(){
-    console.log("empty?");
     let splicedDialogue = characterDialogue.splice(0, characterDialogue.length);
-    console.log(i);
     return splicedDialogue;
 }

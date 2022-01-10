@@ -422,6 +422,18 @@ wrapper {
   width: 240px;
 }
 
+.exitDialogue {
+  position: absolute;
+  right: 0px;
+  bottom: 50px;
+  background-color: var(--deleteButtonC);
+  color: var(--mainTextC);
+  padding: 3px 7px 3px 7px;
+}
+.exitDialogue:hover{
+  background-color: #96012c;
+}
+
 /*SPACESHIP INVENTORY CSS */
 
 /*ITEMS CSS */
