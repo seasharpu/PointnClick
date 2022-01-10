@@ -15,18 +15,7 @@ function MakerRegisterPage() {
     let registerDiv = document.createElement("div");
     registerDiv.classList.add("registerDiv");
 
-    // let avatarWrapperDiv = document.createElement("div");
-    // avatarWrapperDiv.classList.add("avatarWrapperDiv");
-
     document.querySelector(".wrapperDiv").append(registerDiv);
-
-
-    /*for (let i= 1; i <= 4; i++) {
-        let avatars = document.createElement("div");
-        avatars.classList.add("avatars");
-        avatarWrapperDiv.append(avatars);
-
-    }    */
 
     //skapa new player from
     let formDiv = document.createElement("div");

@@ -10,5 +10,32 @@
             5
         ],
         "laikaFound": false
+    },
+    {
+        "id": 56,
+        "nameTag": "Tester",
+        "password": "12345",
+        "profilePicture": "1cd8cf0a9e65ca049952b16ab206de67b85bb502.jpeg",
+        "avatar": "/assets/images/characters/avatar4.png",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 57,
+        "nameTag": "teeeest",
+        "password": "123456",
+        "profilePicture": "370331b9e193c10d00d730aa8ca2532a84c76ebd.jpeg",
+        "avatar": "/assets/images/characters/avatar1.png",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 58,
+        "nameTag": "liiiiv",
+        "password": "123456",
+        "profilePicture": "60e3e145c4931af68b67553f9921de8c2f62f5e2.jpeg",
+        "avatar": "/assets/images/characters/avatar1.png",
+        "inventory": [],
+        "laikaFound": false
     }
 ]
