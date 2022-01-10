@@ -205,6 +205,18 @@ function profile() {
     document.querySelector(".spaceShipBackground").append(profileDiv);
     document.querySelector(".profileDiv").append(profileName);
     document.querySelector(".profileDiv").append(profilePic);
+
+    async function fetchImgProfile(){
+        let userID = globalUserID;
+        let users = await fetchUser();
+
+        users.forEach(user => {
+            if(user.id == userID){
+                console.log(user.profilePicture);
+            }
+        })
+    }
+    fetchImgProfile();
 }
 // Rensar bakgrunden
 function cleanBackground() {
