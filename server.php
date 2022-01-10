@@ -156,6 +156,7 @@ if ($contentType == "application/json") {
                 if ($_SESSION["userID"] == $user["id"]) {
                     $found = TRUE;
                     array_splice($users, $key, 1);
+                    //header("Location:/index.php");
                 }
             }
             if ($found == False) {

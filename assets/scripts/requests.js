@@ -76,8 +76,6 @@ function requestDeleteUser(userID){
 }
 //requestDeleteUser(4);
 
-
-
 // let formWrapper = document.createElement("div");
 // formWrapper.innerHTML = 
 //     `

@@ -193,6 +193,27 @@ wrapper {
 .backToSpaceship:hover {
   cursor: pointer;
 }
+
+.deleteUser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 180px;
+  bottom: 1px;
+  height: 100px;
+  width: 70px;
+  background-image: url(/assets/images/redbuttonup.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+.deleteUser > a {
+  font-size: 12px;
+  text-decoration: none;
+  color: white;
+}
 /*INVENTORY*/
 .inventory {
   height: 100px;
