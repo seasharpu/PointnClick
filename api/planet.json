@@ -39,7 +39,7 @@
             "location": "Jungle Planet",
             "NPC": {
                 "name": "",
-                "dialogue": ["junglePlanet1","junglePlanet2","junglePlanet3","junglePlanet4","junglePlanet5"]
+                "dialogue": ["Hello there little fellah","Is this your first time visiting this planet?","Did you know that space is infinite? but this planet is not","If you're not careful, I might bite you","leave me alone now thank you, I have things to take care of"]
             },
             "itemOnGround":5,
             "backgroundImage": "assets/images/jungleplanet.png"
