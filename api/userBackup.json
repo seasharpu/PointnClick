@@ -428,5 +428,31 @@
         "avatar": "/assets/images/characters/avatar4.png",
         "inventory": [],
         "laikaFound": false
+    },
+    {
+        "id": 52,
+        "nameTag": "Holla",
+        "password": "1234",
+        "profilePicture": "f67bbf8d0aacb321cb2a720f13b20b5c466dfc94.jpeg",
+        "avatar": "/assets/images/characters/avatar4.png",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 53,
+        "nameTag": "liv",
+        "password": "test",
+        "profilePicture": "7d4257838061ede00fe9b996687d6ab36dba3957.png",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 54,
+        "nameTag": "hej",
+        "password": "1234",
+        "profilePicture": "78d5c3596aa7984ac7861b7db3e6ff3cb36f49cb.jpeg",
+        "avatar": "/assets/images/characters/avatar1.png",
+        "inventory": [],
+        "laikaFound": false
     }
 ]
