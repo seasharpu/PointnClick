@@ -40,6 +40,17 @@ function requestChangeUserName(nameTag, newNameTag){
 }
 //requestChangeUserName("testUser", "Buster");
 
+//CHANGE LAIKA SATUS 
+function requestLaikaStatus(boolean, userID){
+    const data = {"laikaFound": boolean, "userID": userID};
+    const req = new Request("server.php", {
+        method: "PATCH",
+        body: JSON.stringify(data),
+        headers: {"Content-type": "application/json"}
+    });
+    fetch(req).then(response => getStatusCode(response));
+}
+
 //LOGIN USER
 function requestLoginUser(nameTag, password){
     const data = {"nameTag": nameTag, "password": password};
