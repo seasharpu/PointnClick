@@ -14,10 +14,13 @@
     bottom: 300px;
 }
 
-.underwater .planetsItem{
-    position: absolute;
+.underWaterPlanetDIV .planetsItem{
     left: 650px;
     top: 584px;
-    height: 45px;
-    width: 45px;
+  
+}
+
+.Watermelon{
+    height: 100%;
+    width: 10%;
 }

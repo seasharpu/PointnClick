@@ -22,10 +22,15 @@
   bottom: 90px;
 }
 
-.desert .planetsItem{
-  position: absolute;
+
+.desertPlanetDIV .planetsItem{
   left: 330px;
   top: 440px;
-  height: 50px;
-  width: 50px;
+
 }
+
+.Gasmask{
+  height: 100%;
+  width: 20%;
+}
+

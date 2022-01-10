@@ -274,3 +274,30 @@ footer {
   bottom: 80px;
   left: 90px;
 }*/
+
+
+
+.planetsItem{
+  position: absolute;
+}
+
+.noSee{
+  display: none;
+}
+
+.planetsItem:hover {
+  animation-name: wiggle;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(1deg);}
+  25% {transform: rotate(-1deg);}
+  50% {transform: rotate(2deg);}
+  75% {transform: rotate(-2deg);}
+  100% {transform: rotate(1deg);}
+}
+
+
