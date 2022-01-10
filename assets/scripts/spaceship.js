@@ -212,7 +212,8 @@ function profile() {
 
         users.forEach(user => {
             if(user.id == userID){
-                console.log(user.profilePicture);
+                let profileImg = user.profilePicture;
+                profilePic.innerHTML = `<img src="/api/profileImages/${profileImg}">`;
             }
         })
     }
