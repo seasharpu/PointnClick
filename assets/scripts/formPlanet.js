@@ -5,16 +5,16 @@ let spaceShipBackground = document.querySelector("#hidden");
 async function fetchAvatarProfile(){
     let userID = globalUserID;
     let users = await fetchUser();
-    let playeraCa = null;
+    let playerCharacter = null;
     
     users.forEach(user => {
         if(user.id == userID){
             let avatar = user.avatar;
-            playeraCa = document.querySelector(".playerCharacter");
-            playeraCa.innerHTML = `<img src="${avatar}">`;
+            playerCharacter = document.querySelector(".playerCharacter");
+            playerCharacter.innerHTML = `<img src="${avatar}">`;
         }
     })
-    return playeraCa;
+    return playerCharacter;
 }
 
 //skapar ett element och eget klassnamn (css) till den, samt .character som alla karaktärer ska ha.
