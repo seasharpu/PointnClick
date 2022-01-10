@@ -2,6 +2,21 @@
 
 let spaceShipBackground = document.querySelector("#hidden");
 
+async function fetchAvatarProfile(){
+    let userID = globalUserID;
+    let users = await fetchUser();
+    let playeraCa = null;
+    
+    users.forEach(user => {
+        if(user.id == userID){
+            let avatar = user.avatar;
+            playeraCa = document.querySelector(".playerCharacter");
+            playeraCa.innerHTML = `<img src="${avatar}">`;
+        }
+    })
+    return playeraCa;
+}
+
 //skapar ett element och eget klassnamn (css) till den, samt .character som alla karaktärer ska ha.
 //.character kommer vi använda till ett klick-event
 //ange klassnamn själv och styla den i planetens css-fil.
@@ -62,7 +77,7 @@ function talkingCharacter(divElementClassname, nameOfImage){
 //dessa funktioner kallar på när respektive planet trycks på.
 function formPlutoPlanet(){
     //element för PLUTO
-    implementElement("playerCharacter", userAvatar);
+    implementElement("playerCharacter", fetchAvatarProfile());
     implementElement("cloudSmall", "molntrans");
     implementElement("cloudBig", "molntrans");
     implementCharacterElement("wingedDemon", "winged-demon");
@@ -70,33 +85,33 @@ function formPlutoPlanet(){
 }
 function formAlienPlanet(){
     //element för ALIEN
-    implementElement("playerCharacter", "spacemanSam");
+    implementElement("playerCharacter", fetchAvatarProfile());
     implementCharacterElement("insect", "insect");
     whichDialogue("insect");
      
 }
 function formDesertPlanet(){
     //element för DESERT
-    implementElement("playerCharacter", "spacemanSam");
+    implementElement("playerCharacter", fetchAvatarProfile());
     implementCharacterElement("dragon", "dragon");
     whichDialogue("dragon");
    
 }
 function formWaterPlanet(){
     //element för WATER
-    implementElement("playerCharacter", "spacemanSam");
+    implementElement("playerCharacter", fetchAvatarProfile());
     implementCharacterElement("pinkjelly", "pinkjelly");
     whichDialogue("pinkjelly");
 }
 function formJunglePlanet(){
     //element för JUNGLE
-    implementElement("playerCharacter", "spacemanSam");
+    implementElement("playerCharacter", fetchAvatarProfile());
     implementCharacterElement("fireworm", "fireworm");
     whichDialogue("fireworm");
 }
 function formPartyPlanet(){
     //element för PARTY
-    implementElement("playerCharacter", "spacemanSam");
+    implementElement("playerCharacter", fetchAvatarProfile());
     implementCharacterElement("mike", "mike");
     whichDialogue("mike");
 }

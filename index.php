@@ -62,15 +62,15 @@ require_once "functions.php";
                 echo "<script>const createdUser = true </script>";
                 echo "hejhej echo";
             }
-            if (isset($_POST["avatar"])) {
-                $avatarPic = $_POST["avatar"];
-                echo "<script>const userAvatar = '$avatarPic'</script>";
-            }
+           
             if (isset($_GET["userFound"])) {
                 echo "<script>const globalUserID = $id</script>";
                 echo "<script>const userNameTag = '$nameTag'</script>";
             }
-
+            if (isset($_POST["avatar"])) {
+                $avatarPic = $_POST["avatar"];
+                echo "<script>const userAvatar = '$avatarPic'</script>";
+            }
             ?>
             <script src="/assets/scripts/requests.js"></script>
             <script src="/assets/scripts/tutorial.js"></script>
@@ -83,7 +83,7 @@ require_once "functions.php";
             <script src="/assets/scripts/loading.js"></script>
             <script src="assets\scripts\formPlanet.js"></script>
 
-
+            
             <?php
             if (isset($_GET["createdUser"])) {
                 $createdCode = $_GET["createdUser"];
@@ -92,6 +92,7 @@ require_once "functions.php";
                     echo "<script>createTutorial()</script>";
                 }
             }
+           
             ?>
 
             <?php

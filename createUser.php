@@ -86,13 +86,13 @@ if ($rqstMethod === "POST") {
         //$newUser["avatar"] = $_POST["avatar"];
         
         if ($_POST["avatar"] == "Blue"){
-            $newUser["avatar"] = "/assets/images/characters/avatar1";
+            $newUser["avatar"] = "/assets/images/characters/avatar1.png";
         }elseif ($_POST["avatar"] == "ninja"){
-            $newUser["avatar"] = "/assets/images/characters/avatar2";
+            $newUser["avatar"] = "/assets/images/characters/avatar2.png";
         }elseif ($_POST["avatar"] == "astro"){
-            $newUser["avatar"] = "/assets/images/characters/avatar3";
+            $newUser["avatar"] = "/assets/images/characters/avatar3.png";
         }elseif ($_POST["avatar"] == "blob"){
-            $newUser["avatar"] = "/assets/images/characters/avatar4";
+            $newUser["avatar"] = "/assets/images/characters/avatar4.png";
         }
 
         $newUser["inventory"] = [];
