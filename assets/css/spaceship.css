@@ -209,10 +209,10 @@ wrapper {
   background-position: center;
 
 }
-.deleteUser > a {
+.deleteUser > p {
   font-size: 12px;
-  text-decoration: none;
   color: white;
+  margin: 0;
 }
 /*INVENTORY*/
 .inventory {

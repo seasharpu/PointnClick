@@ -276,11 +276,13 @@ function backToSpaceship() {
 function deleteUserButton() {
     let deleteUser = document.createElement("div");
     deleteUser.classList.add("deleteUser");
-    deleteUser.innerHTML = `<a href="index.php">DELETE USER</a>`;
+    deleteUser.innerHTML = `<p>DELETE USER</p>`;
     document.querySelector(".joystickDiv").append(deleteUser);
 
     deleteUser.addEventListener("click", function(){
         requestDeleteUser(globalUserID);
+        document.querySelector("#hidden").innerHTML = "";
+        makeStartPage();
     })
 }
 // GRUND INVENTORY FUNCTION
