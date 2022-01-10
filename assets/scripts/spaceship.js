@@ -25,6 +25,7 @@ fetchPlanetNamesandIDs();
 
 //skapar planeter och lägger till info från planet.json när man klickar på en planet så som bakgrundsbild etc
 async function makePlanets(){
+ 
     let planetData = await fetchPlanetNamesandIDs();
    
     //console.log(planetData);
@@ -35,7 +36,6 @@ async function makePlanets(){
         
         planetDiv.addEventListener("click", ()=> {
             loadingDivPlanet();
-
             document.querySelector(".background").style.position = "static";
             document.getElementById("location").innerHTML = element.name;
             document.querySelector(".background").style.backgroundImage = `url(${element.backgroundImage})`;
@@ -111,8 +111,7 @@ function spaceShip() {
     spaceShipBackground.classList.add("spaceShipBackground");
     document.querySelector("main").append(spaceShipBackground);
     document.getElementById("location").innerHTML = "Spaceship";
-    let tt = characterDialogue.length = 0; //tömmer inte? 
-    console.log(tt);
+    
     
     blinking();
     makePlanets();
@@ -157,7 +156,7 @@ function backToSpaceship() {
 
     backToSpaceship.addEventListener("click", function() {
         // document.querySelector(".background").style.display = "none";
-        loadingDivSpaceship();
+        loadingDivSpaceship();  
         clickSound();
         setTimeout(() => {
             //makePlanets();
