@@ -8,7 +8,7 @@ function loadJson($database)
 
 function saveJson($database, $data)
 {
-    $json = json_encode($data, JSON_PRETTY_PRINT);
+    $json = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     file_put_contents($database, $json);
 }
 

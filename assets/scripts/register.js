@@ -15,10 +15,10 @@ function MakerRegisterPage() {
     let registerDiv = document.createElement("div");
     registerDiv.classList.add("registerDiv");
 
-    let avatarWrapperDiv = document.createElement("div");
-    avatarWrapperDiv.classList.add("avatarWrapperDiv");
+    // let avatarWrapperDiv = document.createElement("div");
+    // avatarWrapperDiv.classList.add("avatarWrapperDiv");
 
-    document.querySelector(".wrapperDiv").append(registerDiv, avatarWrapperDiv);
+    document.querySelector(".wrapperDiv").append(registerDiv);
 
 
     /*for (let i= 1; i <= 4; i++) {
@@ -55,10 +55,10 @@ function MakerRegisterPage() {
         <div id="avatar">
         <div id="avatarHeader">Choose your avatar</div>
             <div class="avatarWrapperDiv">
-                <div class="avatars"><input type="radio" id="avatar1" name="avatarPic" value="HTML"></div>
-                <div class="avatars"><input type="radio" id="avatar2" name="avatarPic" value="HTML"></div>
-                <div class="avatars"><input type="radio" id="avatar3" name="avatarPic" value="HTML"></div>
-                <div class="avatars"><input type="radio" id="avatar4" name="avatarPic" value="HTML">
+                <div class="avatars"><input type="radio" id="avatar1" name="avatar" value="Blue"></div>
+                <div class="avatars"><input type="radio" id="avatar2" name="avatar" value="ninja"></div>
+                <div class="avatars"><input type="radio" id="avatar3" name="avatar" value="astro"></div>
+                <div class="avatars"><input type="radio" id="avatar4" name="avatar" value="blob">
             </div>
         </div>
         </div>

@@ -62,7 +62,7 @@ function talkingCharacter(divElementClassname, nameOfImage){
 //dessa funktioner kallar på när respektive planet trycks på.
 function formPlutoPlanet(){
     //element för PLUTO
-    implementElement("playerCharacter", "spacemanSam");
+    implementElement("playerCharacter", userAvatar);
     implementElement("cloudSmall", "molntrans");
     implementElement("cloudBig", "molntrans");
     implementCharacterElement("wingedDemon", "winged-demon");
