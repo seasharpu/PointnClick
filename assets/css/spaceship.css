@@ -28,6 +28,7 @@ wrapper {
   flex-direction: row;
   width: 100%;
   flex-grow: 1;
+  position: relative;
 }
 .rightBlack {
   flex-grow: 1;
@@ -557,4 +558,13 @@ wrapper {
   70% {
     opacity: 0;
   }
+}
+
+#noJSON{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 1000;
+  background-color: black;
+  color: white;
 }

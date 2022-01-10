@@ -13,17 +13,15 @@ if ($rqstMethod === "POST") {
         $nameTag = $_POST["nameTag"];
         $password = $_POST["password"];
 
-        if ($nameTag == "" || $password == ""){
+        if ($nameTag == "" || $password == "") {
             //TOMMA FÄLT !!
-            header("Location: /sign-in.php?error=1");
-            statusCode(464);
-            exit();
+            header("Location: /sign-in.php?id=464");
         }
 
         $users = loadJson("api/user.json");
         $found = false;
         foreach ($users as $key => $user) {
-            
+
             if ($user["nameTag"] == $_POST["nameTag"] && $user["password"] == $_POST["password"]) {
                 //var_dump($user);
                 $_SESSION["userID"] = $user["id"];
@@ -36,8 +34,9 @@ if ($rqstMethod === "POST") {
             header("Location: index.php?userFound=1");
             exit();
         } else {
-            statusCode(469);
+            header("Location: index.php?id=469");
         }
+    } else {
+        header("Location index.php?id=464");
     }
 }
-?>

@@ -6,7 +6,8 @@
         "inventory": [
             5,
             1,
-            2
+            2,
+            4
         ]
     },
     {
@@ -167,9 +168,7 @@
         "nameTag": "Liv",
         "password": "1234",
         "profilePicture": "fa6c0cd73e02c9e2a3f0ceefff8a04cdde1b6adb.jpeg",
-        "inventory": [
-            2
-        ],
+        "inventory": [],
         "laikaFound": false
     }
 ]

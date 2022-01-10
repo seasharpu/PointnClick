@@ -1,26 +1,9 @@
 <?php session_start();
 require_once "functions.php";
+//tar fram felmeddelanden som skickats från createUser.php
 
-if (isset($_GET["id"])) {
-    $errorCode = $_GET["id"];
-    if ($errorCode == 210) {
-        statusCode(210);
-    } else if ($errorCode == 463) {
-        statusCode(436);
-    } else if ($errorCode == 464) {
-        statusCode(464);
-    } else if ($errorCode == 468) {
-        statusCode(468);
-    } else if ($errorCode == 467) {
-        statusCode(467);
-    } else if ($errorCode == 464) {
-        statusCode(464);
-    } else if ($errorCode == 466) {
-        statusCode(466);
-    } else if ($errorCode == 465) {
-        statusCode(465);
-    }
-}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,8 +46,8 @@ if (isset($_GET["id"])) {
             <?php
 
             require_once "functions.php";
-            if (file_exists("api/user.json")) {
-                echo '<div id="testare">tjenare</div>';
+            if (!file_exists("api/items.json") || !file_exists("api/user.json") || !file_exists("api/planet.json")) {
+                echo '<div id="noJSON">Error - JSON file(s) missing! Please make sure the following files are present in the directory: <br>items.json, user.json, planet.json</div>';
             }
 
             //kollar om vi har en inloggad användare.
@@ -107,6 +90,85 @@ if (isset($_GET["id"])) {
                 }
             }
             ?>
+
+            <?php
+            if (isset($_GET["id"])) {
+                $errorCode = $_GET["id"];
+                if ($errorCode == 210) {
+                    statusCode(210);
+                } else if ($errorCode == 463) {
+                    //statusCode(468);
+                    echo "<script>statusCodeDiv('User was not found. Huh?')</script>";
+                    echo "<script>
+                document.querySelector('.understood').addEventListener('click', (event) =>{
+                document.querySelector('.statusCodeDiv').remove();
+                });
+                MakerRegisterPage();
+            </script>";
+                } else if ($errorCode == 464) {
+                    //statusCode(464);
+                    echo "<script>statusCodeDiv('User was not found. Huh?')</script>";
+                    echo "<script>
+                document.querySelector('.understood').addEventListener('click', (event) =>{
+                document.querySelector('.statusCodeDiv').remove();
+                });
+            </script>";
+                } else if ($errorCode == 468) {
+                    //statusCode(468);
+                    echo "<script>statusCodeDiv('Please add more than 2 characters in the input field.')</script>";
+                    echo "<script>
+                document.querySelector('.understood').addEventListener('click', (event) =>{
+                document.querySelector('.statusCodeDiv').remove();
+                });
+            </script>";
+                } else if ($errorCode == 467) {
+                    //statusCode(467);
+                    echo "<script>statusCodeDiv('Please add more than 3 characters to your password.')</script>";
+                    echo "<script>
+                document.querySelector('.understood').addEventListener('click', (event) =>{
+                document.querySelector('.statusCodeDiv').remove();
+                });
+                MakerRegisterPage();
+            </script>";
+                } else if ($errorCode == 464) {
+                    //statusCode(464);
+                    echo "<script>statusCodeDiv('Please fill in all the fields.')</script>";
+                    echo "<script>
+                document.querySelector('.understood').addEventListener('click', (event) =>{
+                document.querySelector('.statusCodeDiv').remove();
+                });
+            </script>";
+                } else if ($errorCode == 466) {
+                    //statusCode(466);
+                    echo "<script>statusCodeDiv('Something went wrong with your picture. Please try again.')</script>";
+                    echo "<script>
+            document.querySelector('.understood').addEventListener('click', (event) =>{
+            document.querySelector('.statusCodeDiv').remove();
+            });
+            MakerRegisterPage();
+            </script>";
+                } else if ($errorCode == 465) {
+                    //statusCode(465);
+                    echo "<script>statusCodeDiv('Picture is too large! Try something smaller than 400kb.')</script>";
+                    echo "<script>
+                document.querySelector('.understood').addEventListener('click', (event) =>{
+                document.querySelector('.statusCodeDiv').remove();
+                });
+                MakerRegisterPage();
+            </script>";
+                } else if ($errorCode == 469) {
+                    //statusCode(469);
+                    echo "<script>statusCodeDiv('Input fields are empty.')</script>";
+                    echo "<script>
+                document.querySelector('.understood').addEventListener('click', (event) =>{
+                document.querySelector('.statusCodeDiv').remove();
+                });
+                MakerRegisterPage();
+            </script>";
+                }
+            }
+            ?>
+
 
         </main>
         <div class="rightBlack"></div>
