@@ -34,7 +34,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  width: 500px;
   margin-left: 100px;
 }
 
@@ -44,12 +43,24 @@
   width: 200px;
   height: 200px;
 }
+
+.avatars > input:hover {
+  cursor: pointer;
+}
+.avatars > input {
+  height: 25px;
+  width: 25px;
+  margin: 10px;
+}
+
 #avatarHeader {
   text-align: center;
-  color: white;
+  color: var(--mainButtonC);
+  font-family: var(--titleFont);
+  font-size: 30px;
 
-  margin-left: 60px;
-  margin-bottom: 10px;
+  margin-left: 100px;
+  margin-bottom: 20px;
 }
 .avatarWrapperDiv div:first-child,
 .avatarWrapperDiv div:nth-child(2),
@@ -114,7 +125,7 @@ input {
 #cancelButton {
   display: inline-block;
   border: none;
-  padding: 25px;
+  padding: 31px;
   margin: 0;
   text-decoration: none;
   background: url(/assets/images/button.png);
@@ -162,14 +173,15 @@ label {
   text-align: center;
 
   cursor: pointer;
+  margin-bottom: 10px;
 }
 label:hover {
   cursor: pointer;
 }
 .show {
-  width: 200px;
-  height: 200px;
-  margin-left: 30px;
+  width: 150px;
+  height: 150px;
+  margin-left: 60px;
 }
 
 #startExploring {

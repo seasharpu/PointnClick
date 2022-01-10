@@ -217,6 +217,11 @@ function insideLaikasShip () {
         fireworksgif.classList.add("fireworksgif");
         fireworksgif.style.backgroundImage = `url(./assets/images/fireworks.gif)`;
         
+        const win = new Audio('assets/audiofiles/round_end.wav');
+        function winPlay(){
+            win.load();
+            win.play();
+    }   
         laikaTheDog.addEventListener("click", () => {
         laikasDialogueBubble.style.backgroundImage = `url(./assets/images/talkbubble_left.png)`;
         laikasSpeech.classList.add("laikasSpeech");
