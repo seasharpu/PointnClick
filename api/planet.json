@@ -16,7 +16,7 @@
             "location": "Desert Planet",
             "NPC": {
                 "name": "",
-                "dialogue": ["Greetings, traveler. What brings you do this desert planet?","While i wondered the desert i saw equipment suited for underwater planets. A bit strange considering theres no water here","Farewell traveler and good luck"]
+                "dialogue": ["Greetings, traveler. What brings you do this desert planet?","While i wondered the desert i saw equipment suited for water planets.", "A bit strange considering theres no water here","Farewell traveler and good luck"]
             },
             "itemOnGround":2,
             "backgroundImage": "assets/images/tiledesert.png"
