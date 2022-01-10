@@ -75,6 +75,7 @@ if ($rqstMethod === "POST") {
 
         // DB BACKUP
         saveJson("api/userBackup.json", $allUsers);
+        $avatar = $_POST["avatar"];
 
         //ny array med nycklar.
         $newUser = [];
@@ -82,6 +83,18 @@ if ($rqstMethod === "POST") {
         $newUser["nameTag"] = $nameTag;
         $newUser["password"] = $password;
         $newUser["profilePicture"] = "$uniqueFilename.$ext";
+        //$newUser["avatar"] = $_POST["avatar"];
+        
+        if ($_POST["avatar"] == "Blue"){
+            $newUser["avatar"] = "/assets/images/characters/avatar1";
+        }elseif ($_POST["avatar"] == "ninja"){
+            $newUser["avatar"] = "/assets/images/characters/avatar2";
+        }elseif ($_POST["avatar"] == "astro"){
+            $newUser["avatar"] = "/assets/images/characters/avatar3";
+        }elseif ($_POST["avatar"] == "blob"){
+            $newUser["avatar"] = "/assets/images/characters/avatar4";
+        }
+
         $newUser["inventory"] = [];
         $newUser["laikaFound"] = false;
 

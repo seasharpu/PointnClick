@@ -62,7 +62,10 @@ require_once "functions.php";
                 echo "<script>const createdUser = true </script>";
                 echo "hejhej echo";
             }
-
+            if (isset($_POST["avatar"])) {
+                $avatarPic = $_POST["avatar"];
+                echo "<script>const userAvatar = '$avatarPic'</script>";
+            }
             if (isset($_GET["userFound"])) {
                 echo "<script>const globalUserID = $id</script>";
                 echo "<script>const userNameTag = '$nameTag'</script>";
