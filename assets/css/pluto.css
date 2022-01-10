@@ -81,7 +81,6 @@
 }
 
 .codeNumbers:hover {
-  box-shadow: 5px 5px 0 #808080;
   cursor: pointer;
 }
 
@@ -94,7 +93,6 @@
 }
 
 .codePanelTitle {
-  color: white;
   margin: 15px;
   font-size: 0px;
   transition: calc(var(--transitionTime) - 0.5s);
@@ -258,7 +256,7 @@
   left: 690px;
   top: 10px;
 }
-.wingedDemon .characterDialogueWrapper{
+.wingedDemon .characterDialogueWrapper {
   position: absolute;
   left: -200px;
 }
@@ -476,11 +474,19 @@
   background-size: contain;
 }
 
+.laikaTheDog:hover {
+  cursor: pointer;
+}
+
 .laikasDialogueBubble {
   background-size: contain;
   background-repeat: no-repeat;
   height: 114px;
   display: flex;
+
+  position: absolute;
+  bottom: 218px;
+  left: 139px;
 }
 
 .fireworksgif {

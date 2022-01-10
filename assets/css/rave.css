@@ -3,10 +3,10 @@
 /* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
 
 /*användarens karaktär*/
-.playerCharacter .playerRave{
-    left: 0px;
-    top: 0px;
-  }
+.playerCharacter .playerRave {
+  left: 0px;
+  top: 0px;
+}
 
 .partyPlayerCharacter {
   position: absolute;
@@ -14,18 +14,18 @@
   bottom: 40px;
 }
 .mike {
-  Height: 90px;
+  height: 90px;
   width: 90px;
   left: 530px;
   bottom: 150px;
 }
-.mike .characterDialogueWrapper{
+.mike .characterDialogueWrapper {
   position: absolute;
   left: -200px;
   top: -100px;
 }
 
-.partyPlanetDIV .planetsItem{
+.partyPlanetDIV .planetsItem {
   position: absolute;
   left: 800px;
   top: 550px;

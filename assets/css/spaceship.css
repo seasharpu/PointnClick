@@ -12,7 +12,6 @@
   background-image: url("/assets/images/spaceship.png");
   z-index: 1;
   box-sizing: border-box;
-  border: 1px solid white;
   pointer-events: none;
 }
 .backgroundDiv {
@@ -94,7 +93,7 @@ wrapper {
   height: 70px;
   position: absolute;
   left: 661px;
-  font-size: 13px;
+  font-size: 11px;
   bottom: 20px;
   color: white;
   font-weight: bold;
@@ -187,7 +186,9 @@ wrapper {
   position: absolute;
   align-self: end;
   font-family: var(--mainFont);
-  font-size: 13px;
+
+  text-align: center;
+  font-size: 12px;
 }
 .backToSpaceship:hover {
   cursor: pointer;
@@ -256,8 +257,9 @@ wrapper {
 }
 
 .itemboxes:hover {
- /* background-color: silver; */
+  /* background-color: silver; */
   border: 5px double greenyellow;
+  cursor: pointer;
 }
 
 /*Profile*/
@@ -278,7 +280,8 @@ wrapper {
   justify-content: center;
   color: white;
   margin: 5px;
-  font-family: var(--mainFont);
+  font-family: var(--titleFont);
+  font-size: 20px;
 }
 .profilePic {
   width: 130px;
@@ -347,8 +350,8 @@ wrapper {
   background-size: contain;
   border-radius: 50%;
   position: absolute;
-  left: 60px;
-  top: 150px;
+  left: 96px;
+  top: 180px;
   transition: 1s;
 }
 .alienPlanet {
@@ -359,7 +362,7 @@ wrapper {
   border-radius: 50%;
   position: absolute;
   left: 550px;
-  top: 100px;
+  top: 145px;
   transition: 2s;
 }
 .junglePlanet {
@@ -409,11 +412,11 @@ wrapper {
 
 /*DIALOG CSS*/
 
-.innerDialogue{
+.innerDialogue {
   font-size: medium;
   height: 130px;
-  padding: 0px 10px 0px 15px;
-  
+  padding: 5px 10px 0px 15px;
+
   background-image: url(/assets/images/talkbubble_left.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -431,7 +434,7 @@ wrapper {
   color: var(--mainTextC);
   padding: 3px 7px 3px 7px;
 }
-.exitDialogue:hover{
+.exitDialogue:hover {
   background-color: #96012c;
 }
 
@@ -448,7 +451,6 @@ wrapper {
 .planetsItem:hover {
   cursor: pointer;
 }
-
 
 .itemboxes > img {
   width: 100%;
@@ -573,7 +575,7 @@ wrapper {
   }
 }
 
-#noJSON{
+#noJSON {
   width: 100vw;
   height: 100vh;
   position: absolute;

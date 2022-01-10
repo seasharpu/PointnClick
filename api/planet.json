@@ -5,7 +5,7 @@
             "location": "Party Planet",
             "NPC": {
                 "name": "",
-                "dialogue": ["Wanna party??!","Once this was the coolest place in space","it's not anymore..","PARTYTIME!!","Look at the screen..."]
+                "dialogue": ["Yo skippy! Wanna party??!","Once this was the coolest party place in the universe!","It's not anymore... but I have a feeling it will be cool again soon!","Me and McWaterMask here will party until then!","PARTYTIME!!","Look at the screen..."]
             },
             "itemOnGround":4,
             "backgroundImage": "assets/images/party_planet.png"
@@ -16,7 +16,7 @@
             "location": "Desert Planet",
             "NPC": {
                 "name": "",
-                "dialogue": ["Greetings, traveler. What brings you do this desert planet?","While i wondered the desert i saw equipment suited for water planets.", "A bit strange considering theres no water here","Farewell traveler and good luck"]
+                "dialogue": ["Greetings, traveler. What brings you to this desert planet?","While I wandered the desert I saw equipment suited for toxic planets.", "Strange, huh?", "Maybe you can make use of it?", "Farewell traveler and good luck!"]
             },
             "itemOnGround":2,
             "backgroundImage": "assets/images/tiledesert.png"
@@ -27,7 +27,7 @@
             "location": "Alien Planet",
             "NPC": {
                 "name": "",
-                "dialogue": ["Intruder! State your business!","A dog? I do not know what that is but there's certainly no such creature here!","Be careful not to step on our eggs!","THE HIVE IS FOREVER","You're still here? BE GONE HIVE INTRUDER!"]
+                "dialogue": ["Intruder! State your business!","A dog? I do not know what that is but there's no such creature here!","Be careful not to step on our eggs!","THE HIVE IS FOREVER","You're still here? BE GONE HIVE INTRUDER!"]
             },
             "itemOnGround":1,
             "requiredItem":2,
@@ -39,7 +39,7 @@
             "location": "Jungle Planet",
             "NPC": {
                 "name": "",
-                "dialogue": ["Hello there little fellah","Is this your first time visiting this planet?","Did you know that space is infinite? but this planet is not","If you're not careful, I might bite you","leave me alone now thank you, I have things to take care of"]
+                "dialogue": ["Hello there little fellah!","Is this your first time visiting this planet?","Did you know that space is infinite? But this planet is not..","If you're not careful, I might bite you!","Leave me alone now thank you, I have things to take care of."]
             },
             "itemOnGround":5,
             "backgroundImage": "assets/images/jungleplanet.png"
