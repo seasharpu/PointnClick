@@ -50,6 +50,15 @@ function MakerRegisterPage() {
                 <button type="submit" id="startExploring">Start Exploring</button>
                 <button id="cancelButton">Cancel</button>
             </div>
+            <div id="avaterFormWrpper">
+        <div id="avatarHeader">Choose your avatar</div>
+            <div class="avatarWrapperDiv">
+                <div class="avatars"><input type="radio" id="avatar1" name="avatarPic" value="HTML"></div>
+                <div class="avatars"><input type="radio" id="avatar2" name="avatarPic" value="HTML"></div>
+                <div class="avatars"><input type="radio" id="avatar3" name="avatarPic" value="HTML"></div>
+                <div class="avatars"><input type="radio" id="avatar4" name="avatarPic" value="HTML"></div>
+            </div>
+        </div>
         </form>
     `;
 
