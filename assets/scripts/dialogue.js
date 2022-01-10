@@ -54,8 +54,6 @@ async function whichDialogue(character) {
 
 }
 
-
-
 //tar bort gammal dialog ur arrayen
 function emptyDialogueArray(){
     let splicedDialogue = characterDialogue.splice(0, characterDialogue.length);

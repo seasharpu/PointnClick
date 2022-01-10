@@ -74,34 +74,6 @@ function requestDeleteUser(userID){
     });
     fetch(req).then(response => getStatusCode(response));
 }
-//requestDeleteUser(4);
 
-// let formWrapper = document.createElement("div");
-// formWrapper.innerHTML = 
-//     `
-//     <form id="create-user" action="createUser.php "method="POST" enctype="multipart/form-data">
-//         <input type="file" name="image">
-//         <input type="text" placeholder="nameTag" name="nameTag">
-//         <input type="text" placeholder="password" name="password">
-//         <button id="button">Upload</button>
-//     </form>
-//     `;
-
-// document.querySelector("main").append(formWrapper);
-
-//CREATE USER
-// const form = document.getElementById("registerForm");
-// form.addEventListener("button", (event) => {
-//     event.preventDefault();
-//     const data = new FormData(form);
-//     console.log(data);
-
-//     const req = new Request("createUser.php", {
-//         method: "POST",
-//         body: data
-//     });
-//     fetch(req).then(response => getStatusCode(response));
-
-// });
 
 
