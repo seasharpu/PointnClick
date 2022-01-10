@@ -35,7 +35,7 @@ function MakerRegisterPage() {
 
     formDiv.innerHTML = `
         <form id="registerForm" action="/createUser.php" method="POST" enctype="multipart/form-data">
-        <div
+        <div>
             <div id="uploadpicture">
                 <input type="file" name="image" id="file" onchange="loadfile(event)">
                 <label for="file">
@@ -50,6 +50,7 @@ function MakerRegisterPage() {
         <div id="buttonsDiv">
             <button type="submit" id="startExploring">Start Exploring</button>
             <button id="cancelButton">Cancel</button>
+        </div>
         </div>
         <div id="avatar">
         <div id="avatarHeader">Choose your avatar</div>

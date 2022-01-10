@@ -34,13 +34,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  width: 500px;
+  margin-left: 100px;
 }
 
 .avatars {
   background-color: black;
   margin: 5px;
+  width: 200px;
+  height: 200px;
 }
+#avatarHeader {
+  text-align: center;
+  color: white;
 
+  margin-left: 60px;
+  margin-bottom: 10px;
+}
 .avatarWrapperDiv div:first-child,
 .avatarWrapperDiv div:nth-child(2),
 .avatarWrapperDiv div:nth-child(3),
@@ -76,7 +86,7 @@
 
 #registerForm {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 input {
