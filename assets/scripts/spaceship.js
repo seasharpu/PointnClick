@@ -277,11 +277,13 @@ function backToSpaceship() {
 function deleteUserButton() {
     let deleteUser = document.createElement("div");
     deleteUser.classList.add("deleteUser");
-    deleteUser.innerHTML = `<a href="index.php">delete user</a>`;
+    deleteUser.innerHTML = `<p>delete user</p>`;
     document.querySelector(".joystickDiv").append(deleteUser);
 
     deleteUser.addEventListener("click", function(){
         requestDeleteUser(globalUserID);
+        document.querySelector("#hidden").innerHTML = "";
+        makeStartPage();
     })
 }
 

@@ -233,11 +233,10 @@ wrapper {
 .tutorialButton:hover {
   cursor: pointer;
 }
-
-.deleteUser > a {
+.deleteUser > p {
   font-size: 12px;
-  text-decoration: none;
   color: white;
+  margin: 0;
 }
 /*INVENTORY*/
 .inventory {
