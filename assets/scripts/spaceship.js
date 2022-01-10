@@ -127,7 +127,7 @@ function spaceShip() {
 function profile() {
     let profileDiv = document.createElement("div");
     let profilePic = document.createElement("div");
-    let profileName = document.createElement("div");
+    let profileName = document.createElement("input");
 
     profileDiv.classList.add("profileDiv");
     profilePic.classList.add("profilePic");

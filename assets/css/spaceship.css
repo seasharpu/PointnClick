@@ -166,16 +166,14 @@ wrapper {
 .inventory {
   height: 100px;
   width: 100px;
-  border-bottom: black 1px solid;
-  background-color: rgba(128, 128, 128, 0.582);
+  background-color: rgba(47, 44, 80, 0.82);
   grid-area: 1/3/3/4;
   justify-self: end;
+  border: 3px black solid;
 }
 .chest {
   height: 100px;
   width: 100px;
-  /*background-color: rgba(128, 128, 128, 0.562);*/
-  border-bottom: 1px black solid;
 
   display: flex;
   align-items: center;
@@ -186,28 +184,44 @@ wrapper {
 }
 .chestOpen {
   background-image: url(/assets/images/Treasure\ Chest\ open\ 64x64.png);
-  background-color: rgba(128, 128, 128, 0.712);
+  background-color: rgba(47, 44, 80, 0.82);
 }
 .chest:hover {
-  background-color: rgba(128, 128, 128, 0.712);
+  background-color: rgba(92, 101, 149, 0.71);
   cursor: pointer;
 }
 .inventoryObjectsHidden {
   height: 0px;
   width: 100px;
-  background-color: rgba(128, 128, 128, 0.678);
+  background-color: rgba(47, 44, 80, 0.82);
   transition: 0.5s height ease;
 }
 .inventoryObjectsOpen {
-  background-color: rgba(128, 128, 128, 0.678);
+  background-color: rgba(47, 44, 80, 0.82);
   transition: 0.5s height ease;
   height: 150px;
+  border: 3px solid black;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 7px;
   padding: 8px;
 }
+
+/*ITEMS CSS*/
+
+.itemboxes {
+  /*height: 44px;*/
+  background-color: rgba(255, 255, 255, 0.699);
+  border-radius: 20%;
+  border: 5px double silver;
+}
+
+.itemboxes:hover {
+ /* background-color: silver; */
+  border: 5px double greenyellow;
+}
+
 /*Profile*/
 .profileDiv {
   display: flex;
@@ -331,18 +345,6 @@ wrapper {
   cursor: pointer;
 }
 
-.dialogueDivtest {
-  width: 50px;
-  height: 50px;
-  background-color: white;
-}
-
-/*SPACESHIP INVENTORY CSS */
-
-.itemboxes {
-  /*height: 44px;*/
-  background-color: white;
-}
 
 /*Blink effects*/
 .blink1 {
@@ -462,3 +464,4 @@ wrapper {
   font-family: var(--mainFont);
   color: white;
 }
+
