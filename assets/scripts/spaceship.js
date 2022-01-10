@@ -470,4 +470,4 @@ function planetDisplay(){
     let displayDiv = document.createElement("div");
     displayDiv.classList.add("displayDiv");
     document.querySelector(".joystickDiv").append(displayDiv);
-    }
+}

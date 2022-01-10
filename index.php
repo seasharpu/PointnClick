@@ -60,9 +60,9 @@ require_once "functions.php";
             }
             if (isset($_GET["createdUser"])) {
                 echo "<script>const createdUser = true </script>";
-                echo "hejhej echo";
+                echo "<script>makeTutorial();</script>";
             }
-           
+
             if (isset($_GET["userFound"])) {
                 echo "<script>const globalUserID = $id</script>";
                 echo "<script>const userNameTag = '$nameTag'</script>";
@@ -83,7 +83,7 @@ require_once "functions.php";
             <script src="/assets/scripts/loading.js"></script>
             <script src="assets\scripts\formPlanet.js"></script>
 
-            
+
             <?php
             if (isset($_GET["createdUser"])) {
                 $createdCode = $_GET["createdUser"];
