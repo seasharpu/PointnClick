@@ -177,7 +177,10 @@ footer {
   width: 100px;
   height: 100px;
 }
-
+.playerCharacter > img {
+  width: 100px;
+  height: 100px;
+}
 /* loadingDiv CSS */
 
 .ldWrapper {

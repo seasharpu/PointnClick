@@ -141,8 +141,7 @@
         "profilePicture": "388e57a27640ca90f637bc200f64b1908f7915f3.jpeg",
         "inventory": [
             1,
-            5,
-            2
+            5
         ],
         "laikaFound": false
     },
@@ -167,6 +166,257 @@
         "nameTag": "Liv",
         "password": "1234",
         "profilePicture": "fa6c0cd73e02c9e2a3f0ceefff8a04cdde1b6adb.jpeg",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 23,
+        "nameTag": "ava",
+        "password": "123",
+        "profilePicture": "bb9f440a306a10096327a28db5dcfaa0e1fc4343.png",
+        "avatar": null,
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 24,
+        "nameTag": "ava2",
+        "password": "123",
+        "profilePicture": "b2110a80d825d239ceda010bc92c559f59a63a5a.png",
+        "avatar": null,
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 25,
+        "nameTag": "ava3",
+        "password": "1234",
+        "profilePicture": "30ad52e1698a14e1457aaf2d8a248cc0fd0e66ba.png",
+        "avatar": null,
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 26,
+        "nameTag": "ava4",
+        "password": "123",
+        "profilePicture": "06126c2bef092b4c1020e8c387a2184acff91ff7.png",
+        "avatar": null,
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 27,
+        "nameTag": "test",
+        "password": "1234",
+        "profilePicture": "726a82649f011e2e4b8628f6c673a3be14268be3.png",
+        "avatar": "bluedude",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 28,
+        "nameTag": "hej",
+        "password": "123",
+        "profilePicture": "7444514ae870f410db47d0814fdd1f4e6933b7a3.png",
+        "avatar": null,
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 29,
+        "nameTag": "ava4",
+        "password": "ava4",
+        "profilePicture": "c88efac766cd21d235c4b5c9564e6e9ad7ea4b79.png",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 30,
+        "nameTag": "ava2",
+        "password": "ava2",
+        "profilePicture": "cb3d165b3fcf511c3a72501fbb233e950a65c890.png",
+        "avatar": "",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 31,
+        "nameTag": "ava2",
+        "password": "ava2",
+        "profilePicture": "a32dc8f4d72fc17fd7cfc55f5cc847335411f48f.png",
+        "avatar": "ninja",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 32,
+        "nameTag": "ava3",
+        "password": "ava3",
+        "profilePicture": "f893eb6dac8435e2df45adce6ed3c4e4f04bbf9a.png",
+        "avatar": "/assets/images/characters/avatar3.png",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 33,
+        "nameTag": "ava2",
+        "password": "ava2",
+        "profilePicture": "1471aa2ef156ad0e94b8f6507140787a8876acdb.png",
+        "avatar": "/assets/images/characters/avatar2.png",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 34,
+        "nameTag": "ava100",
+        "password": "ava100",
+        "profilePicture": "051124c9d584b9bd4c70e7a5b833dc816a15e313.png",
+        "avatar": "/assets/images/characters/avatar2.png",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 35,
+        "nameTag": "avava",
+        "password": "avava",
+        "profilePicture": "28893c8582ceadce13836071892491dd559b5553.png",
+        "avatar": "/assets/images/characters/avatar1.png",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 36,
+        "nameTag": "HEJ123",
+        "password": "HEJ",
+        "profilePicture": "78f5bd273a1e9e422bb3189cf7e30e37f39d9586.png",
+        "avatar": "",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 37,
+        "nameTag": "ASDFA",
+        "password": "DSAFA",
+        "profilePicture": "3ff1974fcba25ccef1a43a43ddb8175b41d6b87f.png",
+        "avatar": "/assets/images/characters/avatar1.png",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 38,
+        "nameTag": "ASJLFKas",
+        "password": "AIS\u00d6FJLC\u00d6E",
+        "profilePicture": "b7d13b7168fb5f8934ed70acb9a3a5497a0a8327.png",
+        "avatar": "/assets/images/characters/avatar2.png",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 39,
+        "nameTag": "aolkdj",
+        "password": "akjd",
+        "profilePicture": "d778cfb9b06b753b3f8b6026e214bbf0291182d3.png",
+        "avatar": null,
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 40,
+        "nameTag": "hejhej",
+        "password": "hejhej",
+        "profilePicture": "e132308bf2e59f266eb0eb09c1afdcc83fa8dbc7.png",
+        "avatar": "/assets/images/characters/avatar1",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 41,
+        "nameTag": "tjotjo",
+        "password": "hejehej",
+        "profilePicture": "166d8a127e68327c235c352c7d63ce85c9702e29.png",
+        "avatar": "/assets/images/characters/avatar2",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 42,
+        "nameTag": "aFS",
+        "password": "DASF",
+        "profilePicture": "3b081e5a8846dda485479278ccd68daeae11a32f.png",
+        "avatar": "/assets/images/characters/avatar1",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 43,
+        "nameTag": "HEJHEJ",
+        "password": "HEJHEJ",
+        "profilePicture": "a019d071aa63eba2d732e3a930d39ac9005ee373.png",
+        "avatar": "/assets/images/characters/avatar1",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 44,
+        "nameTag": "hejhej",
+        "password": "jojo",
+        "profilePicture": "a260ad6319da7132d4576a05276e1382d4538239.png",
+        "avatar": "/assets/images/characters/avatar1",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 45,
+        "nameTag": "hejhej",
+        "password": "hejehje",
+        "profilePicture": "f6cfc06d2048a87b90a2cc6038828c2ee312c4bc.png",
+        "avatar": "/assets/images/characters/avatar1",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 46,
+        "nameTag": "heje",
+        "password": "joas",
+        "profilePicture": "6ec18dda580554cecc2ff6d3feb7095ff77ecfe9.png",
+        "avatar": "/assets/images/characters/avatar1",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 47,
+        "nameTag": "jalws",
+        "password": "dsfas",
+        "profilePicture": "dcd38318f813a5ef55ee1c73c2dc0655cc3b53f9.png",
+        "avatar": "/assets/images/characters/avatar1",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 48,
+        "nameTag": "kajds",
+        "password": "asoljd",
+        "profilePicture": "3f7325a0b2ffd0c705d7993a0d4944537c5dfb2a.png",
+        "avatar": "/assets/images/characters/avatar1",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 49,
+        "nameTag": "kasjdk",
+        "password": "daslf",
+        "profilePicture": "1a63099181693ce6f9a2cf9bb77278e5e70d373e.png",
+        "avatar": "/assets/images/characters/avatar1",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 50,
+        "nameTag": "hejras",
+        "password": "dsfas",
+        "profilePicture": "b6fed2313e25dbcd06d0438d85e8e7942d1e6525.png",
+        "avatar": "/assets/images/characters/avatar1.png",
         "inventory": [],
         "laikaFound": false
     }
