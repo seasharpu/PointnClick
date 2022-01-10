@@ -32,6 +32,7 @@ fetchPlanetNamesandIDs();
 
 //skapar planeter och lägger till info från planet.json när man klickar på en planet så som bakgrundsbild etc
 async function makePlanets(){
+ 
     let planetData = await fetchPlanetNamesandIDs();
 
     planetData.forEach(element => {
@@ -49,8 +50,7 @@ async function makePlanets(){
             clickSound();
         });
         
-        planetDiv.addEventListener("click", async function(){
-            
+        planetDiv.addEventListener("click", async function(){            
             currentID.push(element.id);
         
             async function getUserInventory () {
@@ -180,6 +180,7 @@ function spaceShip() {
     document.querySelector("main").append(spaceShipBackground);
     document.getElementById("location").innerHTML = "Spaceship";
     
+    
     blinking();
     makePlanets();
     //backgrounds();
@@ -194,7 +195,7 @@ function spaceShip() {
 function profile() {
     let profileDiv = document.createElement("div");
     let profilePic = document.createElement("div");
-    let profileName = document.createElement("div");
+    let profileName = document.createElement("input");
 
     profileDiv.classList.add("profileDiv");
     profilePic.classList.add("profilePic");
@@ -372,12 +373,16 @@ function joystick() {
         joystick.classList.toggle("joystickLeft");
         space.classList.toggle("spaceLeft");
         if(joystick.classList.contains("joystickLeft")) {
-            document.querySelector(".goRight").style.pointerEvents = "none";
-            document.querySelector(".goRight").style.opacity = "0.8";
+            document.querySelector(".goLeft").style.pointerEvents = "none";
+            document.querySelector(".goLeft").style.opacity = "0.8";
+
+            //document.querySelector(".goRight").style.pointerEvents = "all";
+            //document.querySelector(".goRight").style.opacity = "1";
             clickSound();
         } else {
             document.querySelector(".goRight").style.pointerEvents = "all";
             document.querySelector(".goRight").style.opacity = "1";
+            
             clickSound();
         }
     });
@@ -385,8 +390,11 @@ function joystick() {
         joystick.classList.toggle("joystickRight");
         space.classList.toggle("spaceRight");
         if(joystick.classList.contains("joystickRight")) {
-            document.querySelector(".goLeft").style.pointerEvents = "none";
-            document.querySelector(".goLeft").style.opacity = "0.8";
+            document.querySelector(".goRight").style.pointerEvents = "none";
+            document.querySelector(".goRight").style.opacity = "0.8";
+
+            //document.querySelector(".goLeft").style.pointerEvents = "all";
+            //document.querySelector(".goLeft").style.opacity = "1";
             clickSound();
         } else {
             document.querySelector(".goLeft").style.pointerEvents = "all";

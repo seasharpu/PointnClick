@@ -216,6 +216,7 @@ function insideLaikasShip () {
     
         let laikasDialogueBubble = document.createElement("div");
         laikasDialogueBubble.classList.add("laikasDialogueBubble");
+        let laikasSpeech = document.createElement("p");
         
         let fireworksgif = document.createElement("div");
         fireworksgif.classList.add("fireworksgif");
@@ -223,7 +224,6 @@ function insideLaikasShip () {
         
         laikaTheDog.addEventListener("click", () => {
         laikasDialogueBubble.style.backgroundImage = `url(./assets/images/talkbubble.png)`;
-        let laikasSpeech = document.createElement("p");
         laikasSpeech.classList.add("laikasSpeech");
         laikasSpeech.innerHTML="You must be here to save me? Thank you space legend!";
 
@@ -234,26 +234,14 @@ function insideLaikasShip () {
         document.querySelector(".background").append(fireworksgif);
 
         setTimeout(() => {
-            statusCodeDivEnd("Congratulations, you have completed your quest! You can either choose to stay and explore, OR exit world. What’s it going to be space-legend?");
-            
-            document.querySelector(".understoodToStay").addEventListener("click", (event)=> {
-                let statusCodeDiv = event.target.parentElement.parentElement;
-               // document.querySelector("#hidden").innerHTML = "";
-                statusCodeDiv.remove();
-                spaceShip();
-                backgrounds();
-            })
-    
-            document.querySelector(".buttonToexit").addEventListener("click", (event) => {
+            statusCodeDiv("Congratulations, you have completed your quest! It's time for you to go home and take a well deserved rest. See you around space legend!");
+            document.querySelector(".understood").addEventListener("click", (event)=> {
                 let statusCodeDiv = event.target.parentElement.parentElement;
                 statusCodeDiv.remove();
+                document.querySelector(".background").append(exit());
             })
         }, 10000);
     })
 }
 
-async function ifLaikaisFound (){
-    let users = await fetchUser();
-    console.log(users);
-}
-ifLaikaisFound ()
+

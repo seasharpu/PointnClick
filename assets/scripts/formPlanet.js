@@ -66,29 +66,37 @@ function formPlutoPlanet(){
     implementElement("cloudSmall", "molntrans");
     implementElement("cloudBig", "molntrans");
     implementCharacterElement("wingedDemon", "winged-demon");
+    whichDialogue("wingedDemon");
 }
 function formAlienPlanet(){
     //element för ALIEN
     implementElement("playerCharacter", "spacemanSam");
     implementCharacterElement("insect", "insect");
+    whichDialogue("insect");
+     
 }
 function formDesertPlanet(){
     //element för DESERT
     implementElement("playerCharacter", "spacemanSam");
     implementCharacterElement("dragon", "dragon");
+    whichDialogue("dragon");
+   
 }
 function formWaterPlanet(){
     //element för WATER
     implementElement("playerCharacter", "spacemanSam");
     implementCharacterElement("pinkjelly", "pinkjelly");
+    whichDialogue("pinkjelly");
 }
 function formJunglePlanet(){
     //element för JUNGLE
     implementElement("playerCharacter", "spacemanSam");
     implementCharacterElement("fireworm", "fireworm");
+    whichDialogue("fireworm");
 }
 function formPartyPlanet(){
     //element för PARTY
     implementElement("playerCharacter", "spacemanSam");
     implementCharacterElement("mike", "mike");
+    whichDialogue("mike");
 }

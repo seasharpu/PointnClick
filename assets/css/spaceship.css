@@ -122,9 +122,8 @@ wrapper {
   width: 100px;
 }
 .joystickLeft {
-  background-image: url(/assets/images/joystick/joystick_right-2.png);
+  background-image: url(/assets/images/joystick/joystick_left-2.png);
   background-repeat: no-repeat;
-  transform: scaleX(-1);
 
   height: 100px;
   width: 100px;
@@ -138,15 +137,14 @@ wrapper {
 .goLeft {
   height: 50px;
   width: 50px;
-  background-image: url(/assets/images/joystick/arrow.png);
+  background-image: url(/assets/images/joystick/arrow_left.png);
   background-size: contain;
-  transform: scaleX(-1);
   cursor: pointer;
 }
 .goRight {
   height: 50px;
   width: 50px;
-  background-image: url(/assets/images/joystick/arrow.png);
+  background-image: url(/assets/images/joystick/arrow_right.png);
   background-size: contain;
   cursor: pointer;
 }
@@ -207,8 +205,6 @@ wrapper {
 .chest {
   height: 100px;
   width: 100px;
-  /*background-color: rgba(128, 128, 128, 0.562);*/
-  border-bottom: 1px black solid;
 
   display: flex;
   align-items: center;
@@ -219,31 +215,47 @@ wrapper {
 }
 .chestOpen {
   background-image: url(/assets/images/Treasure\ Chest\ open\ 64x64.png);
-  background-color: rgba(128, 128, 128, 0.712);
+  background-color: rgba(47, 44, 80, 0.82);
 }
 .chest:hover {
-  background-color: rgba(128, 128, 128, 0.712);
+  background-color: rgba(92, 101, 149, 0.71);
   cursor: pointer;
 }
 .inventoryObjectsHidden {
   height: 0px;
   width: 100px;
-  background-color: rgba(128, 128, 128, 0.678);
+  background-color: rgba(47, 44, 80, 0.82);
   transition: 0.5s height ease;
 }
 .inventoryObjectsHidden > div {
   display: none;
 }
 .inventoryObjectsOpen {
-  background-color: rgba(128, 128, 128, 0.678);
+  background-color: rgba(47, 44, 80, 0.82);
   transition: 0.5s height ease;
   height: 150px;
+  border: 3px solid black;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 7px;
   padding: 8px;
 }
+
+/*ITEMS CSS*/
+
+.itemboxes {
+  /*height: 44px;*/
+  background-color: rgba(255, 255, 255, 0.699);
+  border-radius: 20%;
+  border: 5px double silver;
+}
+
+.itemboxes:hover {
+ /* background-color: silver; */
+  border: 5px double greenyellow;
+}
+
 /*Profile*/
 .profileDiv {
   display: flex;
@@ -390,20 +402,19 @@ wrapper {
 
 /*DIALOG CSS*/
 
-.dialogueBubble {
-  height: 50px;
-
-  background-image: url(/assets/images/talkbubble.png);
+.innerDialogue{
+  font-size: medium;
+  height: 129px;
+  width: 265px;
+  
+  background-image: url(/assets/images/talkbubble_left.png);
   background-size: contain;
   background-repeat: no-repeat;
+}
 
-  grid-column: 1;
-
-  /*  background-color: white;
-  width: 150px;
-  height: 70px;
-  position: absolute;
-  right: -50px; */
+.characterDialogueWrapper {
+  height: 129px;
+  width: 265px;
 }
 
 /*SPACESHIP INVENTORY CSS */
