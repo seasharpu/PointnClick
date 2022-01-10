@@ -4,11 +4,7 @@
 let currentID = [];
 
 // *FUNKTIONEN SOM BEHÖVS VARA IGÅNG FÖR ATT SE NÅGOT*
-// spaceShip();
-// backgrounds();
-if (globalUserID == undefined){
-    console.log("not inlogged");
-}
+
 if (globalUserID  > 0) {
 
     document.querySelector("#hidden").innerHTML = "";
