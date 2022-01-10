@@ -30,6 +30,11 @@ if ($rqstMethod === "POST") {
         $size = $profilePicture["size"];
         $error = $profilePicture["error"];
 
+        if (!isset($_POST["avatar"])){
+            header("Location: index.php?id=470");
+            exit();
+        }
+
         //nameTag är färre än 3 bokstäver
         if (strlen($nameTag) <= 2) {
             header("Location: index.php?id=468");

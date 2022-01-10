@@ -24,6 +24,7 @@
     //467 - lösen vill ha mer än 3 tecken
     //468 - användare finns ej - vid inloggning
     //469 - fel inmatning vid inloggning
+    //470 - ingen avatar vald
 
 //500 - 599: ngt gick fel på servern 
 
@@ -124,6 +125,9 @@ function getStatusCode(responseFromFetch){
         if(responseFromFetch.status == 469){
             statusCodeDiv("Perhaps you spelled something wrong. Try again.");
         };//nametag & password överensstämmer inte med databas
+        if(responseFromFetch.status == 470){
+            statusCodeDiv("Pick an avatar too.");
+        };//avatar är inte vald i skapa användare
         if(responseFromFetch.status >= 500){
             statusCodeDiv("Server error! Sorry about that.");
         };//om 500 eller högre- serverfel

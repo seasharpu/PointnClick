@@ -169,6 +169,15 @@ require_once "functions.php";
                 });
                 MakerRegisterPage();
             </script>";
+                } else if ($errorCode == 470) {
+                    //statusCode(469);
+                    echo "<script>statusCodeDiv('Pick an avatar.')</script>";
+                    echo "<script>
+                document.querySelector('.understood').addEventListener('click', (event) =>{
+                document.querySelector('.statusCodeDiv').remove();
+                });
+                MakerRegisterPage();
+            </script>";
                 }
             }
             ?>
