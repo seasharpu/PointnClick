@@ -5,7 +5,7 @@ let spaceShipBackground = document.querySelector("#hidden");
 async function fetchAvatarProfile(){
     let userID = globalUserID;
     let users = await fetchUser();
-    let playerCharacter = null;
+    let playerCharacter = "";
     
     users.forEach(user => {
         if(user.id == userID){
@@ -77,6 +77,7 @@ function talkingCharacter(divElementClassname, nameOfImage){
 //dessa funktioner kallar på när respektive planet trycks på.
 function formPlutoPlanet(){
     //element för PLUTO
+    console.log(fetchAvatarProfile());
     implementElement("playerCharacter", fetchAvatarProfile());
     implementElement("cloudSmall", "molntrans");
     implementElement("cloudBig", "molntrans");
