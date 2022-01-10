@@ -186,6 +186,7 @@ wrapper {
   position: absolute;
   align-self: end;
   font-family: var(--mainFont);
+  font-size: 13px;
 }
 .backToSpaceship:hover {
   cursor: pointer;
