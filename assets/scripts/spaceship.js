@@ -215,6 +215,7 @@ function spaceShip() {
     joystick(); 
     profile();
     exit();
+    deleteUserButton();
     planetDisplay();
 }
 
@@ -272,7 +273,16 @@ function backToSpaceship() {
         }, 2000);
     });
 }
+function deleteUserButton() {
+    let deleteUser = document.createElement("div");
+    deleteUser.classList.add("deleteUser");
+    deleteUser.innerHTML = `<a href="index.php">DELETE USER</a>`;
+    document.querySelector(".joystickDiv").append(deleteUser);
 
+    deleteUser.addEventListener("click", function(){
+        requestDeleteUser(globalUserID);
+    })
+}
 // GRUND INVENTORY FUNCTION
 function inventory(){
     let inventory = document.createElement("div");
