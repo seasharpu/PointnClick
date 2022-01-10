@@ -1,4 +1,5 @@
 "use strict";
+const userID = globalUserID;
 async function fetchUser() {
     const response = await fetch('./api/user.json')
     const data = await response.json()
@@ -17,15 +18,18 @@ async function fetchitems(){
 //inventory samt planetens itemOnGround.
 async function fetchItemsForPlanets (userInvArray, currentPlanetID) {  
     let itemData = await fetchitems();
+    //let imgURL = null;
 
         currentPlanetID.forEach(idOfPlanet => {
             itemData.forEach(item => {
                 if (idOfPlanet == item.id ){
                     if(userInvArray.includes(item.id) == false){
+                        console.log(item);
                         let itemsDiv = document.createElement("div");
                         itemsDiv.classList.add("planetsItem");
+                        itemsDiv.innerHTML = `<img class="${item.name}"src="${item.image}"><span class="noSee">${item.name}</span>`;
                         document.querySelector(".background").prepend(itemsDiv);
-                        itemsDiv.style.backgroundImage = `url(${item.image})`
+                        //itemsDiv.style.backgroundImage = `url(${item.image})`
                     } 
                 }
             })
@@ -40,7 +44,7 @@ async function userRequiredItem(requiredItem, userInvArray){
         //om användaren ännu inte har något i sin array
         //och det inte krävs ett requiredItem ska de komma
         //förbi ändå.&& requiredItem == undefined
-        if (userInvArray.length == 0 && requiredItem == undefined) {
+        if (userInvArray.length == 0) {
             found = false;
             
             if (requiredItem == undefined){
@@ -73,7 +77,6 @@ async function userRequiredItem(requiredItem, userInvArray){
 //jämför användarens items med bilderna i item.json.
 //skickar ut en array med bilder av användarens items
 async function fetchUserInventoryIMGS () {
-    const userID = 2;
     let users = await fetchUser();
     let itemData = await fetchitems();
 

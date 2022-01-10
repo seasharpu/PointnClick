@@ -425,11 +425,11 @@ wrapper {
 
 /*ITEMS CSS */
 
-.planetsItem {
+/*.planetsItem {
   height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
-}
+}*/
 
 .planetsItem:hover {
   cursor: pointer;

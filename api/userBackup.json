@@ -4,7 +4,7 @@
         "nameTag": "Buster",
         "password": "test123",
         "inventory": [
-            1,
+            5,
             1
         ],
         "laikaFound": true

@@ -50,7 +50,15 @@ async function makePlanets(){
             clickSound();
         });
         
-        planetDiv.addEventListener("click", async function(){            
+        planetDiv.addEventListener("click", async function(){
+            //tar bort den förra planetens classNamn
+            document.querySelector("main").classList.remove(`${element.name}DIV`);
+            console.log(element.name);
+            if (document.querySelector("main").classList.contains(`${element.name}DIV`)){
+                console.log("yay");
+                
+            }
+            
             currentID.push(element.id);
         
             async function getUserInventory () {
@@ -64,6 +72,7 @@ async function makePlanets(){
                         currentUserIDInventory = user.inventory;
                     }
                 })
+                console.log(currentUserIDInventory);
                 return currentUserIDInventory;
             }
             
@@ -71,6 +80,7 @@ async function makePlanets(){
             let hasUserRequiredItem = await userRequiredItem(element.requiredItem, currentUserIDInventory);
             
             if (hasUserRequiredItem == true){
+
                 loadingDivPlanet();
                 backgrounds();
                 //document.querySelector(".background").style.position = "static";
@@ -87,24 +97,29 @@ async function makePlanets(){
                     }
                     if (element.id == 5) {
                         formWaterPlanet();
+                        document.querySelector("main").classList.add("underWaterPlanetDIV");
                         document.querySelector(".playerCharacter").classList.add("waterPlayerCharacter");
                         
                     }
                     if (element.id == 4) {
                         formJunglePlanet();
+                        document.querySelector("main").classList.add("junglePlanetDIV");
                         document.querySelector(".playerCharacter").classList.add("junglePlayerCharacter");
                         
                     }
                     if (element.id == 3) {
                         formAlienPlanet();
+                        document.querySelector("main").classList.add("alienPlanetDIV");
                         document.querySelector(".playerCharacter").classList.add("alienPlayerCharacter");
                     }
                     if (element.id == 2) {
                         formDesertPlanet();
+                        document.querySelector("main").classList.add("desertPlanetDIV");
                         document.querySelector(".playerCharacter").classList.add("desertPlayerCharacter");
                     }
                     if (element.id == 1) {
                         formPartyPlanet();
+                        document.querySelector("main").classList.add("partyPlanetDIV");
                         document.querySelector(".playerCharacter").classList.add("partyPlayerCharacter");
                     }
 
@@ -114,6 +129,30 @@ async function makePlanets(){
                     backToSpaceship(); 
                     //whichDialogue();
 
+                    //lägg till ett item med hjälp av namnet, samt
+                    //och sedan koppla det till itemets id
+                    async function addItemOnGround(nameOfItem){
+                        updateUserInventorySlots();
+                        let itemData = await fetchitems();
+                        itemData.forEach(item => {
+                            if (item.name == nameOfItem){
+                                requestAddItem(userID, item.id)
+                            }
+                        })
+                    }
+                    //om planeten har ett item på marken,
+                    //bara då kan jag lägga till det (med klick-event)
+                    setTimeout(() => {
+                    if (document.querySelectorAll(".planetsItem").length > 0){
+                        document.querySelector(".planetsItem").addEventListener("click", (event) => {
+                            let divURL = event.target.nextElementSibling.innerHTML;
+                            addItemOnGround(divURL);
+                            document.querySelector(".planetsItem").remove();
+                        })
+                    }}, 2500); 
+
+                    //Om planeten är otillgänglig för användaren.
+                    //har inte det specifika itemet för planeten
             } else {
                 if (!planetDiv.classList.contains("unavailablePlanet")){
                     let overlay = document.createElement("div");
@@ -344,9 +383,8 @@ async function updateUserInventorySlots(){
             itemBoxes.classList.add("deletedItem");
 
             setTimeout(() => {
-                //2 ska vara userID när vi fått igång session["id"];
                 requestDeleteItem(userID, itemID);
-            }, 3000);
+            }, 2000);
 
             itemBoxes.innerHTML = "";
             deleteButton.remove();
