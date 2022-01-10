@@ -21,3 +21,14 @@
   bottom: -19px;
   transform: scaleX(-1);
 }
+
+.junglePlanetDIV .planetsItem{
+  left: 248px;
+  top: 250px;
+
+}
+
+.Musicdisc{
+  height: 100%;
+  width: 8%;
+}

@@ -1,7 +1,7 @@
 [
         {
             "id": 1,
-            "name": "Underwater Breathing Mask",
+            "name": "BreathingMask",
             "image": "assets/images/underwaterbreathingmask.png",
             "description":"for underwater"
         },

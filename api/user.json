@@ -4,8 +4,9 @@
         "nameTag": "Buster",
         "password": "test123",
         "inventory": [
+            5,
             1,
-            1
+            2
         ]
     },
     {
