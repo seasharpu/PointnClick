@@ -89,7 +89,6 @@ if (isset($_GET["id"])) {
             <script src="/assets/scripts/requests.js"></script>
             <script src="/assets/scripts/tutorial.js"></script>
             <script src="/assets/scripts/register.js"></script>
-
             <script src="/assets/scripts/spaceship.js"></script>
             <script src="/assets/scripts/dialogue.js"></script>
             <script src="assets\scripts\statuscodemessages.js"></script>

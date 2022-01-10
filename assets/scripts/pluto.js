@@ -186,7 +186,9 @@ function createBox(){
 }
 //skapar allt som krävs för insidan av Laikas spaceship inklusive statusDiv som uppdaterar spelaren 
 function insideLaikasShip () {
-    requestLaikaStatus(true, 2); //måste ändras till userID!!
+    let currentUserID = globalUserID;
+    ;
+    requestLaikaStatus(true, currentUserID);
     document.querySelector(".background").style.backgroundImage = `url(./assets/images/laikasShipinside.png)`;
 
     let laikasWrapper = document.createElement("laikasWrapper");
