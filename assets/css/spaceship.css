@@ -269,7 +269,10 @@ wrapper {
   height: 130px;
   border: solid 1px white;
 }
-
+.profilePic > img {
+  width: 130px;
+  height: 130px;
+}
 /*PLANETERNA SOM MAN KLICKAR PÅ */
 
 .unavailablePlanet {
