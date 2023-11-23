@@ -60,7 +60,7 @@ if ($rqstMethod === "POST") {
         // Skapa ett unikt filnamn med TID + FILNAMN
         $uniqueFilename = sha1("$time$filename");
         //sökväg för mappen
-        $path = __DIR__ . '/api/profileImages/';
+        $path = __DIR__ . '../api/profileImages/';
 
         //Skickar bilden till vår mapp
         move_uploaded_file($tempname, $path . "$uniqueFilename.$ext");
@@ -68,11 +68,11 @@ if ($rqstMethod === "POST") {
         //det läggas till i databasen. 
 
         //id till ny användare.
-        $allUsers = loadJson("api/user.json");
+        $allUsers = loadJson("../api/user.json");
         $highestID = theHighestId($allUsers);
 
         // DB BACKUP
-        saveJson("api/userBackup.json", $allUsers);
+        saveJson("../api/userBackup.json", $allUsers);
 
         //ny array med nycklar.
         $newUser = [];
@@ -87,7 +87,7 @@ if ($rqstMethod === "POST") {
 
         //sparar i array, och sen i json-fil.
         array_push($allUsers, $newUser);
-        saveJson("api/user.json", $allUsers);
+        saveJson("../api/user.json", $allUsers);
 
         foreach ($allUsers as $key => $user) {
             if ($user["nameTag"] == $_POST["nameTag"] && $user["password"] == $_POST["password"]) {
@@ -98,13 +98,13 @@ if ($rqstMethod === "POST") {
             }
         }
         if (!$found) {
-            header("Location: index.html?id=463");
+            header("Location: /index.html?id=463");
         }
         // $createdUser = true;
-        header("Location: index.php?createdUser=true");
+        header("Location: /index.php?createdUser=true");
         exit();
     } else {
-        header("Location: index.html?id=464");
+        header("Location: /index.html?id=464");
         exit();
     }
 }

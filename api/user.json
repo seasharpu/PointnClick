@@ -139,7 +139,11 @@
         "nameTag": "TestLiv",
         "password": "12345",
         "profilePicture": "388e57a27640ca90f637bc200f64b1908f7915f3.jpeg",
-        "inventory": [1,3,5],
+        "inventory": [
+            1,
+            3,
+            5
+        ],
         "laikaFound": false
     },
     {
@@ -155,6 +159,22 @@
         "nameTag": "Blub",
         "password": "Blubb",
         "profilePicture": "9d4f8cfc7cb6353059d1c94df038c13a5ca91ecd.jpeg",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 22,
+        "nameTag": "gegre",
+        "password": "greerg",
+        "profilePicture": "162a91fd595c2ef7567a0e1003ae6db4322d2f42.png",
+        "inventory": [],
+        "laikaFound": false
+    },
+    {
+        "id": 23,
+        "nameTag": "matt",
+        "password": "hatt123",
+        "profilePicture": "3e43994ebbf89e8a4d781b19dd46ad0221fb7968.png",
         "inventory": [],
         "laikaFound": false
     }

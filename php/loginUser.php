@@ -33,10 +33,12 @@ if ($rqstMethod === "POST") {
             }
         }
         if ($found) {
-            header("Location: index.php?userFound=1");
+            header("Location: /index.php?userFound=1");
             exit();
         } else {
+            header("Location: /index.php");
             statusCode(469);
+            exit();
         }
     }
 }
