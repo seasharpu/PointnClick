@@ -456,7 +456,7 @@ function exit() {
     exitDiv.classList.add("exitDiv");
     document.querySelector(".joystickDiv").append(exitDiv);
     exitDiv.innerHTML = `
-    <a href='exit.php'>exit</a>
+    <a href='php/exit.php'>exit</a>
 `;
     return exitDiv;
 }

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "functions.php";
+require_once "./functions.php";
 $rqstMethod = $_SERVER["REQUEST_METHOD"];
 
 $data = file_get_contents("php://input");

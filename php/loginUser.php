@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "functions.php";
+require_once "./functions.php";
 
 $rqstMethod = $_SERVER["REQUEST_METHOD"];
 
@@ -20,7 +20,7 @@ if ($rqstMethod === "POST") {
             exit();
         }
 
-        $users = loadJson("api/user.json");
+        $users = loadJson("../api/user.json");
         $found = false;
         foreach ($users as $key => $user) {
             

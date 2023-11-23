@@ -1,5 +1,5 @@
 <?php session_start();
-require_once "functions.php";
+require_once "php/functions.php";
 
 if (isset($_GET["id"])) {
     $errorCode = $_GET["id"];
@@ -62,7 +62,7 @@ if (isset($_GET["id"])) {
             <script src="/assets/scripts/startPage.js"></script>
             <?php
 
-            require_once "functions.php";
+            require_once "php/functions.php";
             if (file_exists("api/user.json")) {
                 echo '<div id="testare">tjenare</div>';
             }

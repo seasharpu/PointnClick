@@ -4,7 +4,7 @@
 //tar emot ID på inloggad användare samt ID på item som ska deletas.
 function requestDeleteItem(userID,inventoryID){
     const data = {"userID": userID,"inventoryID": inventoryID};
-    const req = new Request("server.php", {
+    const req = new Request("php/server.php", {
         method: "PATCH",
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json"}
@@ -17,7 +17,7 @@ function requestDeleteItem(userID,inventoryID){
 //i användarens inventoryArray.
 function requestAddItem(userID, inventoryID){
     const data = {"userID": userID,"inventoryID": inventoryID};
-    const req = new Request("server.php", {
+    const req = new Request("php/server.php", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json"}
@@ -31,7 +31,7 @@ function requestAddItem(userID, inventoryID){
 //tar emot befintligt namn, samt det nya namnet.
 function requestChangeUserName(nameTag, newNameTag){
     const data = {"nameTag": nameTag, "newNameTag": newNameTag};
-    const req = new Request("server.php", {
+    const req = new Request("php/server.php", {
         method: "PATCH",
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json"}
@@ -43,7 +43,7 @@ function requestChangeUserName(nameTag, newNameTag){
 //CHANGE LAIKA SATUS 
 function requestLaikaStatus(boolean, userID){
     const data = {"laikaFound": boolean, "userID": userID};
-    const req = new Request("server.php", {
+    const req = new Request("php/server.php", {
         method: "PATCH",
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json"}
@@ -54,7 +54,7 @@ function requestLaikaStatus(boolean, userID){
 //LOGIN USER
 function requestLoginUser(nameTag, password){
     const data = {"nameTag": nameTag, "password": password};
-    const req = new Request("server.php", {
+    const req = new Request("php/server.php", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json"}
@@ -67,7 +67,7 @@ function requestLoginUser(nameTag, password){
 //DELETE USER
 function requestDeleteUser(userID){
     const data = {"deleteUserID": userID};
-    const req = new Request("server.php", {
+    const req = new Request("php/server.php", {
         method: "DELETE",
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json"}
@@ -81,7 +81,7 @@ function requestDeleteUser(userID){
 // let formWrapper = document.createElement("div");
 // formWrapper.innerHTML = 
 //     `
-//     <form id="create-user" action="createUser.php "method="POST" enctype="multipart/form-data">
+//     <form id="create-user" action="/php/createUser.php "method="POST" enctype="multipart/form-data">
 //         <input type="file" name="image">
 //         <input type="text" placeholder="nameTag" name="nameTag">
 //         <input type="text" placeholder="password" name="password">
@@ -98,7 +98,7 @@ function requestDeleteUser(userID){
 //     const data = new FormData(form);
 //     console.log(data);
 
-//     const req = new Request("createUser.php", {
+//     const req = new Request("/php/createUser.php", {
 //         method: "POST",
 //         body: data
 //     });

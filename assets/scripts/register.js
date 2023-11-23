@@ -1,5 +1,6 @@
 "use strict";
 
+require_once("../php/functions.php");
 //REGISTER SIDA
 function MakerRegisterPage() {
     document.querySelector("main").style.backgroundImage = "url('assets/images/background2.gif')";
@@ -34,7 +35,7 @@ function MakerRegisterPage() {
     registerDiv.append(formDiv);
 
     formDiv.innerHTML = `
-        <form id="registerForm" action="/createUser.php" method="POST" enctype="multipart/form-data">
+        <form id="registerForm" action="/php/createUser.php" method="POST" enctype="multipart/form-data">
             <div id="uploadpicture">
                 <input type="file" name="image" id="file" onchange="loadfile(event)">
                 <label for="file">

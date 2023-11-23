@@ -31,7 +31,7 @@ function makeStartPage() {
     document.querySelector(".logInWrapper").append(formDiv);
 
     formDiv.innerHTML = `
-        <form method="POST" action="/loginUser.php" >
+        <form method="POST" action="/php/loginUser.php" >
             <h2 class="registerTitle"> NameTag</h2>
             <input type="text" name="nameTag">
             <h2 class="passwordTitle">Password</h2>
