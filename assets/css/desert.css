@@ -1,0 +1,42 @@
+@import "common.css";
+/* Denna fil avser unika css-regler för ökenplaneten */
+/* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+
+/*användarens karaktär*/
+.playerCharacter .playerDesert {
+  left: 0px;
+  top: 0px;
+}
+
+.desertPlayerCharacter {
+  position: absolute;
+  left: 90px;
+  bottom: 80px;
+}
+
+.dragon {
+  height: 250px;
+  width: 450px;
+
+  left: 400px;
+  bottom: 90px;
+}
+
+.dragon .characterDialogueWrapper{
+  position: absolute;
+  left: -10px;
+  top: 0px;
+}
+
+
+.desertPlanetDIV .planetsItem{
+  left: 330px;
+  top: 440px;
+
+}
+
+.Gasmask{
+  height: 100%;
+  width: 20%;
+}
+

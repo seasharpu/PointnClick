@@ -1,0 +1,134 @@
+@import "common.css";
+/* Denna fil avser unika css-regler för startsidan */
+/* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+.titleText {
+  font-family: var(--titleFont);
+  color: var(--mainTextC);
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+}
+.smallTitleStart {
+  margin: 0;
+  color: white;
+}
+
+.titleTextDiv {
+  height: calc(var(--screenHeight) - 400px);
+  grid-row: 1;
+  grid-column: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainerDiv {
+  height: calc(var(--screenHeight) - 250px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logInWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 100%;
+
+  grid-row: 1 / span 2;
+  grid-column: 1;
+}
+
+.passwordTitle,
+.nameTitle {
+  font-family: var(--titleFont);
+}
+
+.passwordTitle {
+  display: flex;
+  justify-content: center;
+  color: var(--mainButtonC);
+  font-family: var(--titleFont);
+}
+
+.NameTagText,
+.PasswordText {
+  margin: 15px;
+  text-align: center;
+  font-family: var(--titleFont);
+  color: var(--inputTitlesC);
+}
+
+.logInWrapper > input {
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  width: 60%;
+  text-align: center;
+}
+
+#buttonsDivStart {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+
+  color: white;
+}
+
+#buttonsDivStart > button {
+  background: url(/assets/images/button.png);
+  background-size: contain;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  border: none;
+
+  flex-basis: 0;
+  flex-grow: 1;
+  color: var(--mainTextC);
+}
+#buttonsDivStart > button:active {
+  background: url(/assets/images/buttonpress.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#buttonsDivStart > button:hover {
+  cursor: pointer;
+}
+
+.planetMoon {
+  height: 150px;
+  width: 150px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+
+  background-image: url(/assets/images/moon.gif);
+  background-position: center;
+  background-size: contain;
+
+  position: absolute;
+  left: 15px;
+  bottom: 20px;
+}
+
+.laikaStart {
+  height: 150px;
+  width: 150px;
+
+  background-image: url(/assets/images/laikarun.gif);
+  background-position: center;
+  background-size: contain;
+
+  position: absolute;
+  left: 40px;
+  bottom: 155px;
+}

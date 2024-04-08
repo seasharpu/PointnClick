@@ -8,18 +8,14 @@ function loadJson($database)
 
 function saveJson($database, $data)
 {
-    $json = json_encode($data, JSON_PRETTY_PRINT);
+    $json = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     file_put_contents($database, $json);
 }
 
 
-function sendJson($errorCode = 200, $message)
+function statusCode($errorCode = 200)
 {
-    header("Content-Type: application/json");
     http_response_code($errorCode);
-    $json = json_encode($message);
-    echo $json;
-    exit();
 }
 
 //Hittar det högsts id:et
@@ -33,4 +29,15 @@ function theHighestId($array)
     }
     $userID = $userID + 1;
     return $userID;
+}
+
+function checkIfLoggedIn(){
+    if (isset($_SESSION["IsLoggedIn"])){
+        if ($_SESSION["IsLoggedIn"] == true){
+            return $_SESSION["nameTag"];
+        }
+    }
+    else {
+        return null;
+    }
 }

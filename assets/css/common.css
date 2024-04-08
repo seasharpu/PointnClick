@@ -1,0 +1,314 @@
+/* Denna sida avser samtliga regler för gemensamma css-regler på alla sidor */
+/* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+@font-face {
+  font-family: "PixelBold";
+  src: url(/assets/fonts/PixelBold.ttf);
+}
+
+:root {
+  /* Färger */
+  --backgroundC: #000000;
+  --mainTextC: #ffffff;
+  --dialogTextC: #000000;
+  --inputTitlesC: #810084;
+  /*nedan kan ändras om färgen inte passar!*/
+  --messageBackgroundC: #231c3b;
+
+  /* Knappar */
+  --mainButtonC: #810084;
+  --buttonBorderC: #342957;
+  --exitButtonC: #c70039;
+  --deleteButtonC: #c70039;
+
+  /* Storlekar */
+  --screenWidth: 975px;
+  --screenHeight: 650px;
+
+  /* Fonter */
+  --mainFont: "DotGothic16", sans-serif;
+  --titleFont: "PixelBold";
+}
+
+/* Konstanter på hemsidan */
+body {
+  margin: 0px;
+  height: 100vh;
+  background-color: var(--backgroundC);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+header {
+  margin: 0px;
+  width: var(--screenWidth);
+  height: 55px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--mainFont);
+  font-size: larger;
+  color: var(--mainTextC);
+}
+
+main {
+  width: var(--screenWidth);
+  height: var(--screenHeight);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  position: relative;
+}
+
+footer {
+  width: var(--screenWidth);
+  height: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--mainFont);
+  color: var(--mainTextC);
+  background-color: black;
+}
+.spacesShipBackground {
+  position: relative;
+}
+.spacesShipBackground {
+  position: relative;
+}
+.statusCodeDiv {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.36);
+  transition: background-color 1.5s ease;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/*kod för meddelande av statuskod*/
+.statusCodeDiv > div {
+  font-family: var(--titleFont);
+  background-color: var(--messageBackgroundC);
+  border: 7px solid var(--buttonBorderC);
+
+  position: absolute;
+  height: 220px;
+  width: 250px;
+  left: 50%;
+  top: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform: translate(-50%, -50%);
+}
+.statusCodeDiv > div h2 {
+  font-family: var(--mainFont);
+  color: var(--mainTextC);
+}
+.statusCodeDiv > div p {
+  text-align: center;
+  margin: 5px 3px 0px 3px;
+}
+.statusCodeDiv .understood {
+  background-color: var(--exitButtonC);
+  padding: 13px 20px 13px 20px;
+  color: var(--mainTextC);
+  margin-top: 34px;
+}
+.statusCodeDiv .understood:hover {
+  background-color: #b10334;
+  cursor: pointer;
+}
+.statusCodeDiv .understood:active {
+  background-color: #9f032f;
+}
+
+.statusColor {
+  color: red;
+}
+
+.buttonToexit,
+.understoodToStay {
+  background-color: var(--exitButtonC);
+  color: var(--mainTextC);
+  padding: 11px;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+}
+
+.understoodToStay:hover,
+.buttonToexit:hover {
+  background-color: #b10334;
+}
+.understoodToStay:active,
+.buttonToexit:active {
+  background-color: #9f032f;
+}
+
+.statusColorexitORstay {
+  color: var(--mainTextC);
+}
+.stayORexitButtons {
+  display: flex;
+  width: 130%;
+  margin-top: 3px;
+  justify-content: space-evenly;
+}
+/*karaktärer för planeten*/
+
+.character {
+  background-size: cover;
+  background-position: center;
+
+  position: absolute;
+}
+
+.character:hover {
+  cursor: pointer;
+}
+.playerCharacter {
+  background-size: cover;
+  background-position: center;
+
+  width: 100px;
+  height: 100px;
+}
+.playerCharacter > img {
+  width: 100px;
+  height: 100px;
+}
+/* loadingDiv CSS */
+
+.ldWrapper {
+  height: var(--screenHeight);
+  width: var(--screenWidth);
+  background-image: url(/assets/images/backgroundspaceload.png);
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 10;
+}
+.ldWrapperShip {
+  height: var(--screenHeight);
+  width: var(--screenWidth);
+  background-image: url(/assets/images/Zone-202.png);
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+#travelingText {
+  margin: 0px 10px 0px 10px;
+  color: var(--mainTextC);
+  font-family: var(--mainFont);
+}
+
+#spaceshipImgMoving {
+  height: 100px;
+  width: 100px;
+  background-image: url(/assets/images/movingspaceship.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#beamgif {
+  height: 150px;
+  width: 150px;
+  background-image: url(/assets/images/beam.gif);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  position: relative;
+  top: -40px;
+}
+
+.lds-dots {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 37px;
+}
+.lds-dots div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 8px;
+  background: #fff;
+  animation: lds-dots 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-dots div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.lds-dots div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.lds-dots div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-dots {
+  0% {
+    top: 8px;
+    height: 14px;
+  }
+  50%,
+  100% {
+    top: 24px;
+    height: 5px;
+  }
+}
+
+.planetsItem {
+  position: absolute;
+}
+
+.noSee {
+  display: none;
+}
+
+.planetsItem:hover {
+  animation-name: wiggle;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(1deg);
+  }
+  25% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(1deg);
+  }
+}

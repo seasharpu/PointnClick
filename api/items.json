@@ -1,27 +1,32 @@
 [
         {
             "id": 1,
-            "name": "snorkle",
+            "name": "BreathingMask",
+            "image": "assets/images/underwaterbreathingmask.png",
             "description":"for underwater"
         },
         {
             "id": 2,
-            "name": "gasmask",
+            "name": "Gasmask",
+            "image": "assets/images/gasmask.png",
             "description":"for toxic enviroments"
         },
         {
             "id": 3,
-            "name": "candy",
+            "name": "Candy",
+            "image": "assets/images/candy.png",
             "description":"not foor humans"
         },
         {
             "id": 4,
-            "name": "musicdisc",
+            "name": "Musicdisc",
+            "image": "assets/images/musicdisc.png",
             "description":"aliens absolute hits!"
         },
         {
             "id": 5,
-            "name": "alienWorm",
+            "name": "Watermelon",
+            "image": "assets/images/watermelon.png",
             "description":"bites"
         }
     ]

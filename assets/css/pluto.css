@@ -1,0 +1,505 @@
+@import "common.css";
+/* Denna fil avser unika css-regler för pluto samt laikas skepp */
+/* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+
+:root {
+  --transitionTime: 3s;
+}
+.plutoPlayerCharacter {
+  position: absolute;
+  left: 400px;
+  bottom: 100px;
+}
+.wrapperShipDiv {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 350px;
+  left: 40px;
+}
+.codeWrapper {
+  background-color: #aeaeae;
+  width: 0px;
+  height: 0px;
+  transform-origin: right top;
+  transition: var(--transitionTime);
+
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 150px;
+  left: 120px;
+
+  z-index: 1000;
+}
+
+.codeNumbersWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  height: 200px;
+}
+
+.codePanelIMGandNumbers {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  transition: var(--transitionTime);
+}
+
+.spaceshipButton {
+  width: 100%;
+  padding: 10px;
+  background-color: purple;
+}
+
+.codeinputnumbers {
+  background-color: black;
+  border: none;
+  font-family: var(--mainFont);
+  color: lime;
+  font-size: 0px;
+  flex-grow: 1;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  transition: calc(var(--transitionTime) - 2s);
+}
+
+.codeNumbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+  font-size: 0px;
+  font-family: var(--mainFont);
+  transition: calc(var(--transitionTime) - 1.5s);
+}
+
+.codeNumbers:hover {
+  cursor: pointer;
+}
+
+.clearCodePanelButton,
+.enterCodeButton {
+  background-color: #813124;
+  box-shadow: 5px 5px 0 #525252;
+
+  font-family: var(--mainFont);
+}
+
+.codePanelTitle {
+  margin: 15px;
+  font-size: 0px;
+  transition: calc(var(--transitionTime) - 0.5s);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-family: var(--titleFont);
+}
+
+.laikasShip {
+  width: 200px;
+  height: 200px;
+  background-image: url(/assets/images/laikaship.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+.buttonWrapperPanel {
+  flex-grow: 2;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.clearCodePanelButton > p,
+.enterCodeButton > p {
+  margin: 0;
+
+  flex-grow: 1;
+  text-align: center;
+}
+
+.enterButton,
+.clearButton {
+  font-size: 0px;
+  transition: calc(var(--transitionTime) - 1s);
+}
+/* Växande knapp  */
+
+.transformSize {
+  width: 400px;
+  height: 400px;
+  padding: 15px;
+
+  border: solid 5px #808080;
+
+  margin: -450px 0px 0px 150px;
+}
+
+.codeScreenSize {
+  height: 40px;
+  margin-bottom: 20px;
+  border: solid 5px #808080;
+  transition: calc(var(--transitionTime) - 0.5s);
+}
+
+.enterCodeSize,
+.clearCodeSize {
+  border: 5px 5px 0 black;
+  height: 50px;
+  width: 165px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enterButtonSize,
+.clearButtonSize {
+  font-size: 20px;
+  transition: calc(var(--transitionTime) - 0.5s);
+}
+.enterButtonSize:hover,
+.clearButtonSize:hover {
+  cursor: pointer;
+}
+
+.screenNumberSize {
+  font-size: 20px;
+}
+
+.numberSize {
+  font-size: 25px;
+  box-shadow: 3px 3px 0 #813124;
+}
+
+.panelTitleSize {
+  font-size: 30px;
+}
+
+.cardboardBox {
+  height: 50px;
+  width: 50px;
+
+  background-image: url(/assets/images/box.png);
+  background-size: cover;
+
+  grid-row: 3;
+  grid-column: 2;
+
+  transition: 1s;
+
+  align-self: center;
+}
+
+.cardboardBox:hover {
+  cursor: pointer;
+
+  animation: MoveUpDown 0.5s linear infinite;
+  position: relative;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    left: 0;
+  }
+  50% {
+    bottom: 5px;
+  }
+}
+
+.notepad {
+  display: none;
+
+  background-image: url(/assets/images/notepad.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-sizing: border-box;
+  height: 200px;
+
+  grid-column: 3;
+  grid-row: 2;
+  z-index: 10;
+}
+
+.notepadBig {
+  display: inline;
+  align-self: center;
+}
+
+/*användarens karaktär*/
+.playerCharacter .playerPluto {
+  left: 0px;
+  top: 0px;
+}
+
+/*demon*/
+.wingedDemon {
+  height: 200px;
+  width: 200px;
+  left: 690px;
+  top: 10px;
+}
+.wingedDemon .characterDialogueWrapper {
+  position: absolute;
+  left: -200px;
+}
+
+/*MOLN*/
+.cloudSmall {
+  height: 120px;
+  width: 120px;
+
+  background-size: cover;
+  background-position: center;
+
+  position: absolute;
+
+  left: 100px;
+  top: 170px;
+
+  animation: moveclouds 40s linear infinite;
+}
+
+.cloudBig {
+  height: 200px;
+  width: 200px;
+
+  background-size: cover;
+  background-position: center;
+
+  position: absolute;
+
+  left: 100px;
+  top: -30px;
+
+  animation: moveclouds 30s linear infinite;
+}
+
+.cloud:before,
+.cloud:after {
+  position: absolute;
+  transform: rotate(30deg);
+  position: absolute;
+  top: -15px;
+  left: 10px;
+}
+
+.cloud:after {
+  width: 120px;
+  height: 120px;
+  top: -55px;
+  left: auto;
+  right: 15px;
+}
+
+@keyframes moveclouds {
+  0% {
+    margin-left: 1000px;
+  }
+  100% {
+    margin-left: -1000px;
+  }
+}
+
+.creditsDiv {
+  grid-area: 1/3/2/4;
+  height: 180px;
+  width: 115px;
+}
+
+.creditTextWrapper {
+  font-size: x-small;
+  font-family: var(--titleFont);
+  background-color: rgba(0, 0, 0, 0.623);
+  border: black solid 7px;
+  color: lime;
+
+  width: 115px;
+
+  display: inline-block;
+}
+
+.creditTextWrapper h2,
+.creditTextWrapper > p {
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.creditTextWrapper h2 {
+  width: 7.3em;
+}
+
+.creditTextWrapper > h2,
+.creditTextWrapper > p:nth-child(2),
+.creditTextWrapper > p:nth-child(3),
+.creditTextWrapper > p:nth-child(4),
+.creditTextWrapper > p:nth-child(5),
+.creditTextWrapper > p:nth-child(6),
+.creditTextWrapper > p:nth-child(7) {
+  opacity: 0;
+  -webkit-animation: type2 2s steps(40, end),
+    blink 0.2s step-end infinite alternate;
+  animation: type2 2s steps(40, end), blink 2s step-end infinite alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.creditTextWrapper > p:nth-child(2) {
+  width: 3em;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.creditTextWrapper > p:nth-child(3) {
+  width: 4em;
+  -webkit-animation-delay: 2s;
+  animation-delay: 4s;
+}
+
+.creditTextWrapper > p:nth-child(4) {
+  width: 5em;
+  -webkit-animation-delay: 2s;
+  animation-delay: 6s;
+}
+
+.creditTextWrapper > p:nth-child(5) {
+  width: 3em;
+  -webkit-animation-delay: 2s;
+  animation-delay: 8s;
+}
+
+.creditTextWrapper > p:nth-child(6) {
+  width: 4em;
+  -webkit-animation-delay: 2s;
+  animation-delay: 10s;
+}
+.creditTextWrapper > p:nth-child(7) {
+  width: 3em;
+  -webkit-animation-delay: 2s;
+  animation-delay: 12s;
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: 0.15em solid orange;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: 0.15em solid orange;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: 0.15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: 0.15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: tranparent;
+  }
+}
+
+.laikasWrapper {
+  grid-area: 3/2/3/3;
+}
+
+.laikaTheDog {
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.laikaTheDog:hover {
+  cursor: pointer;
+}
+
+.laikasDialogueBubble {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 114px;
+  display: flex;
+
+  position: absolute;
+  bottom: 218px;
+  left: 139px;
+}
+
+.fireworksgif {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.laikasSpeech {
+  width: 222px;
+  margin: 13px;
+}
+.laikaPlayerCharacter {
+  position: absolute;
+  left: 100px;
+  bottom: 70px;
+}

@@ -1,0 +1,41 @@
+@import "common.css";
+/* Denna fil avser unika css-regler för alienplaneten */
+/* VARNING!! SE TILL ATT CLASS- OCH ID-NAMN INTE ÄR LIKADAN SOM PÅ EN ANNAN PLANET */
+
+/*användarens karaktär*/
+.playerCharacter .playerAlien{
+    left: 0px;
+    top: 0px;
+  }
+
+  .alienPlayerCharacter {
+    position: absolute;
+    left:300px;
+    bottom:155px;
+  }
+
+  .insect {
+    height: 100px;
+    width: 100px;
+
+    
+    left: 600px;
+    bottom: 300px;
+  }
+
+.insect .characterDialogueWrapper{
+  position: absolute;
+  left: -250px;
+  top: -100px;
+}
+
+.alienPlanetDIV .planetsItem{
+  left: 908px;
+  top: 595px;
+
+}
+
+.Candy{
+  height: 100%;
+  width: 50%;
+}

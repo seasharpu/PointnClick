@@ -1,60 +1,69 @@
 [
         {
             "id":1,
-            "name": "tomatoPlanet",
+            "name": "partyPlanet",
+            "location": "Party Planet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["Yo skippy! Wanna party??!","Once this was the coolest party place in the universe!","It's not anymore... but I have a feeling it will be cool again soon!","Me and McWaterMask here will party until then!","PARTYTIME!!","Look at the screen..."]
             },
-            "itemOnGround":4
+            "itemOnGround":4,
+            "backgroundImage": "assets/images/party_planet.png"
         },
         {
             "id":2,
             "name": "desertPlanet",
+            "location": "Desert Planet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["Greetings, traveler. What brings you to this desert planet?","While I wandered the desert I saw equipment suited for toxic planets.", "Strange, huh?", "Maybe you can make use of it?", "Farewell traveler and good luck!"]
             },
-            "itemOnGround":2
+            "itemOnGround":2,
+            "backgroundImage": "assets/images/tiledesert.png"
         },
         {
             "id":3,
             "name": "alienPlanet",
+            "location": "Alien Planet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["Intruder! State your business!","A dog? I do not know what that is but there's no such creature here!","Be careful not to step on our eggs!","THE HIVE IS FOREVER","You're still here? BE GONE HIVE INTRUDER!"]
             },
             "itemOnGround":1,
-            "requiredItem":2
+            "requiredItem":2,
+            "backgroundImage": "assets/images/alien.png"
         },
         {
             "id":4,
             "name": "junglePlanet",
+            "location": "Jungle Planet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["Hello there little fellah!","Is this your first time visiting this planet?","Did you know that space is infinite? But this planet is not..","If you're not careful, I might bite you!","Leave me alone now thank you, I have things to take care of."]
             },
-            "itemOnGround":5
+            "itemOnGround":5,
+            "backgroundImage": "assets/images/jungleplanet.png"
         },
         {
             "id":5,
-            "name": "waterPlanet",
+            "name": "underwaterPlanet",
+            "location": "Water Planet",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
+                "dialogue": ["Hello, I am underwater.","Why did the star decide to take a vacation? It needed some space.","I dont even know what a... dog is?","Smell ya later!"]
             },
             "itemOnGround":3,
-            "requiredItem":1
+            "requiredItem":1,
+            "backgroundImage": "assets/images/Underwater.png"
         },
         {
             "id":6,
-            "name": "pluto",
+            "name": "plutoPlanet",
+            "location": "Pluto",
             "NPC": {
                 "name": "",
-                "dialouge": ["","","","",""]
-            }
-        },
-        {
-            "laikaPassword": 12345
-        } 
+                "dialogue": ["Hello there tiny creature. Please do not be alarmed by my appearance.","I sought out this small planet for solace.","However, I have a feeling this planet's name has a hidden meaning.","See that box down there? I cannot make any sense of it.","Good luck on your journey, space-thingy."]
+            },
+            "backgroundImage": "assets/images/Pluto_v1.png"
+        }
     ]
