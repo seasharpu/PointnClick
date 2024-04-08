@@ -5,6 +5,18 @@
         "password": "test123",
         "profilePicture": "8802ddf974434854420d1cdc10ea9e1f305a7c7b.png",
         "avatar": "/assets/images/characters/avatar2.png",
+        "inventory": [
+            2,
+            5
+        ],
+        "laikaFound": false
+    },
+    {
+        "id": 3,
+        "nameTag": "Matte",
+        "password": "1234",
+        "profilePicture": "99c3a7d1abd3daa9659d6ca09ddce9b8a481fb47.png",
+        "avatar": "/assets/images/characters/avatar2.png",
         "inventory": [],
         "laikaFound": false
     }
