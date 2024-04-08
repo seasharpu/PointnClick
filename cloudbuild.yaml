@@ -1,0 +1,44 @@
+# Define variables at the top
+substitutions:
+  _PROJECT_ID: savinglaika
+  _PROJECT_REGION: europe-west1
+  _SERVICE_NAME: savinglaikaservice
+  _IMAGE_NAME: savinglaikaimg
+  _CONTAINER_REGION: eu.gcr.io
+  _TARGET_PROJECT: nein
+
+steps:
+  # Step 1: Build the Docker image
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - "build"
+      - "-t"
+      # Tag the image with the project ID and a unique tag (e.g., commit SHA)
+      - "${_CONTAINER_REGION}/${_PROJECT_ID}/${_IMAGE_NAME}:${SHORT_SHA}"  
+      - "."  # Build context (current directory)
+
+  # Step 2: Push the Docker image to Google Container Registry (GCR)
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - '${_CONTAINER_REGION}/${_PROJECT_ID}/${_IMAGE_NAME}:${SHORT_SHA}' # Push the tagged image to GCR
+
+  # Step 3: Deploy the Docker image to Google Cloud Run
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      - "beta"
+      - "run"
+      - "deploy"
+      - "${_SERVICE_NAME}"
+      - "--image"
+      - "${_CONTAINER_REGION}/${_PROJECT_ID}/${_IMAGE_NAME}:${SHORT_SHA}"
+      - "--region"
+      - "${_PROJECT_REGION}"
+      - "--platform"
+      - "managed"
+      - "--allow-unauthenticated"
+      #- "--project"
+      #- "${_PROJECT_ID}"
+      - "--async"
+
+timeout: 1200s
