@@ -2,7 +2,7 @@
 substitutions:
   _PROJECT_ID: gamemoviedatabase-417713
   _PROJECT_REGION: europe-west1
-  _SERVICE_NAME: savinglaikaservice
+  _SERVICE_NAME: savinglaika
   _IMAGE_NAME: savinglaikaimage
   _CONTAINER_REGION: eu.gcr.io
   _TARGET_PROJECT: nein
